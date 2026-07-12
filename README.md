@@ -48,7 +48,7 @@ Want a guided, AI-assisted build with a personality assessment and brand tooling
 
 ## See a finished one
 
-[`examples/personal-avery-quinn/`](examples/personal-avery-quinn) is a complete, **fictional** personal vibegraph — a useful reference for what "done" looks like before you build your own.
+A complete reference vibegraph is on the way — see [`examples/`](examples). For now, the [templates](templates) and [SPEC.md](SPEC.md) show the full shape of every section.
 
 ## The two halves
 

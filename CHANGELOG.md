@@ -22,7 +22,7 @@ The first public release of the Vibegraph specification.
 - Guidance for AI consumption: direct context, persistent workspace context,
   live access over MCP, and memory-layer seeding.
 - Personal and business templates.
-- A complete fictional worked example (`examples/personal-avery-quinn`).
+- Personal and business templates with inline guidance (a complete worked example follows with the vibegraph.ai app).
 - Dual licensing: MIT for templates/schema/code, CC-BY 4.0 for specification prose.
 
 [1.0.0]: https://vibegraph.md

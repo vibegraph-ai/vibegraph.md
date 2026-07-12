@@ -49,7 +49,7 @@ There are two **types**: `personal` and `business`. They share the same structur
 
 ## 2. File layout
 
-A vibegraph is a directory. Its name SHOULD end in `.vibegraph` (for example, `avery-quinn.vibegraph`), which lets tools recognize it, but this is a convention, not a requirement.
+A vibegraph is a directory. Its name SHOULD end in `.vibegraph` (for example, `jordan-lee.vibegraph`), which lets tools recognize it, but this is a convention, not a requirement.
 
 ```
 name.vibegraph/
@@ -95,7 +95,7 @@ Rules:
 ---
 vibegraph_version: "1.0"        # REQUIRED — spec version this vibegraph targets
 type: personal                  # REQUIRED — "personal" | "business"
-owner: "Avery Quinn"            # REQUIRED — display name of the person/org
+owner: "Jordan Lee"             # REQUIRED — display name of the person/org
 updated: "2026-07-11"           # REQUIRED — ISO 8601 date of last change
 default_visibility: private     # REQUIRED — default for any item lacking its own setting
 summary: >                      # OPTIONAL — one-paragraph orientation for a consumer
@@ -118,7 +118,7 @@ summary: >                      # OPTIONAL — one-paragraph orientation for a c
 The body of `VIBEGRAPH.md` SHOULD contain, in plain prose and a simple list, a **map** of the vibegraph: what's in the Core, which modules exist, and their visibility. This doubles as the thing an AI reads to orient itself. See [`templates/personal/VIBEGRAPH.md`](templates/personal/VIBEGRAPH.md) for the canonical shape. A minimal body:
 
 ```markdown
-# Avery Quinn — Vibegraph
+# Jordan Lee — Vibegraph
 
 > Independent brand strategist & writer. This is my codified identity
 > and working context for use with AI tools.
