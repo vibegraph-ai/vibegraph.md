@@ -1,0 +1,20 @@
+# A vibegraph is personal data. Never commit a real one to a public repo.
+# These patterns keep private vibegraphs out of version control by default.
+
+*.vibegraph/
+!examples/**/*.vibegraph/
+private/
+*.local.md
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# Build artifacts
+node_modules/
+dist/
+.cache/

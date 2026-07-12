@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vibegraph.md/schema/vibegraph-document.schema.json",
+  "title": "Vibegraph Document Front Matter",
+  "description": "Schema for the optional YAML front matter of any Core or module document in a vibegraph, per the Vibegraph Specification v1.0 (https://vibegraph.md/SPEC.md).",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "section": {
+      "type": "string",
+      "description": "A stable logical identifier, usually mirroring the path (e.g. 'core/purpose', 'modules/goals').",
+      "examples": ["core/personality", "core/purpose", "modules/goals"]
+    },
+    "visibility": {
+      "type": "string",
+      "description": "Overrides the manifest default_visibility for this document.",
+      "enum": ["private", "scoped", "public"]
+    },
+    "scope": {
+      "type": "array",
+      "description": "Required when visibility is 'scoped': the agent/tool identifiers permitted to read this document. Ignored otherwise. An empty scope with visibility 'scoped' MUST be treated as 'private'.",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "updated": {
+      "type": "string",
+      "description": "ISO 8601 date the document last changed.",
+      "format": "date"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "visibility": { "const": "scoped" } },
+        "required": ["visibility"]
+      },
+      "then": {
+        "description": "When visibility is 'scoped', a non-empty scope is expected.",
+        "properties": {
+          "scope": { "type": "array", "minItems": 1 }
+        }
+      }
+    }
+  ]
+}

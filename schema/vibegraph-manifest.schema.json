@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vibegraph.md/schema/vibegraph-manifest.schema.json",
+  "title": "Vibegraph Manifest Front Matter",
+  "description": "Schema for the YAML front matter of a VIBEGRAPH.md manifest file, per the Vibegraph Specification v1.0 (https://vibegraph.md/SPEC.md).",
+  "type": "object",
+  "required": ["vibegraph_version", "type", "owner", "updated", "default_visibility"],
+  "additionalProperties": true,
+  "properties": {
+    "vibegraph_version": {
+      "type": "string",
+      "description": "The spec version this vibegraph targets (semver).",
+      "pattern": "^\\d+\\.\\d+(\\.\\d+)?$",
+      "examples": ["1.0"]
+    },
+    "type": {
+      "type": "string",
+      "description": "Selects the Core instrument set.",
+      "enum": ["personal", "business"]
+    },
+    "owner": {
+      "type": "string",
+      "description": "Display name of the person or organization the vibegraph represents.",
+      "minLength": 1
+    },
+    "updated": {
+      "type": "string",
+      "description": "ISO 8601 date of the last change to any part of the vibegraph.",
+      "format": "date"
+    },
+    "default_visibility": {
+      "type": "string",
+      "description": "Default visibility for any item that omits its own visibility. SHOULD be 'private'.",
+      "enum": ["private", "scoped", "public"],
+      "default": "private"
+    },
+    "summary": {
+      "type": "string",
+      "description": "Optional one-paragraph orientation a consumer can surface without reading the whole vibegraph."
+    }
+  }
+}
