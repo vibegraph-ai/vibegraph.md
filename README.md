@@ -83,7 +83,7 @@ Use it, fork it, build products that consume it. Spreading the convention is the
 
 <div align="center">
 
-**Vibegraph™** and **Vibeclone™** are trademarks of Raizen Labs, LLC. Created by [Ryan Charleston](https://vibegraph.ai).
+**Vibegraph™** and **Vibeclone™** are trademarks of Raizen Labs, LLC. Created by [Ryan Charleston](https://ryancharleston.com).
 
 The name is a standard; the code is open. Build with it.
 
