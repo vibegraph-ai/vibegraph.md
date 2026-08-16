@@ -1,0 +1,80 @@
+<!doctype html><html><head><meta charset='utf-8'><title>Cover</title><style>
+* { box-sizing: border-box; }
+html { font-size: 10.4pt; }
+body {
+  font-family: Charter, Georgia, serif;
+  color: #1a1a1c; line-height: 1.62; margin: 0;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+/* ---- cover ---- */
+.cover { height: 232mm; display: flex; flex-direction: column; }
+.cover-top { display: flex; justify-content: space-between; margin-top: 10mm; }
+.cover-eyebrow { font-family: Menlo, monospace; font-size: 8.2pt; letter-spacing: 0.35em; color: #52525b; font-weight: 600; }
+.cover-rule { border: none; border-top: 1.6px solid #1a1a1c; margin: 3mm 0 0 0; }
+.cover-main { margin-top: 42mm; }
+.cover-title { font-size: 34pt; margin: 0; font-weight: 700; letter-spacing: -0.01em; }
+.cover-title .tm { font-size: 11pt; vertical-align: super; font-weight: 400; }
+.cover-tagline { font-style: italic; font-size: 13.5pt; margin: 4mm 0 0 0; }
+.cover-desc { max-width: 152mm; font-size: 11pt; margin-top: 16mm; }
+.cover-bottom { margin-top: auto; }
+.cover-bottom .cover-rule { border-top: 1px solid #d4d4d8; }
+.cover-meta { display: flex; justify-content: space-between; margin-top: 3mm; font-size: 9.5pt; }
+.cover-meta p { margin: 0 0 1.2mm 0; }
+.cover-meta .right { text-align: right; color: #52525b; }
+/* ---- body ---- */
+h2 { font-size: 16.5pt; margin: 0 0 3mm 0; break-before: page; }
+h2::before { content: ""; display: block; width: 11mm; border-top: 1.4px solid #1a1a1c; margin-bottom: 7mm; padding-top: 2mm; }
+h2:first-child { break-before: auto; }
+h3 { font-size: 12pt; margin: 7mm 0 2mm 0; page-break-after: avoid; }
+/* A subsection that fits on one page never splits: it moves whole to the
+   next page instead of stranding its heading or leaving a gap. Chrome
+   ignores the rule for chunks taller than a page, which then flow. */
+.keep { break-inside: avoid-page; }
+p { margin: 0 0 3.2mm 0; text-align: justify; hyphens: auto; }
+strong { font-weight: 700; }
+hr { border: none; margin: 0; }
+blockquote {
+  margin: 6mm 6mm 6mm 8mm; padding-left: 6mm;
+  border-left: 2px solid #1a1a1c; font-style: italic; font-size: 11.2pt;
+  page-break-inside: avoid;
+}
+blockquote p { text-align: left; }
+code { font-family: Menlo, monospace; font-size: 8.8pt; background: #f4f4f5; padding: 0.5pt 3pt; border-radius: 3px; }
+a { color: inherit; text-decoration: none; }
+ul, ol { margin: 0 0 3.2mm 0; padding-left: 7mm; }
+li { margin-bottom: 1.4mm; }
+table {
+  border-collapse: collapse; width: 100%; margin: 4mm 0 5mm 0;
+  font-family: Inter, sans-serif; font-size: 8.6pt; line-height: 1.45;
+  page-break-inside: avoid;
+}
+th { text-align: left; border-top: 1.4px solid #1a1a1c; border-bottom: 1px solid #1a1a1c; padding: 2mm 3mm 2mm 0; }
+td { border-bottom: 1px solid #e4e4e7; padding: 2mm 3mm 2mm 0; vertical-align: top; }
+figure { margin: 6mm 0; page-break-inside: avoid; }
+figure svg { width: 100%; height: auto; }
+figcaption { font-style: italic; font-size: 9.3pt; color: #52525b; text-align: center; margin-top: 2mm; }
+.colophon { margin-top: 10mm; font-style: italic; font-size: 9pt; color: #52525b; }
+</style></head><body>
+<section class="cover">
+  <div class="cover-top">
+    <span class="cover-eyebrow">WHITEPAPER</span>
+    <span class="cover-eyebrow right">VERSION 1.5</span>
+  </div>
+  <hr class="cover-rule"/>
+  <div class="cover-main">
+    <h1 class="cover-title">The Vibegraph<span class="tm">™</span></h1>
+    <p class="cover-tagline">Your Vibes, Codified.</p>
+    <p class="cover-desc">An open framework for codifying human identity and
+    personal brand as structured, portable AI context: digital DNA any AI can
+    read today, and the protocol for an agent that operates as its
+    creator&rsquo;s clone, a Vibeclone.</p>
+  </div>
+  <div class="cover-bottom">
+    <hr class="cover-rule"/>
+    <div class="cover-meta">
+      <div><p>August 2026</p><p>Ryan Charleston</p></div>
+      <div class="right"><p>vibegraph.ai</p><p>vibegraph.md</p></div>
+    </div>
+  </div>
+</section>
+</body></html>
