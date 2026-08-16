@@ -4,7 +4,8 @@
 
 ### Your Vibes, Codified.
 
-**An open framework for codifying personal and brand identity as portable context for AI tools and agents.**
+**An open framework for codifying human identity and personal brand as structured, portable AI context: digital DNA any AI can read today, and the protocol for an agent that operates as its creator's clone, a Vibeclone.
+**
 
 [vibegraph.md](https://vibegraph.md) · [vibegraph.ai](https://vibegraph.ai) · [Read the whitepaper](whitepaper/The-Vibegraph-Whitepaper-v1.5.pdf)
 
