@@ -63,7 +63,7 @@ Personal and business vibegraphs share this structure; the business version swap
 ## Read more
 
 - **[SPEC.md](SPEC.md)**: the full specification: file tree, the master file, per-document schema, the permission model, and how AI systems consume a vibegraph.
-- **[The whitepaper](whitepaper/The-Vibegraph-Whitepaper-v1.5.md)**: the concept, the architecture, security, and use cases (v1.5; the v1.0 PDF remains in the same folder).
+- **[The whitepaper](whitepaper/The-Vibegraph-Whitepaper-v1.5.pdf)**: the concept, the architecture, security, and use cases (v1.5; [markdown source](whitepaper/The-Vibegraph-Whitepaper-v1.5.md), v1.0 PDF in the same folder).
 - **[CONTRIBUTING.md](CONTRIBUTING.md)**: how to propose changes to the spec.
 - **[CHANGELOG.md](CHANGELOG.md)**: version history.
 
