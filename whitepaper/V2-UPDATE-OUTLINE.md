@@ -162,7 +162,8 @@ agents.":
 
 > An open framework for codifying human identity and personal brand as
 > structured, portable AI context: digital DNA any AI can read today, and
-> the foundation for an agent that operates as its creator, a Vibeclone.
+> the protocol for an agent that operates as its creator's clone, a
+> Vibeclone.
 
 Carries the "digital DNA" idea and puts the Vibeclone endgame on the cover.
 Deliberately NOT claimed: "agentic knowledge graph" (it is neither,

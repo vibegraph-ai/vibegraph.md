@@ -37,8 +37,8 @@ COVER = """
     <p class="cover-tagline">Your Vibes, Codified.</p>
     <p class="cover-desc">An open framework for codifying human identity and
     personal brand as structured, portable AI context: digital DNA any AI can
-    read today, and the foundation for an agent that operates as its creator,
-    a Vibeclone.</p>
+    read today, and the protocol for an agent that operates as its
+    creator&rsquo;s clone, a Vibeclone.</p>
   </div>
   <div class="cover-bottom">
     <hr class="cover-rule"/>
@@ -68,7 +68,7 @@ body {
 .cover-title { font-size: 34pt; margin: 0; font-weight: 700; letter-spacing: -0.01em; }
 .cover-title .tm { font-size: 11pt; vertical-align: super; font-weight: 400; }
 .cover-tagline { font-style: italic; font-size: 13.5pt; margin: 4mm 0 0 0; }
-.cover-desc { max-width: 118mm; font-size: 11pt; margin-top: 16mm; }
+.cover-desc { max-width: 152mm; font-size: 11pt; margin-top: 16mm; }
 .cover-bottom { margin-top: auto; }
 .cover-bottom .cover-rule { border-top: 1px solid #d4d4d8; }
 .cover-meta { display: flex; justify-content: space-between; margin-top: 3mm; font-size: 9.5pt; }
