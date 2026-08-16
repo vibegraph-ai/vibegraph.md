@@ -72,13 +72,13 @@ A portable, structured identity and context framework that codifies personality,
 **Core Identity: who you are.**
 The first of a vibegraph's three parts: personality (a two-part assessment: the Big Five and the Enneagram, reconciled in an integrated reading) and Ikigai (purpose). Small, stable, and safe to share with any AI tool.
 
-**Branding: how you show up.**
+**Branding: how you present.**
 The second part: one or more brands, each made of Brand Context (twelve positioning elements, from brand name to bios) and Brand Visuals (eight visual elements, from logos to photography direction). The personal brand is built from the Core Identity; business brands are built beside it. This is the part that keeps generated work on-brand.
 
 **Element.**
 The unit inside Brand Context and Brand Visuals: a single named artifact such as Core Values or Color Palette. Elements are first-class: each carries its own guidance, examples, and craft standards.
 
-**Orbits: what you know and how you operate.**
+**Orbits: your personal domain context.**
 The third part: self-defined modules containing the documents, data, and working context of your life or business, revolving around the core. Creators often call this their second brain; businesses call it a knowledge base or wiki. Orbits are gated and permissioned based on owner preferences, and they stay home when the core travels.
 
 **Claudia.**
@@ -95,7 +95,7 @@ Every vibegraph has the same three-part structure, anchored to one person.
 
 The **Core Identity** answers the question every AI tool silently asks and never gets answered: who is this person? It contains the personality profile and the purpose work. It is deliberately small, because it is meant to travel everywhere. It is the part you paste into a chat, attach to a project, or expose to an agent without a second thought.
 
-**Branding** answers the next question: how does this person show up? It holds one or more brands, each with its words (Brand Context) and its look (Brand Visuals). The personal brand is built from the Core Identity; business brands the owner operates sit beside it as full brand documents of their own (Section 5). Together with the core, Branding forms the shareable half of a vibegraph: the core and a brand fit comfortably inside a single model context window.
+**Branding** answers the next question: how does this person present themselves? It holds one or more brands, each with its words (Brand Context) and its look (Brand Visuals). The personal brand is built from the Core Identity; business brands the owner operates sit beside it as full brand documents of their own (Section 5). Together with the core, Branding forms the shareable half of a vibegraph: the core and a brand fit comfortably inside a single model context window.
 
 The **Orbits** answer the follow-up question: what is this person working with? They are a set of self-defined modules (health, finances, relationships, career, notes, time management, skills, goals, or anything else the owner wants to include) each containing documents, files, data, and protocols. The orbits are where depth lives, and where sensitivity lives, which is why every orbit and every item within it carries its own access controls.
 

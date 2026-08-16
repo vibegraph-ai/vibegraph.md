@@ -31,8 +31,8 @@ A **vibegraph** is a set of Markdown files that codifies one person's identity a
 It has three parts:
 
 - **Core Identity**: *who you are.* Personality (a two-part assessment: the Big Five and the Enneagram, reconciled in an integrated reading) and Ikigai (purpose). Small, stable, and safe to share with any AI tool.
-- **Branding**: *how you show up.* One brand document per brand, composed of the brand's words (Brand Context, twelve elements) and its look (Brand Visuals, eight elements). The owner's personal brand is always present once built; business brands the owner operates sit beside it.
-- **Orbits**: *what you know and how you operate.* Self-defined domains (health, finances, career, operations, and so on) containing the documents, data, and protocols of a life or business. Orbits are where depth and sensitivity live. In an exported vibegraph they appear as pointer documents; the content itself stays home in the owner's own tools, which is the permission model made structural (see [§6](#6-security--the-permission-model)).
+- **Branding**: *how you present.* One brand document per brand, composed of the brand's words (Brand Context, twelve elements) and its look (Brand Visuals, eight elements). The owner's personal brand is always present once built; business brands the owner operates sit beside it.
+- **Orbits**: *your personal domain context.* Self-defined domains (health, finances, career, operations, and so on) containing the documents, data, and protocols of a life or business. Orbits are where depth and sensitivity live. In an exported vibegraph they appear as pointer documents; the content itself stays home in the owner's own tools, which is the permission model made structural (see [§6](#6-security--the-permission-model)).
 
 A vibegraph is **plain Markdown at its simplest**: a handful of files you can read, edit, and paste anywhere. Implementations MAY layer encryption, hosting, and access control on top, but a bare folder of Markdown is a valid, complete vibegraph.
 

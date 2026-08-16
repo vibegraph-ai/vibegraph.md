@@ -75,8 +75,8 @@
       }
 
       .st10 {
-        font-family: Helvetica-Oblique, Helvetica;
-        font-style: oblique;
+        font-family: Inter-Italic, Inter, sans-serif;
+        font-style: italic;
       }
 
       .st10, .st14 {
