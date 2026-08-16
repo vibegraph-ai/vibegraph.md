@@ -6,7 +6,7 @@
 
 **An open framework for codifying personal and brand identity as portable context for AI tools and agents.**
 
-[vibegraph.md](https://vibegraph.md) · [vibegraph.ai](https://vibegraph.ai) · [Read the whitepaper](whitepaper/The-Vibegraph-Whitepaper-v1.0.pdf)
+[vibegraph.md](https://vibegraph.md) · [vibegraph.ai](https://vibegraph.ai) · [Read the whitepaper](whitepaper/The-Vibegraph-Whitepaper-v1.5.pdf)
 
 </div>
 
