@@ -1,129 +1,193 @@
-<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" font-family="Inter, -apple-system, sans-serif">
-  <style>
-    .eyebrow { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 2.2px; fill: #a1a1aa; font-weight: 500; }
-    .title   { font-family: 'Space Grotesk', Inter, sans-serif; font-size: 24px; font-weight: 700; fill: #18181b; }
-    .sub     { font-size: 13px; fill: #71717a; }
-    .cardtitle { font-size: 15px; font-weight: 600; fill: #18181b; }
-    .row     { font-size: 13.5px; font-weight: 600; fill: #27272a; }
-    .rowsub  { font-size: 11.5px; fill: #71717a; }
-    .chip    { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 9.5px; letter-spacing: 1.6px; fill: #52525b; font-weight: 500; }
-    .mono    { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
-    .card { fill: #ffffff; stroke: #e4e4e7; stroke-width: 1; }
-    .hair { stroke: #e4e4e7; stroke-width: 1; }
-    .orbitchip { fill: #fafafa; stroke: #e4e4e7; stroke-width: 1; }
-  </style>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1200 800">
+  <!-- Generator: Adobe Illustrator 30.7.0, SVG Export Plug-In . SVG Version: 2.1.4 Build 114)  -->
+  <defs>
+    <style>
+      .st0, .st1, .st2, .st3 {
+        fill: none;
+      }
 
-  <rect width="1200" height="800" fill="#ffffff"/>
+      .st0, .st4 {
+        stroke: #18181b;
+        stroke-width: 1.5px;
+      }
 
-  <!-- ============ left: the person's vibegraph ============ -->
-  <text x="48" y="76" class="eyebrow">ONE PERSON'S VIBEGRAPH</text>
-  <rect x="48" y="90" width="330" height="600" rx="18" class="card"/>
+      .st5 {
+        font-size: 13px;
+      }
 
-  <text x="76" y="132" class="title" font-size="20">Jordan Lee</text>
-  <text x="76" y="152" class="sub">jordan-lee.vibegraph.md</text>
+      .st5, .st6, .st7, .st8, .st9, .st10, .st11, .st12, .st13, .st14 {
+        isolation: isolate;
+      }
 
-  <!-- core identity mini card -->
-  <rect x="76" y="176" width="274" height="150" rx="12" fill="#fafafa" stroke="#e4e4e7"/>
-  <text x="94" y="204" class="cardtitle">Core Identity</text>
-  <line x1="94" y1="218" x2="332" y2="218" class="hair"/>
-  <text x="94" y="242" class="row">Personality</text>
-  <text x="94" y="259" class="rowsub">Big Five + Enneagram</text>
-  <text x="94" y="284" class="row">Ikigai</text>
-  <text x="94" y="301" class="rowsub">the founder's own Why lives here</text>
+      .st5, .st10, .st14 {
+        fill: #71717a;
+      }
 
-  <!-- personal brand mini card -->
-  <rect x="76" y="346" width="274" height="88" rx="12" class="card"/>
-  <text x="94" y="374" class="cardtitle">Personal brand</text>
-  <text x="94" y="394" class="rowsub">jordan-lee.brand.md</text>
-  <text x="94" y="411" class="rowsub">Context · 12, Visuals · 8</text>
+      .st5, .st14 {
+        font-family: Inter-Regular, Inter;
+      }
 
-  <!-- business brands stubs pointing right -->
-  <rect x="76" y="454" width="274" height="60" rx="12" fill="#ffffff" stroke="#18181b" stroke-width="1.5"/>
-  <text x="94" y="480" class="row">Business brand: Acme Studio</text>
-  <text x="94" y="498" class="rowsub">acme-studio.brand.md</text>
+      .st1 {
+        stroke: #a1a1aa;
+        stroke-dasharray: 5 4;
+        stroke-width: 1.2px;
+      }
 
-  <rect x="76" y="526" width="274" height="44" rx="12" fill="none" stroke="#d4d4d8" stroke-dasharray="4 4"/>
-  <text x="94" y="553" class="rowsub">+ every business Jordan owns</text>
+      .st6 {
+        font-family: IBMPlexMono-Bold, 'IBM Plex Mono';
+        font-size: 24px;
+        font-weight: 700;
+      }
 
-  <text x="76" y="640" class="rowsub">Built after the identity and personal</text>
-  <text x="76" y="657" class="rowsub">brand: the founder is the raw material.</text>
+      .st6, .st9, .st15 {
+        fill: #18181b;
+      }
 
-  <!-- connector from business stub to the big card -->
-  <g stroke="#18181b" stroke-width="1.5" fill="none">
-    <path d="M 350 484 H 430"/>
-  </g>
-  <path d="M 430 484 l -8 -4.5 v 9 z" fill="#18181b"/>
+      .st7 {
+        fill: #8f8f96;
+      }
 
-  <!-- ============ right: the business brand, magnified ============ -->
-  <text x="430" y="76" class="eyebrow">A BUSINESS BRAND, MAGNIFIED</text>
-  <rect x="430" y="90" width="722" height="600" rx="18" class="card"/>
+      .st7, .st8 {
+        font-family: IBMPlexMono, 'IBM Plex Mono';
+        font-size: 12.5px;
+      }
 
-  <!-- file bar -->
-  <rect x="458" y="116" width="666" height="40" rx="8" fill="#18181b"/>
-  <text x="478" y="141" class="mono" font-size="12.5" fill="#ffffff">acme-studio.brand.md</text>
-  <text x="648" y="141" class="mono" font-size="12.5" fill="#8f8f96">| kind: business · one file per brand</text>
+      .st8, .st4, .st16, .st17 {
+        fill: #fff;
+      }
 
-  <!-- foundations column -->
-  <text x="458" y="192" class="eyebrow">FOUNDATIONS · INSTRUMENTS SWAPPED</text>
-  <rect x="458" y="204" width="316" height="250" rx="12" class="card"/>
+      .st2, .st18, .st17 {
+        stroke: #e4e4e7;
+      }
 
-  <text x="476" y="232" class="row">Brand personality</text>
-  <text x="476" y="250" class="rowsub">Aaker's five dimensions: Sincerity,</text>
-  <text x="476" y="266" class="rowsub">Excitement, Competence,</text>
-  <text x="476" y="282" class="rowsub">Sophistication, Ruggedness</text>
-  <line x1="476" y1="298" x2="756" y2="298" class="hair"/>
+      .st18 {
+        fill: #fafafa;
+      }
 
-  <text x="476" y="322" class="row">Brand character</text>
-  <text x="476" y="340" class="rowsub">one Jungian archetype to speak from</text>
-  <line x1="476" y1="356" x2="756" y2="356" class="hair"/>
+      .st9 {
+        font-size: 15px;
+      }
 
-  <text x="476" y="380" class="row">Purpose</text>
-  <text x="476" y="398" class="rowsub">Golden Circle: Why / How / What</text>
-  <text x="476" y="414" class="rowsub">+ mission, vision, values</text>
-  <text x="476" y="437" class="chip">REPLACES BIG FIVE + IKIGAI</text>
+      .st9, .st13 {
+        font-family: Inter-SemiBold, Inter;
+        font-weight: 600;
+      }
 
-  <!-- structure column -->
-  <text x="806" y="192" class="eyebrow">STRUCTURE · SAME AS PERSONAL</text>
-  <rect x="806" y="204" width="318" height="250" rx="12" class="card"/>
+      .st10 {
+        font-family: Helvetica-Oblique, Helvetica;
+        font-style: oblique;
+      }
 
-  <text x="824" y="232" class="row">Brand Context</text>
-  <text x="824" y="250" class="rowsub">the same twelve elements, in the</text>
-  <text x="824" y="266" class="rowsub">company's voice: UVP, values, tone,</text>
-  <text x="824" y="282" class="rowsub">messaging, boilerplates, presence</text>
-  <line x1="824" y1="298" x2="1106" y2="298" class="hair"/>
+      .st10, .st14 {
+        font-size: 11.5px;
+      }
 
-  <text x="824" y="322" class="row">Brand Visuals</text>
-  <text x="824" y="340" class="rowsub">the same eight elements, deepened</text>
-  <text x="824" y="356" class="rowsub">into a full design system + templates</text>
-  <text x="824" y="372" class="rowsub">for what the business ships repeatedly</text>
-  <text x="824" y="437" class="chip">CARRIES OVER FROM PERSONAL</text>
+      .st11 {
+        fill: #52525b;
+        font-size: 9.5px;
+        letter-spacing: .17em;
+      }
 
-  <!-- business orbits strip -->
-  <text x="458" y="500" class="eyebrow">BUSINESS ORBITS · BUILT FOR REPEATABILITY</text>
-  <rect x="458" y="512" width="666" height="120" rx="12" class="card"/>
+      .st11, .st12 {
+        font-family: IBMPlexMono-Medium, 'IBM Plex Mono';
+        font-weight: 500;
+      }
 
-  <rect x="476" y="530" width="60" height="30" rx="8" class="orbitchip"/>
-  <text x="506" y="549" text-anchor="middle" class="rowsub" fill="#52525b">CRM</text>
-  <rect x="548" y="530" width="90" height="30" rx="8" class="orbitchip"/>
-  <text x="593" y="549" text-anchor="middle" class="rowsub" fill="#52525b">Finances</text>
-  <rect x="650" y="530" width="100" height="30" rx="8" class="orbitchip"/>
-  <text x="700" y="549" text-anchor="middle" class="rowsub" fill="#52525b">Operations</text>
-  <rect x="762" y="530" width="130" height="30" rx="8" class="orbitchip"/>
-  <text x="827" y="549" text-anchor="middle" class="rowsub" fill="#52525b">SOPs &amp; playbooks</text>
-  <rect x="904" y="530" width="130" height="30" rx="8" class="orbitchip"/>
-  <text x="969" y="549" text-anchor="middle" class="rowsub" fill="#52525b">Brand templates</text>
-  <rect x="1046" y="530" width="60" height="30" rx="8" class="orbitchip"/>
-  <text x="1076" y="549" text-anchor="middle" class="rowsub" fill="#52525b">Goals</text>
+      .st19, .st12 {
+        fill: #a1a1aa;
+      }
 
-  <text x="476" y="590" class="rowsub">Any operator (teammate, contractor, or agent) following the same playbook produces the</text>
-  <text x="476" y="607" class="rowsub">same result. An SOP written for a new hire is most of the way to a protocol an agent can run.</text>
+      .st12 {
+        font-size: 10.5px;
+        letter-spacing: .21em;
+      }
 
-  <!-- shared Why spine -->
-  <g stroke="#a1a1aa" stroke-width="1.2" fill="none" stroke-dasharray="5 4">
-    <path d="M 350 290 H 404 V 388 H 470"/>
-  </g>
-  <circle cx="350" cy="290" r="3" fill="#a1a1aa"/>
-  <path d="M 470 388 l -7 -4 v 8 z" fill="#a1a1aa"/>
-  <text x="404" y="352" text-anchor="middle" class="chip" transform="rotate(-90 404 352)">THE SAME WHY</text>
-  <text x="458" y="666" class="rowsub" font-style="italic">The founder's Why and the company's Why: written in the same shape, checked against each other, in one graph.</text>
+      .st13 {
+        fill: #27272a;
+        font-size: 13.5px;
+      }
+
+      .st3 {
+        stroke: #d4d4d8;
+        stroke-dasharray: 4 4;
+      }
+    </style>
+  </defs>
+  <rect class="st16" y="0" width="1200" height="800"/>
+  <text class="st12" transform="translate(48 76)"><tspan x="0" y="0">INDIVIDUAL VIBEGRAPH</tspan></text>
+  <rect class="st17" x="48" y="90" width="330" height="600" rx="18" ry="18"/>
+  <text class="st6" transform="translate(76 132)"><tspan x="0" y="0">Jordan Lee</tspan></text>
+  <text class="st5" transform="translate(76 152)"><tspan x="0" y="0">jordan-lee.vibegraph.md</tspan></text>
+  <rect class="st18" x="76" y="176" width="274" height="150" rx="12" ry="12"/>
+  <text class="st9" transform="translate(94 204)"><tspan x="0" y="0">Core Identity</tspan></text>
+  <line class="st2" x1="94" y1="218" x2="332" y2="218"/>
+  <text class="st13" transform="translate(94 242)"><tspan x="0" y="0">Personality</tspan></text>
+  <text class="st14" transform="translate(94 259)"><tspan x="0" y="0">Big Five + Enneagram</tspan></text>
+  <text class="st13" transform="translate(94 284)"><tspan x="0" y="0">Ikigai</tspan></text>
+  <text class="st14" transform="translate(94 301)"><tspan x="0" y="0">the founder&apos;s own Why lives here</tspan></text>
+  <rect class="st17" x="76" y="346" width="274" height="88" rx="12" ry="12"/>
+  <text class="st9" transform="translate(94 374)"><tspan x="0" y="0">Personal brand</tspan></text>
+  <text class="st14" transform="translate(94 394)"><tspan x="0" y="0">jordan-lee.brand.md</tspan></text>
+  <text class="st14" transform="translate(94 411)"><tspan x="0" y="0">Context · 12, Visuals · 8</tspan></text>
+  <rect class="st4" x="76" y="454" width="274" height="60" rx="12" ry="12"/>
+  <text class="st13" transform="translate(94 480)"><tspan x="0" y="0">Business brand: Acme Studio</tspan></text>
+  <text class="st14" transform="translate(94 498)"><tspan x="0" y="0">acme-studio.brand.md</tspan></text>
+  <rect class="st3" x="76" y="526" width="274" height="44" rx="12" ry="12"/>
+  <text class="st14" transform="translate(94 553)"><tspan x="0" y="0">+ every business Jordan owns</tspan></text>
+  <text class="st14" transform="translate(76 640)"><tspan x="0" y="0">Built after the identity and personal</tspan><tspan x="0" y="13.8">brand. Its founder’s personal brand</tspan><tspan x="0" y="27.6">provides the seed material.</tspan></text>
+  <path class="st0" d="M350,484h80"/>
+  <path class="st15" d="M430,484l-8-4.5v9l8-4.5Z"/>
+  <text class="st12" transform="translate(430 76)"><tspan x="0" y="0">BUSINESS BRAND SYSTEM</tspan></text>
+  <rect class="st17" x="430" y="90" width="722" height="600" rx="18" ry="18"/>
+  <rect class="st15" x="458" y="116" width="666" height="40" rx="8" ry="8"/>
+  <text class="st8" transform="translate(478 141)"><tspan x="0" y="0">acme-studio.brand.md</tspan></text>
+  <text class="st7" transform="translate(648 141)"><tspan x="0" y="0">| kind: business · one file per brand</tspan></text>
+  <text class="st12" transform="translate(458 192)"><tspan x="0" y="0">FOUNDATIONS · INSTRUMENTS SWAPPED</tspan></text>
+  <rect class="st17" x="458" y="204" width="316" height="250" rx="12" ry="12"/>
+  <text class="st13" transform="translate(476 232)"><tspan x="0" y="0">Brand personality</tspan></text>
+  <text class="st14" transform="translate(476 250)"><tspan x="0" y="0">Aaker&apos;s five dimensions: Sincerity,</tspan></text>
+  <text class="st14" transform="translate(476 266)"><tspan x="0" y="0">Excitement, Competence,</tspan></text>
+  <text class="st14" transform="translate(476 282)"><tspan x="0" y="0">Sophistication, Ruggedness</tspan></text>
+  <line class="st2" x1="476" y1="298" x2="756" y2="298"/>
+  <text class="st13" transform="translate(476 322)"><tspan x="0" y="0">Brand character</tspan></text>
+  <text class="st14" transform="translate(476 340)"><tspan x="0" y="0">one Jungian archetype to speak from</tspan></text>
+  <line class="st2" x1="476" y1="356" x2="756" y2="356"/>
+  <text class="st13" transform="translate(476 380)"><tspan x="0" y="0">Purpose</tspan></text>
+  <text class="st14" transform="translate(476 398)"><tspan x="0" y="0">Golden Circle: Why / How / What</tspan></text>
+  <text class="st14" transform="translate(476 414)"><tspan x="0" y="0">+ mission, vision, values</tspan></text>
+  <text class="st11" transform="translate(476 437)"><tspan x="0" y="0">REPLACES BIG FIVE + IKIGAI</tspan></text>
+  <text class="st12" transform="translate(806 192)"><tspan x="0" y="0">STRUCTURE · SAME AS PERSONAL</tspan></text>
+  <rect class="st17" x="806" y="204" width="318" height="250" rx="12" ry="12"/>
+  <text class="st13" transform="translate(824 232)"><tspan x="0" y="0">Brand Context</tspan></text>
+  <text class="st14" transform="translate(824 250)"><tspan x="0" y="0">the same twelve elements, in the</tspan></text>
+  <text class="st14" transform="translate(824 266)"><tspan x="0" y="0">company&apos;s voice: UVP, values, tone,</tspan></text>
+  <text class="st14" transform="translate(824 282)"><tspan x="0" y="0">messaging, boilerplates, presence</tspan></text>
+  <line class="st2" x1="824" y1="298" x2="1106" y2="298"/>
+  <text class="st13" transform="translate(824 322)"><tspan x="0" y="0">Brand Visuals</tspan></text>
+  <text class="st14" transform="translate(824 340)"><tspan x="0" y="0">the same eight elements, deepened</tspan></text>
+  <text class="st14" transform="translate(824 356)"><tspan x="0" y="0">into a full design system + templates</tspan></text>
+  <text class="st14" transform="translate(824 372)"><tspan x="0" y="0">for what the business ships repeatedly</tspan></text>
+  <text class="st11" transform="translate(824 437)"><tspan x="0" y="0">CARRIES OVER FROM PERSONAL</tspan></text>
+  <text class="st12" transform="translate(458 500)"><tspan x="0" y="0">BUSINESS ORBITS · BUILT FOR REPEATABILITY</tspan></text>
+  <rect class="st17" x="458" y="512" width="666" height="120" rx="12" ry="12"/>
+  <rect class="st18" x="476" y="530" width="60" height="30" rx="8" ry="8"/>
+  <text class="st14" transform="translate(493.03 549)"><tspan x="0" y="0">CRM</tspan></text>
+  <rect class="st18" x="548" y="530" width="90" height="30" rx="8" ry="8"/>
+  <text class="st14" transform="translate(568.73 549)"><tspan x="0" y="0">Finances</tspan></text>
+  <rect class="st18" x="650" y="530" width="100" height="30" rx="8" ry="8"/>
+  <text class="st14" transform="translate(670.13 549)"><tspan x="0" y="0">Operations</tspan></text>
+  <rect class="st18" x="762" y="530" width="130" height="30" rx="8" ry="8"/>
+  <text class="st14" transform="translate(777.63 549)"><tspan x="0" y="0">SOPs &amp; playbooks</tspan></text>
+  <rect class="st18" x="904" y="530" width="130" height="30" rx="8" ry="8"/>
+  <text class="st14" transform="translate(924.4 549)"><tspan x="0" y="0">Brand templates</tspan></text>
+  <rect class="st18" x="1046" y="530" width="60" height="30" rx="8" ry="8"/>
+  <text class="st14" transform="translate(1060.6858 549)"><tspan x="0" y="0">Goals</tspan></text>
+  <text class="st14" transform="translate(476 590)"><tspan x="0" y="0">Any operator (teammate, contractor, or agent) following the same playbook produces the</tspan></text>
+  <text class="st14" transform="translate(476 607)"><tspan x="0" y="0">same result. An SOP written for a new hire is most of the way to a protocol an agent can run.</tspan></text>
+  <path class="st1" d="M350,290h54v98h66"/>
+  <circle class="st19" cx="350" cy="290" r="3"/>
+  <path class="st19" d="M470,388l-7-4v8l7-4Z"/>
+  <text class="st11" transform="translate(398.56 387.25) rotate(-90)"><tspan x="0" y="0">THE SAME WHY</tspan></text>
+  <text class="st10" transform="translate(458 666)"><tspan x="0" y="0">The founder&apos;s Why and the company&apos;s Why: written in the same shape, checked against each other, in one graph.</tspan></text>
 </svg>
