@@ -181,7 +181,9 @@ A note on method: readers who maintain a second brain will recognize that this i
 
 The most common failure mode of personal knowledge systems is well documented: capture everything, retrieve nothing, abandon the system. The vibegraph's defense is the core/orbit split itself. The Core Identity and Branding alone deliver the headline value. Orbits are added when a real use case demands one, not because an empty template exists.
 
-*[Figure 1, redrawn for v1.5: one person's vibegraph as a master file over three parts (Core Identity, Branding with the personal brand and business brands beside it, Orbits), consumed by AI chats and tools, agents, memory layers, and the Vibeclone.]*
+![Figure 1: one person's vibegraph, three parts under one master file, consumed by chats and tools, agents, memory layers, and the Vibeclone.](figures/figure-1-the-vibegraph.svg)
+
+*Figure 1: one person's vibegraph: a master file over three parts (Core Identity, Branding with the personal brand and business brands beside it, Orbits), consumed everywhere from a chat window to the Vibeclone.*
 
 ---
 
@@ -237,7 +239,9 @@ A solopreneur, usefully, needs both, and the vibegraph holds them side by side b
 
 A standalone organizational vibegraph (a company as first-class owner, with no single human anchor: the multi-founder startup, the agency-managed brand, the institution) is a plausible future extension of the framework, and nothing in the format precludes it. It is deliberately not part of this version. The person-anchored model is shipped, coherent, and serves the framework's first audience; an organization-anchored variant deserves its own careful treatment rather than a premature parallel.
 
-*[Figure 2, redrawn for v1.5: business brands inside one person's vibegraph, the instruments swapped for organizational equivalents and the business orbits restructured around repeatability.]*
+![Figure 2: a business brand inside one person's vibegraph, instruments swapped, orbits built for repeatability.](figures/figure-2-business-brands.svg)
+
+*Figure 2: business brands inside one person's vibegraph: the instruments swapped for organizational equivalents, the business orbits restructured around repeatability, and the founder's Why checked against the company's.*
 
 ---
 

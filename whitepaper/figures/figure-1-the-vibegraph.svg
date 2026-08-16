@@ -1,0 +1,136 @@
+<svg viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" font-family="Inter, -apple-system, sans-serif">
+  <style>
+    .eyebrow { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 2.2px; fill: #a1a1aa; font-weight: 500; }
+    .title   { font-family: 'Space Grotesk', Inter, sans-serif; font-size: 26px; font-weight: 700; fill: #18181b; }
+    .sub     { font-size: 13px; fill: #71717a; }
+    .cardtitle { font-size: 15px; font-weight: 600; fill: #18181b; }
+    .row     { font-size: 13.5px; font-weight: 600; fill: #27272a; }
+    .rowsub  { font-size: 11.5px; fill: #71717a; }
+    .chip    { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 9.5px; letter-spacing: 1.6px; fill: #52525b; font-weight: 500; }
+    .mono    { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
+    .conbox-t { font-size: 14.5px; font-weight: 600; fill: #18181b; }
+    .conbox-s { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 10.5px; fill: #a1a1aa; }
+    .card { fill: #ffffff; stroke: #e4e4e7; stroke-width: 1; }
+    .hair { stroke: #e4e4e7; stroke-width: 1; }
+    .orbitchip { fill: #fafafa; stroke: #e4e4e7; stroke-width: 1; }
+  </style>
+
+  <rect width="1200" height="760" fill="#ffffff"/>
+
+  <!-- ================= main card ================= -->
+  <rect x="40" y="52" width="792" height="656" rx="18" class="card"/>
+
+  <text x="76" y="102" class="title">The Vibegraph</text>
+  <text x="76" y="124" class="sub">One person. Three parts.</text>
+
+  <!-- master file bar -->
+  <rect x="76" y="146" width="720" height="44" rx="8" fill="#18181b"/>
+  <text x="96" y="173" class="mono" font-size="12.5" fill="#ffffff">jordan-lee.vibegraph.md</text>
+  <text x="286" y="173" class="mono" font-size="12.5" fill="#8f8f96">| the master file an AI reads first</text>
+
+  <!-- ============ column 1: Core Identity ============ -->
+  <text x="76" y="230" class="eyebrow">WHO YOU ARE</text>
+  <rect x="76" y="242" width="220" height="356" rx="12" class="card"/>
+  <text x="94" y="272" class="cardtitle">Core Identity</text>
+  <line x1="94" y1="288" x2="278" y2="288" class="hair"/>
+
+  <text x="94" y="314" class="row">Personality</text>
+  <text x="94" y="331" class="rowsub">Big Five + Enneagram</text>
+  <text x="94" y="347" class="rowsub">+ the integrated reading</text>
+  <line x1="94" y1="364" x2="278" y2="364" class="hair"/>
+
+  <text x="94" y="390" class="row">Ikigai</text>
+  <text x="94" y="407" class="rowsub">four pillars, where they</text>
+  <text x="94" y="423" class="rowsub">meet, one statement</text>
+
+  <rect x="94" y="546" width="180" height="28" rx="14" fill="none" stroke="#d4d4d8"/>
+  <text x="184" y="564" text-anchor="middle" class="chip">PUBLIC · SAFE TO SHARE</text>
+
+  <!-- ============ column 2: Branding ============ -->
+  <text x="324" y="230" class="eyebrow">HOW YOU SHOW UP</text>
+  <rect x="324" y="242" width="220" height="356" rx="12" class="card"/>
+  <text x="342" y="272" class="cardtitle">Branding</text>
+  <line x1="342" y1="288" x2="526" y2="288" class="hair"/>
+
+  <!-- personal brand inner card -->
+  <rect x="342" y="302" width="184" height="92" rx="8" fill="#fafafa" stroke="#e4e4e7"/>
+  <text x="356" y="326" class="row">Personal brand</text>
+  <text x="356" y="345" class="rowsub">Brand Context · 12 elements</text>
+  <text x="356" y="362" class="rowsub">Brand Visuals · 8 elements</text>
+  <text x="356" y="381" class="chip">EXACTLY ONE · YOURS</text>
+
+  <!-- business brand inner card -->
+  <rect x="342" y="408" width="184" height="76" rx="8" fill="#ffffff" stroke="#e4e4e7"/>
+  <text x="356" y="432" class="row">Business brand</text>
+  <text x="356" y="451" class="rowsub">Acme Studio: same shape,</text>
+  <text x="356" y="468" class="rowsub">organizational instruments</text>
+
+  <rect x="342" y="496" width="184" height="34" rx="8" fill="none" stroke="#d4d4d8" stroke-dasharray="4 4"/>
+  <text x="356" y="517" class="rowsub">+ every business you own</text>
+
+  <rect x="342" y="546" width="150" height="28" rx="14" fill="none" stroke="#d4d4d8"/>
+  <text x="417" y="564" text-anchor="middle" class="chip">SAFE TO SHARE</text>
+
+  <!-- ============ column 3: Orbits ============ -->
+  <text x="572" y="230" class="eyebrow">WHAT YOU KNOW</text>
+  <rect x="572" y="242" width="220" height="356" rx="12" class="card"/>
+  <text x="590" y="272" class="cardtitle">Orbits</text>
+  <line x1="590" y1="288" x2="774" y2="288" class="hair"/>
+
+  <rect x="590" y="304" width="80" height="30" rx="8" class="orbitchip"/>
+  <text x="630" y="323" text-anchor="middle" class="rowsub" fill="#52525b">Goals</text>
+  <rect x="682" y="304" width="88" height="30" rx="8" class="orbitchip"/>
+  <text x="726" y="323" text-anchor="middle" class="rowsub" fill="#52525b">Health</text>
+  <rect x="590" y="344" width="90" height="30" rx="8" class="orbitchip"/>
+  <text x="635" y="363" text-anchor="middle" class="rowsub" fill="#52525b">Finances</text>
+  <rect x="692" y="344" width="78" height="30" rx="8" class="orbitchip"/>
+  <text x="731" y="363" text-anchor="middle" class="rowsub" fill="#52525b">Career</text>
+  <rect x="590" y="384" width="70" height="30" rx="8" class="orbitchip"/>
+  <text x="625" y="403" text-anchor="middle" class="rowsub" fill="#52525b">Skills</text>
+  <rect x="672" y="384" width="98" height="30" rx="8" fill="none" stroke="#d4d4d8" stroke-dasharray="4 4"/>
+  <text x="721" y="403" text-anchor="middle" class="rowsub">+ your own</text>
+
+  <text x="590" y="452" class="rowsub">They revolve around the core</text>
+  <text x="590" y="469" class="rowsub">and stay home when it travels:</text>
+  <text x="590" y="486" class="rowsub">exports carry pointers, content</text>
+  <text x="590" y="503" class="rowsub">stays in your own tools.</text>
+
+  <rect x="590" y="546" width="170" height="28" rx="14" fill="none" stroke="#d4d4d8"/>
+  <text x="675" y="564" text-anchor="middle" class="chip">PRIVATE BY DEFAULT</text>
+
+  <!-- footer note inside main card -->
+  <text x="76" y="672" class="rowsub">Plain markdown. Owned and hosted by its person; readable by any AI, owned by none.</text>
+
+  <!-- ================= consumers ================= -->
+  <text x="892" y="102" class="eyebrow">CONSUMED BY</text>
+
+  <rect x="892" y="120" width="268" height="86" rx="12" class="card"/>
+  <text x="912" y="156" class="conbox-t">AI chats &amp; tools</text>
+  <text x="912" y="178" class="conbox-s">paste it in · works today</text>
+
+  <rect x="892" y="242" width="268" height="86" rx="12" class="card"/>
+  <text x="912" y="278" class="conbox-t">Agents</text>
+  <text x="912" y="300" class="conbox-s">scoped access via MCP · roadmap</text>
+
+  <rect x="892" y="364" width="268" height="86" rx="12" class="card"/>
+  <text x="912" y="400" class="conbox-t">Memory layers</text>
+  <text x="912" y="422" class="conbox-s">seed context · no cold start</text>
+
+  <rect x="892" y="486" width="268" height="86" rx="12" class="card"/>
+  <text x="912" y="522" class="conbox-t">Vibeclone</text>
+  <text x="912" y="544" class="conbox-s">an agent that operates as you</text>
+
+  <!-- connector elbows -->
+  <g stroke="#d4d4d8" stroke-width="1.5" fill="none">
+    <path d="M 832 380 H 862 V 163 H 892"/>
+    <path d="M 832 380 H 862 V 285 H 892"/>
+    <path d="M 862 380 V 407 H 892"/>
+    <path d="M 862 380 V 529 H 892"/>
+  </g>
+  <g fill="#d4d4d8">
+    <path d="M 892 163 l -7 -4 v 8 z"/>
+    <path d="M 892 285 l -7 -4 v 8 z"/>
+    <path d="M 892 407 l -7 -4 v 8 z"/>
+    <path d="M 892 529 l -7 -4 v 8 z"/>
+  </g>
+</svg>
