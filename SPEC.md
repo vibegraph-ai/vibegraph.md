@@ -174,7 +174,7 @@ Purpose and meaning through a four-pillar structure (inspired by Kowalski's "Iki
 
 One document per brand, composing two halves:
 
-**Brand Context** (the brand in words), twelve elements: Brand Name · Slogans & Taglines · Unique Value Proposition · Purpose-Vision-Mission · Core Values · Tone & Voice · Messaging & Narratives · Keywords & Phrases · Bio (Short/Long) · Achievements & Awards · Inspiration & Influence · Online Presence.
+**Brand Context** (the brand in words), twelve elements: Brand Name · Taglines & Slogans · Unique Value Proposition · Purpose-Vision-Mission · Core Values · Tone & Voice · Messaging & Narratives · Keywords & Phrases · Bio (Short/Long) · Achievements & Awards · Inspiration & Influence · Online Presence.
 
 **Brand Visuals** (the brand in pictures), eight elements: Symbols & Logos · Color Palette · Typography · Iconography · Brand Imagery · Illustration Style · Visual Elements · Photography. Visual elements are concrete artifacts (hex values, type pairings, generated assets under `assets/`, referenced from the document) rather than vague direction.
 

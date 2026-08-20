@@ -34,7 +34,7 @@ services. Then mission, vision, and values as the business states them.
 
 The business name and its naming rules.
 
-## Slogans & Taglines
+## Taglines & Slogans
 
 The lines the business repeats.
 

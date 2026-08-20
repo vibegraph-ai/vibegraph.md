@@ -19,7 +19,7 @@ updated: "2026-01-01"
 Your name as a brand, and any naming rules (how it is written, shortened,
 never written).
 
-## Slogans & Taglines
+## Taglines & Slogans
 
 The lines you actually repeat. If you do not have one, say so rather than
 inventing one here.

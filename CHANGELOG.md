@@ -4,6 +4,18 @@ All notable changes to the Vibegraph specification are documented here. The form
 follows [Keep a Changelog](https://keepachangelog.com), and the spec follows
 [Semantic Versioning](https://semver.org).
 
+## [Unreleased]
+
+### Changed (breaking)
+- The Brand Context element **Slogans & Taglines** is renamed **Taglines &
+  Slogans**, and its `## ` heading in the brand document changes to match. The
+  durable brand line and the situational campaign lines are different things,
+  and the tagline leads. A consumer that matches the old heading exactly will
+  not find the section; consumers MAY treat `Slogans & Taglines` as a v2.0.0
+  synonym.
+- Awaiting a version number: the whitepaper still carries the old name in its
+  v1.5 edition and picks this up in v2.0.
+
 ## [2.0.0] — 2026-08-11
 
 The flat-tree release: the specification now describes the format the reference
