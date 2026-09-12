@@ -1,42 +1,42 @@
-# Contributing to the Vibegraph specification
+# Contributing to the vibegraph.md specification
 
-Thanks for your interest in improving the vibegraph. This is an open convention — the more people build on it, the more useful it becomes.
+Thanks for your interest in improving vibegraph.md. It is an open convention: the more people build on it, the more useful it becomes.
 
 ## Ways to contribute
 
-- **Use it and report friction.** The most valuable contribution early on is telling us where the spec is unclear, where a template field is confusing, or where a consuming tool didn't behave as expected. Open an issue.
-- **Improve the templates.** If a Core document or module template could prompt a better answer, propose an edit.
-- **Add integrations.** Built something that produces or consumes vibegraphs — an exporter, an MCP server, a "load vibegraph" import? Open an issue to have it listed.
+- **Use it and report friction.** Tell us where the spec is unclear, where a template is confusing, or where a consuming tool did not behave as expected. Open an issue.
+- **Improve the templates and the example.** If a template could prompt a better answer, propose an edit.
+- **Add integrations.** Built something that produces, serves, or consumes vibegraphs: an exporter, an MCP server, an import? Open an issue to have it listed.
 - **Sharpen the spec.** Clarifications, corrections, and well-argued additions to `SPEC.md` are welcome.
 
 ## How to propose a change
 
-1. **Open an issue first** for anything beyond a typo, so we can discuss direction before you invest time.
-2. **Fork, branch, and open a pull request** against `main`. Keep PRs focused — one concern per PR.
-3. **Explain the "why."** A change to a shared convention affects everyone who builds on it; motivation matters as much as the diff.
+1. **Open an issue first** for anything beyond a typo, so we can agree on direction before you invest time.
+2. **Fork, branch, and open a pull request** against `main`. One concern per pull request.
+3. **Explain the why.** A change to a shared convention affects everyone who builds on it; the motivation matters as much as the diff.
 
 ## What we optimize for
 
-- **Human readability.** If a change makes a vibegraph harder for a person to read and edit by hand, it's probably the wrong change.
+- **Human readability.** If a change makes a vibegraph harder to read and edit by hand, it is probably the wrong change.
 - **Zero-adoption value.** Nothing in the spec should require a specific platform to be useful.
-- **Privacy by default.** Changes must not weaken the deny-by-default permission model.
-- **Backward compatibility.** Follow [semver](https://semver.org). Breaking changes need a strong justification and a MAJOR version bump.
+- **Privacy by default.** Changes must not weaken deny by default or the scope model.
+- **One person per vibegraph.** Changes must not pool graphs across people.
 
-## Scope changes to the spec version
+## Versioning
 
-Proposed changes are versioned per [`CHANGELOG.md`](CHANGELOG.md):
+Changes are recorded in [`CHANGELOG.md`](CHANGELOG.md) and versioned `MAJOR.MINOR`:
 
-- **PATCH** — clarifications, typo fixes, wording.
-- **MINOR** — new optional fields, new suggested modules, additive guidance.
-- **MAJOR** — anything that breaks an existing valid vibegraph.
+- **Clarifications and corrections** change the text in place with a changelog note.
+- **MINOR:** new optional fields, suggested areas, or component placements.
+- **MAJOR:** anything that breaks an existing valid vibegraph.
+
+## Style
+
+Write "vibegraph" in lowercase, always, and write vibegraph.md and vibegraph.ai in lowercase with the extension. VIBEGRAPH.md, the root file, is capitalized. No em dashes or en dashes; use commas, colons, parentheses, or a vertical bar.
 
 ## Licensing of contributions
 
-By contributing, you agree that your contributions are licensed under the same terms as the repository: **MIT** for templates, schema, and code; **CC-BY 4.0** for specification prose and documentation. You retain copyright to your contributions; you grant Raizen Labs, LLC and downstream users the rights described by those licenses.
-
-## Trademarks
-
-*Vibegraph™* and *Vibeclone™* are trademarks of Raizen Labs, LLC. Contributing to this repository does not grant trademark rights. Please don't use the marks in a way that implies official endorsement of a third-party product. See [`SPEC.md` §8](SPEC.md#8-licensing).
+By contributing, you agree that your contributions are licensed under the same terms as the repository: MIT for templates, schema, and code; CC-BY 4.0 for specification prose and documentation. You keep copyright to your contributions and grant Raizen Labs, LLC and downstream users the rights those licenses describe.
 
 ## Code of conduct
 
@@ -44,4 +44,4 @@ Be decent. Assume good faith, critique ideas rather than people, and keep discus
 
 ---
 
-Questions that aren't a bug or proposal? Reach out at **hello@vibegraph.ai**.
+Questions that are not a bug or a proposal? Write to **hello@vibegraph.ai**.

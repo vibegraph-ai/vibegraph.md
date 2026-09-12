@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" width="1200" height="720" role="img" aria-label="Figure 2: a business brand inside its owner's vibegraph">
+<rect width="1200" height="720" fill="#0a0a0a"/>
+<defs><marker id="f2-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b8b8b8"/></marker></defs>
+<rect x="24.0" y="24.0" width="1152.0" height="672.0" rx="14" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="56.0" y="70.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="22" font-weight="500" fill="#f6f6f6" text-anchor="start">Maya Okafor's vibegraph</text>
+<text x="64.0" y="114.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#f6f6f6" text-anchor="start">personal brand</text>
+<text x="64.0" y="134.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b7a8ff" text-anchor="start">when: always</text>
+<rect x="64.0" y="150.0" width="500.0" height="120.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="82.0" y="177.0" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#f6f6f6" text-anchor="start">foundation: identity core</text>
+<text x="82.0" y="201.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11.5" font-weight="400" fill="#b8b8b8" text-anchor="start">Big Five · Enneagram</text>
+<text x="82.0" y="221.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11.5" font-weight="400" fill="#b8b8b8" text-anchor="start">other instruments</text>
+<text x="82.0" y="241.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11.5" font-weight="400" fill="#b8b8b8" text-anchor="start">Ikigai</text>
+<line x1="314.0" y1="270.0" x2="314.0" y2="314.0" stroke="#b8b8b8" stroke-width="1.2" marker-end="url(#f2-arrow)"/>
+<rect x="64.0" y="318.0" width="500.0" height="60.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="82.0" y="343.0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f6f6f6" text-anchor="start">Brand Context</text>
+<text x="82.0" y="363.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">12 elements · the brand in words</text>
+<line x1="314.0" y1="378.0" x2="314.0" y2="402.0" stroke="#b8b8b8" stroke-width="1.2" marker-end="url(#f2-arrow)"/>
+<rect x="64.0" y="406.0" width="500.0" height="60.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="82.0" y="431.0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f6f6f6" text-anchor="start">Brand Visuals</text>
+<text x="82.0" y="451.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">8 elements · the brand in pictures</text>
+<text x="636.0" y="114.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#f6f6f6" text-anchor="start">business brand: Delivery OS</text>
+<text x="636.0" y="134.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b7a8ff" text-anchor="start">when: on-task</text>
+<rect x="636.0" y="150.0" width="500.0" height="120.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="654.0" y="177.0" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#f6f6f6" text-anchor="start">foundations</text>
+<text x="654.0" y="201.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11.5" font-weight="400" fill="#b8b8b8" text-anchor="start">Aaker's five dimensions</text>
+<text x="654.0" y="221.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11.5" font-weight="400" fill="#b8b8b8" text-anchor="start">archetype</text>
+<text x="654.0" y="241.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11.5" font-weight="400" fill="#b8b8b8" text-anchor="start">Golden Circle + mission, vision, values</text>
+<line x1="886.0" y1="270.0" x2="886.0" y2="314.0" stroke="#b8b8b8" stroke-width="1.2" marker-end="url(#f2-arrow)"/>
+<rect x="636.0" y="318.0" width="500.0" height="60.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="654.0" y="343.0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f6f6f6" text-anchor="start">Brand Context</text>
+<text x="654.0" y="363.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">12 elements · the brand in words</text>
+<line x1="886.0" y1="378.0" x2="886.0" y2="402.0" stroke="#b8b8b8" stroke-width="1.2" marker-end="url(#f2-arrow)"/>
+<rect x="636.0" y="406.0" width="500.0" height="60.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="654.0" y="431.0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f6f6f6" text-anchor="start">Brand Visuals</text>
+<text x="654.0" y="451.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">8 elements · the brand in pictures</text>
+<line x1="564.0" y1="210.0" x2="636.0" y2="210.0" stroke="#b8b8b8" stroke-width="1.2" stroke-dasharray="2 4"/>
+<line x1="600.0" y1="210.0" x2="600.0" y2="276.0" stroke="#b8b8b8" stroke-width="1.2" stroke-dasharray="2 4"/>
+<rect x="458.3" y="276.0" width="283.4" height="26.0" rx="13" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="600.0" y="293.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle" font-style="italic">shared Why, checked against each other</text>
+<line x1="886.0" y1="466.0" x2="886.0" y2="510.0" stroke="#b8b8b8" stroke-width="1.2" marker-end="url(#f2-arrow)"/>
+<text x="636.0" y="496.0" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#f6f6f6" text-anchor="start">business areas</text>
+<rect x="636.0" y="514.0" width="500.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<rect x="652.0" y="530.0" width="41.8" height="24.0" rx="6" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="672.9" y="546.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="middle">CRM</text>
+<rect x="703.8" y="530.0" width="88.0" height="24.0" rx="6" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="747.8" y="546.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="middle">operations</text>
+<rect x="801.8" y="530.0" width="140.8" height="24.0" rx="6" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="872.2" y="546.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="middle">playbooks and SOPs</text>
+<rect x="952.6" y="530.0" width="81.4" height="24.0" rx="6" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="993.3" y="546.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="middle">templates</text>
+<line x1="24.0" y1="612.0" x2="1176.0" y2="612.0" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="600.0" y="656.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="middle">personal · when: always | business · when: on-task (any Delivery OS writing, design, or publishing)</text>
+</svg>

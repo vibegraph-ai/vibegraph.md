@@ -1,3 +1,3 @@
 # Whitepaper
 
-**[The-Vibegraph-Whitepaper-v1.0.pdf](The-Vibegraph-Whitepaper-v1.0.pdf)** — the canonical v1.0 whitepaper (CC-BY 4.0). Also served at [vibegraph.md/whitepaper/](https://vibegraph.md/whitepaper/The-Vibegraph-Whitepaper-v1.0.pdf).
+**[vibegraph-whitepaper.pdf](vibegraph-whitepaper.pdf)** is the current edition: *The vibegraph: your vibes, codified*, version 2.0, September 2026, by Ryan Charleston, licensed CC-BY 4.0. The markdown source is [vibegraph-whitepaper.md](vibegraph-whitepaper.md); the figures and their specs are in [figures/](figures), and the PDF build is in [pdf-source/](pdf-source). The PDF is also served at [vibegraph.md/whitepaper/vibegraph-whitepaper.pdf](https://vibegraph.md/whitepaper/vibegraph-whitepaper.pdf). To cite it: Charleston, R. (2026). *The vibegraph: your vibes, codified* (Version 2.0). vibegraph.md. https://vibegraph.md/whitepaper/vibegraph-whitepaper.pdf

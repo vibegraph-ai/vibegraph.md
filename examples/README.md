@@ -1,16 +1,7 @@
 # Examples
 
-**A complete reference vibegraph is on the way.**
+**[`maya-okafor.vibegraph/`](maya-okafor.vibegraph)** is a complete vibegraph in the reference layout, for a fictional owner: Maya Okafor, a solo operations consultant, and her business brand, Delivery OS.
 
-The best example of a finished vibegraph is a *real* one — built end to end, with every Core Identity layer and a representative set of modules filled in to the depth the framework intends. Rather than ship a partial example that undersells what a vibegraph actually is, we're holding this slot for a complete reference built with the [vibegraph.ai](https://vibegraph.ai) app once it's live.
+It has everything [SPEC.md](../SPEC.md) defines: the root file, the identity core (with two built-in instruments and two others recorded as named sources), a personal brand and a business brand with all twenty elements each, asset locations, four areas with a skill, a components registry, and the handoff stanza in AGENTS.md and CLAUDE.md.
 
-**In the meantime, the fastest way to understand the shape of a vibegraph:**
-
-- **[`../templates/personal/`](../templates/personal)** — the personal template: a manifest, all four Core Identity documents, and an example module, each with inline guidance on what goes where.
-- **[`../templates/business/`](../templates/business)** — the business template: the organizational Core (brand personality, archetype, Golden Circle, design system) and operating-system modules.
-- **[`../SPEC.md`](../SPEC.md)** — the full specification: file layout, the manifest, per-document schema, the permission model, and how AI systems consume a vibegraph.
-- **[The whitepaper](../whitepaper/The-Vibegraph-Whitepaper-v1.0.pdf)** — the concept and architecture in full, including diagrams of both the personal and business vibegraph.
-
-Want to build one now? Copy a template folder, fill in the Core, and paste it into any AI tool — that *is* a vibegraph. When the reference example lands here, it'll show you what a thorough, fully-developed one looks like.
-
-*Watch this space, or follow along at [vibegraph.md](https://vibegraph.md).*
+Every name, number, and link in it is invented. To make your own, copy the folder, replace Maya with you, and pass the paste test in its README. Or start blank from [`../templates/your-name.vibegraph/`](../templates/your-name.vibegraph).

@@ -1,89 +1,127 @@
 <div align="center">
 
-# The Vibegraph™
+# vibegraph.md
 
-### Your Vibes, Codified.
+### Your vibes, codified.
 
-An open framework for codifying human identity and personal brand as structured, portable AI context: digital DNA any AI can read today, and the protocol for an agent that operates as its creator's clone, a Vibeclone.
+The open framework and file convention for a vibegraph. It defines VIBEGRAPH.md, the root file every AI reads first.
 
-[vibegraph.md](https://vibegraph.md) · [vibegraph.ai](https://vibegraph.ai) · [Read the whitepaper](whitepaper/The-Vibegraph-Whitepaper-v1.5.pdf)
+[Specification](SPEC.md) · [Example](examples/maya-okafor.vibegraph) · [Templates](templates/your-name.vibegraph) · [Whitepaper (PDF)](whitepaper/vibegraph-whitepaper.pdf) · [vibegraph.ai](https://vibegraph.ai)
+
+Published specification: 2.0 · MIT (templates, schema, code) · CC-BY 4.0 (prose)
 
 </div>
 
 ---
 
-## What is this?
+## What is a vibegraph?
 
-Every AI tool you use starts from zero. It doesn't know your voice, your values, your goals, or your taste: so it guesses, toward the statistical average. The result is output that could belong to anyone.
+Your vibes (your personality, taste, voice, values, purpose, and aesthetic) are what AI gets wrong about you by default, because nobody wrote them down anywhere a machine could read them.
 
-A **vibegraph** is a small set of markdown files that fixes the *input* instead of endlessly editing the output. It codifies who you are (your personality, purpose, and brand) in a format any AI tool, agent, or memory layer can read.
+**A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one person, and any businesses they own or operate.**
 
-Think of it as `AGENTS.md`, but for a person instead of a codebase.
+Everyone who uses AI for real work already has one, spread across a notes app, a folder of documents, a few platform memories, and a great deal that lives only in their head. Two things turn that pile into a vibegraph: a human-authored identity core, and a root file with a fixed name that any agent reads first. Without them, it is context. With them, it is a graph any agent can walk, a permission model you can reason about, and an asset that moves unchanged when a better tool ships.
 
-```
-jordan-lee-vibegraph.zip
-├── jordan-lee.vibegraph.md    # the master file an AI reads first
-├── jordan-lee.personality.md  # Core Identity: who you are
-├── jordan-lee.ikigai.md       # Core Identity: why
-├── jordan-lee.brand.md        # Branding: the personal brand
-├── acme-studio.brand.md       # Branding: a business brand (optional)
-└── orbits/                    # Orbits: what you know & how you operate
-    ├── goals.md
-    └── ...
-```
+> Memory layers remember what happened. A vibegraph defines who you are.
 
-## Why it works on day one
+## Three things, three roles
 
-You don't need a single platform to adopt anything. Paste your Core Identity into Claude, ChatGPT, Grok, or Gemini and the very next response sounds like *you*. That's the whole thing. Everything else (MCP servers, memory-layer seeding, the guided app) is an amplifier, not a dependency.
-
-## 60-second quickstart
-
-1. **Copy the template.** Grab [`templates/vibegraph/`](templates/vibegraph) and rename the `your-name.*` files to your own name. Your business brands live inside it as `<business>.brand.md` files beside your personal one.
-2. **Fill in the Core.** Start with `your-name.personality.md`. Work down. Don't overthink it: a rough Core beats an empty one.
-3. **Use it.** Paste the master file plus the personality, ikigai, and brand documents into any AI chat, or attach them to a Claude Project or custom GPT. Ask it to write something in your voice.
-4. **Grow it later.** Add `orbits/` for the life or business domains you actually want an agent to know about. Not before.
-
-Want a guided, AI-assisted build with a personality assessment and brand tooling instead of doing it by hand? That's what [**vibegraph.ai**](https://vibegraph.ai) is for.
-
-## See a finished one
-
-A complete reference vibegraph is on the way: see [`examples/`](examples). For now, the [templates](templates) and [SPEC.md](SPEC.md) show the full shape of every section.
-
-## The three parts
-
-| | **Core Identity** | **Branding** | **Orbits** |
+| | vibegraph (the noun) | vibegraph.md (the framework) | vibegraph.ai (the app) |
 |---|---|---|---|
-| Answers | *Who is this person?* | *How do they show up?* | *What do they know / how do they operate?* |
-| Contents | Personality, ikigai | Personal brand + business brands | Self-defined domains (health, finances, goals, SOPs…) |
-| Size | Small, stable | One document per brand | Grows over time |
-| Default sharing | Safe to share with any AI | Safe to share with any AI | Gated & permissioned; pointers only in exports |
+| What it is | A category term for the network that governs AI for one person and the businesses they own | The open specification and file convention: the root file, the typed link schema, scopes, areas, the handoff | A guided builder for the identity core and brands, which exports this layout |
+| Who owns it | Nobody. A common noun | Maintained by Ryan Charleston under MIT and CC-BY 4.0 | Raizen Labs, LLC |
+| Analogy | the web | HTML and index.html | a website builder |
 
-Personal and business vibegraphs share this structure; the business version swaps the instruments (brand archetype + Aaker dimensions instead of a personality test, Golden Circle instead of Ikigai). See [`SPEC.md`](SPEC.md).
+You do not need vibegraph.ai to have a vibegraph. Copy the example, replace the owner, and fill it in by hand.
 
-## Read more
+## The layout
 
-- **[SPEC.md](SPEC.md)**: the full specification: file tree, the master file, per-document schema, the permission model, and how AI systems consume a vibegraph.
-- **[The whitepaper](whitepaper/The-Vibegraph-Whitepaper-v1.5.pdf)**: the concept, the architecture, security, and use cases (v1.5; [markdown source](whitepaper/The-Vibegraph-Whitepaper-v1.5.md), v1.0 PDF in the same folder).
-- **[CONTRIBUTING.md](CONTRIBUTING.md)**: how to propose changes to the spec.
-- **[CHANGELOG.md](CHANGELOG.md)**: version history.
+```
+your-name.vibegraph/
+├── VIBEGRAPH.md               root file. Fixed name. Read first.
+├── AGENTS.md                  the handoff stanza
+├── CLAUDE.md                  the same stanza, for Claude Code
+├── identity/your-name.md      the identity core: rules, personality, purpose
+├── brands/
+│   ├── your-name.brand.md     personal brand: 12 Brand Context + 8 Brand Visuals
+│   ├── your-business.brand.md business brand: foundations + 12 + 8
+│   └── assets/README.md       where the visual assets live
+├── areas/<area>/index.md      one folder per area, each with its own scope
+└── components.md              the tools that already hold parts of the graph
+```
+
+The full rules are in [SPEC.md §2](SPEC.md#2-the-reference-layout).
+
+## The root file
+
+Every link in VIBEGRAPH.md carries a kind, a scope, and a rule for when to read it:
+
+```markdown
+- [Maya Okafor](identity/maya-okafor.md) · kind: identity · scope: public · when: always
+- [Delivery OS](brands/delivery-os.brand.md) · kind: brand · type: business · scope: public · when: on-task (any Delivery OS writing, design, or publishing)
+- [Finances](areas/finances/index.md) · kind: area · scope: private · when: on-grant
+```
+
+- **kind:** identity · brand · area · source · memory · project · skill · agent
+- **scope:** public · scoped · private
+- **when:** always · on-task · on-grant
+
+Nothing is exposed by omission. See [SPEC.md §3 and §4](SPEC.md#3-the-root-file-vibegraphmd).
+
+## The handoff
+
+Put this in AGENTS.md, and the same text in CLAUDE.md, in any repository or workspace you work in:
+
+```markdown
+## Who you are working for
+Before starting, read `VIBEGRAPH.md` (in this repo, or at `~/vibegraph/VIBEGRAPH.md`).
+It defines the person and brands this work belongs to. Follow its read order and scopes.
+Do not read entries marked `scope: private` unless they have been granted for this session.
+```
+
+Codex, Cursor, Copilot, and Gemini CLI read AGENTS.md. Claude Code reads CLAUDE.md. Both files, same four lines.
+
+## The paste test
+
+Open a fresh session in any model. Paste VIBEGRAPH.md, your identity file, and one brand file. Ask for a piece of work you do often. The output should sound like you on the first generation. If it does not, the core is incomplete, not the tool.
+
+## Start
+
+1. **Read the specification.** [SPEC.md](SPEC.md): the layout, the root file, the link schema, scopes, the handoff, serving, and the conformance checklist.
+2. **Start from the example.** [`examples/maya-okafor.vibegraph/`](examples/maya-okafor.vibegraph) is a complete vibegraph for a fictional owner with a personal brand and a business brand. Or start blank from [`templates/your-name.vibegraph/`](templates/your-name.vibegraph).
+3. **Pass the paste test.** Then add the handoff to your repositories.
+4. **Serve it live if you want.** Over MCP, scopes become grants and every read is logged. See [SPEC.md §7](SPEC.md#7-scopes-grants-and-serving).
+
+Want a guided build with an AI coach instead? That is what [vibegraph.ai](https://vibegraph.ai) is for.
+
+## In this repository
+
+| Path | What it is |
+|---|---|
+| [SPEC.md](SPEC.md) | The specification, version 2.0 |
+| [examples/](examples) | The Maya Okafor worked example |
+| [templates/](templates) | A blank vibegraph in the reference layout |
+| [schema/](schema) | JSON Schemas for the front matter |
+| [whitepaper/](whitepaper) | The whitepaper: markdown source, PDF, figures |
+| [docs/](docs) | The vibegraph.md site (GitHub Pages) |
+| [CHANGELOG.md](CHANGELOG.md) | Version history |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | How to propose changes |
 
 ## A note on privacy
 
-A complete vibegraph is sensitive by nature. The framework is **local-first and private by default**: your files live on hardware you control, orbit content stays in your own tools, and served content carries `visibility` settings (`private` / `scoped` / `public`). Nothing is shared by omission. Read the security model in [SPEC.md §6](SPEC.md#6-security--the-permission-model) before you serve a vibegraph to any agent.
+A complete vibegraph is sensitive by nature. There is no global vibegraph: each one represents one person and is private by default. The reference posture is files on hardware you control, areas stay home when the core travels, and anything without a scope is private. Read [SPEC.md §7](SPEC.md#7-scopes-grants-and-serving) before you serve a vibegraph to any agent. Never commit your own vibegraph to a public repository; this repository's `.gitignore` excludes `*.vibegraph/` folders outside `examples/` and `templates/`.
 
 ## License
 
-- **Templates, schema, and code** → [MIT](LICENSE)
-- **Specification prose and documentation** → [CC-BY 4.0](LICENSE-docs)
+- **Templates, schema, and code:** [MIT](LICENSE)
+- **Specification prose and documentation:** [CC-BY 4.0](LICENSE-docs)
 
-Use it, fork it, build products that consume it. Spreading the convention is the point. See [SPEC.md](SPEC.md) for the licensing rationale.
+Use it, fork it, serve it, and build products that produce or consume it. Spreading the convention is the point.
 
 ---
 
 <div align="center">
 
-**Vibegraph™** and **Vibeclone™** are trademarks of Raizen Labs, LLC. Created by [Ryan Charleston](https://github.com/ryancharleston).
-
-The name is a standard; the code is open. Build with it.
+Maintained by [Ryan Charleston](https://github.com/ryancharleston) · Raizen Labs, LLC · "vibegraph" is a common noun.
 
 </div>

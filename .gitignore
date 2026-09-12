@@ -3,6 +3,7 @@
 
 *.vibegraph/
 !examples/**/*.vibegraph/
+!templates/**/*.vibegraph/
 private/
 *.local.md
 

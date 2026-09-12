@@ -1,73 +1,50 @@
 # Changelog
 
-All notable changes to the Vibegraph specification are documented here. The format
-follows [Keep a Changelog](https://keepachangelog.com), and the spec follows
-[Semantic Versioning](https://semver.org).
+All notable changes to the vibegraph.md specification are recorded here. The format follows [Keep a Changelog](https://keepachangelog.com).
 
-## [Unreleased]
+## [2.0] (September 30, 2026)
 
-### Changed (breaking)
-- The Brand Context element **Slogans & Taglines** is renamed **Taglines &
-  Slogans**, and its `## ` heading in the brand document changes to match. The
-  durable brand line and the situational campaign lines are different things,
-  and the tagline leads. A consumer that matches the old heading exactly will
-  not find the section; consumers MAY treat `Slogans & Taglines` as a v2.0.0
-  synonym.
-- Awaiting a version number: the whitepaper still carries the old name in its
-  v1.5 edition and picks this up in v2.0.
-
-## [2.0.0] — 2026-08-11
-
-The flat-tree release: the specification now describes the format the reference
-application (vibegraph.ai) actually exports, and adopts the whitepaper v1.5
-naming.
-
-### Changed (breaking)
-- The nested `core/` + `modules/` tree is replaced by a flat, owner-named tree:
-  `<owner>.vibegraph.md` (master, read first), `<owner>.personality.md`,
-  `<owner>.ikigai.md`, `<owner>.brand.md`, `<brand>.brand.md` per business
-  brand, `assets/`, and `orbits/` pointer documents. Delivered as
-  `<owner-slug>-vibegraph.zip`.
-- The master file replaces `VIBEGRAPH.md`: front matter plus an explicit,
-  link-checked read order covering every file in the export.
-- **Knowledge Base is renamed Orbits**; `modules/` becomes `orbits/`.
-  Consumers MAY treat `modules/` as a v1.0 synonym.
-- Brand Positioning and Brand Aesthetics are renamed **Brand Context** (twelve
-  elements) and **Brand Visuals** (eight elements), composed into one brand
-  document per brand.
-- The personality layer is a two-part assessment: the Big Five (IPIP-NEO-120)
-  joined by the Enneagram, reconciled in an integrated reading.
+The reference layout release. The specification now describes a vibegraph as five elements anchored to one person (the identity core, brands, areas, components, and the root file) and matches the whitepaper of the same version.
 
 ### Added
-- Slug rules: lowercase-hyphenated names, input-time collision rejection, and
-  the reserved slugs `assets`, `orbits`, `vibegraph`.
-- Orbit pointer documents (`section: orbit`, `target_tool`): exported
-  vibegraphs carry the shareable parts and pointers; orbit content stays in
-  the owner's own tools, making the first permission decision structural.
-- Optional `brand-kit-checklist.md` and `<owner>.vibegraph.pdf`.
-- A compatibility note for accepting v1.0 trees.
+- **The reference layout:** `<owner-slug>.vibegraph/` with `VIBEGRAPH.md`, `identity/<owner-slug>.md`, `brands/<slug>.brand.md`, `brands/assets/README.md`, `areas/<area>/index.md`, `components.md`, and optional `AGENTS.md`, `CLAUDE.md`, and `README.md`.
+- **VIBEGRAPH.md, the root file:** a fixed, capitalized name; front matter `vibegraph`, `owner`, `identity`, `updated`; the orientation; Identity, Brands, Areas, Components, and Read order sections.
+- **The typed link schema:** every root file entry is one markdown line with `kind`, `scope`, `when`, and on brands `type`, separated by a middle dot.
+- **Scopes** `public`, `scoped`, `private`, deny by default, and **when rules** `always`, `on-task`, `on-grant`.
+- **Areas:** owner-defined domains as folders with their own index and scope.
+- **Components:** a registry of tools that already hold parts of the graph, with kinds `source`, `memory`, `project`, `skill`, `agent`.
+- **The handoff stanza:** four lines for AGENTS.md and CLAUDE.md, written byte for byte by producers, and the standalone and embedded placement modes.
+- **Other instruments** in the identity file, recorded as named sources with their own figures and scale words, never converted.
+- **Brand Visuals as recorded elements:** values plus asset locations (`url`, `figma`, `drive`, `local-path`, `upload`) listed in `brands/assets/README.md`.
+- **Business brand Foundations:** Brand Personality, Archetype, Golden Circle, Mission, Vision, Values, and AI Instruction.
+- **Serving rules:** the same layout served per client under grants, private entries omitted, every read logged.
+- **The acceptance test** and a **conformance checklist** for producers.
+- **The worked example** `examples/maya-okafor.vibegraph/` and a blank template `templates/your-name.vibegraph/`.
+- JSON Schemas `schema/vibegraph-root.schema.json` and `schema/vibegraph-node.schema.json`.
 
-[2.0.0]: https://vibegraph.md
+### Changed
+- The Brand Context element order leads with **Taglines & Slogans** (the durable tagline first, then situational slogans).
+- Brand files group their elements under `## Brand Context` and `## Brand Visuals`, with each element as a `###` heading.
+- Version numbers are `MAJOR.MINOR`, aligned with the whitepaper.
 
-## [1.0.0] — 2026-07-11
+### Removed
+- The owner-named master file and the flat owner-named tree of the 2.0.0 draft.
+- The earlier third part for domain context and its pointer documents. Areas replace it.
 
-The first public release of the Vibegraph specification.
+## [2.0.0-draft] (August 11, 2026, superseded, never released as an export to a user)
+
+A draft that described a flat, owner-named tree: an `<owner>.vibegraph.md` master file with a link-checked read order, separate personality, Ikigai, and brand documents, an assets folder, and pointer documents for a third part holding domain context. It introduced Brand Context and Brand Visuals as the names of the brand's two halves and the Big Five plus Enneagram personality layer. There is no tag for this draft. It was superseded by 2.0 before any user received an export in its layout.
+
+## [1.0.0] (July 11, 2026)
+
+The first public release.
 
 ### Added
-- Two-part architecture: **Core Identity** (`core/`) and **Knowledge Base** (`modules/`).
-- The `VIBEGRAPH.md` manifest convention with YAML front matter
-  (`vibegraph_version`, `type`, `owner`, `updated`, `default_visibility`, `summary`).
-- Per-document schema with `section`, `visibility`, `scope`, and `updated` fields.
-- Personal Core instrument set: Big Five (OCEAN), Ikigai 2.0, brand positioning,
-  brand aesthetics.
-- Business Core instrument set: Aaker's five dimensions + brand archetype,
-  Golden Circle + mission/vision/values, brand positioning, brand design system.
-- Suggested module taxonomies for personal and business vibegraphs.
-- Deny-by-default permission model with `private` / `scoped` / `public` visibility.
-- Guidance for AI consumption: direct context, persistent workspace context,
-  live access over MCP, and memory-layer seeding.
-- Personal and business templates.
-- Personal and business templates with inline guidance (a complete worked example follows with the vibegraph.ai app).
-- Dual licensing: MIT for templates/schema/code, CC-BY 4.0 for specification prose.
-
-[1.0.0]: https://vibegraph.md
+- A two-part architecture: a core identity (`core/`) and a part for domain context (`modules/`).
+- The `VIBEGRAPH.md` manifest convention with YAML front matter.
+- A per-document schema with `section`, `visibility`, `scope`, and `updated` fields.
+- Personal and business core instrument sets.
+- A deny-by-default permission model with `private`, `scoped`, and `public` visibility.
+- Guidance for AI consumption: direct context, persistent workspace context, live access over MCP, and memory-layer seeding.
+- Personal and business templates with inline guidance.
+- Dual licensing: MIT for templates, schema, and code; CC-BY 4.0 for specification prose.

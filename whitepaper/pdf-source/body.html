@@ -1,28 +1,27 @@
-<!doctype html><html><head><meta charset='utf-8'><title>The Vibegraph Whitepaper v1.5</title><style>
+<!doctype html><html><head><meta charset='utf-8'><title>vibegraph whitepaper 2.0</title><link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=block'><style>
 * { box-sizing: border-box; }
-html { font-size: 10.4pt; }
+html { font-size: 9.6pt; }
 body {
-  font-family: Charter, Georgia, serif;
-  color: #1a1a1c; line-height: 1.62; margin: 0;
+  font-family: Inter, sans-serif;
+  color: #1a1a1c; line-height: 1.6; margin: 0;
   -webkit-print-color-adjust: exact; print-color-adjust: exact;
 }
 /* ---- cover ---- */
 .cover { height: 232mm; display: flex; flex-direction: column; }
 .cover-top { display: flex; justify-content: space-between; margin-top: 10mm; }
-.cover-eyebrow { font-family: Menlo, monospace; font-size: 8.2pt; letter-spacing: 0.35em; color: #52525b; font-weight: 600; }
+.cover-eyebrow { font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 8.2pt; letter-spacing: 0.3em; color: #52525b; font-weight: 500; }
 .cover-rule { border: none; border-top: 1.6px solid #1a1a1c; margin: 3mm 0 0 0; }
 .cover-main { margin-top: 42mm; }
-.cover-title { font-size: 34pt; margin: 0; font-weight: 700; letter-spacing: -0.01em; }
-.cover-title .tm { font-size: 11pt; vertical-align: super; font-weight: 400; }
-.cover-tagline { font-style: italic; font-size: 13.5pt; margin: 4mm 0 0 0; }
-.cover-desc { max-width: 152mm; font-size: 11pt; margin-top: 16mm; }
+.cover-title { font-family: 'Space Grotesk', Inter, sans-serif; font-size: 36pt; line-height: 1.05; margin: 0; font-weight: 700; letter-spacing: -0.02em; }
+.cover-desc { max-width: 148mm; font-size: 11.5pt; line-height: 1.55; margin-top: 16mm; color: #3f3f46; }
 .cover-bottom { margin-top: auto; }
 .cover-bottom .cover-rule { border-top: 1px solid #d4d4d8; }
 .cover-meta { display: flex; justify-content: space-between; margin-top: 3mm; font-size: 9.5pt; }
 .cover-meta p { margin: 0 0 1.2mm 0; }
-.cover-meta .right { text-align: right; color: #52525b; }
+.cover-meta .right { text-align: right; color: #52525b; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 9pt; }
 /* ---- body ---- */
-h2 { font-size: 16.5pt; margin: 0 0 3mm 0; break-before: page; }
+h2, h3 { font-family: 'Space Grotesk', Inter, sans-serif; font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-size: 17pt; margin: 0 0 3mm 0; break-before: page; }
 h2::before { content: ""; display: block; width: 11mm; border-top: 1.4px solid #1a1a1c; margin-bottom: 7mm; padding-top: 2mm; }
 h2:first-child { break-before: auto; }
 h3 { font-size: 12pt; margin: 7mm 0 2mm 0; page-break-after: avoid; }
@@ -31,98 +30,193 @@ h3 { font-size: 12pt; margin: 7mm 0 2mm 0; page-break-after: avoid; }
    ignores the rule for chunks taller than a page, which then flow. */
 .keep { break-inside: avoid-page; }
 p { margin: 0 0 3.2mm 0; text-align: justify; hyphens: auto; }
-strong { font-weight: 700; }
+strong { font-weight: 600; }
 hr { border: none; margin: 0; }
 blockquote {
   margin: 6mm 6mm 6mm 8mm; padding-left: 6mm;
-  border-left: 2px solid #1a1a1c; font-style: italic; font-size: 11.2pt;
+  border-left: 2px solid #b7a8ff; font-family: 'Space Grotesk', Inter, sans-serif; font-weight: 500; font-size: 12pt;
   page-break-inside: avoid;
 }
 blockquote p { text-align: left; }
-code { font-family: Menlo, monospace; font-size: 8.8pt; background: #f4f4f5; padding: 0.5pt 3pt; border-radius: 3px; }
+code { font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 8.4pt; background: #f4f4f5; padding: 0.5pt 3pt; border-radius: 3px; }
+pre {
+  font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 7.5pt; line-height: 1.5; background: #f4f4f5;
+  padding: 3mm 4mm; border-radius: 3px; margin: 3mm 0 4mm 0;
+  white-space: pre-wrap; overflow-wrap: anywhere; page-break-inside: avoid;
+}
+pre code { background: none; padding: 0; font-size: inherit; }
 a { color: inherit; text-decoration: none; }
 ul, ol { margin: 0 0 3.2mm 0; padding-left: 7mm; }
 li { margin-bottom: 1.4mm; }
 table {
   border-collapse: collapse; width: 100%; margin: 4mm 0 5mm 0;
-  font-family: Inter, sans-serif; font-size: 8.6pt; line-height: 1.45;
-  page-break-inside: avoid;
+  font-size: 8.4pt; line-height: 1.45; page-break-inside: avoid;
 }
-th { text-align: left; border-top: 1.4px solid #1a1a1c; border-bottom: 1px solid #1a1a1c; padding: 2mm 3mm 2mm 0; }
+th { text-align: left; border-top: 1.4px solid #1a1a1c; border-bottom: 1px solid #1a1a1c; padding: 2mm 3mm 2mm 0; font-weight: 600; }
 td { border-bottom: 1px solid #e4e4e7; padding: 2mm 3mm 2mm 0; vertical-align: top; }
 figure { margin: 6mm 0; page-break-inside: avoid; }
-figure svg { width: 100%; height: auto; }
-figcaption { font-style: italic; font-size: 9.3pt; color: #52525b; text-align: center; margin-top: 2mm; }
-.colophon { margin-top: 10mm; font-style: italic; font-size: 9pt; color: #52525b; }
+figure svg { width: 100%; height: auto; border-radius: 4px; }
+figcaption { font-style: italic; font-size: 8.8pt; color: #52525b; text-align: center; margin-top: 2mm; }
+.colophon { margin-top: 10mm; font-style: italic; font-size: 8.6pt; color: #52525b; }
 </style></head><body><h2>Introduction</h2>
-<p>Every AI tool you use starts from zero. It doesn't know your voice, your values, your goals, or your taste. So it guesses, and it guesses toward the statistical average. The result is output that could belong to anyone, which is another way of saying it belongs to no one.</p>
-<p>The vibegraph fixes the input instead of endlessly editing the output. It is a structured, portable, human-owned system that codifies who you are: your personality, your purpose, your brand positioning, and your visual identity, plus optional orbits covering the working context of your life and/or business. Any AI tool, agent, or memory system can consume it. None of them own it.</p>
-<p>Two design decisions separate the vibegraph from the wave of AI memory products. First, it is grounded in established frameworks rather than passive data collection: the Big Five "OCEAN" personality model paired with the Enneagram as a two-part personality assessment, an Ikigai-based structure for purpose and meaning, and industry best practices and standards in brand strategy for positioning and aesthetics (with organizational equivalents for business brands, drawn from Aaker's brand personality dimensions, Jungian brand archetypes, and the Golden Circle). Second, it works today, with zero platform adoption required. Paste a vibegraph into Claude, ChatGPT, Grok, or Gemini and the next output sounds like you.</p>
+<p>Every AI tool you use starts from zero. It does not know your voice, your values, your goals, or your taste. So it guesses, and it guesses toward the statistical average. The result is output that could belong to anyone, which is another way of saying it belongs to no one.</p>
+<p>Your vibes (your personality, taste, voice, values, purpose, and aesthetic) are the things AI gets wrong about you by default, because nobody wrote them down anywhere a machine could read them. This paper is about writing them down, once, in a form every AI you use can read first.</p>
+<p>The word for the result is a vibegraph. <strong>A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one person, and any businesses they own or operate.</strong> Everyone who uses AI for real work already has one, spread across a notes app, a folder of documents, a few platform memories, and a great deal that lives only in their head. What separates a working vibegraph from a pile of context is small and specific: a human-authored identity core, and a root file with a fixed name that any agent reads first.</p>
+<p>This paper defines the term, describes the anatomy of a vibegraph, shows where the tools people already use fit inside one, explains how business brands nest inside their owner's graph, specifies how AI systems consume one (by paste, by workspace, over the Model Context Protocol, and as a seed for memory layers), states the security model such a thing demands and which parts of it are shipped, and separates the three things that share the name: the noun, the open framework at vibegraph.md, and the guided builder at vibegraph.ai.</p>
 <blockquote>
 <p>Memory layers remember what happened. A vibegraph defines who you are.</p>
 </blockquote>
-<p>This paper describes the problem, the three-part architecture, how business brands nest inside their owner's vibegraph, how AI systems consume a vibegraph, the security model such a concept demands, and the open specification at vibegraph.md. Since version 1.0, the framework has also been proven in software: a working application at vibegraph.ai now builds complete vibegraphs, and the revisions in this version reflect what that build taught us.</p>
 <hr />
-<h2>1. The Problem: AI Doesn't Know Who You Are</h2>
+<h2>1. The problem: AI does not know who you are</h2>
 <p>Large language models are trained on the written output of millions of people and optimized to produce the most probable response. Probable means average. When a model knows nothing about you, the average is the best it can do.</p>
-<p>Anyone who uses AI for real work has felt the consequences:</p>
-<p><strong>You repeat yourself constantly.</strong> Every new chat, every new tool, every new agent begins with the same ritual: here's who I am, here's what I do, here's how I write, here's what I'm working on. The context you type into one tool is gone the moment you open another.</p>
-<p><strong>The output is generic.</strong> "AI slop" became a household term for a reason. Ask ten professionals in the same field to generate a LinkedIn post on the same topic and the results are nearly interchangeable, because the model is drawing on the same averaged prior for all ten. The people who complain loudest are exactly the people with the most to lose: creators, coaches, consultants, and founders whose personal brand is their business. Their differentiation is their voice or unique "vibes", and generic output erodes that brand with every post.</p>
-<p><strong>Platform memory doesn't solve this, and creates a new problem.</strong> ChatGPT remembers some things about you. Claude remembers other things. Neither can see the other's memory, you can't fully inspect either one, and none of it transfers when a better tool ships next quarter. Memory features are useful, but they are fragmented, passive, and platform-locked. What they accumulate is a history of what you did, filtered through what a model happened to notice. That is not the same as a deliberate statement of who you are, today, nor does it keep track of who you are becoming.</p>
-<p><strong>Agents raise the stakes.</strong> A chatbot that misreads your tone wastes a prompt. An autonomous agent that misreads your intent takes actions on your behalf: it sends the email, books the meeting, publishes the post. The gap between "AI that knows you" and "AI that guesses" stops being a quality issue and becomes a trust issue.</p>
-<p>The software industry has already solved a version of this problem for code. AGENTS.md, an open markdown convention that tells coding agents how a project works, spread to more than 60,000 repositories in about a year because the payoff was immediate: write the file once, and every agent that touches your codebase gets better on the next task. No committee, no SDK, no permission from anyone.</p>
-<p>There is no equivalent for a human being. That is the gap the vibegraph fills.</p>
+<p>Anyone who uses AI for real work has felt the consequences.</p>
+<p><strong>You repeat yourself constantly.</strong> Every new chat, every new tool, every new agent begins with the same ritual: here is who I am, here is what I do, here is how I write, here is what I am working on. The context you type into one tool is gone the moment you open another.</p>
+<p><strong>The output is generic.</strong> Ask ten professionals in the same field to generate a post on the same topic and the results are nearly interchangeable, because the model draws on the same averaged prior for all ten. The people who notice most are the ones with the most to lose: creators, coaches, consultants, and founders whose voice is the business. Generic output erodes that voice with every draft.</p>
+<p><strong>Platform memory does not solve it, and adds a problem of its own.</strong> ChatGPT remembers some things about you. Claude remembers other things. Gemini calls its version personal intelligence. None of them can see the others, you cannot fully inspect any of them, and none of it moves when a better tool ships next quarter. What they accumulate is a history of what you did, filtered through what a model happened to notice. That is not a deliberate statement of who you are today, and it does not track who you are becoming.</p>
+<p><strong>Agents raise the stakes.</strong> A chatbot that misreads your tone wastes a prompt. An autonomous agent that misreads your intent sends the email, books the meeting, publishes the post. The gap between "AI that knows you" and "AI that guesses" stops being a quality issue and becomes a trust issue.</p>
+<p>The software industry already solved a version of this for code. AGENTS.md, a plain markdown file at the root of a repository, tells coding agents how a project works. It spread to tens of thousands of repositories in its first year and to several hundred thousand root-level files by September 2026, read natively by Codex, Cursor, Copilot, Gemini CLI, and more than twenty other tools, because the payoff was immediate: write the file once, and every agent that touches the codebase gets better on the next task. No committee, no SDK, no permission from anyone. SKILL.md did the same for procedures in under ninety days. llms.txt is doing it, more slowly, for websites.</p>
+<p>There is no equivalent for a person. That is the gap a vibegraph fills.</p>
+<blockquote>
+<p>Where AGENTS.md tells an agent how to work on your code, a vibegraph tells an agent how to work not just for you, but as you.</p>
+</blockquote>
 <hr />
-<h2>2. What Is a Vibegraph?</h2>
-<p>A vibegraph is a structured collection of documents that codifies one person's identity and working context in a format AI systems can consume. It is natively human-shaped: a vibegraph represents a unique individual, holding exactly one personal brand, and one or more business brands that person owns beside it. Plain markdown at its simplest. A permissioned, encrypted data vault at its most complete. You own it, you host it where you choose, and you decide which parts any given tool or agent can see.</p>
-<p>The name is literal. Your "vibes" (personality, taste, voice, values, purpose, aesthetic) are the things AI gets wrong about you by default, because they were never written down anywhere a machine could read them. The vibegraph writes them down and keeps them up-to-date.</p>
-<div class="keep"><h3>Design Principles</h3>
-<p><strong>Human-authored, not scraped.</strong> A vibegraph is built deliberately, through structured self-assessment and brand-strategy work, not inferred from your inbox. Passive inference produces a model's opinion of you. A vibegraph is your statement of record. (The two can coexist; a vibegraph makes an excellent seed and correction layer for passive memory systems.)</p>
-<p><strong>Useful on day one, with zero adoption required.</strong> This is the load-bearing principle. A vibegraph delivers its value the moment its owner pastes it into any AI tool, LLM, or agent. Although welcomed, it's not dependent on third-party platforms to support it as a standard. Proposed web standards that depended on platform adoption have a poor track record; the ones that win give individual users an immediate payoff with tools they already have and use. The vibegraph is designed for the second pattern.</p>
-<p><strong>Guided, not blank.</strong> The hard part of a document like this is not the format; it is the blank page. The framework assumes a guided build: structured questions, worked examples for every element, and an AI coach that elicits real material in conversation rather than waiting for the owner to fill in a template. This principle was learned in software: the reference application's entire building experience exists because blank templates kill documents like these.</p>
-<p><strong>Portable and sovereign.</strong> The vibegraph is a framework and system that can be exported to a document/file format. It moves with you across tools, models, and vendors. If a platform shuts down or a better one launches, your vibegraph comes along unchanged.</p>
-<p><strong>Grounded in established frameworks.</strong> The identity layer is not improvised. It uses instruments and frameworks with decades of practice behind them, so the output is structured, comparable, and complete rather than a freeform "about me" essay.</p>
-<p><strong>Private by default, shared by choice.</strong> The parts of a vibegraph differ in sensitivity by design, and the framework's permission model (Section 7) treats visibility as a per-part, deny-by-default decision.</p>
-<p><strong>Extensible.</strong> A minimal vibegraph is the Core Identity and Branding: a few documents. From there, owners add orbits for whatever domains matter to them, at whatever depth they choose and feel comfortable documenting.</p>
-</div><div class="keep"><h3>Glossary</h3>
-<p><strong>Vibegraph: your vibes, codified.</strong>
-A portable, structured identity and context framework that codifies personality, purpose, and brand so AI tools and agents act in alignment with their owner's goals, voice, and taste. A vibegraph represents one unique person, and carries that person's brands: one personal, and optionally one or more business.</p>
-<p><strong>Core Identity: who you are.</strong>
-The first of a vibegraph's three parts: personality (a two-part assessment: the Big Five and the Enneagram, reconciled in an integrated reading) and Ikigai (purpose). Small, stable, and safe to share with any AI tool.</p>
-<p><strong>Branding: how you present.</strong>
-The second part: one or more brands, each made of Brand Context (twelve positioning elements, from brand name to bios) and Brand Visuals (eight visual elements, from logos to photography direction). The personal brand is built from the Core Identity; business brands are built beside it. This is the part that keeps generated work on-brand.</p>
-<p><strong>Element.</strong>
-The unit inside Brand Context and Brand Visuals: a single named artifact such as Core Values or Color Palette. Elements are first-class: each carries its own guidance, examples, and craft standards.</p>
-<p><strong>Orbits: your personal domain context.</strong>
-The third part: self-defined modules containing the documents, data, and working context of your life or business, revolving around the core. Creators often call this their second brain; businesses call it a knowledge base or wiki. Orbits are gated and permissioned based on owner preferences, and they stay home when the core travels.</p>
-<p><strong>Claudia.</strong>
-The AI coach in the reference application at vibegraph.ai. She guides the build: asking, drafting, and generating from what the owner has already established.</p>
-<p><strong>Vibeclone: you, digitally remastered.</strong>
-An AI agent powered by a vibegraph that thinks, writes, and acts in its owner's likeness. Covered briefly in Section 9; a dedicated paper will follow.</p>
+<h2>2. What is a vibegraph?</h2>
+<p>A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one person, and any businesses they own or operate.</p>
+<p>They may not realize it, but everyone who uses AI for real work already has a vibegraph. It is just spread across a notes app, local folders, cloud drives, fragmented memory inside various AI chat apps and agents, a system prompt pasted from a text file, a CLAUDE.md file, and important context that lives only in the person's head and gets retyped into every new tool. That's a vibegraph in the way a shoebox of photos is an album: all the material, none of the structure, and no way for a machine to read it properly.</p>
+<p>A vibegraph is an attempt to understand and organize that context in the following ways:</p>
+<ol>
+<li>
+<p><strong>An identity core.</strong> A human-authored statement of who the person is, built from validated instruments rather than inferred thinly from behavior: a two-part personality assessment (the Big Five via the IPIP-NEO-120, and the Enneagram, reconciled in one integrated reading), any further instruments the person has taken, a four-pillar Ikigai, and a personal brand (twelve Brand Context elements and eight Brand Visuals elements). Business brands the person owns sit beside the personal brand, built with organizational instruments (Aaker's dimensions, a Jungian archetype, the Golden Circle). The core is small, stable, and safe to share. It is the part every AI interaction should start from.</p>
+</li>
+<li>
+<p><strong>A root file.</strong> A single markdown file, always named VIBEGRAPH.md, always at the root, that any agent reads first. It says who the agent is working for or working as, links every part of the graph with a kind and a scope, and states the read order. It is to a vibegraph what index.html is to a website and what AGENTS.md is to a repository.</p>
+</li>
+<li>
+<p><strong>Areas and components, linked by scope.</strong> Areas are the domains of knowledge and working context the person adds when a real use case demands one (career, finances, health, skills, goals, and on the business side CRM, operations, SOPs, templates). Components are the tools that already hold parts of the graph: an Obsidian vault, a Notion workspace, a memory layer such as Mem0 or Zep, a project's AGENTS.md, an agent that runs on the graph. The root file registers each with a kind (identity, brand, area, source, memory, project, skill, agent) and a scope (public, scoped, private). Nothing is exposed by omission.</p>
+</li>
+</ol>
+<p>The identity core and the root file are what make it a vibegraph. Without them, it is context. With them, it is a graph any agent can walk, a permission model an owner can reason about, and a portable asset that moves unchanged when a better tool ships.</p>
+<p><strong>What a vibegraph is not.</strong> It is not a notes app, a memory layer, or an AI operating system; those are components or consumers of it. It is not shared. A single vibegraph represents exactly one human, and there is no global vibegraph. A business brand inside a person's vibegraph can be shared with other people inside that business, but the graph itself has one owner. A vibegraph is not scraped. A core vibegraph is written on purpose, through assessment and brand work, not inferred from an inbox. It is plain markdown at its simplest and an encrypted, permissioned vault at its most complete, owned and hosted by the person it describes.</p>
+<p>Two design decisions separate a vibegraph from the memory products it composes with. Memory layers remember what happened; a vibegraph defines who you are. And a vibegraph works today, with zero platform adoption required. Use it with your AI tools and the output becomes something that matches the "vibes" of its creator; high-fidelity, high-quality results that are the opposite of AI slop. Where AGENTS.md tells an agent how to work on your code, a vibegraph tells an agent how to work as, and for, you.</p>
+<p>The word is a common noun. "vibegraph" (lowercase v) is not a product name and carries no trademark. The open framework and file convention are published at vibegraph.md under a permissive MIT license. A guided builder for the identity core is available at vibegraph.ai. Neither is required to have a vibegraph; both exist to make a good one faster.</p>
+<div class="keep"><h3>2.1 Design principles</h3>
+<p><strong>Human-authored, not scraped.</strong> The core is built deliberately, through structured self-assessment and brand work, not inferred from an inbox. Passive inference produces a model's opinion of you. A vibegraph is your statement of record. The two coexist: a vibegraph makes an excellent seed and correction layer for passive memory systems.</p>
+<p><strong>Useful on day one, with zero adoption required.</strong> A vibegraph delivers its value the moment its owner pastes the core into any AI tool. Proposed standards that depended on platform adoption have a poor record; the ones that won gave individual users an immediate payoff with the tools they already had. The framework is designed for the second pattern.</p>
+<p><strong>One person per vibegraph.</strong> A vibegraph represents exactly one human. The businesses that person owns nest inside it as business brands. There is no global vibegraph, and nothing in the framework pools graphs across people.</p>
+<p><strong>Nothing is exposed by omission.</strong> Every link in the root file carries a scope. Anything without one is private. An agent that was never granted a part of the graph cannot read it, and cannot leak it.</p>
+<p><strong>Guided, not blank.</strong> The hard part of a document like this is not the format; it is the blank page. The framework assumes a guided build: structured questions, worked examples for every element, and an AI coach that draws out real material in conversation rather than waiting for the owner to fill a template.</p>
+<p><strong>Portable and sovereign.</strong> A vibegraph is files, not a service. It moves across tools, models, and vendors unchanged. If a platform shuts down or a better one launches, the graph comes along.</p>
+<p><strong>Grounded in established instruments.</strong> The identity core is not improvised. It uses instruments and frameworks with decades of practice behind them, so the result is structured, comparable, and complete rather than a freeform "about me" essay. More instruments make a richer core; the framework welcomes any the owner has taken.</p>
+<p><strong>Extensible.</strong> A minimal vibegraph is an identity core, one personal brand, and a root file. From there the owner adds business brands, areas, and components as real needs appear, at whatever depth they choose.</p>
 <hr />
-</div><h2>3. Architecture: Three Parts</h2>
-<p>Every vibegraph has the same three-part structure, anchored to one person.</p>
-<p>The <strong>Core Identity</strong> answers the question every AI tool silently asks and never gets answered: who is this person? It contains the personality profile and the purpose work. It is deliberately small, because it is meant to travel everywhere. It is the part you paste into a chat, attach to a project, or expose to an agent without a second thought.</p>
-<p><strong>Branding</strong> answers the next question: how does this person present themselves? It holds one or more brands, each with its words (Brand Context) and its look (Brand Visuals). The personal brand is built from the Core Identity; business brands the owner operates sit beside it as full brand documents of their own (Section 5). Together with the core, Branding forms the shareable half of a vibegraph: the core and a brand fit comfortably inside a single model context window.</p>
-<p>The <strong>Orbits</strong> answer the follow-up question: what is this person working with? They are a set of self-defined modules (health, finances, relationships, career, notes, time management, skills, goals, or anything else the owner wants to include) each containing documents, files, data, and protocols. The orbits are where depth lives, and where sensitivity lives, which is why every orbit and every item within it carries its own access controls.</p>
+</div><h2>3. The anatomy of a vibegraph</h2>
+<p>Every vibegraph has the same five elements, anchored to one person.</p>
+<p><strong>The identity core</strong> answers the question every AI tool silently asks and never gets answered: who is this person? It holds the personality assessment, the integrated reading, any other instruments the owner has taken, and the purpose work. It is deliberately small, because it travels everywhere: pasted into a chat, attached to a project, read first by an agent.</p>
+<p><strong>Brands</strong> answer the next question: how does this person present? A vibegraph holds one personal brand, built from the identity core, and any business brands the owner operates, each a full brand document of its own with organizational foundations. Every brand has its words (Brand Context) and its look (Brand Visuals). The core plus one brand fits inside a single model context window; that is a design constraint, not an accident.</p>
+<p><strong>Areas</strong> answer the follow-up: what is this person working with? Areas are the domains of knowledge and working context the owner adds when a use case demands one. On the personal side: career, finances, health, skills, goals. On the business side: relationships and CRM, operations, playbooks and SOPs, templates. Each area is a folder with its own index file and its own scope, so it can be granted as a unit. Areas are where depth lives, and where sensitivity lives, which is why they are gated by default and stay home when the core travels.</p>
+<p><strong>Components</strong> are the tools that already hold parts of the graph: a notes app, a memory layer, a project repository with its own AGENTS.md, a skill file, an agent. The root file registers them; it does not store them. This is how the framework says "everything you already use is part of your vibegraph" without pretending to be a container for it. Section 6 places the common tools.</p>
+<p><strong>The root file</strong>, VIBEGRAPH.md, ties the four together. It names the owner, points to the identity file, links every brand, area, and component with a kind, a scope, and a rule for when to read it, and states the read order. An agent handed only this file knows what exists, what to read first, and what it may not read.</p>
 <p>The structure matters for three reasons.</p>
-<p>First, it matches how AI consumption actually works. Identity and brand context belong in every interaction; domain context belongs only in relevant ones. A model writing your newsletter needs your voice and positioning, not your medical history. Separating the always-relevant from the sometimes-relevant keeps context windows lean and permission decisions simple.</p>
-<p>Second, it matches how trust works. The Core Identity and Branding are shareable by design. The Orbits are gated by design. A clean architectural line is easier to secure and easier to reason about than a single blob with per-paragraph exceptions.</p>
-<p>Third, it scales in both directions. A minimal vibegraph (Core Identity and Branding only) is genuinely useful and can be built quickly with proper tools. A maximal vibegraph, with a dozen orbits maintained over years, approaches something like a personal operating system. Both are valid. The framework doesn't force anyone up the curve.</p>
+<p>First, it matches how AI consumption works. Identity and brand belong in every interaction; area context belongs only in relevant ones. A model writing your newsletter needs your voice and positioning, not your medical history. Separating the always-relevant from the sometimes-relevant keeps context windows lean and permission decisions simple.</p>
+<p>Second, it matches how trust works. The core and the brands are shareable by design. Areas are gated by design. Components are registered, not copied. A clean line is easier to secure and easier to reason about than one blob with per-paragraph exceptions.</p>
+<p>Third, it scales in both directions. A minimal vibegraph (core, one brand, root file) is useful the day it is built. A large one, with two business brands, a dozen areas, and six registered components maintained over years, is still one file an agent reads first. The framework does not force anyone up the curve.</p>
+<figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="Figure 1: the anatomy of a vibegraph">
+<rect width="1200" height="800" fill="#0a0a0a"/>
+<defs><marker id="f1-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f6f6f6"/></marker></defs>
+<text x="600.0" y="56.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="26" font-weight="500" fill="#f6f6f6" text-anchor="middle">Maya Okafor</text>
+<text x="600.0" y="80.0" font-family="Inter, sans-serif" font-size="13" font-weight="400" fill="#b8b8b8" text-anchor="middle">one person</text>
+<line x1="600.0" y1="92.0" x2="600.0" y2="127.0" stroke="#f6f6f6" stroke-width="1.5" marker-end="url(#f1-arrow)"/>
+<rect x="440.0" y="130.0" width="320.0" height="64.0" rx="10" fill="#0a0a0a" stroke="#b7a8ff" stroke-width="1.5"/>
+<text x="600.0" y="160.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="18" font-weight="500" fill="#f6f6f6" text-anchor="middle">VIBEGRAPH.md</text>
+<text x="600.0" y="181.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">root file · read first</text>
+<line x1="600.0" y1="194.0" x2="600.0" y2="236.0" stroke="#b8b8b8" stroke-width="1.0"/>
+<line x1="174.0" y1="236.0" x2="1026.0" y2="236.0" stroke="#b8b8b8" stroke-width="1.0"/>
+<line x1="174.0" y1="236.0" x2="174.0" y2="330.0" stroke="#b8b8b8" stroke-width="1.0"/>
+<rect x="77.8" y="258.0" width="192.4" height="44.0" rx="4" fill="#0a0a0a" stroke="none" stroke-width="0"/>
+<text x="174.0" y="276.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#b8b8b8" text-anchor="middle">kind: identity</text>
+<text x="174.0" y="292.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#b8b8b8" text-anchor="middle">scope: public · when: always</text>
+<line x1="458.0" y1="236.0" x2="458.0" y2="330.0" stroke="#b8b8b8" stroke-width="1.0"/>
+<rect x="409.1" y="258.0" width="97.9" height="44.0" rx="4" fill="#0a0a0a" stroke="none" stroke-width="0"/>
+<text x="458.0" y="276.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#b8b8b8" text-anchor="middle">kind: brand</text>
+<text x="458.0" y="292.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#b8b8b8" text-anchor="middle">scope: public</text>
+<line x1="742.0" y1="236.0" x2="742.0" y2="330.0" stroke="#b8b8b8" stroke-width="1.0"/>
+<rect x="667.9" y="258.0" width="148.3" height="44.0" rx="4" fill="#0a0a0a" stroke="none" stroke-width="0"/>
+<text x="742.0" y="276.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#b8b8b8" text-anchor="middle">kind: area</text>
+<text x="742.0" y="292.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#b8b8b8" text-anchor="middle">scope: scoped/private</text>
+<line x1="1026.0" y1="236.0" x2="1026.0" y2="330.0" stroke="#b8b8b8" stroke-width="1.0"/>
+<rect x="914.0" y="258.0" width="223.9" height="44.0" rx="4" fill="#0a0a0a" stroke="none" stroke-width="0"/>
+<text x="1026.0" y="276.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#b8b8b8" text-anchor="middle">kind: source/memory/project/agent</text>
+<text x="1026.0" y="292.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#b8b8b8" text-anchor="middle">scope: scoped</text>
+<rect x="44.0" y="330.0" width="260.0" height="440.0" rx="12" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="64.0" y="364.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#f6f6f6" text-anchor="start">identity core</text>
+<rect x="328.0" y="330.0" width="260.0" height="440.0" rx="12" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="348.0" y="364.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#f6f6f6" text-anchor="start">brands</text>
+<rect x="612.0" y="330.0" width="260.0" height="440.0" rx="12" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="632.0" y="364.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#f6f6f6" text-anchor="start">areas</text>
+<rect x="896.0" y="330.0" width="260.0" height="440.0" rx="12" fill="none" stroke="#2b2b2b" stroke-width="1.0" stroke-dasharray="6 4"/>
+<text x="916.0" y="364.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#f6f6f6" text-anchor="start">components</text>
+<text x="916.0" y="384.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="start">registered, not stored</text>
+<rect x="60.0" y="386.0" width="228.0" height="84.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="74.0" y="411.0" font-family="Inter, sans-serif" font-size="14" font-weight="400" fill="#f6f6f6" text-anchor="start">personality</text>
+<text x="74.0" y="430.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">Big Five · Enneagram</text>
+<text x="74.0" y="447.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">other instruments</text>
+<rect x="60.0" y="486.0" width="228.0" height="48.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="74.0" y="515.0" font-family="Inter, sans-serif" font-size="14" font-weight="400" fill="#f6f6f6" text-anchor="start">integrated reading</text>
+<rect x="60.0" y="550.0" width="228.0" height="66.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="74.0" y="575.0" font-family="Inter, sans-serif" font-size="14" font-weight="400" fill="#f6f6f6" text-anchor="start">Ikigai</text>
+<text x="74.0" y="594.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">four pillars · one statement</text>
+<text x="64.0" y="750.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">identity/maya-okafor.md</text>
+<rect x="344.0" y="386.0" width="228.0" height="84.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="358.0" y="411.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="12.5" font-weight="500" fill="#f6f6f6" text-anchor="start">maya-okafor.brand.md</text>
+<text x="358.0" y="430.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">personal · 12 + 8</text>
+<text x="358.0" y="447.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">when: always</text>
+<rect x="360.0" y="486.0" width="212.0" height="100.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<line x1="361.0" y1="494.0" x2="361.0" y2="578.0" stroke="#b7a8ff" stroke-width="2"/>
+<text x="374.0" y="511.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="12.5" font-weight="500" fill="#f6f6f6" text-anchor="start">delivery-os.brand.md</text>
+<text x="374.0" y="530.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">business</text>
+<text x="374.0" y="547.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">foundations + 12 + 8</text>
+<text x="374.0" y="564.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">when: on-task</text>
+<text x="348.0" y="750.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">brands/</text>
+<rect x="628.0" y="386.0" width="228.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="642.0" y="411.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="13" font-weight="500" fill="#f6f6f6" text-anchor="start">career/</text>
+<text x="642.0" y="430.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">scope: scoped · on-task</text>
+<rect x="628.0" y="454.0" width="228.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="642.0" y="479.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="13" font-weight="500" fill="#f6f6f6" text-anchor="start">skills/</text>
+<text x="642.0" y="498.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">scope: scoped · on-task</text>
+<rect x="628.0" y="522.0" width="228.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="642.0" y="547.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="13" font-weight="500" fill="#f6f6f6" text-anchor="start">finances/</text>
+<text x="642.0" y="566.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">scope: private · on-grant</text>
+<text x="632.0" y="750.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">areas/&lt;area&gt;/index.md</text>
+<rect x="912.0" y="406.0" width="228.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="926.0" y="431.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#f6f6f6" text-anchor="start">Obsidian vault</text>
+<text x="926.0" y="450.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">kind: source</text>
+<rect x="912.0" y="474.0" width="228.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="926.0" y="499.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#f6f6f6" text-anchor="start">Claude memory</text>
+<text x="926.0" y="518.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">kind: memory</text>
+<rect x="912.0" y="542.0" width="228.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="926.0" y="567.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#f6f6f6" text-anchor="start">site repo</text>
+<text x="926.0" y="586.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">kind: project</text>
+<rect x="912.0" y="610.0" width="228.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="926.0" y="635.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#f6f6f6" text-anchor="start">writing agent</text>
+<text x="926.0" y="654.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">kind: agent</text>
+<text x="916.0" y="750.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">components.md</text>
+</svg>
+<figcaption>Figure 1: the anatomy of a vibegraph. One owner, one root file, an identity core, brands (personal plus nested business brands), areas, and registered components, with every link carrying a kind and a scope.</figcaption></figure>
 <hr />
-<h2>4. Inside the Vibegraph</h2>
-<div class="keep"><h3>4.1 Personality: a two-part assessment</h3>
-<p>The foundation is a full personality assessment in two parts, using two instruments that approach the same person with different methods of questioning.</p>
-<p><strong>Part one: the Big Five (OCEAN).</strong> A Big Five assessment measuring Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism, administered through the IPIP-NEO-120, a public-domain, research-grade inventory. The Big Five anchors the assessment for a simple reason: it is the model with the strongest empirical support in personality psychology, and it produces dimensional scores rather than type labels. Dimensional data is exactly what a machine consumer can use: "high openness, moderate extraversion, low neuroticism" gives a model calibration that a four-letter type does not. The vibegraph stores the scores, the facet breakdown, and a written interpretation in the owner's own words.</p>
-<p><strong>Part two: the Enneagram.</strong> The Enneagram asks a different kind of question: not how you behave, but why. Where the Big Five measures traits, the Enneagram surfaces core motivations, fears, and the characteristic patterns a person falls into under stress and growth. It is a typology rather than a dimensional instrument, and the framework uses it with that understanding: not as a replacement for dimensional rigor, but as a second angle of questioning that dimensional scores alone do not capture.</p>
-<p><strong>The integrated reading.</strong> The two instruments are reconciled in a single written interpretation: where they agree, where they tension, and what the combination means for how this person works, decides, and communicates. This reading, in the owner's own words after review, is what most AI consumers actually use; the underlying scores remain available for tools that want them. Owners who have already taken either assessment elsewhere can import their results rather than retaking them.</p>
-</div><div class="keep"><h3>4.2 Purpose: Ikigai</h3>
-<p>The second layer codifies meaning and direction through a four-pillar Ikigai structure, inspired by Kyle Kowalski's "Ikigai 2.0" treatment of the concept: what you love, what the world needs from you, what you are naturally good at, and what you can be paid for. Where the pop-culture ikigai Venn diagram reduces purpose to a career sweet spot, this treatment keeps the pillars distinct, examines where they genuinely meet, and produces a richer artifact: four honest self-statements, a synthesis of their intersections, and a single Ikigai statement, the sentence the rest of the vibegraph builds on. For an AI consumer, this layer is what turns "write a post about productivity" into a post about productivity <em>that connects to what its author actually cares about.</em></p>
-</div><div class="keep"><h3>4.3 Brand Context: the brand in words</h3>
-<p>The third layer begins the Branding part: twelve positioning elements that define the brand's language.</p>
+<h2>4. Inside the identity core</h2>
+<div class="keep"><h3>4.1 Personality: two built-in instruments, and any others you bring</h3>
+<p>The foundation is a personality assessment in two parts, using two instruments that approach the same person with different methods of questioning.</p>
+<p><strong>Part one: the Big Five.</strong> A Big Five assessment measuring Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism, administered through the IPIP-NEO-120, a public-domain, research-grade inventory. The Big Five anchors the assessment because it is the model with the strongest empirical support in personality psychology, and because it produces dimensional scores rather than type labels. Dimensional data is what a machine can use: "high openness, moderate extraversion, low neuroticism" gives a model calibration that a four-letter type does not. The identity file stores the domain scores, the facet breakdown, and a written interpretation in the owner's own words.</p>
+<p><strong>Part two: the Enneagram.</strong> The Enneagram asks a different kind of question: not how you behave, but why. Where the Big Five measures traits, the Enneagram surfaces core motivations, fears, and the patterns a person falls into under stress and growth. It is a typology, and the framework uses it as one: a second angle of questioning that dimensional scores alone do not capture.</p>
+<p><strong>Any other instrument.</strong> The two built-in instruments are a floor, not a ceiling. Owners can add the results of any assessment they have taken: 16personalities, CliftonStrengths, DISC, HEXACO, a Truity Enneagram, an attachment-style inventory, anything. These are recorded as named sources with the document's own figures and scale words, never converted onto another instrument's scale, and summarized in plain language. The more instruments a person brings, the richer and more cross-checked the core becomes. The framework expects the list of instruments to grow, and the identity file carries them as a list.</p>
+<p><strong>The integrated reading.</strong> All of it is reconciled in a single written interpretation: where the instruments agree, where they tension, and what the combination means for how this person works, decides, and communicates. This reading, in the owner's own words after review, is the paragraph most AI consumers use; the underlying scores stay available for tools that want them.</p>
+</div><div class="keep"><h3>4.2 Purpose: a four-pillar Ikigai</h3>
+<p>The second layer codifies meaning and direction through a four-pillar Ikigai structure: what you love, what the world needs from you, what you are naturally good at, and what you can be paid for. Where the pop-culture Venn diagram reduces purpose to a career sweet spot, this treatment keeps the pillars distinct, examines where they meet, and produces a richer artifact: four honest self-statements, a synthesis of their intersections, and a single Ikigai statement, the sentence the rest of the graph builds on. For an AI consumer, this layer turns "write a post about productivity" into a post about productivity that connects to what its author cares about.</p>
+</div><div class="keep"><h3>4.3 The personal brand: Brand Context</h3>
+<p>The personal brand's first half is twelve elements that define the brand in words:</p>
 <ol>
 <li>Brand Name</li>
-<li>Slogans &amp; Taglines</li>
+<li>Taglines &amp; Slogans</li>
 <li>Unique Value Proposition</li>
 <li>Purpose-Vision-Mission</li>
 <li>Core Values</li>
@@ -134,9 +228,9 @@ An AI agent powered by a vibegraph that thinks, writes, and acts in its owner's 
 <li>Inspiration &amp; Influence</li>
 <li>Online Presence</li>
 </ol>
-<p>Each element is a small, opinionated artifact with a defined shape: core values as decision filters with the behavior that proves them, a value proposition in a single tested sentence, messaging as repeatable statements each paired with the story that makes it believable. The shapes matter because the consumer is a machine: a model handed twelve well-formed elements writes like the owner; a model handed an essay writes like a model that read an essay.</p>
-</div><div class="keep"><h3>4.4 Brand Visuals: the brand in pictures</h3>
-<p>Eight visual elements complete the Branding part:</p>
+<p>Each element is a small, opinionated artifact with a defined shape: core values as decision filters with the behavior that proves them, a value proposition in one tested sentence, messaging as repeatable statements each paired with the story that makes it believable. The shapes matter because the consumer is a machine: a model handed twelve well-formed elements writes exactly like the owner; a model handed just an essay writes like an AI model.</p>
+</div><div class="keep"><h3>4.4 The personal brand: Brand Visuals</h3>
+<p>The second half is eight elements that define the brand in pictures:</p>
 <ol>
 <li>Symbols &amp; Logos</li>
 <li>Color Palette</li>
@@ -147,319 +241,23 @@ An AI agent powered by a vibegraph that thinks, writes, and acts in its owner's 
 <li>Visual Elements</li>
 <li>Photography</li>
 </ol>
-<p>The visuals layer produces concrete artifacts rather than vague direction: hex color values, typography pairings, logo and symbol options, iconography, imagery guidelines, and photography direction. When an AI tool generates a slide, a thumbnail, or a landing page for you, this is the layer that keeps it on-brand without a design review.</p>
-<p>Together, the Core Identity and Branding give any AI system what a great ghostwriter, a great designer, and a great strategist would each need a dozen sessions to absorb.</p>
-</div><div class="keep"><h3>4.5 Orbits</h3>
-<p>The Orbits are organized into modules. The framework suggests a starting taxonomy; owners rename, merge, split, and invent orbits freely. The default suggested personal set:</p>
-<table>
-<thead>
-<tr>
-<th>Orbit</th>
-<th>Typical contents</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Health &amp; Wellness</td>
-<td>Sleep, nutrition, fitness, habits and rituals, health records and documents</td>
-</tr>
-<tr>
-<td>Relationships</td>
-<td>Family, friends, coworkers, partners and clients, audience</td>
-</tr>
-<tr>
-<td>Finances</td>
-<td>Budget, savings and investments, wealth and tax documents</td>
-</tr>
-<tr>
-<td>Career</td>
-<td>Résumé/CV and career history, current role, current business info</td>
-</tr>
-<tr>
-<td>Notes &amp; Ideas</td>
-<td>Quick notes, brain dumps, bookmarks and read-later queues, journals</td>
-</tr>
-<tr>
-<td>Time Management</td>
-<td>Principles, routines and schedules, planner, calendar conventions</td>
-</tr>
-<tr>
-<td>Skills</td>
-<td>Methods, protocols, skills written for AI consumption, reference docs</td>
-</tr>
-<tr>
-<td>Tech Stack</td>
-<td>Tools and hardware/software, current/intended use, access and privileges</td>
-</tr>
-<tr>
-<td>Goals</td>
-<td>Short- and long-term, with daily/weekly/monthly/yearly cadence</td>
-</tr>
-</tbody>
-</table>
-<p>A note on method: readers who maintain a second brain will recognize that this is a life-domain taxonomy, closer to Johnny Decimal or the "Areas" of PARA than to Zettelkasten's emergent linking. That is deliberate. Systems optimized for human creative recall reward loose association; systems optimized for machine retrieval reward stable, addressable domains an agent can be granted access to, one at a time. The vibegraph does not replace your PKM practice. It sits in front of it as the permissioned, machine-facing layer, and it can happily link out to an Obsidian vault, Notion workspace, or a folder of markdown files.</p>
-<p>The most common failure mode of personal knowledge systems is well documented: capture everything, retrieve nothing, abandon the system. The vibegraph's defense is the core/orbit split itself. The Core Identity and Branding alone deliver the headline value. Orbits are added when a real use case demands one, not because an empty template exists.</p>
-<figure>
-<svg id="f1-layer" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1200 760">
-  
-  <defs>
-    <style>
-      .f1-st0, .f1-st1, .f1-st2, .f1-st3 {
-        fill: none;
-      }
-
-      .f1-st0, .f1-st2, .f1-st3 {
-        stroke: #d4d4d8;
-      }
-
-      .f1-st4 {
-        font-size: 13px;
-      }
-
-      .f1-st4, .f1-st5, .f1-st6, .f1-st7, .f1-st8, .f1-st9, .f1-st10, .f1-st11, .f1-st12, .f1-st13, .f1-st14 {
-        isolation: isolate;
-      }
-
-      .f1-st4, .f1-st14 {
-        fill: #71717a;
-        font-family: Inter, sans-serif;
-      }
-
-      .f1-st5 {
-        font-family: Menlo, monospace;
-        font-size: 26px;
-        font-weight: 700;
-      }
-
-      .f1-st5, .f1-st9, .f1-st10, .f1-st15 {
-        fill: #18181b;
-      }
-
-      .f1-st6 {
-        fill: #8f8f96;
-      }
-
-      .f1-st6, .f1-st7 {
-        font-size: 12.5px;
-      }
-
-      .f1-st6, .f1-st7, .f1-st8 {
-        font-family: Menlo, monospace;
-      }
-
-      .f1-st7, .f1-st16, .f1-st17 {
-        fill: #fff;
-      }
-
-      .f1-st8, .f1-st12 {
-        fill: #a1a1aa;
-        font-size: 10.5px;
-      }
-
-      .f1-st1, .f1-st18, .f1-st17 {
-        stroke: #e4e4e7;
-      }
-
-      .f1-st18 {
-        fill: #fafafa;
-      }
-
-      .f1-st9 {
-        font-size: 15px;
-      }
-
-      .f1-st9, .f1-st10, .f1-st13 {
-        font-family: Inter, sans-serif;
-        font-weight: 600;
-      }
-
-      .f1-st10 {
-        font-size: 14.5px;
-      }
-
-      .f1-st19 {
-        fill: #d4d4d8;
-      }
-
-      .f1-st11 {
-        fill: #52525b;
-        font-size: 9.5px;
-        letter-spacing: .17em;
-      }
-
-      .f1-st11, .f1-st12 {
-        font-family: Menlo, monospace;
-        font-weight: 500;
-      }
-
-      .f1-st12 {
-        letter-spacing: .21em;
-      }
-
-      .f1-st13 {
-        fill: #27272a;
-        font-size: 13.5px;
-      }
-
-      .f1-st14 {
-        font-size: 11.5px;
-      }
-
-      .f1-st2 {
-        stroke-width: 1.5px;
-      }
-
-      .f1-st3 {
-        stroke-dasharray: 4 4;
-      }
-    </style>
-  </defs>
-  <rect class="f1-st16" y="0" width="1200" height="760"/>
-  <rect class="f1-st17" x="40" y="52" width="792" height="656" rx="18" ry="18"/>
-  <text class="f1-st5" transform="translate(76 102)"><tspan x="0" y="0">The Vibegraph</tspan></text>
-  <text class="f1-st4" transform="translate(76 124)"><tspan x="0" y="0">One person. Three parts.</tspan></text>
-  <rect class="f1-st15" x="76" y="146" width="720" height="44" rx="8" ry="8"/>
-  <text class="f1-st7" transform="translate(96 173)"><tspan x="0" y="0">jordan-lee.vibegraph.md</tspan></text>
-  <text class="f1-st6" transform="translate(286 173)"><tspan x="0" y="0">| the master file an AI reads first.</tspan></text>
-  <text class="f1-st12" transform="translate(76 230)"><tspan x="0" y="0">WHO YOU ARE</tspan></text>
-  <rect class="f1-st17" x="76" y="242" width="220" height="356" rx="12" ry="12"/>
-  <text class="f1-st9" transform="translate(94 272)"><tspan x="0" y="0">Core Identity</tspan></text>
-  <line class="f1-st1" x1="94" y1="288" x2="278" y2="288"/>
-  <text class="f1-st13" transform="translate(94 314)"><tspan x="0" y="0">Personality</tspan></text>
-  <text class="f1-st14" transform="translate(94 331)"><tspan x="0" y="0">Big Five + Enneagram</tspan></text>
-  <text class="f1-st14" transform="translate(94 347)"><tspan x="0" y="0">+ the integrated reading</tspan></text>
-  <line class="f1-st1" x1="94" y1="364" x2="278" y2="364"/>
-  <text class="f1-st13" transform="translate(94 390)"><tspan x="0" y="0">Ikigai</tspan></text>
-  <text class="f1-st14" transform="translate(94 407)"><tspan x="0" y="0">four pillars, where they</tspan></text>
-  <text class="f1-st14" transform="translate(94 423)"><tspan x="0" y="0">meet, one statement</tspan></text>
-  <path class="f1-st0" d="M108,546h152c7.73,0,14,6.27,14,14h0c0,7.73-6.27,14-14,14H108c-7.73,0-14-6.27-14-14h0c0-7.73,6.27-14,14-14Z"/>
-  <text class="f1-st11" transform="translate(103.7 564)"><tspan x="0" y="0">PUBLIC · SAFE TO SHARE</tspan></text>
-  <text class="f1-st12" transform="translate(324 230)"><tspan x="0" y="0">HOW YOU PRESENT</tspan></text>
-  <rect class="f1-st17" x="324" y="242" width="220" height="356" rx="12" ry="12"/>
-  <text class="f1-st9" transform="translate(342 272)"><tspan x="0" y="0">Branding</tspan></text>
-  <line class="f1-st1" x1="342" y1="288" x2="526" y2="288"/>
-  <rect class="f1-st18" x="342" y="302" width="184" height="92" rx="8" ry="8"/>
-  <text class="f1-st13" transform="translate(356 326)"><tspan x="0" y="0">Personal brand</tspan></text>
-  <text class="f1-st14" transform="translate(356 345)"><tspan x="0" y="0">Brand Context · 12 elements</tspan></text>
-  <text class="f1-st14" transform="translate(356 362)"><tspan x="0" y="0">Brand Visuals · 8 elements</tspan></text>
-  <text class="f1-st11" transform="translate(356 381)"><tspan x="0" y="0">EXACTLY ONE · YOURS</tspan></text>
-  <rect class="f1-st17" x="342" y="408" width="184" height="76" rx="8" ry="8"/>
-  <text class="f1-st13" transform="translate(356 432)"><tspan x="0" y="0">Business brand</tspan></text>
-  <text class="f1-st14" transform="translate(356 451)"><tspan x="0" y="0">Acme Studio: same shape,</tspan></text>
-  <text class="f1-st14" transform="translate(356 468)"><tspan x="0" y="0">organizational instruments</tspan></text>
-  <rect class="f1-st3" x="342" y="496" width="184" height="34" rx="8" ry="8"/>
-  <text class="f1-st14" transform="translate(356 517)"><tspan x="0" y="0">+ every business you own</tspan></text>
-  <path class="f1-st0" d="M356,546h122c7.73,0,14,6.27,14,14h0c0,7.73-6.27,14-14,14h-122c-7.73,0-14-6.27-14-14h0c0-7.73,6.27-14,14-14Z"/>
-  <text class="f1-st11" transform="translate(369.55 564)"><tspan x="0" y="0">SAFE TO SHARE</tspan></text>
-  <text class="f1-st12" transform="translate(572 230)"><tspan x="0" y="0">PERSONAL DOMAIN CONTEXT</tspan></text>
-  <rect class="f1-st17" x="572" y="242" width="220" height="356" rx="12" ry="12"/>
-  <text class="f1-st9" transform="translate(590 272)"><tspan x="0" y="0">Orbits</tspan></text>
-  <line class="f1-st1" x1="590" y1="288" x2="774" y2="288"/>
-  <rect class="f1-st18" x="590" y="304" width="80" height="30" rx="8" ry="8"/>
-  <text class="f1-st14" transform="translate(614.69 323)"><tspan x="0" y="0">Goals</tspan></text>
-  <rect class="f1-st18" x="682" y="304" width="88" height="30" rx="8" ry="8"/>
-  <text class="f1-st14" transform="translate(708.24 323)"><tspan x="0" y="0">Health</tspan></text>
-  <rect class="f1-st18" x="590" y="344" width="90" height="30" rx="8" ry="8"/>
-  <text class="f1-st14" transform="translate(610.73 363)"><tspan x="0" y="0">Finances</tspan></text>
-  <rect class="f1-st18" x="692" y="344" width="78" height="30" rx="8" ry="8"/>
-  <text class="f1-st14" transform="translate(712.7 363)"><tspan x="0" y="0">Career</tspan></text>
-  <rect class="f1-st18" x="590" y="384" width="70" height="30" rx="8" ry="8"/>
-  <text class="f1-st14" transform="translate(611.11 403)"><tspan x="0" y="0">Skills</tspan></text>
-  <rect class="f1-st3" x="672" y="384" width="98" height="30" rx="8" ry="8"/>
-  <text class="f1-st14" transform="translate(690.62 403)"><tspan x="0" y="0">+ your own</tspan></text>
-  <text class="f1-st14" transform="translate(590 452)"><tspan x="0" y="0">They revolve around the core</tspan></text>
-  <text class="f1-st14" transform="translate(590 469)"><tspan x="0" y="0">and stay home when it travels:</tspan></text>
-  <text class="f1-st14" transform="translate(590 486)"><tspan x="0" y="0">exports carry pointers, content</tspan></text>
-  <text class="f1-st14" transform="translate(590 503)"><tspan x="0" y="0">stays in your own tools.</tspan></text>
-  <path class="f1-st0" d="M604,546h142c7.73,0,14,6.27,14,14h0c0,7.73-6.27,14-14,14h-142c-7.73,0-14-6.27-14-14h0c0-7.73,6.27-14,14-14Z"/>
-  <text class="f1-st11" transform="translate(609.3 564)"><tspan x="0" y="0">PRIVATE BY DEFAULT</tspan></text>
-  <text class="f1-st14" transform="translate(76 672)"><tspan x="0" y="0">Plain markdown. Readable by any AI. Owned and hosted by its creator, one unique human.</tspan></text>
-  <text class="f1-st12" transform="translate(892 102)"><tspan x="0" y="0">CONSUMED BY</tspan></text>
-  <rect class="f1-st17" x="892" y="120" width="268" height="86" rx="12" ry="12"/>
-  <text class="f1-st10" transform="translate(912 156)"><tspan x="0" y="0">AI chats &amp; tools</tspan></text>
-  <text class="f1-st8" transform="translate(912 178)"><tspan x="0" y="0">paste it in · works today</tspan></text>
-  <rect class="f1-st17" x="892" y="242" width="268" height="86" rx="12" ry="12"/>
-  <text class="f1-st10" transform="translate(912 278)"><tspan x="0" y="0">Agents</tspan></text>
-  <text class="f1-st8" transform="translate(912 300)"><tspan x="0" y="0">scoped access via MCP · roadmap</tspan></text>
-  <rect class="f1-st17" x="892" y="364" width="268" height="86" rx="12" ry="12"/>
-  <text class="f1-st10" transform="translate(912 400)"><tspan x="0" y="0">Memory layers</tspan></text>
-  <text class="f1-st8" transform="translate(912 422)"><tspan x="0" y="0">seed context · no cold start</tspan></text>
-  <rect class="f1-st17" x="892" y="486" width="268" height="86" rx="12" ry="12"/>
-  <text class="f1-st10" transform="translate(912 522)"><tspan x="0" y="0">Vibeclone</tspan></text>
-  <text class="f1-st8" transform="translate(912 544)"><tspan x="0" y="0">an agent that operates as you</tspan></text>
-  <g>
-    <path class="f1-st2" d="M832,380h30v-217h30"/>
-    <path class="f1-st2" d="M832,380h30v-95h30"/>
-    <path class="f1-st2" d="M862,380v27h30"/>
-    <path class="f1-st2" d="M862,380v149h30"/>
-  </g>
-  <g>
-    <path class="f1-st19" d="M892,163l-7-4v8l7-4Z"/>
-    <path class="f1-st19" d="M892,285l-7-4v8l7-4Z"/>
-    <path class="f1-st19" d="M892,407l-7-4v8l7-4Z"/>
-    <path class="f1-st19" d="M892,529l-7-4v8l7-4Z"/>
-  </g>
-</svg><figcaption>Figure 1: one person's vibegraph: a master file over three parts (Core Identity, Branding with the personal brand and business brands beside it, Orbits), consumed everywhere from a chat window to the Vibeclone.</figcaption></figure>
+<p>The visual elements are concrete artifacts rather than vague direction: hex values, typeface pairings, a described logo and where its master file lives, imagery rules, and photography direction. The framework records and links these; it does not require any particular tool to produce them. In practice the owner takes the finished Brand Context and a set of prompts into whichever design tool they prefer (a general model, a code agent, a design canvas, a design application), produces the assets there, and records where each asset lives. When an AI tool later generates a slide, a thumbnail, or a landing page, this is the layer that keeps it on-brand without a design review.</p>
+<p>Together, the identity core and the personal brand give any AI system what a good ghostwriter, a good designer, and a good strategist would each need a dozen sessions to absorb.</p>
 <hr />
-</div><h2>5. Business Brands</h2>
-<p><em>This section describes the business framework as specified. The rest of the vibegraph is implemented in full in the reference application; the business brand builder is in active development on the same architecture, and this section will move to the present tense in version 2.0.</em></p>
-<p>A vibegraph represents one human being, and that is the design, not a limitation. The audience this framework serves first (solopreneurs, creators, founders) does not experience their business as a separate self; they experience it as something they own and express. The vibegraph models that reality directly: business brands live inside their owner's vibegraph, one full brand document per business, beside the personal brand.</p>
-<p>The sequence is deliberate, and the reference application enforces it: business brands are built after the owner's identity and personal brand, because the founder's material is the business brand's raw material. A brand for a business still cannot take a personality test, and ikigai does not describe a company, so the business brand swaps the identity instruments for organizational equivalents while keeping the same Context and Visuals structure.</p>
-<div class="keep"><h3>5.1 The Business Brand's Foundations</h3>
-<p><strong>Brand personality: Aaker's five dimensions.</strong> In place of the Big Five, the business brand uses Jennifer Aaker's brand personality framework (Sincerity, Excitement, Competence, Sophistication, Ruggedness), the closest thing brand research has to an empirically derived trait model for organizations. Like OCEAN, it produces dimensional, machine-usable calibration rather than a slogan.</p>
-<p><strong>Brand character: the twelve archetypes.</strong> Aaker's dimensions describe a brand's personality; a Jungian archetype (Hero, Sage, Creator, Outlaw, Caregiver, and the rest) gives it a coherent character to write and design from. In practice the two work together: choose the archetype, then use the dimensions to describe and measure how it shows up. Both live in the business brand's foundation.</p>
-<p><strong>Purpose: the Golden Circle, mission, vision, values.</strong> In place of Ikigai, the business brand codifies purpose through Simon Sinek's Why/How/What structure alongside conventional mission, vision, and values statements. (Small businesses running on EOS can drop their Vision/Traction Organizer in here nearly unchanged.) Usefully, Sinek designed the Golden Circle to apply to individuals as well as organizations, which gives the personal and business brands inside one vibegraph a shared spine: the founder's personal Why and their company's Why are written in the same shape and checked against each other, in the same graph.</p>
-<p><strong>Visuals.</strong> The visual half carries over from the personal brand with one adjustment in emphasis: it becomes a full design system (design principles, symbols and logos, palette, typography, iconography, imagery, and templates for the assets a business produces repeatedly, such as social posts, decks, email signatures, landing pages, and media kits).</p>
-</div><div class="keep"><h3>5.2 Business Orbits</h3>
-<p>A business brand brings its own orbits, and they shift from life domains to operating systems: the things that make delegation and consistency possible.</p>
-<table>
-<thead>
-<tr>
-<th>Orbit</th>
-<th>Typical contents</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Relationships (CRM)</td>
-<td>Employees, advisors, investors, partners, vendors, customers, audience</td>
-</tr>
-<tr>
-<td>Finances</td>
-<td>Budget, P&amp;L, payroll, investments, valuation</td>
-</tr>
-<tr>
-<td>Operations</td>
-<td>Business entity, HR, legal</td>
-</tr>
-<tr>
-<td>Skills</td>
-<td>Playbooks, SOPs, workflows, skills written for AI, reference docs</td>
-</tr>
-<tr>
-<td>Management</td>
-<td>Principles, routines, planning, calendar systems</td>
-</tr>
-<tr>
-<td>Brand Templates</td>
-<td>Post templates, decks, email templates, lead magnets, landing pages, media kits</td>
-</tr>
-<tr>
-<td>Goals</td>
-<td>Short- and long-term, with cadence</td>
-</tr>
-<tr>
-<td>Notes &amp; Ideas</td>
-<td>Capture, bookmarks, journals/logs</td>
-</tr>
-<tr>
-<td>Tech Stack</td>
-<td>Tools, access and privilege protocols</td>
-</tr>
-</tbody>
-</table>
-<p>The structural difference from the personal orbits is worth stating plainly, because it explains why the module lists diverge. A personal knowledge system optimizes for one person's recall and creative output. A business knowledge system optimizes for <em>repeatability</em>: any operator (teammate, contractor, or agent) following the same playbook should produce the same result. That is why SOPs and templates, which barely appear in personal systems, are the center of gravity in business ones. It is also why the business side of a vibegraph is unusually well suited to agents: an SOP written clearly enough for a new hire is most of the way to being a protocol an agent can execute.</p>
-</div><div class="keep"><h3>5.3 What maps, what doesn't</h3>
+</div><h2>5. Business brands</h2>
+<p>A vibegraph represents one human being, and that is the design, not a limitation. The people this framework serves best, initially, are solo operators, founders, creators, and owners of small firms who do not experience their business as a separate self. They experience it as something they own and express. The framework models that directly: business brands live inside their owner's vibegraph, one full brand document per business, beside the personal brand.</p>
+<p>The sequence is deliberate. Business brands are built after the owner's identity and personal brand, because the founder's material is the business brand's raw material. A business cannot take a personality test, and an Ikigai does not describe a company, so the business brand swaps the identity instruments for organizational equivalents and keeps the same Brand Context and Brand Visuals structure.</p>
+<div class="keep"><h3>5.1 Foundations</h3>
+<p><strong>Brand personality: Aaker's five dimensions.</strong> In place of the Big Five, a business brand uses Jennifer Aaker's brand personality framework (Sincerity, Excitement, Competence, Sophistication, Ruggedness), the closest thing brand research has to an empirically derived trait model for organizations. Like the Big Five, it produces dimensional calibration rather than a slogan.</p>
+<p><strong>Brand character: a Jungian archetype.</strong> Aaker's dimensions describe a brand's personality; an archetype (Sage, Creator, Hero, Outlaw, Caregiver, and the rest) gives it a coherent character to write and design from. The two work together: choose the archetype, then use the dimensions to describe and measure how it shows up.</p>
+<p><strong>Purpose: the Golden Circle, mission, vision, values.</strong> In place of the Ikigai, a business brand codifies purpose through Simon Sinek's Why, How, and What, alongside conventional mission, vision, and values. Small businesses that run on EOS can drop their Vision/Traction Organizer in nearly unchanged. Sinek designed the Golden Circle to apply to individuals as well as organizations, which gives the personal and business brands inside one vibegraph a shared spine: the founder's Why and the company's Why are written in the same shape and checked against each other, in the same graph.</p>
+</div><div class="keep"><h3>5.2 The same twelve and eight</h3>
+<p>After the foundations, a business brand carries the same twelve Brand Context elements and eight Brand Visuals elements as the personal brand. The reading of some elements shifts: Messaging &amp; Narratives carries the category point of view and the audience; Bio carries the boilerplates a business repeats in bylines and press. The visuals become a design system with templates for the assets a business produces repeatedly. The shapes are the same, so a tool that reads one brand file reads them all.</p>
+</div><div class="keep"><h3>5.3 When a business brand is read</h3>
+<p>In the root file, the personal brand is <code>when: always</code>. A business brand is <code>when: on-task</code>, with the tasks named: "any Delivery OS writing, design, or publishing." An agent drafting the owner's newsletter reads the personal brand; an agent drafting the company's landing page reads both, with the business brand governing. This is the difference between a founder who sounds like themselves and a company that sounds like its founder when it should not.</p>
+</div><div class="keep"><h3>5.4 Business areas</h3>
+<p>A business brand brings its own areas, and they shift from life domains to operating knowledge: relationships and CRM, finances, operations, playbooks and SOPs, management routines, templates, goals. A personal system optimizes for one person's recall. A business system optimizes for repeatability: any operator following the same playbook should get the same result. That is why SOPs and templates, which barely appear on the personal side, are the center of gravity on the business side. It is also why the business side of a vibegraph suits agents: an SOP written clearly enough for a new hire is most of the way to a protocol an agent can run.</p>
+</div><div class="keep"><h3>5.5 What maps, what does not</h3>
 <table>
 <thead>
 <tr>
@@ -470,336 +268,626 @@ An AI agent powered by a vibegraph that thinks, writes, and acts in its owner's 
 </thead>
 <tbody>
 <tr>
-<td>Big Five + Enneagram</td>
+<td>Big Five + Enneagram + other instruments</td>
 <td>Aaker's five dimensions + archetype</td>
 <td>Replaced: same job (personality calibration), different instruments</td>
 </tr>
 <tr>
 <td>Ikigai</td>
-<td>Golden Circle + mission/vision/values</td>
+<td>Golden Circle + mission, vision, values</td>
 <td>Replaced: same job (purpose), shared Why structure</td>
 </tr>
 <tr>
-<td>Brand Context</td>
-<td>Brand Context</td>
+<td>Brand Context, 12 elements</td>
+<td>Brand Context, twelve elements</td>
 <td>Carries over nearly intact</td>
 </tr>
 <tr>
-<td>Brand Visuals</td>
-<td>Brand design system + templates</td>
+<td>Brand Visuals, 8 elements</td>
+<td>Brand Visuals, eight elements, plus templates</td>
 <td>Carries over, deepens</td>
 </tr>
 <tr>
-<td>Life-domain orbits</td>
-<td>Operating-system orbits</td>
+<td>Personal areas</td>
+<td>Business areas</td>
 <td>Restructured around repeatability</td>
+</tr>
+<tr>
+<td><code>when: always</code></td>
+<td><code>when: on-task</code></td>
+<td>The founder governs by default; the business governs its own tasks</td>
 </tr>
 </tbody>
 </table>
-<p>A solopreneur, usefully, needs both, and the vibegraph holds them side by side by design: the personal brand governs voice and identity; the business brand governs the machine that sells and delivers. One person, one graph, every brand they own.</p>
-</div><div class="keep"><h3>5.4 The organizational vibegraph, someday</h3>
-<p>A standalone organizational vibegraph (a company as first-class owner, with no single human anchor: the multi-founder startup, the agency-managed brand, the institution) is a plausible future extension of the framework, and nothing in the format precludes it. It is deliberately not part of this version. The person-anchored model is shipped, coherent, and serves the framework's first audience; an organization-anchored variant deserves its own careful treatment rather than a premature parallel.</p>
-<figure>
-<svg id="f2-layer" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1200 800">
-  
-  <defs>
-    <style>
-      .f2-st0, .f2-st1, .f2-st2, .f2-st3 {
-        fill: none;
-      }
-
-      .f2-st0, .f2-st4 {
-        stroke: #18181b;
-        stroke-width: 1.5px;
-      }
-
-      .f2-st5 {
-        font-size: 13px;
-      }
-
-      .f2-st5, .f2-st6, .f2-st7, .f2-st8, .f2-st9, .f2-st10, .f2-st11, .f2-st12, .f2-st13, .f2-st14 {
-        isolation: isolate;
-      }
-
-      .f2-st5, .f2-st10, .f2-st14 {
-        fill: #71717a;
-      }
-
-      .f2-st5, .f2-st14 {
-        font-family: Inter, sans-serif;
-      }
-
-      .f2-st1 {
-        stroke: #a1a1aa;
-        stroke-dasharray: 5 4;
-        stroke-width: 1.2px;
-      }
-
-      .f2-st6 {
-        font-family: Menlo, monospace;
-        font-size: 24px;
-        font-weight: 700;
-      }
-
-      .f2-st6, .f2-st9, .f2-st15 {
-        fill: #18181b;
-      }
-
-      .f2-st7 {
-        fill: #8f8f96;
-      }
-
-      .f2-st7, .f2-st8 {
-        font-family: Menlo, monospace;
-        font-size: 12.5px;
-      }
-
-      .f2-st8, .f2-st4, .f2-st16, .f2-st17 {
-        fill: #fff;
-      }
-
-      .f2-st2, .f2-st18, .f2-st17 {
-        stroke: #e4e4e7;
-      }
-
-      .f2-st18 {
-        fill: #fafafa;
-      }
-
-      .f2-st9 {
-        font-size: 15px;
-      }
-
-      .f2-st9, .f2-st13 {
-        font-family: Inter, sans-serif;
-        font-weight: 600;
-      }
-
-      .f2-st10 {
-        font-family: Inter, sans-serif;
-        font-style: italic;
-      }
-
-      .f2-st10, .f2-st14 {
-        font-size: 11.5px;
-      }
-
-      .f2-st11 {
-        fill: #52525b;
-        font-size: 9.5px;
-        letter-spacing: .17em;
-      }
-
-      .f2-st11, .f2-st12 {
-        font-family: Menlo, monospace;
-        font-weight: 500;
-      }
-
-      .f2-st19, .f2-st12 {
-        fill: #a1a1aa;
-      }
-
-      .f2-st12 {
-        font-size: 10.5px;
-        letter-spacing: .21em;
-      }
-
-      .f2-st13 {
-        fill: #27272a;
-        font-size: 13.5px;
-      }
-
-      .f2-st3 {
-        stroke: #d4d4d8;
-        stroke-dasharray: 4 4;
-      }
-    </style>
-  </defs>
-  <rect class="f2-st16" y="0" width="1200" height="800"/>
-  <text class="f2-st12" transform="translate(48 76)"><tspan x="0" y="0">INDIVIDUAL VIBEGRAPH</tspan></text>
-  <rect class="f2-st17" x="48" y="90" width="330" height="600" rx="18" ry="18"/>
-  <text class="f2-st6" transform="translate(76 132)"><tspan x="0" y="0">Jordan Lee</tspan></text>
-  <text class="f2-st5" transform="translate(76 152)"><tspan x="0" y="0">jordan-lee.vibegraph.md</tspan></text>
-  <rect class="f2-st18" x="76" y="176" width="274" height="150" rx="12" ry="12"/>
-  <text class="f2-st9" transform="translate(94 204)"><tspan x="0" y="0">Core Identity</tspan></text>
-  <line class="f2-st2" x1="94" y1="218" x2="332" y2="218"/>
-  <text class="f2-st13" transform="translate(94 242)"><tspan x="0" y="0">Personality</tspan></text>
-  <text class="f2-st14" transform="translate(94 259)"><tspan x="0" y="0">Big Five + Enneagram</tspan></text>
-  <text class="f2-st13" transform="translate(94 284)"><tspan x="0" y="0">Ikigai</tspan></text>
-  <text class="f2-st14" transform="translate(94 301)"><tspan x="0" y="0">the founder&apos;s own Why lives here</tspan></text>
-  <rect class="f2-st17" x="76" y="346" width="274" height="88" rx="12" ry="12"/>
-  <text class="f2-st9" transform="translate(94 374)"><tspan x="0" y="0">Personal brand</tspan></text>
-  <text class="f2-st14" transform="translate(94 394)"><tspan x="0" y="0">jordan-lee.brand.md</tspan></text>
-  <text class="f2-st14" transform="translate(94 411)"><tspan x="0" y="0">Context · 12, Visuals · 8</tspan></text>
-  <rect class="f2-st4" x="76" y="454" width="274" height="60" rx="12" ry="12"/>
-  <text class="f2-st13" transform="translate(94 480)"><tspan x="0" y="0">Business brand: Acme Studio</tspan></text>
-  <text class="f2-st14" transform="translate(94 498)"><tspan x="0" y="0">acme-studio.brand.md</tspan></text>
-  <rect class="f2-st3" x="76" y="526" width="274" height="44" rx="12" ry="12"/>
-  <text class="f2-st14" transform="translate(94 553)"><tspan x="0" y="0">+ every business Jordan owns</tspan></text>
-  <text class="f2-st14" transform="translate(76 640)"><tspan x="0" y="0">Built after the identity and personal</tspan><tspan x="0" y="13.8">brand. Its founder’s personal brand</tspan><tspan x="0" y="27.6">provides the seed material.</tspan></text>
-  <path class="f2-st0" d="M350,484h80"/>
-  <path class="f2-st15" d="M430,484l-8-4.5v9l8-4.5Z"/>
-  <text class="f2-st12" transform="translate(430 76)"><tspan x="0" y="0">BUSINESS BRAND SYSTEM</tspan></text>
-  <rect class="f2-st17" x="430" y="90" width="722" height="600" rx="18" ry="18"/>
-  <rect class="f2-st15" x="458" y="116" width="666" height="40" rx="8" ry="8"/>
-  <text class="f2-st8" transform="translate(478 141)"><tspan x="0" y="0">acme-studio.brand.md</tspan></text>
-  <text class="f2-st7" transform="translate(648 141)"><tspan x="0" y="0">| kind: business · one file per brand</tspan></text>
-  <text class="f2-st12" transform="translate(458 192)"><tspan x="0" y="0">FOUNDATIONS · INSTRUMENTS SWAPPED</tspan></text>
-  <rect class="f2-st17" x="458" y="204" width="316" height="250" rx="12" ry="12"/>
-  <text class="f2-st13" transform="translate(476 232)"><tspan x="0" y="0">Brand personality</tspan></text>
-  <text class="f2-st14" transform="translate(476 250)"><tspan x="0" y="0">Aaker&apos;s five dimensions: Sincerity,</tspan></text>
-  <text class="f2-st14" transform="translate(476 266)"><tspan x="0" y="0">Excitement, Competence,</tspan></text>
-  <text class="f2-st14" transform="translate(476 282)"><tspan x="0" y="0">Sophistication, Ruggedness</tspan></text>
-  <line class="f2-st2" x1="476" y1="298" x2="756" y2="298"/>
-  <text class="f2-st13" transform="translate(476 322)"><tspan x="0" y="0">Brand character</tspan></text>
-  <text class="f2-st14" transform="translate(476 340)"><tspan x="0" y="0">one Jungian archetype to speak from</tspan></text>
-  <line class="f2-st2" x1="476" y1="356" x2="756" y2="356"/>
-  <text class="f2-st13" transform="translate(476 380)"><tspan x="0" y="0">Purpose</tspan></text>
-  <text class="f2-st14" transform="translate(476 398)"><tspan x="0" y="0">Golden Circle: Why / How / What</tspan></text>
-  <text class="f2-st14" transform="translate(476 414)"><tspan x="0" y="0">+ mission, vision, values</tspan></text>
-  <text class="f2-st11" transform="translate(476 437)"><tspan x="0" y="0">REPLACES BIG FIVE + IKIGAI</tspan></text>
-  <text class="f2-st12" transform="translate(806 192)"><tspan x="0" y="0">STRUCTURE · SAME AS PERSONAL</tspan></text>
-  <rect class="f2-st17" x="806" y="204" width="318" height="250" rx="12" ry="12"/>
-  <text class="f2-st13" transform="translate(824 232)"><tspan x="0" y="0">Brand Context</tspan></text>
-  <text class="f2-st14" transform="translate(824 250)"><tspan x="0" y="0">the same twelve elements, in the</tspan></text>
-  <text class="f2-st14" transform="translate(824 266)"><tspan x="0" y="0">company&apos;s voice: UVP, values, tone,</tspan></text>
-  <text class="f2-st14" transform="translate(824 282)"><tspan x="0" y="0">messaging, boilerplates, presence</tspan></text>
-  <line class="f2-st2" x1="824" y1="298" x2="1106" y2="298"/>
-  <text class="f2-st13" transform="translate(824 322)"><tspan x="0" y="0">Brand Visuals</tspan></text>
-  <text class="f2-st14" transform="translate(824 340)"><tspan x="0" y="0">the same eight elements, deepened</tspan></text>
-  <text class="f2-st14" transform="translate(824 356)"><tspan x="0" y="0">into a full design system + templates</tspan></text>
-  <text class="f2-st14" transform="translate(824 372)"><tspan x="0" y="0">for what the business ships repeatedly</tspan></text>
-  <text class="f2-st11" transform="translate(824 437)"><tspan x="0" y="0">CARRIES OVER FROM PERSONAL</tspan></text>
-  <text class="f2-st12" transform="translate(458 500)"><tspan x="0" y="0">BUSINESS ORBITS · BUILT FOR REPEATABILITY</tspan></text>
-  <rect class="f2-st17" x="458" y="512" width="666" height="120" rx="12" ry="12"/>
-  <rect class="f2-st18" x="476" y="530" width="60" height="30" rx="8" ry="8"/>
-  <text class="f2-st14" transform="translate(493.03 549)"><tspan x="0" y="0">CRM</tspan></text>
-  <rect class="f2-st18" x="548" y="530" width="90" height="30" rx="8" ry="8"/>
-  <text class="f2-st14" transform="translate(568.73 549)"><tspan x="0" y="0">Finances</tspan></text>
-  <rect class="f2-st18" x="650" y="530" width="100" height="30" rx="8" ry="8"/>
-  <text class="f2-st14" transform="translate(670.13 549)"><tspan x="0" y="0">Operations</tspan></text>
-  <rect class="f2-st18" x="762" y="530" width="130" height="30" rx="8" ry="8"/>
-  <text class="f2-st14" transform="translate(777.63 549)"><tspan x="0" y="0">SOPs &amp; playbooks</tspan></text>
-  <rect class="f2-st18" x="904" y="530" width="130" height="30" rx="8" ry="8"/>
-  <text class="f2-st14" transform="translate(924.4 549)"><tspan x="0" y="0">Brand templates</tspan></text>
-  <rect class="f2-st18" x="1046" y="530" width="60" height="30" rx="8" ry="8"/>
-  <text class="f2-st14" transform="translate(1060.6858 549)"><tspan x="0" y="0">Goals</tspan></text>
-  <text class="f2-st14" transform="translate(476 590)"><tspan x="0" y="0">Any operator (teammate, contractor, or agent) following the same playbook produces the</tspan></text>
-  <text class="f2-st14" transform="translate(476 607)"><tspan x="0" y="0">same result. An SOP written for a new hire is most of the way to a protocol an agent can run.</tspan></text>
-  <path class="f2-st1" d="M350,290h54v98h66"/>
-  <circle class="f2-st19" cx="350" cy="290" r="3"/>
-  <path class="f2-st19" d="M470,388l-7-4v8l7-4Z"/>
-  <text class="f2-st11" transform="translate(398.56 387.25) rotate(-90)"><tspan x="0" y="0">THE SAME WHY</tspan></text>
-  <text class="f2-st10" transform="translate(458 666)"><tspan x="0" y="0">The founder&apos;s Why and the company&apos;s Why: written in the same shape, checked against each other, in one graph.</tspan></text>
-</svg><figcaption>Figure 2: business brands inside one person's vibegraph: the instruments swapped for organizational equivalents, the business orbits restructured around repeatability, and the founder's Why checked against the company's.</figcaption></figure>
+<p>A solo operator needs both, and a vibegraph holds them side by side by design: the personal brand governs voice and identity; the business brand governs the machine that sells and delivers. One person, one graph, every brand they own.</p>
+</div><div class="keep"><h3>5.6 Out of scope: the organizational vibegraph</h3>
+<p>A standalone organizational vibegraph (a company as first-class owner, with no single human anchor) is a plausible extension and nothing in the format precludes it. It is deliberately not part of this framework. The person-anchored model serves the framework's first audience, and an organization-anchored variant deserves its own treatment rather than a premature parallel.</p>
+<figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" width="1200" height="720" role="img" aria-label="Figure 2: a business brand inside its owner's vibegraph">
+<rect width="1200" height="720" fill="#0a0a0a"/>
+<defs><marker id="f2-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b8b8b8"/></marker></defs>
+<rect x="24.0" y="24.0" width="1152.0" height="672.0" rx="14" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="56.0" y="70.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="22" font-weight="500" fill="#f6f6f6" text-anchor="start">Maya Okafor's vibegraph</text>
+<text x="64.0" y="114.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#f6f6f6" text-anchor="start">personal brand</text>
+<text x="64.0" y="134.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b7a8ff" text-anchor="start">when: always</text>
+<rect x="64.0" y="150.0" width="500.0" height="120.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="82.0" y="177.0" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#f6f6f6" text-anchor="start">foundation: identity core</text>
+<text x="82.0" y="201.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11.5" font-weight="400" fill="#b8b8b8" text-anchor="start">Big Five · Enneagram</text>
+<text x="82.0" y="221.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11.5" font-weight="400" fill="#b8b8b8" text-anchor="start">other instruments</text>
+<text x="82.0" y="241.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11.5" font-weight="400" fill="#b8b8b8" text-anchor="start">Ikigai</text>
+<line x1="314.0" y1="270.0" x2="314.0" y2="314.0" stroke="#b8b8b8" stroke-width="1.2" marker-end="url(#f2-arrow)"/>
+<rect x="64.0" y="318.0" width="500.0" height="60.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="82.0" y="343.0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f6f6f6" text-anchor="start">Brand Context</text>
+<text x="82.0" y="363.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">12 elements · the brand in words</text>
+<line x1="314.0" y1="378.0" x2="314.0" y2="402.0" stroke="#b8b8b8" stroke-width="1.2" marker-end="url(#f2-arrow)"/>
+<rect x="64.0" y="406.0" width="500.0" height="60.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="82.0" y="431.0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f6f6f6" text-anchor="start">Brand Visuals</text>
+<text x="82.0" y="451.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">8 elements · the brand in pictures</text>
+<text x="636.0" y="114.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#f6f6f6" text-anchor="start">business brand: Delivery OS</text>
+<text x="636.0" y="134.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b7a8ff" text-anchor="start">when: on-task</text>
+<rect x="636.0" y="150.0" width="500.0" height="120.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="654.0" y="177.0" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#f6f6f6" text-anchor="start">foundations</text>
+<text x="654.0" y="201.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11.5" font-weight="400" fill="#b8b8b8" text-anchor="start">Aaker's five dimensions</text>
+<text x="654.0" y="221.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11.5" font-weight="400" fill="#b8b8b8" text-anchor="start">archetype</text>
+<text x="654.0" y="241.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11.5" font-weight="400" fill="#b8b8b8" text-anchor="start">Golden Circle + mission, vision, values</text>
+<line x1="886.0" y1="270.0" x2="886.0" y2="314.0" stroke="#b8b8b8" stroke-width="1.2" marker-end="url(#f2-arrow)"/>
+<rect x="636.0" y="318.0" width="500.0" height="60.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="654.0" y="343.0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f6f6f6" text-anchor="start">Brand Context</text>
+<text x="654.0" y="363.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">12 elements · the brand in words</text>
+<line x1="886.0" y1="378.0" x2="886.0" y2="402.0" stroke="#b8b8b8" stroke-width="1.2" marker-end="url(#f2-arrow)"/>
+<rect x="636.0" y="406.0" width="500.0" height="60.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="654.0" y="431.0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f6f6f6" text-anchor="start">Brand Visuals</text>
+<text x="654.0" y="451.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">8 elements · the brand in pictures</text>
+<line x1="564.0" y1="210.0" x2="636.0" y2="210.0" stroke="#b8b8b8" stroke-width="1.2" stroke-dasharray="2 4"/>
+<line x1="600.0" y1="210.0" x2="600.0" y2="276.0" stroke="#b8b8b8" stroke-width="1.2" stroke-dasharray="2 4"/>
+<rect x="458.3" y="276.0" width="283.4" height="26.0" rx="13" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="600.0" y="293.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle" font-style="italic">shared Why, checked against each other</text>
+<line x1="886.0" y1="466.0" x2="886.0" y2="510.0" stroke="#b8b8b8" stroke-width="1.2" marker-end="url(#f2-arrow)"/>
+<text x="636.0" y="496.0" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#f6f6f6" text-anchor="start">business areas</text>
+<rect x="636.0" y="514.0" width="500.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<rect x="652.0" y="530.0" width="41.8" height="24.0" rx="6" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="672.9" y="546.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="middle">CRM</text>
+<rect x="703.8" y="530.0" width="88.0" height="24.0" rx="6" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="747.8" y="546.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="middle">operations</text>
+<rect x="801.8" y="530.0" width="140.8" height="24.0" rx="6" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="872.2" y="546.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="middle">playbooks and SOPs</text>
+<rect x="952.6" y="530.0" width="81.4" height="24.0" rx="6" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="993.3" y="546.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="middle">templates</text>
+<line x1="24.0" y1="612.0" x2="1176.0" y2="612.0" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="600.0" y="656.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="middle">personal · when: always | business · when: on-task (any Delivery OS writing, design, or publishing)</text>
+</svg>
+<figcaption>Figure 2: a business brand nested inside its owner's vibegraph. Foundations swapped for organizational instruments, the same twelve and eight, read on-task, with business areas built for repeatability.</figcaption></figure>
 <hr />
-</div><h2>6. How AI Systems Consume a Vibegraph</h2>
-<p>A vibegraph is only as good as the ways it can be used. There are four, in increasing order of sophistication, and the first one requires nothing from anyone.</p>
-<p><strong>1. Direct context.</strong> Paste the Core Identity and Branding into any chat, or attach the exported files to any tool that accepts them. This works today, in every AI product on the market, and it is the canonical consumption mode. The reference application exports a vibegraph as a portable archive: a master file that tells the reading AI where to start and links every document in read order, one file per document (personality, ikigai, and each brand), and the visual assets alongside. For AI builders, the corollary: a vibegraph is structured markdown, so if your product accepts text, it already supports vibegraphs. The feedback loop is immediate: the very next response is calibrated to its owner. This is the same loop that drove AGENTS.md through the developer ecosystem: write the file once, watch every tool get better. VIBEGRAPH.md applies the same idea to a person instead of a codebase.</p>
-<p><strong>2. Persistent workspace context.</strong> Most serious AI tools now have a persistent-context surface: Claude's Projects, ChatGPT's custom GPTs and project instructions, and their equivalents elsewhere. A vibegraph exports cleanly into all of them. Set it once per workspace and every conversation in that workspace starts calibrated.</p>
-<p><strong>3. Live access over MCP (roadmap).</strong> The Model Context Protocol gives agents a standard way to request data from external sources at runtime. A vibegraph served over MCP lets an agent ask for exactly the orbit it needs, when it needs it, subject to the owner's permissions: your writing agent reads Core Identity and the Brand Templates orbit; your finance agent reads Finances and nothing else. This is where the per-item permission model (Section 7) does its real work, and it is the consumption mode that turns a vibegraph from a document into critical infrastructure. It is a design target of the framework, not a shipped capability of the reference application today.</p>
-<p><strong>4. Seeding memory layers.</strong> AI memory systems, the platform-native ones and the dedicated memory infrastructure used by agent builders, all face a cold-start problem: they know nothing until they've watched you for weeks, and what they learn is inference, not fact. A vibegraph solves this cold start. Loaded as seed context, it gives a memory layer a verified, owner-authored foundation that passive observation can then extend. This is the intended relationship between the vibegraph and the well-funded memory category: they are the substrate, the vibegraph is the schema. Memory layers remember what happened. A vibegraph defines who you are. The two compose.</p>
-<p>One relationship worth making explicit: the vibegraph is to a person what AGENTS.md is to a repository. Same medium (plain, human-readable markdown), same philosophy (a predictable place for the context machines need), same adoption physics (individual users get instant value; ecosystem support compounds it but is never required).</p>
-<blockquote>
-<p>Where AGENTS.md tells an agent how to work on your code, a vibegraph tells an agent how to work as, and for, you.</p>
-</blockquote>
+</div><h2>6. Where existing tools fit</h2>
+<p>A vibegraph is not a competitor to the tools a person already uses. Each of them is a component of that person's vibegraph, with a kind the root file assigns and a scope that usually fits. This table is the map.</p>
+<table>
+<thead>
+<tr>
+<th>Tool or system</th>
+<th>Role in a vibegraph</th>
+<th>kind</th>
+<th>Typical scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Obsidian, Logseq, Anytype</td>
+<td>Knowledge store for one or more areas; local, plaintext</td>
+<td>source</td>
+<td>scoped</td>
+</tr>
+<tr>
+<td>Notion, Tana, Reflect, Mem, Capacities, Heptabase</td>
+<td>Knowledge store for areas; cloud</td>
+<td>source</td>
+<td>scoped</td>
+</tr>
+<tr>
+<td>Mem0, Zep and Graphiti, Letta, Cognee, Hindsight, LangMem</td>
+<td>Memory layer; seeded from the core, extended by observation</td>
+<td>memory</td>
+<td>scoped</td>
+</tr>
+<tr>
+<td>ChatGPT memory, Claude memory, Gemini personal intelligence, Codex memory</td>
+<td>Platform memory; seed it from the core, treat it as a component you do not own</td>
+<td>memory</td>
+<td>scoped</td>
+</tr>
+<tr>
+<td>GBrain</td>
+<td>Agent-run brain; a component that can hold areas and memory, and an agent that reads the root file</td>
+<td>source + agent</td>
+<td>scoped</td>
+</tr>
+<tr>
+<td>AIS-OS and other Claude Code or Codex folders</td>
+<td>An operating pattern that runs on a vibegraph; its context folder is where the core goes</td>
+<td>project</td>
+<td>scoped</td>
+</tr>
+<tr>
+<td>AGENTS.md, CLAUDE.md, GEMINI.md, Cursor rules</td>
+<td>Per-project context; carries the handoff stanza</td>
+<td>project</td>
+<td>scoped</td>
+</tr>
+<tr>
+<td>SKILL.md files</td>
+<td>Executable procedures; live in the skills area</td>
+<td>skill</td>
+<td>scoped</td>
+</tr>
+<tr>
+<td>Notion Business, Slite, Guru, Tettra</td>
+<td>Team knowledge store; a source for a business brand's areas</td>
+<td>source</td>
+<td>scoped</td>
+</tr>
+<tr>
+<td>Delphi, Personal.ai, HeyGen, ElevenLabs</td>
+<td>Outward-facing clone surfaces; consumers of a public slice of the core</td>
+<td>agent</td>
+<td>public slice only</td>
+</tr>
+<tr>
+<td>A vibeclone</td>
+<td>Inward-facing agent that runs on the whole graph within granted scopes</td>
+<td>agent</td>
+<td>per grant</td>
+</tr>
+<tr>
+<td>Context graphs and organizational decision stores</td>
+<td>Org-anchored decision records; a business brand's areas can link to one</td>
+<td>source</td>
+<td>scoped</td>
+</tr>
+<tr>
+<td>Courses and templates (PARA courses, PPV, Ultimate Brain)</td>
+<td>Methods for building and maintaining areas; not components</td>
+<td>none</td>
+<td>n/a</td>
+</tr>
+</tbody>
+</table>
+<p>Three things follow from the map.</p>
+<p>The contested names are resolved. "Memory layer" is a kind. "Knowledge store" is a kind. "Agent folder" is a project. None of them is the whole, and none of them needs to be replaced. A vibegraph is the graph those nodes hang from.</p>
+<p>The identity slot is empty in nearly every tool listed. Agent folders start with a business interview. Memory layers start with observation. Clone platforms start with uploaded content. The human-authored, instrument-grounded identity core is the one component none of them builds, which is why the framework builds it and registers everything else.</p>
+<p>Adding a tool costs one line. A new memory layer, a new notes app, a new agent: one entry in the root file with a kind and a scope, and the graph is current.</p>
+<figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000" role="img" aria-label="Figure 3: where existing tools fit in a vibegraph">
+<rect width="1000" height="1000" fill="#0a0a0a"/>
+<path d="M20.7,601.9 A490,490 0 0 1 172.1,135.9 L219.0,187.9 A420,420 0 0 0 89.2,587.3 Z" fill="#f6f6f6" fill-opacity="0.06" stroke="none"/>
+<circle cx="500" cy="500" r="390" fill="none" stroke="#b7a8ff" stroke-width="1"/>
+<line x1="434.2" y1="409.4" x2="270.8" y2="184.5" stroke="#2b2b2b" stroke-width="1"/>
+<line x1="565.8" y1="409.4" x2="729.2" y2="184.5" stroke="#2b2b2b" stroke-width="1"/>
+<line x1="606.5" y1="534.6" x2="870.9" y2="620.5" stroke="#2b2b2b" stroke-width="1"/>
+<line x1="500.0" y1="612.0" x2="500.0" y2="890.0" stroke="#2b2b2b" stroke-width="1"/>
+<line x1="393.5" y1="534.6" x2="129.1" y2="620.5" stroke="#2b2b2b" stroke-width="1"/>
+<text x="500.0" y="355.0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f6f6f6" text-anchor="middle">knowledge stores<tspan font-family="'IBM Plex Mono', Menlo, monospace" font-weight="400" fill="#b8b8b8"> · source</tspan></text>
+<rect x="439.6" y="309.0" width="120.8" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="500.0" y="324.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Notion Business</text>
+<rect x="395.4" y="279.0" width="114.1" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="452.4" y="294.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">context graphs</text>
+<rect x="517.4" y="279.0" width="87.2" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="561.0" y="294.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Capacities</text>
+<rect x="381.4" y="249.0" width="80.5" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="421.6" y="264.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Heptabase</text>
+<rect x="469.8" y="249.0" width="73.8" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="506.7" y="264.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Obsidian</text>
+<rect x="551.6" y="249.0" width="67.0" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="585.1" y="264.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Anytype</text>
+<rect x="329.8" y="219.0" width="67.0" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="363.4" y="234.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Reflect</text>
+<rect x="404.9" y="219.0" width="60.3" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="435.0" y="234.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Logseq</text>
+<rect x="473.2" y="219.0" width="60.3" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="503.4" y="234.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Notion</text>
+<rect x="541.5" y="219.0" width="60.3" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="571.7" y="234.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Tettra</text>
+<rect x="609.8" y="219.0" width="60.3" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="640.0" y="234.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">GBrain</text>
+<rect x="394.2" y="189.0" width="53.6" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="421.0" y="204.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Slite</text>
+<rect x="455.8" y="189.0" width="46.9" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="479.3" y="204.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Tana</text>
+<rect x="510.7" y="189.0" width="46.9" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="534.2" y="204.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Guru</text>
+<rect x="565.6" y="189.0" width="40.2" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="585.7" y="204.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Mem</text>
+<text x="707.3" y="437.6" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f6f6f6" text-anchor="middle">memory layers<tspan font-family="'IBM Plex Mono', Menlo, monospace" font-weight="400" fill="#b8b8b8"> · memory</tspan></text>
+<rect x="622.9" y="369.0" width="208.2" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="727.0" y="384.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Gemini personal intelligence</text>
+<rect x="703.0" y="489.0" width="114.1" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="760.0" y="504.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">ChatGPT memory</text>
+<rect x="651.0" y="459.0" width="107.4" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="704.7" y="474.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Claude memory</text>
+<rect x="766.4" y="459.0" width="100.6" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="816.7" y="474.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Codex memory</text>
+<rect x="679.9" y="519.0" width="80.5" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="720.1" y="534.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Hindsight</text>
+<rect x="768.4" y="519.0" width="73.8" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="805.2" y="534.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Graphiti</text>
+<rect x="632.5" y="339.0" width="67.0" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="666.0" y="354.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">LangMem</text>
+<rect x="707.6" y="339.0" width="60.3" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="737.7" y="354.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Cognee</text>
+<rect x="775.9" y="339.0" width="53.6" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="802.7" y="354.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Letta</text>
+<rect x="686.5" y="309.0" width="46.9" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="709.9" y="324.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Mem0</text>
+<rect x="741.4" y="309.0" width="40.2" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="761.4" y="324.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Zep</text>
+<text x="604.6" y="649.0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f6f6f6" text-anchor="middle">projects<tspan font-family="'IBM Plex Mono', Menlo, monospace" font-weight="400" fill="#b8b8b8"> · project</tspan></text>
+<rect x="511.8" y="669.0" width="107.4" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="565.4" y="684.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">agent folders</text>
+<rect x="627.1" y="669.0" width="100.6" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="677.4" y="684.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Cursor rules</text>
+<rect x="735.8" y="669.0" width="80.5" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="776.0" y="684.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">AGENTS.md</text>
+<rect x="535.4" y="699.0" width="80.5" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="575.6" y="714.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">CLAUDE.md</text>
+<rect x="623.8" y="699.0" width="80.5" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="664.1" y="714.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">GEMINI.md</text>
+<rect x="712.3" y="699.0" width="60.3" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="742.5" y="714.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">AIS-OS</text>
+<text x="400.1" y="642.5" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f6f6f6" text-anchor="middle">skills<tspan font-family="'IBM Plex Mono', Menlo, monospace" font-weight="400" fill="#b8b8b8"> · skill</tspan></text>
+<rect x="215.6" y="669.0" width="120.8" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="276.0" y="684.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">the skills area</text>
+<rect x="344.4" y="669.0" width="114.1" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="401.4" y="684.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">SKILL.md files</text>
+<text x="319.3" y="446.3" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f6f6f6" text-anchor="middle">agents<tspan font-family="'IBM Plex Mono', Menlo, monospace" font-weight="400" fill="#b8b8b8"> · agent</tspan></text>
+<rect x="185.7" y="369.0" width="174.6" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="273.0" y="384.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">a vibeclone · per grant</text>
+<rect x="226.8" y="399.0" width="60.3" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="257.0" y="414.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">GBrain</text>
+<rect x="17.8" y="489.0" width="60.3" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="48.0" y="504.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Delphi</text>
+<rect x="18.5" y="364.4" width="93.9" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="65.5" y="379.4" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Personal.ai</text>
+<rect x="86.5" y="249.5" width="60.3" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="116.7" y="264.5" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">HeyGen</text>
+<rect x="148.1" y="158.4" width="87.2" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="191.7" y="173.4" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">ElevenLabs</text>
+<defs><path id="f3-ring-label" d="M301.0,155.3 A398,398 0 0 1 699.0,155.3"/><path id="f3-band-label" d="M11.9,621.7 A503,503 0 0 1 176.7,114.7"/></defs>
+<text font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" fill="#b7a8ff"><textPath href="#f3-ring-label" startOffset="50%" text-anchor="middle">scope: scoped</textPath></text>
+<text font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#b8b8b8"><textPath href="#f3-band-label" startOffset="50%" text-anchor="middle">public slice only</textPath></text>
+<circle cx="500" cy="500" r="110" fill="#b7a8ff"/>
+<text x="500.0" y="496.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="18" font-weight="600" fill="#0a0a0a" text-anchor="middle">identity core</text>
+<text x="500.0" y="520.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="18" font-weight="600" fill="#0a0a0a" text-anchor="middle">+ VIBEGRAPH.md</text>
+<circle cx="772" cy="954" r="7" fill="#b7a8ff"/>
+<text x="786.0" y="958.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="start">built here</text>
+<rect x="868.0" y="944.0" width="22.0" height="20.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="898.0" y="958.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="start">registered</text>
+</svg>
+<figcaption>Figure 3: the placement map. The identity core and root file at the center; sources, memory, projects, skills, and agents as registered components around it, each with its kind and scope.</figcaption></figure>
 <hr />
-<h2>7. Security and Privacy</h2>
-<p>A complete vibegraph is a concentrated dossier: personality profile, purpose, finances, health, relationships, goals. In the wrong hands it is a toolkit for impersonation, social engineering, and targeted fraud. Any honest presentation of this framework has to treat security as architecture, not a policy page. This section describes the threat model and the design that answers it, and it is equally honest about which parts of that design are shipped and which are the committed destination.</p>
-<div class="keep"><h3>7.1 Threat Model</h3>
-<p>The realistic attack surfaces, roughly in order of likelihood:</p>
-<p><strong>Compromised or over-permissioned AI tool access.</strong> The newest and most distinctive risk. Prompt-injection attacks that exfiltrate data through AI tool integrations moved from theory to documented incidents in 2025, including zero-click exfiltration through enterprise AI assistants and data theft through poisoned MCP tool descriptions. The security community's consensus position is sobering: prompt injection cannot currently be fully eliminated, only contained. Any system that exposes personal data to AI tools must therefore assume that some tool, someday, will be manipulated, and must limit what that tool can access in the first place.</p>
-<p><strong>Server breach.</strong> If vibegraphs are stored on a provider's servers in readable form, the provider is a honeypot. One breach exposes every customer's most sensitive self-description at once.</p>
+<h2>7. How AI systems consume a vibegraph</h2>
+<p>A vibegraph is only as good as the ways it can be used. This section specifies the root file, the link schema, the scope vocabulary, and the handoff, then the four consumption modes. The first mode requires nothing from anyone.</p>
+<div class="keep"><h3>7.1 The root file</h3>
+<p>VIBEGRAPH.md is a fixed name at the root, capitalized to match AGENTS.md and CLAUDE.md, the two conventions an agent already looks for. The vibegraph.md spec defines VIBEGRAPH.md, the root file. Conventions win on predictability: an agent should be able to look for one file and find it.</p>
+<pre><code class="language-markdown">---
+vibegraph: &quot;2.0&quot;
+owner: Maya Okafor
+identity: identity/maya-okafor.md
+updated: 2026-09-30
+---
+
+# Maya Okafor's vibegraph
+
+Read this file first. It tells you who you are working for and where everything else lives.
+Read entries marked `when: always` before any task. Read `when: on-task` entries only when the
+task needs them. Never read `scope: private` entries unless the owner has granted them for this session.
+
+## Identity
+- [Maya Okafor](identity/maya-okafor.md) · kind: identity · scope: public · when: always
+
+## Brands
+- [Maya Okafor (personal brand)](brands/maya-okafor.brand.md) · kind: brand · type: personal · scope: public · when: always
+- [Delivery OS](brands/delivery-os.brand.md) · kind: brand · type: business · scope: public · when: on-task (any Delivery OS writing, design, or publishing)
+
+## Areas
+- [Career](areas/career/index.md) · kind: area · scope: scoped · when: on-task (resume, bio, client applications)
+- [Skills](areas/skills/index.md) · kind: area · scope: scoped · when: on-task (any repeatable workflow)
+- [Goals](areas/goals/index.md) · kind: area · scope: scoped · when: on-task (planning, prioritization)
+- [Finances](areas/finances/index.md) · kind: area · scope: private · when: on-grant
+
+## Components
+See [components.md](components.md). Summary:
+- Obsidian vault &quot;Notes&quot; · kind: source · scope: scoped · locator: ~/Notes
+- Claude memory · kind: memory · scope: scoped · seeded from this vibegraph on 2026-09-30
+- Delivery OS site repo · kind: project · scope: scoped · locator: github.com/deliveryos/site (has its own AGENTS.md)
+- Writing agent · kind: agent · reads: identity, brands, areas/skills · never: areas/finances
+
+## Read order
+1. identity/maya-okafor.md
+2. brands/maya-okafor.brand.md
+3. the brand or area the task names
+4. nothing else without a grant
+</code></pre>
+<p>The link line is deliberately plain: a markdown link, then key-value pairs separated by a middle dot. It is readable by a person, greppable by a script, and parseable by an agent without a JSON schema. That is the AGENTS.md lesson: plain markdown, no SDK.</p>
+</div><div class="keep"><h3>7.2 The typed link schema</h3>
+<p>Every link in the root file carries three keys, and brand links carry a fourth.</p>
+<p><strong>kind</strong> names what the node is: <code>identity</code>, <code>brand</code>, <code>area</code>, <code>source</code> (an external knowledge store), <code>memory</code> (an external memory layer), <code>project</code> (a repository or workspace with its own AGENTS.md), <code>skill</code> (a SKILL.md procedure), <code>agent</code> (an agent or vibeclone that consumes the graph).</p>
+<p><strong>scope</strong> names who may read it: <code>public</code> (safe to share with any tool), <code>scoped</code> (exposed to named tools or purposes), <code>private</code> (never exposed without an explicit grant).</p>
+<p><strong>when</strong> names when to read it: <code>always</code> (before any task), <code>on-task</code> (only when the task needs it, with the tasks named in parentheses), <code>on-grant</code> (only after the owner grants it for the session).</p>
+<p><strong>type</strong>, on brands only: <code>personal</code> or <code>business</code>.</p>
+<p>This is what makes "graph" a literal claim. Every node has a kind, every edge has a scope and a when, and an agent can walk it from the root. Served over MCP, the scope field is the permission, and every read is logged.</p>
+</div><div class="keep"><h3>7.3 The layout</h3>
+<pre><code>maya-okafor.vibegraph/
+├── VIBEGRAPH.md                 root file. Fixed name. Read first.
+├── AGENTS.md                    optional. One stanza handing agents to VIBEGRAPH.md
+├── CLAUDE.md                    optional. Same stanza, because Claude Code reads CLAUDE.md
+├── README.md                    what this is, the paste test, how to add an area
+├── identity/
+│   └── maya-okafor.md           the identity core: rules, personality, purpose
+├── brands/
+│   ├── maya-okafor.brand.md     personal brand: 12 Context + 8 Visuals
+│   ├── delivery-os.brand.md     business brand: foundations + 12 + 8
+│   └── assets/                  where the visual assets live, or links to where they live
+├── areas/
+│   ├── career/index.md          each area has an index.md with its own scope
+│   ├── skills/
+│   │   ├── index.md
+│   │   └── *.SKILL.md           skills in SKILL.md form, loadable by any harness that reads it
+│   ├── finances/index.md
+│   └── goals/index.md
+└── components.md                registry of external tools that hold parts of the graph
+</code></pre>
+<p>Naming rules. The identity file is named after the person, because a fixed name like identity.md collides with generic usage and person names let a folder hold two people side by side later. Brand files carry the <code>.brand.md</code> suffix so a directory listing tells you the kind. Areas are folders with an index.md, so an area can hold one file or a hundred and can be granted as a unit. Skills use the SKILL.md form so Claude Code, Codex, and the other harnesses that already read that format load them directly.</p>
+</div><div class="keep"><h3>7.4 The handoff stanza</h3>
+<p>Put this in AGENTS.md, and the same text in CLAUDE.md, in any repository or workspace the person works in:</p>
+<pre><code class="language-markdown">## Who you are working for
+Before starting, read `VIBEGRAPH.md` (in this repo, or at `~/vibegraph/VIBEGRAPH.md`).
+It defines the person and brands this work belongs to. Follow its read order and scopes.
+Do not read entries marked `scope: private` unless they have been granted for this session.
+</code></pre>
+<p>Ten seconds to add, and every coding agent that honors AGENTS.md or CLAUDE.md picks up the graph. Both files are needed: Codex, Cursor, Copilot, and Gemini CLI read AGENTS.md; Claude Code reads CLAUDE.md and sees AGENTS.md only through an import line. This stanza is the adoption vector. It is the vibegraph equivalent of the rich-preview payoff that spread Open Graph tags.</p>
+<p>Two placement modes. Standalone: the vibegraph lives in its own folder and repositories point to it. Embedded: the core (root file, identity, brands) is copied into a project that needs it, and the areas stay home. Both are valid; the root file is the same either way.</p>
+</div><div class="keep"><h3>7.5 Four consumption modes</h3>
+<p><strong>1. Direct context.</strong> Paste the root file, the identity file, and one brand file into any chat, or attach the exported files to any tool that accepts them. This works today, in every AI product on the market, and it is the canonical mode. For AI builders, the corollary: a vibegraph is structured markdown, so if your product accepts text, it already supports vibegraphs.</p>
+<p><strong>2. Persistent workspace context.</strong> Most serious AI tools have a persistent-context surface: Claude's Projects, ChatGPT's custom GPTs and project instructions, and their equivalents. A vibegraph loads cleanly into all of them. Set it once per workspace and every conversation there starts calibrated.</p>
+<p><strong>3. Live access over MCP.</strong> The Model Context Protocol gives agents a standard way to request data at runtime. A vibegraph served over MCP reads the same VIBEGRAPH.md schema as the files on disk: kinds become resource types, scopes become grants, <code>when</code> rules become defaults for what a client sees before asking, and every read is logged. An agent asks for exactly the node it needs, when it needs it, within what the owner granted. Your writing agent reads the identity core and the skills area; your finance agent reads the finances area and nothing else. Because the server serves the exported layout, the hosted graph and the local graph are the same shape, and a tool that walks one can walk the other.</p>
+<p><strong>4. Seeding memory layers.</strong> Memory systems, platform-native and dedicated, face a cold-start problem: they know nothing until they have watched you for weeks, and what they learn is inference. A vibegraph solves the cold start. Loaded as seed context, it gives a memory layer a verified, owner-authored foundation that observation then extends. They are the substrate; the vibegraph is the schema. The two compose.</p>
+</div><div class="keep"><h3>7.6 The acceptance test</h3>
+<p>Open a fresh session in any model. Paste VIBEGRAPH.md, the identity file, and one brand file. Ask for a piece of work the owner does often. The output should sound like the owner on the first generation. If it does not, the core is incomplete, not the tool. This is the test the reference repository's README leads with.</p>
+<figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" width="1400" height="760" role="img" aria-label="Figure 4: the root file and the four consumption modes">
+<rect width="1400" height="760" fill="#0a0a0a"/>
+<defs><marker id="f4-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f6f6f6"/></marker></defs>
+<rect x="40.0" y="40.0" width="420.0" height="680.0" rx="12" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="62.0" y="74.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="14" font-weight="500" fill="#f6f6f6" text-anchor="start">VIBEGRAPH.md</text>
+<text x="438.0" y="74.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="end">root file</text>
+<line x1="40.0" y1="90.0" x2="460.0" y2="90.0" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="62" y="116.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#b8b8b8" font-weight="400" xml:space="preserve">---</text>
+<text x="62" y="133.8" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">vibegraph: "2.0"</text>
+<text x="62" y="151.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">owner: Maya Okafor</text>
+<text x="62" y="169.4" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">identity: identity/maya-okafor.md</text>
+<text x="62" y="187.2" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">updated: 2026-09-30</text>
+<text x="62" y="205.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#b8b8b8" font-weight="400" xml:space="preserve">---</text>
+<text x="62" y="222.8" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="500" xml:space="preserve"># Maya Okafor's vibegraph</text>
+<text x="62" y="240.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">Read this file first. It tells you who you are</text>
+<text x="62" y="258.4" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">working for and where everything else lives.</text>
+<text x="62" y="276.2" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="500" xml:space="preserve">## Identity</text>
+<text x="62" y="294.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">- [Maya Okafor](identity/maya-okafor.md)</text>
+<text x="62" y="311.8" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">    · <tspan fill="#b7a8ff">kind:</tspan> identity · <tspan fill="#b7a8ff">scope:</tspan> public · <tspan fill="#b7a8ff">when:</tspan> always</text>
+<text x="62" y="329.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="500" xml:space="preserve">## Brands</text>
+<text x="62" y="347.4" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">- [Maya Okafor (personal brand)]</text>
+<text x="62" y="365.2" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">    (brands/maya-okafor.brand.md)</text>
+<text x="62" y="383.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">    · <tspan fill="#b7a8ff">kind:</tspan> brand · <tspan fill="#b7a8ff">type:</tspan> personal</text>
+<text x="62" y="400.8" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">    · <tspan fill="#b7a8ff">scope:</tspan> public · <tspan fill="#b7a8ff">when:</tspan> always</text>
+<text x="62" y="418.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">- [Delivery OS](brands/delivery-os.brand.md)</text>
+<text x="62" y="436.4" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">    · <tspan fill="#b7a8ff">kind:</tspan> brand · <tspan fill="#b7a8ff">type:</tspan> business</text>
+<text x="62" y="454.2" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">    · <tspan fill="#b7a8ff">scope:</tspan> public · <tspan fill="#b7a8ff">when:</tspan> on-task</text>
+<text x="62" y="472.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="500" xml:space="preserve">## Areas</text>
+<text x="62" y="489.8" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">- [Career](areas/career/index.md)</text>
+<text x="62" y="507.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">    · <tspan fill="#b7a8ff">kind:</tspan> area · <tspan fill="#b7a8ff">scope:</tspan> scoped · <tspan fill="#b7a8ff">when:</tspan> on-task</text>
+<text x="62" y="525.4" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">- [Finances](areas/finances/index.md)</text>
+<text x="62" y="543.2" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">    · <tspan fill="#b7a8ff">kind:</tspan> area · <tspan fill="#b7a8ff">scope:</tspan> private · <tspan fill="#b7a8ff">when:</tspan> on-grant</text>
+<text x="62" y="561.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="500" xml:space="preserve">## Components</text>
+<text x="62" y="578.8" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">- Obsidian vault "Notes" · <tspan fill="#b7a8ff">kind:</tspan> source</text>
+<text x="62" y="596.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">- Claude memory · <tspan fill="#b7a8ff">kind:</tspan> memory</text>
+<text x="62" y="614.4" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="500" xml:space="preserve">## Read order</text>
+<text x="62" y="632.2" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">1. identity/maya-okafor.md</text>
+<text x="62" y="650.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">2. brands/maya-okafor.brand.md</text>
+<text x="62" y="667.8" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">3. the brand or area the task names</text>
+<text x="62" y="685.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">4. nothing else without a grant</text>
+<text x="490.0" y="88.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="16" font-weight="500" fill="#f6f6f6" text-anchor="start">1. paste</text>
+<line x1="462.0" y1="100.0" x2="654.0" y2="100.0" stroke="#f6f6f6" stroke-width="1.5" marker-end="url(#f4-arrow)"/>
+<text x="490.0" y="223.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="16" font-weight="500" fill="#f6f6f6" text-anchor="start">2. workspace</text>
+<line x1="462.0" y1="235.0" x2="654.0" y2="235.0" stroke="#f6f6f6" stroke-width="1.5" marker-end="url(#f4-arrow)"/>
+<text x="490.0" y="388.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="16" font-weight="500" fill="#f6f6f6" text-anchor="start">3. MCP</text>
+<line x1="462.0" y1="400.0" x2="654.0" y2="400.0" stroke="#f6f6f6" stroke-width="1.5" marker-end="url(#f4-arrow)"/>
+<text x="490.0" y="668.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="16" font-weight="500" fill="#f6f6f6" text-anchor="start">4. seed</text>
+<line x1="462.0" y1="680.0" x2="654.0" y2="680.0" stroke="#f6f6f6" stroke-width="1.5" marker-end="url(#f4-arrow)"/>
+<rect x="660.0" y="72.0" width="320.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<circle cx="676" cy="87" r="3" fill="#b8b8b8"/>
+<circle cx="687" cy="87" r="3" fill="#b8b8b8"/>
+<circle cx="698" cy="87" r="3" fill="#b8b8b8"/>
+<text x="716.0" y="91.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#f6f6f6" text-anchor="start">any chat</text>
+<text x="676.0" y="116.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">root + identity + one brand</text>
+<rect x="660.0" y="207.0" width="320.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="674.0" y="232.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#f6f6f6" text-anchor="start">Claude Project · custom GPT</text>
+<text x="674.0" y="251.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">set once per workspace</text>
+<rect x="660.0" y="354.0" width="360.0" height="92.0" rx="10" fill="#0a0a0a" stroke="#b7a8ff" stroke-width="1.2"/>
+<text x="678.0" y="382.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="15" font-weight="500" fill="#f6f6f6" text-anchor="start">MCP server</text>
+<text x="678.0" y="402.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">scopes become grants</text>
+<text x="678.0" y="418.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">kinds become resource types</text>
+<text x="678.0" y="434.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">every read logged</text>
+<line x1="1020.0" y1="400.0" x2="1096.0" y2="320.0" stroke="#f6f6f6" stroke-width="1.5" marker-end="url(#f4-arrow)"/>
+<rect x="1100.0" y="292.0" width="200.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="1114.0" y="314.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#f6f6f6" text-anchor="start">Claude</text>
+<rect x="1114.0" y="324.0" width="148.0" height="18.0" rx="9" fill="none" stroke="#b7a8ff" stroke-width="1.0"/>
+<text x="1188.0" y="336.5" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10" font-weight="400" fill="#b7a8ff" text-anchor="middle">grant: public + skills</text>
+<line x1="1020.0" y1="400.0" x2="1096.0" y2="400.0" stroke="#f6f6f6" stroke-width="1.5" marker-end="url(#f4-arrow)"/>
+<rect x="1100.0" y="372.0" width="200.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="1114.0" y="394.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#f6f6f6" text-anchor="start">ChatGPT</text>
+<rect x="1114.0" y="404.0" width="94.0" height="18.0" rx="9" fill="none" stroke="#b7a8ff" stroke-width="1.0"/>
+<text x="1161.0" y="416.5" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10" font-weight="400" fill="#b7a8ff" text-anchor="middle">grant: public</text>
+<line x1="1020.0" y1="400.0" x2="1096.0" y2="480.0" stroke="#f6f6f6" stroke-width="1.5" marker-end="url(#f4-arrow)"/>
+<rect x="1100.0" y="452.0" width="200.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="1114.0" y="474.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#f6f6f6" text-anchor="start">Cursor</text>
+<rect x="1114.0" y="484.0" width="154.0" height="18.0" rx="9" fill="none" stroke="#b7a8ff" stroke-width="1.0"/>
+<text x="1191.0" y="496.5" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10" font-weight="400" fill="#b7a8ff" text-anchor="middle">grant: public + project</text>
+<line x1="840.0" y1="446.0" x2="840.0" y2="528.0" stroke="#b8b8b8" stroke-width="1.2" stroke-dasharray="3 4"/>
+<rect x="660.0" y="530.0" width="640.0" height="82.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="676.0" y="552.0" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#f6f6f6" text-anchor="start">read log</text>
+<text x="676" y="570" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10" fill="#b8b8b8" xml:space="preserve">2026-09-30 14:02  claude   read identity/maya-okafor.md       (public)</text>
+<text x="676" y="585" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10" fill="#b8b8b8" xml:space="preserve">2026-09-30 14:05  chatgpt  read brands/maya-okafor.brand.md   (public)</text>
+<text x="676" y="600" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10" fill="#b8b8b8" xml:space="preserve">2026-09-30 14:09  cursor   read brands/delivery-os.brand.md   (public)</text>
+<rect x="660.0" y="652.0" width="380.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
+<text x="674.0" y="677.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#f6f6f6" text-anchor="start">memory layer</text>
+<text x="674.0" y="696.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">substrate; the vibegraph is the schema</text>
+</svg>
+<figcaption>Figure 4: the root file and the four consumption modes. One VIBEGRAPH.md, read by paste, by workspace, over MCP with scopes as grants and a read log, and as a seed for memory layers.</figcaption></figure>
+<hr />
+</div><h2>8. Security and privacy</h2>
+<p>A complete vibegraph is a concentrated dossier: personality, purpose, brand, and whatever areas the owner has added. In the wrong hands it is a toolkit for impersonation and targeted fraud. Any honest presentation of this framework has to treat security as architecture, and has to say which parts of that architecture exist.</p>
+<div class="keep"><h3>8.1 Threat model</h3>
+<p><strong>Compromised or over-permissioned AI tool access.</strong> The newest and most distinctive risk. Prompt-injection attacks that exfiltrate data through AI tool integrations moved from theory to documented incidents in 2025, including data theft through poisoned MCP tool descriptions. The security community's position is sobering: prompt injection cannot currently be eliminated, only contained. Any system that exposes personal data to AI tools must assume that some tool, someday, will be manipulated, and must limit what that tool can reach in the first place.</p>
+<p><strong>Server breach.</strong> If vibegraphs are stored on a provider's servers in readable form, the provider is a honeypot.</p>
 <p><strong>Account takeover.</strong> Credential stuffing and phishing against individual accounts.</p>
-<p><strong>Insider access.</strong> Anyone at a hosting provider who can read customer data is a risk, however trustworthy the company.</p>
+<p><strong>Insider access.</strong> Anyone at a hosting provider who can read customer data.</p>
 <p><strong>Training-data leakage.</strong> Personal context sent to model providers without contractual protection may end up in training corpora.</p>
-</div><div class="keep"><h3>7.2 Design Response</h3>
-<p><strong>Private and local by default (shipped: the open framework).</strong> The reference posture for a vibegraph is files on hardware the owner controls. The open framework at vibegraph.md assumes local-first operation: your vibegraph lives on your machine, and only the elements you deliberately expose ever leave it. Owners who self-host accept responsibility for their own device security, and the framework documentation says so plainly rather than pretending a local folder is a vault. This path exists today and is the strong-privacy option.</p>
-<p><strong>The hosted application, today (shipped, stated plainly).</strong> The hosted app at vibegraph.ai currently stores vibegraphs in conventional server-readable form, protected by industry-standard encryption in transit and at rest, row-level access control, and the no-train inference posture below. It does not yet offer zero-knowledge encryption. Owners for whom server-readable hosting is unacceptable should use the local-first framework; that is precisely why the framework ships open and file-based.</p>
-<p><strong>No-train inference, with escalation paths (shipped).</strong> AI features that process vibegraph content run against APIs whose terms exclude customer data from model training, with that policy pinned per-request rather than assumed: the standard posture of major providers' commercial APIs, and the pragmatic baseline for most owners. Owners with stricter requirements can point the framework at local models or privacy-focused inference providers; the vibegraph, being a file format rather than a service, does not care which model reads it.</p>
-<p><strong>Per-item permissions, deny by default (specified; partially shipped).</strong> The framework's permission model gives every orbit, and every item within an orbit, a visibility setting: private (never exposed), scoped (exposed to named tools or agents, for named purposes), or public (freely shareable, like the core). Nothing is exposed by omission. In the reference application today, this model governs the architecture (the shareable core and the gated orbits are structurally separate); the fine-grained per-item controls arrive with the orbits themselves.</p>
-<p><strong>Scoped, logged agent access (design target).</strong> When vibegraphs are served to agents over MCP, access will be granted per-agent and per-orbit, never as a blanket, with every agent read logged so the owner can always answer "what has this tool actually seen?" Given the prompt-injection reality described above, tight scoping is not paranoia; it is the mitigation. An agent that was never granted the Finances orbit cannot leak it, no matter how thoroughly the agent itself is compromised.</p>
-<p><strong>Zero-knowledge encryption for hosted vibegraphs (committed destination).</strong> The endpoint for hosted storage follows the model proven by password managers and encrypted-mail providers: client-side encryption, with keys derived on the owner's device and never transmitted, so the provider stores ciphertext it cannot read. This carries real trade-offs that deserve an honest statement: a zero-knowledge provider cannot search your data server-side, cannot recover it if you lose your keys, and cannot hand over readable data under compulsion, because it never had any. For a document this sensitive, those trade-offs are the point. It is stated here as the destination, not the present: the hosted app will say "zero-knowledge" only when it is true.</p>
-<p><strong>Future consideration of verifiable credentials.</strong> The W3C's Verifiable Credentials standard (v2.0, a formal Recommendation since May 2025) and selective-disclosure techniques point toward a future in which a vibegraph can <em>prove</em> an attribute (a credential, an age, a verified identity) without revealing the underlying data. That is a genuinely useful future for a portable identity layer, and the framework is designed not to preclude it. It remains deliberately excluded from this version of the whitepaper, along with blockchain storage of any kind.</p>
-</div><div class="keep"><h3>7.3 The Risk Summary</h3>
-<p>A vibegraph concentrates risk in exchange for concentrating value; the design's job is to keep the exchange favorable. Local by default, deny by default, scope everything, state plainly what the hosted service can and cannot see today, and log every agent access as that capability ships. No security section can promise safety. This one promises that the sensitivity of the data was the first architectural constraint, not the last, and that the paper will never claim a protection before it exists.</p>
+</div><div class="keep"><h3>8.2 Scopes as the permission model</h3>
+<p>The scope vocabulary in section 7 is the permission model. It has three rules.</p>
+<p><strong>Deny by default.</strong> Anything without a scope is private. Areas are <code>scoped</code> or <code>private</code> unless the owner says otherwise; the identity core and brands are <code>public</code> because they are written to be shared.</p>
+<p><strong>Scoped means named.</strong> A <code>scoped</code> node is exposed to named tools or purposes. A scoped node with no grant behaves as private.</p>
+<p><strong>Grants are per client, per node, and logged.</strong> When a vibegraph is served, each connected client holds its own grants. A client granted the personal brand and the skills area cannot read finances, however thoroughly that client is compromised. Every read is written to a log the owner can inspect, so the owner can always answer "what has this tool actually seen?"</p>
+<p>Tight scoping is not paranoia. Given the prompt-injection reality above, it is the mitigation.</p>
+</div><div class="keep"><h3>8.3 What is shipped, stated plainly</h3>
+<p><strong>Local files, private by default (shipped: the framework).</strong> The reference posture for a vibegraph is files on hardware the owner controls. Only the nodes the owner deliberately exposes ever leave the machine. Owners who self-host accept responsibility for their own device security, and the framework says so plainly rather than pretending a folder is a vault.</p>
+<p><strong>The hosted builder (shipped, with limits stated).</strong> The application at vibegraph.ai stores vibegraphs in conventional server-readable form, protected by encryption in transit and at rest, row-level access control that scopes every row to its owner, and the no-train inference posture below. It does not offer zero-knowledge encryption. Owners for whom server-readable hosting is unacceptable should use the local framework; that is why the framework ships open and file-based.</p>
+<p><strong>No-train inference (shipped).</strong> AI features that process vibegraph content run against APIs whose terms exclude customer data from training, pinned per request rather than assumed. Owners with stricter requirements can point the framework at local models; a vibegraph is a file format, and it does not care which model reads it.</p>
+<p><strong>Scoped, logged serving over MCP (shipped).</strong> The hosted graph is served read-only over MCP. Grants are per client and per node, default to the public core, and every read is logged and visible to the owner. Write-back over MCP is not offered.</p>
+<p><strong>Zero-knowledge encryption for hosted vibegraphs (destination).</strong> The endpoint for hosted storage follows the model proven by password managers: client-side encryption, keys derived on the owner's device and never transmitted, so the provider stores ciphertext it cannot read. The trade-offs are real: no server-side search, no recovery of lost keys, nothing to hand over under compulsion. For a document this sensitive, those trade-offs are the point. The hosted builder will say "zero-knowledge" only when it is true.</p>
+<p><strong>Verifiable credentials (future consideration).</strong> The W3C's Verifiable Credentials standard and selective-disclosure techniques point toward a future in which a vibegraph can prove an attribute without revealing the underlying data. The framework is designed not to preclude it and does not include it.</p>
+</div><div class="keep"><h3>8.4 The risk summary</h3>
+<p>A vibegraph concentrates risk in exchange for concentrating value; the design's job is to keep the exchange favorable. Local by default, deny by default, scope everything, log every served read, and state plainly what the hosted service can and cannot see. No security section can promise safety. This one promises that the sensitivity of the data was the first architectural constraint, and that the paper will not claim a protection before it exists.</p>
 <hr />
-</div><h2>8. Use Cases</h2>
-<p><strong>High-fidelity AI output.</strong> The founding use case. A creator, marketer, or founder with a vibegraph gets output in their voice, aligned with their positioning, styled to their brand, from any AI tool, on the first generation instead of the fifth revision. The people this serves most are those whose personal brand is the business: solopreneurs, founders, coaches, consultants, content creators, educators, agency founders, fractional executives.</p>
-<p><strong>Consistency across the whole stack.</strong> The same Core Identity feeds the chat tool, the writing assistant, the design generator, the email drafter, and the agent that queues social posts. One source of truth ends the drift between tools that each hold a slightly different, slightly stale picture of you.</p>
-<p><strong>Bootstrapping a brand from a vibegraph.</strong> The build proved this one on itself: every launch asset of the vibegraph application (its site copy, its brand board, its founder's own positioning) was generated from vibegraphs built in the app. The vibegraph is not just context for producing content; it is sufficient raw material for producing an entire brand surface.</p>
-<p><strong>Agency client onboarding, upgraded.</strong> Marketing and branding agencies extract a shallow vibegraph from every client today; they just call it a discovery questionnaire, it lives in a Google Doc, and it gets read twice. Rebuilt as a vibegraph, client discovery produces a living, structured client-context file the agency loads into every AI tool it uses for that account, for the life of the engagement. Onboarding output stops being paperwork and becomes reusable infrastructure. For agencies, one intake process yields a per-client asset; for clients, the vibegraph is theirs to keep when the engagement ends.</p>
-<p><strong>Seeding your digital twin.</strong> A vibegraph is the natural training substrate for an AI clone of oneself (see Section 9) and the natural seed for any personal-AI or memory product, giving passive systems a verified foundation instead of weeks of cold-start inference.</p>
-<p><strong>The résumé, replaced.</strong> A résumé is a one-dimensional, self-flattering PDF. A shared slice of a vibegraph (Core Identity plus a Career orbit) gives an employer or client a structured, honest, machine-readable picture of how a person thinks, works, and communicates. Whether hiring processes are ready for this is an open question; the artifact, at least, is finally made possible by the vibegraph.</p>
-<p><strong>Forms, applications, and intake, automated.</strong> Medical intake, loan applications, vendor onboarding, conference speaker forms: tedious, repetitive, and answerable almost entirely from a well-maintained vibegraph. An agent with scoped access to the relevant orbits fills them in seconds and asks the owner only for what's genuinely new. Vibegraph owners save a significant amount of time on the task of filling out forms.</p>
+</div><h2>9. Use cases</h2>
+<p><strong>Output in your voice, on the first draft.</strong> The founding use case. A creator, consultant, or founder with a vibegraph gets output in their voice, aligned with their positioning, styled to their brand, from any AI tool, on the first generation instead of the fifth revision.</p>
+<p><strong>One source of truth across every tool.</strong> The same identity core feeds the chat tool, the writing assistant, the design tool, the email drafter, and the agent that queues posts. One root file ends the drift between tools that each hold a slightly different, slightly stale picture of you.</p>
+<p><strong>The business that sounds like itself.</strong> With a business brand nested under the founder's, the company's copy is governed by the company's brand on the tasks that belong to it, and the founder's voice is governed by their own everywhere else. One graph holds both and knows which applies.</p>
+<p><strong>A starting point for a new brand.</strong> A person with no brand yet builds the identity core first, and the personal brand follows from it. The brand documents are sufficient raw material for a first website, a bio, a set of templates, and a visual system produced in whatever design tool the owner prefers.</p>
+<p><strong>Agency and consultant onboarding, upgraded.</strong> Agencies extract a shallow vibegraph from every client today; they call it a discovery questionnaire, it lives in a document, and it gets read twice. Rebuilt as a vibegraph, client discovery produces a structured client-context file the agency loads into every AI tool it uses for that account. For the client, the vibegraph is theirs to keep when the engagement ends.</p>
+<p><strong>Seeding memory and clones.</strong> A vibegraph is the natural seed for any memory layer and the natural substrate for a clone of oneself, giving passive systems a verified foundation instead of weeks of cold-start inference.</p>
+<p><strong>Forms and intake, automated.</strong> Applications, vendor onboarding, speaker forms: repetitive, and answerable almost entirely from a well-kept vibegraph. An agent with scoped access to the relevant areas fills them and asks the owner only for what is new.</p>
 <hr />
-<h2>9. The Vibeclone</h2>
-<p>In the future, the most ambitious consumer of a vibegraph will be a Vibeclone: an AI agent that runs on a person's vibegraph and operates in their likeness, thinking through their frameworks, writing in their voice, making the calls they would make, within the permissions they've granted.</p>
-<p>The distinction between a vibeclone and today's "AI clone" products is the direction of service. Existing clone platforms point outward at an audience: fans and clients talk to a chatbot trained on a creator's content. A vibeclone points inward, working <em>for</em> its owner across their actual tools and tasks, with the vibegraph as its persistent, owner-authored source of self. The better the vibegraph, the less the clone has to guess.</p>
-<p>The vibeclone raises its own questions (capability boundaries, disclosure norms, delegation limits, identity verification) that deserve more than a subsection. A dedicated Vibeclone paper (forthcoming) will address and answer these questions. For the purposes of this whitepaper, one sentence suffices: the vibegraph is the prerequisite. There is no faithful clone of an uncodified person.</p>
+<h2>10. The vibeclone</h2>
+<p>The most ambitious consumer of a vibegraph will be a vibeclone: an agent that runs on a person's vibegraph and operates in their likeness, thinking through their frameworks, writing in their voice, making the calls they would make, within the scopes they have granted.</p>
+<p>The distinction between a vibeclone and today's clone products is the direction of service. Existing clone platforms point outward at an audience: fans and clients talk to a chatbot trained on a creator's content. A vibeclone points inward, working for its owner across their tools and tasks, with the vibegraph as its persistent, owner-authored source of self. Pointed outward, the same graph feeds the clone platforms as a public slice. The better the vibegraph, the less the clone has to guess.</p>
+<p>A vibeclone raises questions of its own (capability boundaries, disclosure norms, delegation limits, identity verification) that deserve more than a section. For this paper one sentence suffices: the vibegraph is the prerequisite. There is no faithful clone of an uncodified person.</p>
 <hr />
-<h2>10. The Open Framework &amp; Application</h2>
-<p>The vibegraph ships in two forms, deliberately.</p>
-<p><strong>The Open Framework.</strong> The open specification can be found at vibegraph.md. The framework itself (the document structure, the three-part architecture, the element and orbit taxonomy, the schema, and starter templates) is published free under a permissive license, in the same spirit (and the same medium) as AGENTS.md. Anyone can build a vibegraph by hand, with their own tools, their own storage, and their own security posture. Developers and tinkerers can extend it, wrap it, serve it over MCP, and build products that consume it, without asking permission. An identity standard that isn't open isn't a standard; it's a lock-in scheme with a manifesto.</p>
-<p><strong>The Application.</strong> The guided application can be found at vibegraph.ai. Building a vibegraph by hand is real work: a proper personality assessment, honest purpose work, and brand strategy development historically could cost thousands of dollars with a human brand strategist. The application packages that work into a guided build with Claudia, an AI coach who carries the craft: she asks the questions a strategist would ask, drafts every element from what the owner has already established, works from uploaded reference material when there is some, and reads the finished brand back for gaps and contradictions before it ships. The personality assessment is free to start; completing the full build is a one-time unlock (current tiers and prices at vibegraph.ai/pricing), with unlimited edits and re-exports. The vibegraph app is a convenience layered on the open framework, never a gate in front of it.</p>
+<h2>11. Three things, three roles</h2>
+<p>Three things share the name, and the analogy row is the one to remember: the web, HTML and index.html, a website builder.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>vibegraph (the noun)</th>
+<th>vibegraph.md (the framework)</th>
+<th>vibegraph.ai (the app)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What it is</td>
+<td>A category term. The network of identity, context, knowledge, and memory that governs AI for one person and the businesses they own.</td>
+<td>The open specification and file convention: the root file, the typed link schema, scopes, area conventions, and the handoff to AGENTS.md and CLAUDE.md.</td>
+<td>The guided builder. Claudia runs the identity assessment, purpose work, and brand build, then exports the reference layout and registers components.</td>
+</tr>
+<tr>
+<td>Who owns it</td>
+<td>Nobody. Released as a common noun.</td>
+<td>Ryan Charleston, as maintainer, under the MIT license. Anyone can fork, extend, serve, or build on it.</td>
+<td>Raizen Labs, LLC, as a business.</td>
+</tr>
+<tr>
+<td>What it is for</td>
+<td>Giving the market a word for the thing everyone is assembling by hand.</td>
+<td>Making a vibegraph portable, machine-walkable, and permissionable across every tool, with zero platform adoption required.</td>
+<td>Building the one part of a vibegraph no other tool builds: a validated, reconciled, brand-complete identity core.</td>
+</tr>
+<tr>
+<td>How it is written</td>
+<td>Always lowercase: a vibegraph, your vibegraph, vibegraphs.</td>
+<td>Always lowercase with the extension. The spec defines VIBEGRAPH.md, the root file, which is capitalized.</td>
+<td>Always lowercase as a domain. The app has no other product name.</td>
+</tr>
+<tr>
+<td>Analogy</td>
+<td>the web</td>
+<td>HTML and index.html</td>
+<td>a website builder</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The noun.</strong> "vibegraph" is a common noun and carries no trademark. The word is released as generic on purpose, the way "knowledge graph" and "social graph" went generic, and the way AGENTS.md was given away so it would spread. Whether the domain names carry marks is a separate question being confirmed with a trademark attorney; nothing in this paper is legal advice, and no mark is claimed on the word.</p>
+<p><strong>The framework.</strong> vibegraph.md is the open specification: the layout in section 7, the root file, the link schema, the scopes, the handoff stanza, templates, a JSON schema for the front matter, and a complete worked example for a fictional owner so a reader can clone it, replace the example, and pass the acceptance test in under an hour. Templates, schema, and code are MIT. The specification prose is CC-BY 4.0. Anyone can build a vibegraph by hand, with their own tools, their own storage, and their own security posture, and anyone can build products that produce or consume one without asking. An identity standard that is not open is not a standard.</p>
+<p><strong>The app.</strong> vibegraph.ai builds the center of a vibegraph: the identity core and the brands. It does not become a notes app, a memory layer, or a dashboard, and it does not build the organizational vibegraph.</p>
+<p>It meets the owner wherever they stand. On the AI-assisted path, a person with no brand and no assessments starts from a blank slate: the two built-in personality instruments, the integrated reading, the four-pillar Ikigai in conversation with Claudia, then the personal brand. Then, if they own a business, the business brand. On the upload path, a person who already has assessment results (from any instrument, not only the two built in), an Ikigai, or completed or partial brand material brings it in, and the build starts from there. More instruments produce a richer core, and the app expects to add instruments over time.</p>
+<p>For Brand Visuals, the app hands off rather than generating. After the Brand Context is finished, the owner receives their partially built vibegraph plus ready-to-use prompts and instructions for their chosen tool (a general model, a code agent, a design canvas, a design application), with a live connection where one exists. The owner produces the visuals there, records where the assets live, and the build completes with the export.</p>
+<p>The export is the reference layout in section 7, with the handoff stanza pre-written into AGENTS.md and CLAUDE.md and an areas scaffold ready to fill. A components step registers the tools the owner already uses. The same layout is served live over MCP with scopes as grants and every read logged. The personality assessments are free. Completing the build is a one-time unlock with unlimited edits and re-exports; current tiers are at vibegraph.ai/pricing. The app is a convenience layered on the open framework, never a gate in front of it.</p>
 <hr />
-<h2>11. Summary</h2>
-<p>The last two years (mid 2024 to mid 2026) settled the question of whether AI can produce competent work. The next two will be about context and whose work it produces. Left uncalibrated, every model regresses to the same mean, average output or "slop", and everyone who relies on it sounds a little more like everyone else. Your unique personal moat in the agentic era will rely on a well-defined vibegraph and the personal brand that exists within it.</p>
-<p>The fix is not a smarter model. It is better input and context: a deliberate, structured, portable statement of identity that any AI system can read and no AI platform can own. Small enough to paste into a chat today. Extensible enough to run an agent fleet tomorrow. Private by default, permissioned by design, grounded in frameworks older and sturdier than any of the tools that will consume it, and now proven by a working application that builds it end to end.</p>
-<blockquote>
-<p>The Vibegraph is your vibes, codified.</p>
-</blockquote>
-<p>Visit <strong>vibegraph.md</strong> to download the open framework or <strong>vibegraph.ai</strong> to start building your vibegraph with the app.</p>
+<h2>12. Summary</h2>
+<p>The last two years settled whether AI can produce competent work. The next two are about context, and whose work it produces. Left uncalibrated, every model regresses to the same mean, and everyone who relies on it sounds a little more like everyone else.</p>
+<p>The fix is not a smarter model. It is a better starting point: a human-authored identity core and a root file every AI reads first, linked by kind and scope to the brands, areas, and tools that make up the rest of one person's graph. Small enough to paste into a chat today. Structured enough to serve an agent fleet tomorrow. Private by default, permissioned by design, grounded in instruments older and sturdier than any of the tools that will consume it.</p>
+<p>Every AI you use should run on your vibegraph. Your notes app, your memory layer, and your agents are components of it. The open framework at vibegraph.md defines its shape. vibegraph.ai builds its center.</p>
 <hr />
-<h2>Changes since v1.0</h2>
-<ul>
-<li>The architecture is presented as three parts (Core Identity, Branding, Orbits), replacing the two-part Core Identity / Knowledge Base presentation. The concepts are unchanged; the names and grouping now match the reference application.</li>
-<li>A vibegraph now explicitly represents one person. Business brands live inside their owner's vibegraph (Section 5), replacing v1.0's parallel "business vibegraph" framing; the standalone organizational vibegraph is staged as a possible future extension.</li>
-<li>The personality layer is a two-part assessment: the Big Five (IPIP-NEO-120) joined by the Enneagram, reconciled in an integrated reading.</li>
-<li>Brand Positioning and Brand Aesthetics are renamed Brand Context and Brand Visuals, with their twelve and eight elements enumerated.</li>
-<li>The Knowledge Base is renamed Orbits.</li>
-<li>The Ikigai layer's attribution is clarified: inspired by Kowalski's Ikigai 2.0, implemented as the framework's own four-pillar structure.</li>
-<li>Section 7 now states plainly which protections are shipped, which are partial, and which are committed destinations; zero-knowledge hosted encryption is stated as destination, not present capability. MCP serving is stated as roadmap.</li>
-<li>Section 10 describes the application as built, including the guided build with Claudia; pricing details moved to the pricing page.</li>
-<li>A new design principle ("Guided, not blank") and a new use case (bootstrapping a brand from a vibegraph) reflect what the build demonstrated.</li>
-<li>Cover description revised.</li>
-</ul>
+<h2>Glossary</h2>
+<p><strong>vibegraph.</strong> The network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one person and the businesses they own. A common noun, always lowercase. Plural: vibegraphs. One person per vibegraph.</p>
+<p><strong>identity core.</strong> The human-authored statement of who the person is: the personality assessment (the Big Five via the IPIP-NEO-120, the Enneagram, and any other instruments the owner brings), the integrated reading, and the four-pillar Ikigai, with the personal brand built from it. Small, stable, and safe to share.</p>
+<p><strong>root file.</strong> VIBEGRAPH.md. The fixed-name markdown file at the root of a vibegraph that any agent reads first. Names the owner, links every node with a kind, scope, and when, and states the read order. Defined by the vibegraph.md spec.</p>
+<p><strong>brand.</strong> A full brand document inside a vibegraph: twelve Brand Context elements and eight Brand Visuals elements. One personal brand, built from the identity core; any number of business brands, each with organizational foundations (Aaker's dimensions, an archetype, the Golden Circle), nested under the owner.</p>
+<p><strong>Brand Context.</strong> The brand in words: twelve elements from Brand Name to Online Presence.</p>
+<p><strong>Brand Visuals.</strong> The brand in pictures: eight elements from Symbols &amp; Logos to Photography, recorded as concrete artifacts and linked to where the assets live.</p>
+<p><strong>element.</strong> The unit inside Brand Context and Brand Visuals: one named artifact such as Core Values or Color Palette, with its own shape and craft standard.</p>
+<p><strong>area.</strong> A domain of knowledge or working context the owner adds when a use case demands one: a folder with an index file, its own scope, and its own when rule. Familiar from PARA's areas.</p>
+<p><strong>component.</strong> A tool that already holds part of the graph (a knowledge store, a memory layer, a project, a skill, an agent), registered in the root file with a kind and a scope. Registered, not stored.</p>
+<p><strong>kind.</strong> What a node is: identity, brand, area, source, memory, project, skill, agent.</p>
+<p><strong>scope.</strong> Who may read a node: public, scoped, private. Nothing is exposed by omission. Familiar from OAuth.</p>
+<p><strong>when.</strong> When a node is read: always, on-task, on-grant.</p>
+<p><strong>handoff stanza.</strong> The four-line block placed in AGENTS.md and CLAUDE.md that sends an agent to VIBEGRAPH.md before it starts.</p>
+<p><strong>vibeclone.</strong> An agent that runs on a vibegraph and works in its owner's likeness, inward for the owner or outward as a public slice. A common noun, always lowercase.</p>
+<p><strong>Claudia.</strong> The AI coach in the guided builder at vibegraph.ai. She asks, drafts, and reviews from what the owner has already established.</p>
 <hr />
 <h2>References</h2>
-<p>The vibegraph stands on established frameworks and open standards. The works and authors below inform or are embedded in its architecture.</p>
-<div class="keep"><h3>Identity &amp; Psychology</h3>
+<p>The framework stands on established instruments and open conventions.</p>
+<div class="keep"><h3>Identity and psychology</h3>
 <ol>
-<li>McCrae, R. R., &amp; Costa, P. T. (1987). "Validation of the Five-Factor Model of Personality Across Instruments and Observers." <em>Journal of Personality and Social Psychology</em>, 52(1), 81–90. The foundational validation of the Big Five (OCEAN) model.</li>
-<li>Goldberg, L. R. (1993). "The Structure of Phenotypic Personality Traits." <em>American Psychologist</em>, 48(1), 26–34.</li>
-<li>Johnson, J. A. (2014). "Measuring thirty facets of the Five Factor Model with a 120-item public domain inventory: Development of the IPIP-NEO-120." <em>Journal of Research in Personality</em>, 51, 78–89. The instrument used for the Big Five assessment.</li>
-<li>International Personality Item Pool (IPIP): public-domain Big Five assessment instruments. ipip.ori.org</li>
-<li>Riso, D. R., &amp; Hudson, R. (1999). <em>The Wisdom of the Enneagram</em>. Bantam. The Enneagram's nine types, levels of development, and stress/growth patterns.</li>
-<li>Kowalski, K. <em>Ikigai 2.0: Evolving the Ikigai Diagram for Life Purpose</em>: the treatment of ikigai that inspired the framework's four-pillar purpose structure. Sloww. sloww.co/ikigai-2-0</li>
+<li>McCrae, R. R., and Costa, P. T. (1987). "Validation of the Five-Factor Model of Personality Across Instruments and Observers." <em>Journal of Personality and Social Psychology</em>, 52(1), 81-90.</li>
+<li>Goldberg, L. R. (1993). "The Structure of Phenotypic Personality Traits." <em>American Psychologist</em>, 48(1), 26-34.</li>
+<li>Johnson, J. A. (2014). "Measuring thirty facets of the Five Factor Model with a 120-item public domain inventory: Development of the IPIP-NEO-120." <em>Journal of Research in Personality</em>, 51, 78-89.</li>
+<li>International Personality Item Pool (IPIP): public-domain Big Five instruments. ipip.ori.org</li>
+<li>Riso, D. R., and Hudson, R. (1999). <em>The Wisdom of the Enneagram</em>. Bantam.</li>
+<li>Kowalski, K. <em>Ikigai 2.0: Evolving the Ikigai Diagram for Life Purpose</em>. Sloww. sloww.co/ikigai-2-0</li>
 </ol>
-</div><div class="keep"><h3>Brand Strategy</h3>
+</div><div class="keep"><h3>Brand strategy</h3>
 <ol start="7">
-<li>Aaker, J. L. (1997). "Dimensions of Brand Personality." <em>Journal of Marketing Research</em>, 34(3), 347–356. The five-dimension brand personality framework used in the business core.</li>
-<li>Jung, C. G. (1959). <em>The Archetypes and the Collective Unconscious</em>. Princeton University Press. The psychological foundation of archetype theory.</li>
-<li>Mark, M., &amp; Pearson, C. S. (2001). <em>The Hero and the Outlaw: Building Extraordinary Brands Through the Power of Archetypes.</em> McGraw-Hill. The application of Jung's twelve archetypes to brand building.</li>
-<li>Sinek, S. (2009). <em>Start with Why: How Great Leaders Inspire Everyone to Take Action.</em> Portfolio. The Golden Circle (Why/How/What) framework. simonsinek.com</li>
-<li>Wickman, G. (2011). <em>Traction: Get a Grip on Your Business.</em> BenBella Books. The Entrepreneurial Operating System (EOS) and Vision/Traction Organizer. eosworldwide.com</li>
+<li>Aaker, J. L. (1997). "Dimensions of Brand Personality." <em>Journal of Marketing Research</em>, 34(3), 347-356.</li>
+<li>Jung, C. G. (1959). <em>The Archetypes and the Collective Unconscious</em>. Princeton University Press.</li>
+<li>Mark, M., and Pearson, C. S. (2001). <em>The Hero and the Outlaw: Building Extraordinary Brands Through the Power of Archetypes</em>. McGraw-Hill.</li>
+<li>Sinek, S. (2009). <em>Start with Why</em>. Portfolio. simonsinek.com</li>
+<li>Wickman, G. (2011). <em>Traction: Get a Grip on Your Business</em>. BenBella Books. eosworldwide.com</li>
 </ol>
-</div><div class="keep"><h3>Knowledge Management</h3>
+</div><div class="keep"><h3>Graphs and conventions that went generic</h3>
 <ol start="12">
-<li>Forte, T. (2022). <em>Building a Second Brain.</em> Atria Books. The PARA method and the modern "second brain" practice. buildingasecondbrain.com</li>
-<li>Ahrens, S. (2017). <em>How to Take Smart Notes.</em> The Zettelkasten method, after the practice of sociologist Niklas Luhmann.</li>
-<li>Noble, J. <em>The Johnny.Decimal System</em>: a numbered life-domain taxonomy for organizing information. johnnydecimal.com</li>
-</ol>
-</div><div class="keep"><h3>AI Standards &amp; Protocols</h3>
-<ol start="15">
+<li>Singhal, A. (2012). "Introducing the Knowledge Graph: things, not strings." Google, May 16, 2012. blog.google/products/search/introducing-knowledge-graph-things-not/</li>
+<li>The Open Graph protocol (2010). ogp.me</li>
 <li>AGENTS.md: an open markdown convention for guiding AI coding agents, stewarded by the Agentic AI Foundation under the Linux Foundation. agents.md</li>
-<li>Model Context Protocol (MCP): an open protocol for connecting AI applications to external data sources and tools, originated by Anthropic and hosted by the Linux Foundation. modelcontextprotocol.io</li>
+<li>Agent Skills and the SKILL.md format: an open standard for portable agent procedures. agentskills.io</li>
+<li>llms.txt: a proposed convention for making website content available to language models. llmstxt.org</li>
+<li>Model Context Protocol (MCP): an open protocol for connecting AI applications to data and tools, hosted by the Linux Foundation. modelcontextprotocol.io</li>
 </ol>
-</div><div class="keep"><h3>Security &amp; Privacy</h3>
-<ol start="17">
-<li>W3C (2025). <em>Verifiable Credentials Data Model v2.0.</em> W3C Recommendation, May 15, 2025. w3.org/TR/vc-data-model-2.0</li>
-<li>OWASP Foundation. <em>OWASP Top 10 for Large Language Model Applications</em>: the reference taxonomy for prompt-injection and related LLM security risks. genai.owasp.org</li>
-<li>1Password. <em>1Password Security Design</em> white paper: the zero-knowledge, client-side encryption model referenced in Section 7. 1password.com/security</li>
+</div><div class="keep"><h3>Knowledge organization</h3>
+<ol start="18">
+<li>Forte, T. (2023). <em>The PARA Method: Simplify, Organize, and Master Your Digital Life</em>. Atria Books. The method whose "areas" the framework borrows by name. fortelabs.com/blog/para/</li>
+<li>Noble, J. <em>The Johnny.Decimal System</em>: a numbered life-domain taxonomy. johnnydecimal.com</li>
+<li>Ahrens, S. (2017). <em>How to Take Smart Notes</em>. The Zettelkasten method.</li>
+</ol>
+</div><div class="keep"><h3>Security and privacy</h3>
+<ol start="21">
+<li>W3C (2025). <em>Verifiable Credentials Data Model v2.0</em>. W3C Recommendation, May 15, 2025. w3.org/TR/vc-data-model-2.0</li>
+<li>OWASP Foundation. <em>OWASP Top 10 for Large Language Model Applications</em>. genai.owasp.org</li>
+<li>1Password. <em>1Password Security Design</em>: the zero-knowledge, client-side encryption model referenced in section 8. 1password.com/security</li>
 </ol>
 <hr />
-<p class="colophon">Vibegraph™ and Vibeclone™ are trademarks of Raizen Labs, LLC. Authored by Ryan Charleston. The vibegraph specification is published under a permissive open license at vibegraph.md. Send feedback to whitepaper@vibegraph.ai</p></div></body></html>
+<p class="colophon">Authored by Ryan Charleston. The vibegraph.md specification is published under the MIT license (templates, schema, code) and CC-BY 4.0 (prose). "vibegraph" is a common noun and carries no trademark. Feedback: <a href="mailto:whitepaper@vibegraph.ai">whitepaper@vibegraph.ai</a></p></div></body></html>

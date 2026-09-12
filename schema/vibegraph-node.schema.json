@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vibegraph.md/schema/vibegraph-node.schema.json",
+  "title": "vibegraph node file front matter",
+  "description": "The optional YAML front matter of a node file (identity file, brand file, or area index) in a vibegraph, per the vibegraph.md specification 2.0 (SPEC.md section 5). When it disagrees with the node's entry in VIBEGRAPH.md, the root file wins.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["kind"],
+  "properties": {
+    "kind": {
+      "type": "string",
+      "enum": ["identity", "brand", "area"]
+    },
+    "type": {
+      "type": "string",
+      "description": "Brand files only.",
+      "enum": ["personal", "business"]
+    },
+    "owner": { "type": "string", "minLength": 1 },
+    "brand": { "type": "string", "description": "Brand files: the brand's display name.", "minLength": 1 },
+    "area": { "type": "string", "description": "Area index files: the area's display name.", "minLength": 1 },
+    "scope": {
+      "type": "string",
+      "enum": ["public", "scoped", "private"],
+      "description": "Who may read the node. Absent means private."
+    },
+    "when": {
+      "type": "string",
+      "enum": ["always", "on-task", "on-grant"],
+      "description": "When the node is read. Absent means on-grant."
+    },
+    "updated": { "type": "string", "format": "date" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "kind": { "const": "brand" } } },
+      "then": { "required": ["kind", "type", "brand"] }
+    },
+    {
+      "if": { "properties": { "kind": { "const": "area" } } },
+      "then": { "required": ["kind", "area"] }
+    },
+    {
+      "if": { "properties": { "scope": { "const": "private" } }, "required": ["scope"] },
+      "then": { "properties": { "when": { "const": "on-grant" } } }
+    }
+  ]
+}

@@ -1,14 +1,10 @@
 # Schema
 
-Machine-readable JSON Schemas (Draft 2020-12) for validating vibegraph files.
+JSON Schemas (Draft 2020-12) for the front matter of vibegraph files.
 
-- **`vibegraph-manifest.schema.json`** — validates the YAML front matter of a
-  `VIBEGRAPH.md` manifest.
-- **`vibegraph-document.schema.json`** — validates the optional front matter of any
-  Core or module document.
+- **`vibegraph-root.schema.json`** validates the front matter of `VIBEGRAPH.md`, the root file (SPEC.md §3.1).
+- **`vibegraph-node.schema.json`** validates the optional front matter of an identity file, a brand file, or an area index (SPEC.md §5).
 
-These describe the **front matter only** — the Markdown body of each file is free-form
-by design. The schemas are a convenience for tool authors; a vibegraph is valid if it
-follows [SPEC.md](../SPEC.md), and hand-authored vibegraphs need no validation to work.
+They cover front matter only. The markdown bodies and the root file's link lines are defined in [SPEC.md](../SPEC.md), and §10 there is the conformance checklist. A hand-built vibegraph needs no validation to work; the schemas are a convenience for tool authors.
 
-Licensed MIT, like the rest of the schema and templates.
+Licensed MIT, like the templates and code.

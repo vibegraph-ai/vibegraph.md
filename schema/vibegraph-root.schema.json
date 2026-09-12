@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vibegraph.md/schema/vibegraph-root.schema.json",
+  "title": "VIBEGRAPH.md front matter",
+  "description": "The YAML front matter of VIBEGRAPH.md, the root file of a vibegraph, per the vibegraph.md specification 2.0 (SPEC.md section 3.1).",
+  "type": "object",
+  "required": ["vibegraph", "owner", "identity", "updated"],
+  "additionalProperties": true,
+  "properties": {
+    "vibegraph": {
+      "type": "string",
+      "description": "The specification version this vibegraph targets, as MAJOR.MINOR.",
+      "pattern": "^\\d+\\.\\d+$",
+      "examples": ["2.0"]
+    },
+    "owner": {
+      "type": "string",
+      "description": "The display name of the one person this vibegraph represents.",
+      "minLength": 1
+    },
+    "identity": {
+      "type": "string",
+      "description": "Relative path to the identity file, identity/<owner-slug>.md.",
+      "pattern": "^identity/[a-z0-9]+(-[a-z0-9]+)*\\.md$",
+      "examples": ["identity/maya-okafor.md"]
+    },
+    "updated": {
+      "type": "string",
+      "description": "ISO 8601 date of the last change to any part of the vibegraph.",
+      "format": "date"
+    }
+  }
+}
