@@ -41,7 +41,7 @@ A dependency-free VM check additionally verified both system theme defaults, inv
 
 Text contrast: dark foreground 18.32:1, dark muted 9.98:1, light foreground 18.32:1, light muted 4.93:1, light card muted 5.33:1. All seven section text comparisons against the original passed. No em dashes occur in the page. JavaScript syntax and git diff whitespace checks passed.
 
-SPEC.md, templates, example, changelog, GitHub, framework, product domains and whitepaper PDF resolve. The Context Layer at https://contextlayer.vibegraph.ai/ was verified as Home | The Context Layer in the browser; a command-line request returned 403. Vibegraph.ai and Vibeclone.ai currently resolve to public holding pages, not the unpublished marketing implementation. The PDF redirect and CNAME remain untouched.
+SPEC.md, templates, example, changelog, GitHub, framework, product domains and whitepaper PDF resolve. The Context Layer at https://contextlayer.vibegraph.ai/ was verified as Home | The Context Layer in the browser; a command-line request returned 403. vibegraph.ai and vibeclone.ai currently resolve to public holding pages, not the unpublished marketing implementation. The PDF redirect and CNAME remain untouched.
 
 No push or deployment is part of this change.
 
