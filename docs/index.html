@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-brand="framework">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,107 +11,213 @@
 <meta property="og:url" content="https://vibegraph.md" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script>
+  (() => {
+    const root = document.documentElement;
+    root.classList.add('js');
+    let theme;
+    try { theme = localStorage.getItem('vibe-theme'); } catch {}
+    root.dataset.theme = theme === 'dark' || theme === 'light' ? theme : matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  })();
+</script>
 <style>
+  /* Shared foundations, framework monochrome mode, and page 12 Figma geometry. */
   :root {
-    --bg: #0a0a0a;
-    --fg: #f6f6f6;
-    --muted: #b8b8b8;
-    --accent: #b7a8ff;
-    --border: #2b2b2b;
-    --maxw: 760px;
-    --display: "Space Grotesk", Inter, sans-serif;
-    --sans: Inter, system-ui, sans-serif;
-    --mono: "IBM Plex Mono", Menlo, monospace;
+    --graph-ink:#0a0a0a; --graph-charcoal:#2b2b2b; --graph-grey:#6b6b6b;
+    --graph-silver:#b8b8b8; --graph-mist:#e2e2e2; --field:#f6f6f6; --white:#fff;
+    --space-4:4px; --space-8:8px; --space-12:12px; --space-16:16px;
+    --space-20:20px; --space-24:24px; --space-32:32px; --space-40:40px;
+    --space-48:48px; --space-56:56px; --space-72:72px; --space-96:96px; --space-120:120px;
+    --radius-sm:4px; --radius-md:8px; --radius-lg:12px; --radius-full:9999px;
+    --size-control:48px; --size-control-sm:44px; --size-icon:20px;
+    --size-content:1200px; --size-text:880px;
+    --font-display:"Space Grotesk",sans-serif;
+    --font-body:Inter,system-ui,sans-serif;
+    --font-mono:"IBM Plex Mono",monospace;
+    --background:var(--field); --foreground:var(--graph-ink); --card:var(--white);
+    --muted:var(--graph-mist); --muted-foreground:var(--graph-grey);
+    --border:var(--graph-mist); --input:var(--graph-grey);
+    --primary:var(--foreground); --primary-foreground:var(--background);
+    --ring:var(--foreground); --page-gutter:var(--space-32); --section-gap:var(--space-48);
+    color-scheme:light;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
-  a { color: var(--fg); }
-  header.top { border-bottom: 1px solid var(--border); }
-  .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
-  .brandmark { font-family: var(--mono); font-weight: 500; font-size: 16px; text-decoration: none; }
-  .top nav { display: flex; gap: 22px; font-family: var(--mono); font-size: 13px; }
-  .top nav a { color: var(--muted); text-decoration: none; }
-  .top nav a:hover { color: var(--fg); }
-  @media (max-width: 640px) { .top nav a.hide-sm { display: none; } }
-
-  .eyebrow, .kicker { font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
-  .hero { padding: 88px 0 64px; border-bottom: 1px solid var(--border); }
-  h1 { font-family: var(--mono); font-weight: 500; font-size: clamp(44px, 9vw, 76px); line-height: 1; letter-spacing: -0.02em; margin-bottom: 18px; }
-  .tagline { font-family: var(--display); font-weight: 500; font-size: clamp(22px, 3.4vw, 28px); margin-bottom: 8px; }
-  .vibes { color: var(--muted); font-size: 15px; margin-bottom: 26px; }
-  .lede { font-size: 19px; max-width: 62ch; margin-bottom: 30px; }
-  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
-  .btn { font-family: var(--mono); font-size: 14px; text-decoration: none; padding: 12px 20px; border: 1px solid var(--border); border-radius: 6px; }
-  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
-  .btn.ghost:hover { border-color: var(--muted); }
-  .monoline { font-family: var(--mono); font-size: 12.5px; color: var(--muted); margin-top: 28px; }
-
-  section { padding: 60px 0; border-bottom: 1px solid var(--border); }
-  h2 { font-family: var(--display); font-weight: 700; font-size: clamp(26px, 4.2vw, 34px); line-height: 1.12; letter-spacing: -0.01em; margin-bottom: 18px; }
-  h3 { font-family: var(--display); font-weight: 500; font-size: 19px; margin-bottom: 6px; }
-  p + p { margin-top: 14px; }
-  .muted { color: var(--muted); }
-  .pull { border-left: 2px solid var(--accent); padding-left: 18px; margin-top: 26px; font-family: var(--display); font-weight: 500; font-size: 20px; }
-
-  pre { font-family: var(--mono); font-size: 13px; line-height: 1.7; background: #111111; border: 1px solid var(--border); color: var(--fg); padding: 18px 20px; border-radius: 6px; overflow-x: auto; margin: 22px 0; white-space: pre; }
-  code { font-family: var(--mono); font-size: 0.88em; }
-
-  .cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin-top: 26px; }
-  .col { background: var(--bg); padding: 22px 20px; }
-  .col p { font-size: 15px; color: var(--muted); }
-  .col .path { font-family: var(--mono); font-size: 12px; color: var(--accent); margin-top: 12px; }
-  @media (max-width: 720px) { .cols { grid-template-columns: 1fr; } }
-
-  table { width: 100%; border-collapse: collapse; margin-top: 22px; font-size: 14.5px; }
-  th, td { text-align: left; vertical-align: top; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--border); }
-  th { font-family: var(--mono); font-weight: 500; font-size: 12.5px; color: var(--muted); }
-  .table-wrap { overflow-x: auto; }
-
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-  .chip { font-family: var(--mono); font-size: 12px; border: 1px solid var(--border); border-radius: 100px; padding: 5px 12px; color: var(--muted); }
-
-  .steps { margin-top: 22px; }
-  .step { display: grid; grid-template-columns: 44px 1fr; gap: 14px; padding: 16px 0; border-top: 1px solid var(--border); }
-  .step:first-child { border-top: none; }
-  .step .n { font-family: var(--mono); color: var(--accent); font-size: 14px; padding-top: 3px; }
-  .step p { font-size: 15.5px; color: var(--muted); }
-
-  footer { padding: 44px 0 60px; font-size: 14px; color: var(--muted); }
-  footer nav { display: flex; flex-wrap: wrap; gap: 8px 18px; font-family: var(--mono); font-size: 13px; margin-bottom: 18px; }
-  footer nav a { color: var(--muted); text-decoration: none; }
-  footer nav a:hover { color: var(--fg); }
+  @media (prefers-color-scheme:dark) {
+    :root:not([data-theme="light"]) {
+      --background:var(--graph-ink); --foreground:var(--field); --card:var(--graph-ink);
+      --muted:var(--graph-charcoal); --muted-foreground:var(--graph-silver);
+      --border:var(--graph-charcoal); color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --background:var(--graph-ink); --foreground:var(--field); --card:var(--graph-ink);
+    --muted:var(--graph-charcoal); --muted-foreground:var(--graph-silver);
+    --border:var(--graph-charcoal); color-scheme:dark;
+  }
+  *,*::before,*::after { box-sizing:border-box; }
+  * { margin:0; }
+  body { background:var(--background); color:var(--foreground); font:400 16px/26px var(--font-body); -webkit-font-smoothing:antialiased; }
+  a { color:var(--foreground); text-underline-offset:4px; text-decoration-thickness:1px; }
+  button { font:500 14px/20px var(--font-body); color:inherit; cursor:pointer; }
+  a,button { -webkit-tap-highlight-color:transparent; }
+  :focus-visible { outline:2px solid var(--ring); outline-offset:3px; }
+  [hidden] { display:none!important; }
+  .wrap { width:calc(100% - var(--page-gutter)*2); max-width:var(--size-content); margin-inline:auto; }
+  .text-column { max-width:var(--size-text); }
+  .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0; }
+  .skip-link { position:absolute; top:8px; left:20px; z-index:10; background:var(--background); padding:12px 20px; transform:translateY(-200%); }
+  .skip-link:focus { transform:none; }
+  .top { border-bottom:1px solid var(--border); }
+  .top .wrap { display:flex; align-items:center; justify-content:space-between; gap:24px; min-height:88px; }
+  .brandmark { display:flex; align-items:center; gap:88px; width:440px; min-height:44px; font:400 24px/23px var(--font-mono); text-decoration:none; white-space:nowrap; }
+  .framework-mark { display:block; width:32px; height:33px; flex:none; }
+  .framework-mark path { fill:var(--foreground); }
+  .framework-mark path:first-child { fill:var(--background); }
+  .desktop-nav { display:flex; align-items:center; gap:var(--space-24); width:540px; flex:none; }
+  .desktop-nav a { display:flex; align-items:center; min-height:44px; width:150px; font:500 14px/20px var(--font-body); text-decoration:none; }
+  .nav-actions { display:flex; gap:var(--space-4); }
+  .icon-button { display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; padding:12px; border:0; border-radius:var(--radius-md); background:transparent; flex:none; }
+  .icon-button img { width:20px; height:20px; display:block; filter:brightness(0) invert(1); }
+  :root[data-theme="light"] .icon-button img { filter:brightness(0); }
+  .icon-button:hover { background:var(--muted); }
+  .menu-toggle { display:none; }
+  .mobile-nav { padding:var(--space-16) var(--page-gutter) var(--space-24); border-top:1px solid var(--border); }
+  .mobile-nav a { display:flex; align-items:center; min-height:48px; text-decoration:none; }
+  .hero { position:relative; isolation:isolate; padding:72px 0 56px; border-bottom:1px solid var(--border); }
+  .hero-content { display:flex; flex-direction:column; align-items:flex-start; gap:var(--space-40); max-width:var(--size-text); }
+  .hero-content>* { max-width:100%; }
+  .eyebrow,.kicker,.monoline,.n,.chip,.path,.footer-credit { font:400 12px/18px var(--font-mono); letter-spacing:.04em; }
+  .eyebrow,.kicker { text-transform:uppercase; }
+  h1 { font:500 72px/83px var(--font-mono); letter-spacing:-.03em; overflow-wrap:anywhere; }
+  h2 { font:500 48px/54px var(--font-display); letter-spacing:-.02em; overflow-wrap:anywhere; }
+  h3,.tagline,.pull { font:500 28px/34px var(--font-display); letter-spacing:-.01em; }
+  .vibes { font:400 16px/26px var(--font-body); color:var(--muted-foreground); }
+  .lede { font:400 20px/30px var(--font-body); color:var(--muted-foreground); }
+  .monoline,.muted,.col p,.path,.step p,.footer-credit { color:var(--muted-foreground); }
+  .cta-row { display:flex; flex-wrap:wrap; gap:var(--space-12); width:100%; }
+  .btn { display:flex; align-items:center; justify-content:center; gap:12px; min-height:48px; width:232px; padding:12px 20px; border:1px solid var(--input); border-radius:var(--radius-md); font:500 14px/20px var(--font-body); text-decoration:none; }
+  .btn.primary { width:268px; background:var(--primary); color:var(--primary-foreground); border-color:var(--primary); }
+  .btn.primary:hover { background:var(--muted-foreground); border-color:var(--muted-foreground); }
+  .btn.ghost:hover { background:var(--muted); }
+  .text-link { display:inline-flex; align-items:center; min-height:44px; border:0; padding:0; background:none; text-decoration:underline; text-underline-offset:4px; font:500 14px/20px var(--font-body); }
+  section,footer { padding:96px 0; border-bottom:1px solid var(--border); }
+  section .wrap,footer .wrap { display:flex; flex-direction:column; align-items:flex-start; gap:var(--section-gap); }
+  section .wrap>* { width:100%; min-width:0; }
+  section .wrap>p { max-width:var(--size-text); }
+  .pull { border-left:2px solid var(--foreground); padding-left:var(--space-24); }
+  .cols { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--space-32); }
+  .col { display:flex; flex-direction:column; gap:var(--space-16); min-width:0; }
+  .path { overflow-wrap:anywhere; }
+  pre { max-width:var(--size-text); font:400 14px/23px var(--font-mono); background:var(--card); border:1px solid var(--input); border-radius:var(--radius-md); padding:var(--space-24); white-space:pre-wrap; overflow-wrap:anywhere; }
+  code { font-family:var(--font-mono); }
+  .chips { display:flex; flex-wrap:wrap; gap:var(--space-8); max-width:var(--size-text); }
+  .chip { padding:4px 8px; border:1px solid var(--border); border-radius:var(--radius-full); color:var(--muted-foreground); overflow-wrap:anywhere; }
+  table { width:100%; border-collapse:collapse; table-layout:fixed; font:400 16px/26px var(--font-body); }
+  th,td { text-align:left; vertical-align:top; padding:var(--space-24) var(--space-24) var(--space-24) 0; border-bottom:1px solid var(--border); overflow-wrap:anywhere; }
+  th { font:400 12px/18px var(--font-mono); }
+  th:first-child { width:15%; }
+  td:last-child,th:last-child { padding-right:0; }
+  .steps { display:flex; flex-direction:column; gap:var(--section-gap); max-width:var(--size-text); }
+  .step { display:flex; flex-direction:column; gap:var(--space-16); padding-bottom:var(--space-16); border-bottom:1px solid var(--border); }
+  .step>div:last-child { display:flex; flex-direction:column; gap:var(--space-16); }
+  .step p a { display:flex; align-items:center; width:fit-content; min-height:44px; margin-top:var(--space-16); font:500 14px/20px var(--font-body); }
+  .guided-link { display:inline-flex; align-items:center; min-height:44px; }
+  .footer-wordmark { font:500 28px/34px var(--font-display); letter-spacing:-.01em; text-decoration:none; min-height:44px; display:flex; align-items:center; }
+  .footer-main { display:flex; width:100%; align-items:center; gap:var(--space-24); }
+  .footer-main nav { display:grid; grid-template-columns:repeat(4,minmax(0,230px)); gap:var(--space-24); width:992px; max-width:calc(100% - 68px); }
+  footer nav a { display:flex; align-items:center; min-height:44px; font:500 14px/20px var(--font-body); text-decoration:none; }
+  .resource-links { display:flex; flex-wrap:wrap; gap:8px 24px; }
+  .resource-links a { color:var(--muted-foreground); }
+  footer a:hover,.desktop-nav a:hover,.mobile-nav a:hover { text-decoration:underline; }
+  .js-only { display:none; }
+  .js .js-only { display:inline-flex; }
+  .js .menu-toggle { display:none; }
+  #net-background { position:absolute; inset:0; overflow:hidden; opacity:.5; z-index:-1; pointer-events:none; }
+  #net-background::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,var(--background) 0%,var(--background) 25%,transparent 100%); }
+  #net-background.static-net { background-image:linear-gradient(30deg,transparent 49.8%,var(--border) 50%,transparent 50.2%),linear-gradient(150deg,transparent 49.8%,var(--border) 50%,transparent 50.2%); background-size:100px 70px; }
+  /* Preserve AA text contrast even when the optional mesh crosses the copy. */
+  .hero-content { position:relative; }
+  .hero-content .lede,.hero-content .vibes,.hero-content .monoline { background:var(--background); }
+  @media(min-width:1440px) { :root { --page-gutter:120px; } }
+  @media(max-width:1023px) {
+    .desktop-nav { display:none; }
+    .js .menu-toggle { display:inline-flex; }
+    .top .wrap { min-height:76px; gap:8px; }
+    .brandmark { font-size:20px; gap:12px; width:auto; }
+    .cols { grid-template-columns:1fr; }
+    .footer-main { align-items:flex-start; }
+    .footer-main nav { grid-template-columns:repeat(2,minmax(0,1fr)); width:100%; }
+    html:not(.js) .desktop-nav { display:flex; flex-wrap:wrap; }
+    html:not(.js) .top .wrap { flex-wrap:wrap; padding-block:16px; }
+  }
+  @media(max-width:639px) {
+    :root { --page-gutter:20px; --section-gap:32px; }
+    .brandmark { gap:8px; }
+    .nav-actions { gap:0; }
+    .hero { padding:48px 0 32px; }
+    .hero-content { gap:32px; }
+    h1 { font-size:44px; line-height:51px; }
+    h2 { font-size:32px; line-height:38px; letter-spacing:-.01em; }
+    section,footer { padding:56px 0; }
+    .cta-row { flex-direction:column; }
+    .btn,.btn.primary { width:100%; }
+    .footer-main { flex-direction:column; gap:24px; }
+    .footer-main nav { display:flex; flex-direction:column; gap:24px; width:100%; max-width:none; }
+    pre { padding:20px; }
+    table,tbody { display:block; }
+    table tr:first-child { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+    table tr:not(:first-child) { display:flex; flex-direction:column; gap:24px; padding-block:24px; border-bottom:1px solid var(--border); }
+    table tr:not(:first-child):first-of-type { padding-top:0; }
+    th,td { display:block; width:100%; padding:0; border:0; }
+    th:first-child { width:100%; font:500 28px/34px var(--font-display); color:var(--foreground); }
+    td { font:400 16px/26px var(--font-body); color:var(--muted-foreground); }
+    td::before { content:attr(data-label); display:block; margin-bottom:8px; font:400 12px/18px var(--font-mono); color:var(--foreground); }
+    .chips { flex-direction:column; align-items:flex-start; }
+  }
+  @media(max-width:359px) { .brandmark { font-size:18px; gap:4px; } h1 { font-size:40px; line-height:48px; } }
+  @media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation:none!important; transition:none!important; } }
 </style>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 <header class="top">
   <div class="wrap">
-    <a href="/" class="brandmark">vibegraph.md</a>
-    <nav>
-      <a href="https://github.com/vibegraph-ai/vibegraph.md/blob/main/SPEC.md">Specification</a>
-      <a class="hide-sm" href="https://github.com/vibegraph-ai/vibegraph.md/tree/main/templates/your-name.vibegraph">Templates</a>
-      <a class="hide-sm" href="https://github.com/vibegraph-ai/vibegraph.md/tree/main/examples/maya-okafor.vibegraph">Example</a>
-      <a class="hide-sm" href="whitepaper/vibegraph-whitepaper.pdf">Whitepaper</a>
-      <a href="https://vibegraph.ai">vibegraph.ai</a>
-    </nav>
+    <a href="./" class="brandmark" aria-label="vibegraph.md home"><svg class="framework-mark" aria-hidden="true" width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.675 5.4875C10.5875 0.550003 21.425 0.550003 30.3375 5.4875C30.15 15.675 24.7375 25.05 16.0125 30.3125C7.275 25.0625 1.8625 15.6875 1.6875 5.4875H1.675Z" fill="#0A0A0A"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.75 4.9625C10.1875 -0.4875 21.8125 -0.4875 31.25 4.9625C31.25 15.8625 25.4375 25.925 16 31.375C6.5625 25.925 0.75 15.8625 0.75 4.9625ZM2.6 6.025C10.9875 1.5875 21.0125 1.5875 29.4 6.025C29.05 15.5 24.025 24.1875 16 29.2375C7.975 24.2 2.95 15.5 2.6 6.025Z" fill="#F6F6F6"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.75 4.9625C10.1875 -0.4875 21.8125 -0.4875 31.25 4.9625C31.25 15.8625 25.4375 25.925 16 31.375C6.5625 25.925 0.75 15.8625 0.75 4.9625ZM1.975 5.675C10.7125 0.912501 21.275 0.912501 30.0125 5.675C29.775 15.625 24.4875 24.775 15.9875 29.9625C7.4875 24.775 2.2125 15.625 1.9625 5.675H1.975Z" fill="#F6F6F6"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.375 9.91249C13.1 7.18749 18.9 7.18749 23.625 9.91249C23.625 15.3625 20.725 20.4 16 23.125C11.275 20.4 8.375 15.3625 8.375 9.91249ZM9.6125 10.6375C13.625 8.58749 18.375 8.58749 22.3875 10.6375C22.1625 15.1375 19.7875 19.25 16 21.7C12.225 19.25 9.8375 15.1375 9.6125 10.6375Z" fill="#F6F6F6"/>
+<path d="M9.1375 10.475C13.3875 8.025 18.6125 8.025 22.8625 10.475C22.8625 15.375 20.25 19.9125 16 22.3625C11.75 19.9125 9.1375 15.375 9.1375 10.475Z" fill="#F6F6F6"/>
+</svg><span>vibegraph.md</span></a>
+    <nav class="desktop-nav" aria-label="Main navigation"><a href="https://github.com/vibegraph-ai/vibegraph.md/blob/v2.0/SPEC.md">Specification</a>
+      <a href="https://github.com/vibegraph-ai/vibegraph.md/tree/v2.0/templates/your-name.vibegraph">Templates</a>
+      <a href="https://vibegraph.ai">Vibegraph.ai</a></nav>
+    <div class="nav-actions"><button class="icon-button theme-toggle js-only" type="button" aria-label="Switch to dark theme"><img src="assets/icon-moon.svg" alt="" width="20" height="20"></button>
+      <button class="icon-button menu-toggle js-only" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav"><img src="assets/icon-menu.svg" alt="" width="20" height="20"></button>
+    </div>
   </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden><a href="https://github.com/vibegraph-ai/vibegraph.md/blob/v2.0/SPEC.md">Specification</a>
+      <a href="https://github.com/vibegraph-ai/vibegraph.md/tree/v2.0/templates/your-name.vibegraph">Templates</a>
+      <a href="https://vibegraph.ai">Vibegraph.ai</a></nav>
 </header>
+<main id="main" tabindex="-1">
 
 <div class="hero">
-  <div class="wrap">
+  <div id="net-background" aria-hidden="true"></div>
+  <div class="wrap"><div class="hero-content">
     <div class="eyebrow">The open framework</div>
     <h1>vibegraph.md</h1>
     <p class="tagline">Your vibes, codified.</p>
     <p class="vibes">Your vibes: your personality, taste, voice, values, purpose, and aesthetic.</p>
     <p class="lede">A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one person, and any businesses they own or operate. This is its file convention: a readable structure for who you are, your personal brand, and the business brands you own, portable to any AI tool you choose.</p>
     <div class="cta-row">
-      <a class="btn primary" href="https://github.com/vibegraph-ai/vibegraph.md/blob/main/SPEC.md">Read the specification →</a>
-      <a class="btn ghost" href="https://github.com/vibegraph-ai/vibegraph.md/tree/main/examples/maya-okafor.vibegraph">Browse the example →</a>
+      <a class="btn primary" href="https://github.com/vibegraph-ai/vibegraph.md/blob/v2.0/SPEC.md">Read the specification →</a>
+      <a class="btn ghost" href="https://github.com/vibegraph-ai/vibegraph.md/tree/v2.0/examples/maya-okafor.vibegraph">Browse the example →</a>
     </div>
     <p class="monoline">Published specification: 2.0 · MIT (templates, schema, code) · CC-BY 4.0 (prose)</p>
-  </div>
+    <button class="text-link net-toggle js-only" type="button" aria-pressed="false" aria-controls="net-background">Preview NET background</button>
+  </div></div>
 </div>
 
 <section id="definition">
@@ -127,11 +233,11 @@
     <div class="kicker">Three things, three roles</div>
     <h2>The web, HTML, a website builder.</h2>
     <div class="table-wrap">
-      <table>
-        <tr><th></th><th>vibegraph</th><th>vibegraph.md</th><th>vibegraph.ai</th></tr>
-        <tr><td class="muted">What it is</td><td>The noun: the network that governs AI for one person and the businesses they own</td><td>The open framework: the root file, the link schema, scopes, areas, the handoff</td><td>The guided builder for the identity core and brands</td></tr>
-        <tr><td class="muted">Who owns it</td><td>Nobody. A common noun</td><td>Open. MIT and CC-BY 4.0</td><td>Raizen Labs, LLC</td></tr>
-        <tr><td class="muted">Analogy</td><td>the web</td><td>HTML and index.html</td><td>a website builder</td></tr>
+      <table aria-label="Three things, three roles">
+        <tr><th scope="col"><span class="sr-only">Role</span></th><th scope="col">vibegraph</th><th scope="col">vibegraph.md</th><th scope="col">vibegraph.ai</th></tr>
+        <tr><th scope="row" class="muted">What it is</th><td data-label="vibegraph">The noun: the network that governs AI for one person and the businesses they own</td><td data-label="vibegraph.md">The open framework: the root file, the link schema, scopes, areas, the handoff</td><td data-label="vibegraph.ai">The guided builder for the identity core and brands</td></tr>
+        <tr><th scope="row" class="muted">Who owns it</th><td data-label="vibegraph">Nobody. A common noun</td><td data-label="vibegraph.md">Open. MIT and CC-BY 4.0</td><td data-label="vibegraph.ai">Raizen Labs, LLC</td></tr>
+        <tr><th scope="row" class="muted">Analogy</th><td data-label="vibegraph">the web</td><td data-label="vibegraph.md">HTML and index.html</td><td data-label="vibegraph.ai">a website builder</td></tr>
       </table>
     </div>
   </div>
@@ -174,7 +280,7 @@
       <span class="chip">scope: public · scoped · private</span>
       <span class="chip">when: always · on-task · on-grant</span>
     </div>
-    <p class="muted" style="margin-top:18px">Nothing is exposed by omission.</p>
+    <p class="muted" >Nothing is exposed by omission.</p>
   </div>
 </section>
 
@@ -195,11 +301,11 @@ Do not read entries marked `scope: private` unless they have been granted for th
     <div class="kicker">Start with the format</div>
     <h2>Open it. Read it. Make it yours.</h2>
     <div class="steps">
-      <div class="step"><div class="n">01</div><div><h3>Read the specification.</h3><p>The layout, the root file, the link schema, scopes, the handoff, and how AI systems consume a vibegraph. <a href="https://github.com/vibegraph-ai/vibegraph.md/blob/main/SPEC.md">Open SPEC.md ↗</a></p></div></div>
-      <div class="step"><div class="n">02</div><div><h3>Start from the example.</h3><p>A complete vibegraph for a fictional owner, Maya Okafor, with a personal brand and a business brand. Clone it, replace her with you, and pass the paste test in under an hour. <a href="https://github.com/vibegraph-ai/vibegraph.md/tree/main/examples/maya-okafor.vibegraph">Browse the example ↗</a></p></div></div>
+      <div class="step"><div class="n">01</div><div><h3>Read the specification.</h3><p>The layout, the root file, the link schema, scopes, the handoff, and how AI systems consume a vibegraph. <a href="https://github.com/vibegraph-ai/vibegraph.md/blob/v2.0/SPEC.md">Open SPEC.md ↗</a></p></div></div>
+      <div class="step"><div class="n">02</div><div><h3>Start from the example.</h3><p>A complete vibegraph for a fictional owner, Maya Okafor, with a personal brand and a business brand. Clone it, replace her with you, and pass the paste test in under an hour. <a href="https://github.com/vibegraph-ai/vibegraph.md/tree/v2.0/examples/maya-okafor.vibegraph">Browse the example ↗</a></p></div></div>
       <div class="step"><div class="n">03</div><div><h3>Bring it to your tools.</h3><p>Paste the root file, your identity file, and one brand file into any chat. Add the handoff to your repositories. Serve it over MCP if you want it live. <a href="whitepaper/vibegraph-whitepaper.pdf">Read the whitepaper ↗</a></p></div></div>
     </div>
-    <p class="muted" style="margin-top:22px">Want a guided build with an AI coach? That is what <a href="https://vibegraph.ai">vibegraph.ai</a> is for.</p>
+    <p class="muted" >Want a guided build with an AI coach? That is what <a class="guided-link" href="https://vibegraph.ai">vibegraph.ai</a> is for.</p>
   </div>
 </section>
 
@@ -210,20 +316,33 @@ Do not read entries marked `scope: private` unless they have been granted for th
   </div>
 </section>
 
+</main>
 <footer>
   <div class="wrap">
-    <nav>
-      <a href="https://github.com/vibegraph-ai/vibegraph.md/blob/main/SPEC.md">Specification</a>
-      <a href="https://github.com/vibegraph-ai/vibegraph.md/tree/main/templates/your-name.vibegraph">Templates</a>
-      <a href="https://github.com/vibegraph-ai/vibegraph.md/tree/main/examples/maya-okafor.vibegraph">Example</a>
+    <a class="footer-wordmark" href="./">vibegraph.md</a>
+    <div class="footer-main">
+      <nav aria-label="Ecosystem navigation">
+        <a href="https://vibegraph.ai">Vibegraph.ai</a>
+        <a href="https://vibeclone.ai">Vibeclone.ai</a>
+        <a href="https://vibegraph.md">vibegraph.md</a>
+        <a href="https://contextlayer.vibegraph.ai/">The Context Layer</a>
+      </nav>
+      <button class="icon-button theme-toggle js-only" type="button" aria-label="Switch to dark theme"><img src="assets/icon-moon.svg" alt="" width="20" height="20"></button>
+    </div>
+    <p class="footer-credit">Vibegraph &amp; Vibeclone · Raizen Labs</p>
+    <nav class="resource-links" aria-label="Framework resources">
+      <a href="https://github.com/vibegraph-ai/vibegraph.md/blob/v2.0/SPEC.md">Specification</a>
+      <a href="https://github.com/vibegraph-ai/vibegraph.md/tree/v2.0/templates/your-name.vibegraph">Templates</a>
+      <a href="https://github.com/vibegraph-ai/vibegraph.md/tree/v2.0/examples/maya-okafor.vibegraph">Example</a>
       <a href="whitepaper/vibegraph-whitepaper.pdf">Whitepaper</a>
-      <a href="https://github.com/vibegraph-ai/vibegraph.md/blob/main/CHANGELOG.md">Changelog</a>
+      <a href="https://github.com/vibegraph-ai/vibegraph.md/blob/v2.0/CHANGELOG.md">Changelog</a>
       <a href="https://github.com/vibegraph-ai/vibegraph.md">GitHub</a>
       <a href="https://vibegraph.ai">vibegraph.ai</a>
     </nav>
-    <p>Maintained by Ryan Charleston · Raizen Labs, LLC · "vibegraph" is a common noun.</p>
+    <p class="footer-credit">Maintained by Ryan Charleston · Raizen Labs, LLC · "vibegraph" is a common noun.</p>
   </div>
 </footer>
 
+<script src="assets/site.js" defer></script>
 </body>
 </html>
