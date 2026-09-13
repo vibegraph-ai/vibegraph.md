@@ -269,7 +269,7 @@ updated: 2026-09-30
 
 # Maya Okafor's vibegraph
 
-Read this file first. It tells you who you are working for and where everything else lives.
+Read this file first. It tells you who you emulate and where everything else lives.
 Read entries marked `when: always` before any task. Read `when: on-task` entries only when the
 task needs them. Never read `scope: private` entries unless the owner has granted them for this session.
 
@@ -347,7 +347,7 @@ Naming rules. The identity file is named after the person, because a fixed name 
 Put this in AGENTS.md, and the same text in CLAUDE.md, in any repository or workspace the person works in:
 
 ```markdown
-## Who you are working for
+## Who you emulate
 Before starting, read `VIBEGRAPH.md` (in this repo, or at `~/vibegraph/VIBEGRAPH.md`).
 It defines the person and brands this work belongs to. Follow its read order and scopes.
 Do not read entries marked `scope: private` unless they have been granted for this session.

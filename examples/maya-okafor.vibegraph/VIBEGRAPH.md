@@ -7,7 +7,7 @@ updated: 2026-09-30
 
 # Maya Okafor's vibegraph
 
-Read this file first. It tells you who you are working for and where everything else lives.
+Read this file first. It tells you who you emulate and where everything else lives.
 Read entries marked `when: always` before any task. Read `when: on-task` entries only when the
 task needs them. Never read `scope: private` entries unless the owner has granted them for this session.
 
