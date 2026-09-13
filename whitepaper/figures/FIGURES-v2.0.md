@@ -6,7 +6,7 @@ Companion to [`../vibegraph-whitepaper.md`](../vibegraph-whitepaper.md). Each fi
 python3 build_figures.py
 ```
 
-Palette: background #0a0a0a, foreground #f6f6f6, muted #b8b8b8, accent #b7a8ff, border #2b2b2b. Type: Space Grotesk Medium for titles, Inter for labels, IBM Plex Mono for file names and key-value pairs.
+Palette, from the brand system's light mode (Figma file x48b72CU3Bv4bvgTwtOBH7, node 19:959, the desktop light page for vibegraph.ai): background #f6f6f6, cards #ffffff, foreground #0a0a0a, muted #6b6b6b, border #e2e2e2, accent #5a4bd1, with a soft accent tint on figure 3's ring. Type: Space Grotesk Medium for titles, Inter for labels, IBM Plex Mono for file names and key-value pairs.
 
 ## Figure 1: the anatomy of a vibegraph
 
@@ -113,7 +113,7 @@ mindmap
       Delphi, Personal.ai, HeyGen, ElevenLabs · public slice only
 ```
 
-**Build spec.** Canvas 1000 × 1000. Center disc radius 110, accent fill, two-line label in Space Grotesk 18 on dark. Five wedges at 72° each, separated by hairline rules in border color, wedge titles in Inter SemiBold 14 with the kind in mono after a middle dot. Chips: 1px border, 6px radius, Inter 12, muted text. Scope ring at radius 390, 1px accent, labeled once. Clone platforms placed outside the ring in a lighter band labeled "public slice only." Legend bottom-right.
+**Build spec.** Canvas 1000 × 1000. Center disc radius 110, accent fill, two-line label in Space Grotesk 18, light text on the accent. Five wedges at 72° each, separated by hairline rules in border color, wedge titles in Inter SemiBold 14 with the kind in mono after a middle dot. Chips: 1px border, 6px radius, Inter 12, muted text. Scope ring at radius 390, 1px accent, labeled once. Clone platforms placed outside the ring in a lighter band labeled "public slice only." Legend bottom-right.
 
 ## Figure 4: the root file and the four consumption modes
 

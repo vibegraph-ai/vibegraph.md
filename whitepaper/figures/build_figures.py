@@ -5,8 +5,9 @@
 
 Standard library only. Writes figure-1-anatomy.svg, figure-2-business-brand.svg,
 figure-3-where-tools-fit.svg, and figure-4-root-file-and-consumption.svg next to
-this file. Palette and type follow the brand system: background #0a0a0a,
-foreground #f6f6f6, muted #b8b8b8, accent #b7a8ff, border #2b2b2b; Space Grotesk
+this file. Palette and type follow the brand system's light mode (Figma, the
+file x48b72CU3Bv4bvgTwtOBH7, node 19:959): background #f6f6f6, cards #ffffff,
+foreground #0a0a0a, muted #6b6b6b, border #e2e2e2, accent #5a4bd1; Space Grotesk
 for titles, Inter for labels, IBM Plex Mono for file names and key-value pairs.
 Each family carries a fallback (Inter, Menlo) for machines without the faces.
 
@@ -20,7 +21,7 @@ from xml.sax.saxutils import escape
 
 HERE = Path(__file__).parent
 
-BG, FG, MUTED, ACCENT, BORDER = "#0a0a0a", "#f6f6f6", "#b8b8b8", "#b7a8ff", "#2b2b2b"
+BG, CARD, FG, MUTED, ACCENT, BORDER = "#f6f6f6", "#ffffff", "#0a0a0a", "#6b6b6b", "#5a4bd1", "#e2e2e2"
 DISPLAY = "'Space Grotesk', Inter, sans-serif"
 SANS = "Inter, sans-serif"
 MONO = "'IBM Plex Mono', Menlo, monospace"
@@ -75,7 +76,7 @@ def svg(w, h, title, body):
 
 
 def node(x, y, w, h, title, subs=(), title_family=SANS, title_size=14, rule=False):
-    out = [rect(x, y, w, h)]
+    out = [rect(x, y, w, h, fill=CARD)]
     if rule:
         out.append(line(x + 1, y + 8, x + 1, y + h - 8, ACCENT, 2))
     ty = y + 25 if subs else y + h / 2 + title_size * 0.36
@@ -94,7 +95,7 @@ def figure1():
     b.append(text(600, 56, "Maya Okafor", 26, DISPLAY, FG, 500, "middle"))
     b.append(text(600, 80, "one person", 13, SANS, MUTED, 400, "middle"))
     b.append(line(600, 92, 600, 127, FG, 1.5, marker="f1-arrow"))
-    b.append(rect(440, 130, 320, 64, ACCENT, BG, 10, sw=1.5))
+    b.append(rect(440, 130, 320, 64, ACCENT, CARD, 10, sw=1.5))
     b.append(text(600, 160, "VIBEGRAPH.md", 18, MONO, FG, 500, "middle"))
     b.append(text(600, 181, "root file · read first", 12, SANS, MUTED, 400, "middle"))
 
@@ -174,16 +175,16 @@ def figure2():
         cx = x + 250
         b.append(text(x, 114, head, 15, SANS, FG, 600))
         b.append(text(x, 134, when, 11, MONO, ACCENT))
-        b.append(rect(x, 150, 500, 120))
+        b.append(rect(x, 150, 500, 120, fill=CARD))
         b.append(text(x + 18, 177, ftitle, 13, SANS, FG, 600))
         for i, s in enumerate(flist):
             b.append(text(x + 18, 201 + i * 20, s, 11.5, MONO, MUTED))
         b.append(line(cx, 270, cx, 314, MUTED, 1.2, marker="f2-arrow"))
-        b.append(rect(x, 318, 500, 60))
+        b.append(rect(x, 318, 500, 60, fill=CARD))
         b.append(text(x + 18, 343, "Brand Context", 14, SANS, FG, 600))
         b.append(text(x + 18, 363, "12 elements · the brand in words", 11, MONO, MUTED))
         b.append(line(cx, 378, cx, 402, MUTED, 1.2, marker="f2-arrow"))
-        b.append(rect(x, 406, 500, 60))
+        b.append(rect(x, 406, 500, 60, fill=CARD))
         b.append(text(x + 18, 431, "Brand Visuals", 14, SANS, FG, 600))
         b.append(text(x + 18, 451, "8 elements · the brand in pictures", 11, MONO, MUTED))
 
@@ -192,14 +193,14 @@ def figure2():
     b.append(line(600, 210, 600, 276, MUTED, 1.2, dash="2 4"))
     label = "shared Why, checked against each other"
     pw = tw(label, 12) + 28
-    b.append(rect(600 - pw / 2, 276, pw, 26, BORDER, BG, 13))
+    b.append(rect(600 - pw / 2, 276, pw, 26, BORDER, CARD, 13))
     b.append(text(600, 293, label, 12, SANS, MUTED, 400, "middle", italic=True))
 
     # business areas strip under the right column
     x = 636
     b.append(line(x + 250, 466, x + 250, 510, MUTED, 1.2, marker="f2-arrow"))
     b.append(text(x, 496, "business areas", 12, SANS, FG, 600))
-    b.append(rect(x, 514, 500, 56))
+    b.append(rect(x, 514, 500, 56, fill=CARD))
     cx = x + 16
     for chip in ["CRM", "operations", "playbooks and SOPs", "templates"]:
         w = tw(chip, 11, True) + 22
@@ -318,10 +319,10 @@ def figure3():
     band = (f'<path d="{arc_path(490, a0_agent + 6, a0_agent + 66)} '
             f'L{polar(420, a0_agent + 66)[0]:.1f},{polar(420, a0_agent + 66)[1]:.1f} '
             f'A420,420 0 0 0 {polar(420, a0_agent + 6)[0]:.1f},{polar(420, a0_agent + 6)[1]:.1f} Z" '
-            f'fill="{FG}" fill-opacity="0.06" stroke="none"/>')
+            f'fill="{ACCENT}" fill-opacity="0.08" stroke="none"/>')
     b.append(band)
 
-    b.append(f'<circle cx="{CX}" cy="{CY}" r="{RING}" fill="none" stroke="{ACCENT}" stroke-width="1"/>')
+    b.append(f'<circle cx="{CX}" cy="{CY}" r="{RING}" fill="{ACCENT}" fill-opacity="0.05" stroke="{ACCENT}" stroke-width="1"/>')
     for i in range(5):
         a = -126 + 72 * i
         x0, y0 = polar(112, a)
@@ -349,7 +350,7 @@ def figure3():
         )
         excl = [(tx - twid / 2 - 12, ty - 16, twid + 24, 30)]
         for label, x, y, w in pack(chips, a0, a1, 150, RING - 18, excl):
-            b.append(rect(x, y, w, CHIP_H, BORDER, BG, 6))
+            b.append(rect(x, y, w, CHIP_H, BORDER, CARD, 6))
             b.append(text(x + w / 2, y + 15, label, 12, SANS, MUTED, 400, "middle"))
         assert full
 
@@ -357,7 +358,7 @@ def figure3():
     for name, deg in [("Delphi", 180), ("Personal.ai", 196), ("HeyGen", 212), ("ElevenLabs", 227)]:
         px, py = polar(452, deg)
         w = chip_w(name)
-        b.append(rect(px - w / 2, py - CHIP_H / 2, w, CHIP_H, BORDER, BG, 6))
+        b.append(rect(px - w / 2, py - CHIP_H / 2, w, CHIP_H, BORDER, CARD, 6))
         b.append(text(px, py + 4, name, 12, SANS, MUTED, 400, "middle"))
 
     b.append(f'<defs><path id="f3-ring-label" d="{arc_path(398, -120, -60)}"/>'
@@ -368,12 +369,12 @@ def figure3():
              f'startOffset="50%" text-anchor="middle">public slice only</textPath></text>')
 
     b.append(f'<circle cx="{CX}" cy="{CY}" r="110" fill="{ACCENT}"/>')
-    b.append(text(CX, CY - 4, "identity core", 18, DISPLAY, BG, 600, "middle"))
-    b.append(text(CX, CY + 20, "+ VIBEGRAPH.md", 18, DISPLAY, BG, 600, "middle"))
+    b.append(text(CX, CY - 4, "identity core", 18, DISPLAY, CARD, 600, "middle"))
+    b.append(text(CX, CY + 20, "+ VIBEGRAPH.md", 18, DISPLAY, CARD, 600, "middle"))
 
     b.append(f'<circle cx="772" cy="954" r="7" fill="{ACCENT}"/>')
     b.append(text(786, 958, "built here", 12, SANS, MUTED))
-    b.append(rect(868, 944, 22, 20, BORDER, BG, 6))
+    b.append(rect(868, 944, 22, 20, BORDER, CARD, 6))
     b.append(text(898, 958, "registered", 12, SANS, MUTED))
     return svg(W, H, "Figure 3: where existing tools fit in a vibegraph", b)
 
@@ -432,7 +433,7 @@ def figure4():
     W, H = 1400, 760
     b = [f"<defs>{arrow_marker('f4')}</defs>"]
 
-    b.append(rect(40, 40, 420, 680, BORDER, BG, 12))
+    b.append(rect(40, 40, 420, 680, BORDER, CARD, 12))
     b.append(text(62, 74, "VIBEGRAPH.md", 14, MONO, FG, 500))
     b.append(text(438, 74, "root file", 12, SANS, MUTED, 400, "end"))
     b.append(line(40, 90, 460, 90, BORDER))
@@ -448,7 +449,7 @@ def figure4():
 
     # 1. paste
     y = lanes["paste"]
-    b.append(rect(660, y - 28, 320, 56))
+    b.append(rect(660, y - 28, 320, 56, fill=CARD))
     for i in range(3):
         b.append(f'<circle cx="{676 + i * 11}" cy="{y - 13}" r="3" fill="{MUTED}"/>')
     b.append(text(716, y - 9, "any chat", 13.5, SANS, FG))
@@ -460,7 +461,7 @@ def figure4():
 
     # 3. MCP
     y = lanes["mcp"]
-    b.append(rect(660, y - 46, 360, 92, ACCENT, BG, 10, sw=1.2))
+    b.append(rect(660, y - 46, 360, 92, ACCENT, CARD, 10, sw=1.2))
     b.append(text(678, y - 18, "MCP server", 15, DISPLAY, FG, 500))
     for i, s in enumerate(["scopes become grants", "kinds become resource types", "every read logged"]):
         b.append(text(678, y + 2 + i * 16, s, 11, MONO, MUTED))
@@ -469,14 +470,14 @@ def figure4():
     for i, (name, grant) in enumerate(clients):
         cy = y - 80 + i * 80
         b.append(line(1020, y, 1096, cy, FG, 1.5, marker="f4-arrow"))
-        b.append(rect(1100, cy - 28, 200, 56))
+        b.append(rect(1100, cy - 28, 200, 56, fill=CARD))
         b.append(text(1114, cy - 6, name, 13.5, SANS, FG))
         pw = tw(grant, 10, True) + 16
         b.append(rect(1114, cy + 4, pw, 18, ACCENT, "none", 9))
         b.append(text(1114 + pw / 2, cy + 16.5, grant, 10, MONO, ACCENT, 400, "middle"))
 
     b.append(line(840, y + 46, 840, 528, MUTED, 1.2, dash="3 4"))
-    b.append(rect(660, 530, 640, 82))
+    b.append(rect(660, 530, 640, 82, fill=CARD))
     b.append(text(676, 552, "read log", 12, SANS, FG, 600))
     log = [
         "2026-09-30 14:02  claude   read identity/maya-okafor.md       (public)",

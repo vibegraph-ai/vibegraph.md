@@ -121,85 +121,85 @@ figcaption { font-style: italic; font-size: 8.8pt; color: #52525b; text-align: c
 <p>Second, it matches how trust works. The core and the brands are shareable by design. Areas are gated by design. Components are registered, not copied. A clean line is easier to secure and easier to reason about than one blob with per-paragraph exceptions.</p>
 <p>Third, it scales in both directions. A minimal vibegraph (core, one brand, root file) is useful the day it is built. A large one, with two business brands, a dozen areas, and six registered components maintained over years, is still one file an agent reads first. The framework does not force anyone up the curve.</p>
 <figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="Figure 1: the anatomy of a vibegraph">
-<rect width="1200" height="800" fill="#0a0a0a"/>
-<defs><marker id="f1-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f6f6f6"/></marker></defs>
-<text x="600.0" y="56.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="26" font-weight="500" fill="#f6f6f6" text-anchor="middle">Maya Okafor</text>
-<text x="600.0" y="80.0" font-family="Inter, sans-serif" font-size="13" font-weight="400" fill="#b8b8b8" text-anchor="middle">one person</text>
-<line x1="600.0" y1="92.0" x2="600.0" y2="127.0" stroke="#f6f6f6" stroke-width="1.5" marker-end="url(#f1-arrow)"/>
-<rect x="440.0" y="130.0" width="320.0" height="64.0" rx="10" fill="#0a0a0a" stroke="#b7a8ff" stroke-width="1.5"/>
-<text x="600.0" y="160.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="18" font-weight="500" fill="#f6f6f6" text-anchor="middle">VIBEGRAPH.md</text>
-<text x="600.0" y="181.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">root file · read first</text>
-<line x1="600.0" y1="194.0" x2="600.0" y2="236.0" stroke="#b8b8b8" stroke-width="1.0"/>
-<line x1="174.0" y1="236.0" x2="1026.0" y2="236.0" stroke="#b8b8b8" stroke-width="1.0"/>
-<line x1="174.0" y1="236.0" x2="174.0" y2="330.0" stroke="#b8b8b8" stroke-width="1.0"/>
-<rect x="77.8" y="258.0" width="192.4" height="44.0" rx="4" fill="#0a0a0a" stroke="none" stroke-width="0"/>
-<text x="174.0" y="276.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#b8b8b8" text-anchor="middle">kind: identity</text>
-<text x="174.0" y="292.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#b8b8b8" text-anchor="middle">scope: public · when: always</text>
-<line x1="458.0" y1="236.0" x2="458.0" y2="330.0" stroke="#b8b8b8" stroke-width="1.0"/>
-<rect x="409.1" y="258.0" width="97.9" height="44.0" rx="4" fill="#0a0a0a" stroke="none" stroke-width="0"/>
-<text x="458.0" y="276.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#b8b8b8" text-anchor="middle">kind: brand</text>
-<text x="458.0" y="292.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#b8b8b8" text-anchor="middle">scope: public</text>
-<line x1="742.0" y1="236.0" x2="742.0" y2="330.0" stroke="#b8b8b8" stroke-width="1.0"/>
-<rect x="667.9" y="258.0" width="148.3" height="44.0" rx="4" fill="#0a0a0a" stroke="none" stroke-width="0"/>
-<text x="742.0" y="276.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#b8b8b8" text-anchor="middle">kind: area</text>
-<text x="742.0" y="292.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#b8b8b8" text-anchor="middle">scope: scoped/private</text>
-<line x1="1026.0" y1="236.0" x2="1026.0" y2="330.0" stroke="#b8b8b8" stroke-width="1.0"/>
-<rect x="914.0" y="258.0" width="223.9" height="44.0" rx="4" fill="#0a0a0a" stroke="none" stroke-width="0"/>
-<text x="1026.0" y="276.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#b8b8b8" text-anchor="middle">kind: source/memory/project/agent</text>
-<text x="1026.0" y="292.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#b8b8b8" text-anchor="middle">scope: scoped</text>
-<rect x="44.0" y="330.0" width="260.0" height="440.0" rx="12" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="64.0" y="364.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#f6f6f6" text-anchor="start">identity core</text>
-<rect x="328.0" y="330.0" width="260.0" height="440.0" rx="12" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="348.0" y="364.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#f6f6f6" text-anchor="start">brands</text>
-<rect x="612.0" y="330.0" width="260.0" height="440.0" rx="12" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="632.0" y="364.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#f6f6f6" text-anchor="start">areas</text>
-<rect x="896.0" y="330.0" width="260.0" height="440.0" rx="12" fill="none" stroke="#2b2b2b" stroke-width="1.0" stroke-dasharray="6 4"/>
-<text x="916.0" y="364.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#f6f6f6" text-anchor="start">components</text>
-<text x="916.0" y="384.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="start">registered, not stored</text>
-<rect x="60.0" y="386.0" width="228.0" height="84.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="74.0" y="411.0" font-family="Inter, sans-serif" font-size="14" font-weight="400" fill="#f6f6f6" text-anchor="start">personality</text>
-<text x="74.0" y="430.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">Big Five · Enneagram</text>
-<text x="74.0" y="447.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">other instruments</text>
-<rect x="60.0" y="486.0" width="228.0" height="48.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="74.0" y="515.0" font-family="Inter, sans-serif" font-size="14" font-weight="400" fill="#f6f6f6" text-anchor="start">integrated reading</text>
-<rect x="60.0" y="550.0" width="228.0" height="66.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="74.0" y="575.0" font-family="Inter, sans-serif" font-size="14" font-weight="400" fill="#f6f6f6" text-anchor="start">Ikigai</text>
-<text x="74.0" y="594.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">four pillars · one statement</text>
-<text x="64.0" y="750.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">identity/maya-okafor.md</text>
-<rect x="344.0" y="386.0" width="228.0" height="84.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="358.0" y="411.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="12.5" font-weight="500" fill="#f6f6f6" text-anchor="start">maya-okafor.brand.md</text>
-<text x="358.0" y="430.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">personal · 12 + 8</text>
-<text x="358.0" y="447.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">when: always</text>
-<rect x="360.0" y="486.0" width="212.0" height="100.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<line x1="361.0" y1="494.0" x2="361.0" y2="578.0" stroke="#b7a8ff" stroke-width="2"/>
-<text x="374.0" y="511.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="12.5" font-weight="500" fill="#f6f6f6" text-anchor="start">delivery-os.brand.md</text>
-<text x="374.0" y="530.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">business</text>
-<text x="374.0" y="547.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">foundations + 12 + 8</text>
-<text x="374.0" y="564.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">when: on-task</text>
-<text x="348.0" y="750.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">brands/</text>
-<rect x="628.0" y="386.0" width="228.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="642.0" y="411.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="13" font-weight="500" fill="#f6f6f6" text-anchor="start">career/</text>
-<text x="642.0" y="430.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">scope: scoped · on-task</text>
-<rect x="628.0" y="454.0" width="228.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="642.0" y="479.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="13" font-weight="500" fill="#f6f6f6" text-anchor="start">skills/</text>
-<text x="642.0" y="498.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">scope: scoped · on-task</text>
-<rect x="628.0" y="522.0" width="228.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="642.0" y="547.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="13" font-weight="500" fill="#f6f6f6" text-anchor="start">finances/</text>
-<text x="642.0" y="566.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">scope: private · on-grant</text>
-<text x="632.0" y="750.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">areas/&lt;area&gt;/index.md</text>
-<rect x="912.0" y="406.0" width="228.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="926.0" y="431.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#f6f6f6" text-anchor="start">Obsidian vault</text>
-<text x="926.0" y="450.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">kind: source</text>
-<rect x="912.0" y="474.0" width="228.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="926.0" y="499.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#f6f6f6" text-anchor="start">Claude memory</text>
-<text x="926.0" y="518.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">kind: memory</text>
-<rect x="912.0" y="542.0" width="228.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="926.0" y="567.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#f6f6f6" text-anchor="start">site repo</text>
-<text x="926.0" y="586.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">kind: project</text>
-<rect x="912.0" y="610.0" width="228.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="926.0" y="635.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#f6f6f6" text-anchor="start">writing agent</text>
-<text x="926.0" y="654.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">kind: agent</text>
-<text x="916.0" y="750.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">components.md</text>
+<rect width="1200" height="800" fill="#f6f6f6"/>
+<defs><marker id="f1-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0a0a0a"/></marker></defs>
+<text x="600.0" y="56.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="26" font-weight="500" fill="#0a0a0a" text-anchor="middle">Maya Okafor</text>
+<text x="600.0" y="80.0" font-family="Inter, sans-serif" font-size="13" font-weight="400" fill="#6b6b6b" text-anchor="middle">one person</text>
+<line x1="600.0" y1="92.0" x2="600.0" y2="127.0" stroke="#0a0a0a" stroke-width="1.5" marker-end="url(#f1-arrow)"/>
+<rect x="440.0" y="130.0" width="320.0" height="64.0" rx="10" fill="#ffffff" stroke="#5a4bd1" stroke-width="1.5"/>
+<text x="600.0" y="160.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="18" font-weight="500" fill="#0a0a0a" text-anchor="middle">VIBEGRAPH.md</text>
+<text x="600.0" y="181.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">root file · read first</text>
+<line x1="600.0" y1="194.0" x2="600.0" y2="236.0" stroke="#6b6b6b" stroke-width="1.0"/>
+<line x1="174.0" y1="236.0" x2="1026.0" y2="236.0" stroke="#6b6b6b" stroke-width="1.0"/>
+<line x1="174.0" y1="236.0" x2="174.0" y2="330.0" stroke="#6b6b6b" stroke-width="1.0"/>
+<rect x="77.8" y="258.0" width="192.4" height="44.0" rx="4" fill="#f6f6f6" stroke="none" stroke-width="0"/>
+<text x="174.0" y="276.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#6b6b6b" text-anchor="middle">kind: identity</text>
+<text x="174.0" y="292.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#6b6b6b" text-anchor="middle">scope: public · when: always</text>
+<line x1="458.0" y1="236.0" x2="458.0" y2="330.0" stroke="#6b6b6b" stroke-width="1.0"/>
+<rect x="409.1" y="258.0" width="97.9" height="44.0" rx="4" fill="#f6f6f6" stroke="none" stroke-width="0"/>
+<text x="458.0" y="276.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#6b6b6b" text-anchor="middle">kind: brand</text>
+<text x="458.0" y="292.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#6b6b6b" text-anchor="middle">scope: public</text>
+<line x1="742.0" y1="236.0" x2="742.0" y2="330.0" stroke="#6b6b6b" stroke-width="1.0"/>
+<rect x="667.9" y="258.0" width="148.3" height="44.0" rx="4" fill="#f6f6f6" stroke="none" stroke-width="0"/>
+<text x="742.0" y="276.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#6b6b6b" text-anchor="middle">kind: area</text>
+<text x="742.0" y="292.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#6b6b6b" text-anchor="middle">scope: scoped/private</text>
+<line x1="1026.0" y1="236.0" x2="1026.0" y2="330.0" stroke="#6b6b6b" stroke-width="1.0"/>
+<rect x="914.0" y="258.0" width="223.9" height="44.0" rx="4" fill="#f6f6f6" stroke="none" stroke-width="0"/>
+<text x="1026.0" y="276.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#6b6b6b" text-anchor="middle">kind: source/memory/project/agent</text>
+<text x="1026.0" y="292.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#6b6b6b" text-anchor="middle">scope: scoped</text>
+<rect x="44.0" y="330.0" width="260.0" height="440.0" rx="12" fill="none" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="64.0" y="364.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#0a0a0a" text-anchor="start">identity core</text>
+<rect x="328.0" y="330.0" width="260.0" height="440.0" rx="12" fill="none" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="348.0" y="364.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#0a0a0a" text-anchor="start">brands</text>
+<rect x="612.0" y="330.0" width="260.0" height="440.0" rx="12" fill="none" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="632.0" y="364.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#0a0a0a" text-anchor="start">areas</text>
+<rect x="896.0" y="330.0" width="260.0" height="440.0" rx="12" fill="none" stroke="#e2e2e2" stroke-width="1.0" stroke-dasharray="6 4"/>
+<text x="916.0" y="364.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#0a0a0a" text-anchor="start">components</text>
+<text x="916.0" y="384.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="start">registered, not stored</text>
+<rect x="60.0" y="386.0" width="228.0" height="84.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="74.0" y="411.0" font-family="Inter, sans-serif" font-size="14" font-weight="400" fill="#0a0a0a" text-anchor="start">personality</text>
+<text x="74.0" y="430.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">Big Five · Enneagram</text>
+<text x="74.0" y="447.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">other instruments</text>
+<rect x="60.0" y="486.0" width="228.0" height="48.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="74.0" y="515.0" font-family="Inter, sans-serif" font-size="14" font-weight="400" fill="#0a0a0a" text-anchor="start">integrated reading</text>
+<rect x="60.0" y="550.0" width="228.0" height="66.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="74.0" y="575.0" font-family="Inter, sans-serif" font-size="14" font-weight="400" fill="#0a0a0a" text-anchor="start">Ikigai</text>
+<text x="74.0" y="594.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">four pillars · one statement</text>
+<text x="64.0" y="750.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">identity/maya-okafor.md</text>
+<rect x="344.0" y="386.0" width="228.0" height="84.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="358.0" y="411.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="12.5" font-weight="500" fill="#0a0a0a" text-anchor="start">maya-okafor.brand.md</text>
+<text x="358.0" y="430.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">personal · 12 + 8</text>
+<text x="358.0" y="447.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">when: always</text>
+<rect x="360.0" y="486.0" width="212.0" height="100.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<line x1="361.0" y1="494.0" x2="361.0" y2="578.0" stroke="#5a4bd1" stroke-width="2"/>
+<text x="374.0" y="511.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="12.5" font-weight="500" fill="#0a0a0a" text-anchor="start">delivery-os.brand.md</text>
+<text x="374.0" y="530.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">business</text>
+<text x="374.0" y="547.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">foundations + 12 + 8</text>
+<text x="374.0" y="564.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">when: on-task</text>
+<text x="348.0" y="750.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">brands/</text>
+<rect x="628.0" y="386.0" width="228.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="642.0" y="411.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="13" font-weight="500" fill="#0a0a0a" text-anchor="start">career/</text>
+<text x="642.0" y="430.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">scope: scoped · on-task</text>
+<rect x="628.0" y="454.0" width="228.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="642.0" y="479.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="13" font-weight="500" fill="#0a0a0a" text-anchor="start">skills/</text>
+<text x="642.0" y="498.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">scope: scoped · on-task</text>
+<rect x="628.0" y="522.0" width="228.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="642.0" y="547.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="13" font-weight="500" fill="#0a0a0a" text-anchor="start">finances/</text>
+<text x="642.0" y="566.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">scope: private · on-grant</text>
+<text x="632.0" y="750.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">areas/&lt;area&gt;/index.md</text>
+<rect x="912.0" y="406.0" width="228.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="926.0" y="431.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#0a0a0a" text-anchor="start">Obsidian vault</text>
+<text x="926.0" y="450.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">kind: source</text>
+<rect x="912.0" y="474.0" width="228.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="926.0" y="499.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#0a0a0a" text-anchor="start">Claude memory</text>
+<text x="926.0" y="518.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">kind: memory</text>
+<rect x="912.0" y="542.0" width="228.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="926.0" y="567.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#0a0a0a" text-anchor="start">site repo</text>
+<text x="926.0" y="586.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">kind: project</text>
+<rect x="912.0" y="610.0" width="228.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="926.0" y="635.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#0a0a0a" text-anchor="start">writing agent</text>
+<text x="926.0" y="654.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">kind: agent</text>
+<text x="916.0" y="750.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">components.md</text>
 </svg>
 <figcaption>Figure 1: the anatomy of a vibegraph. One owner, one root file, an identity core, brands (personal plus nested business brands), areas, and registered components, with every link carrying a kind and a scope.</figcaption></figure>
 <hr />
@@ -303,57 +303,57 @@ figcaption { font-style: italic; font-size: 8.8pt; color: #52525b; text-align: c
 </div><div class="keep"><h3>5.6 Out of scope: the organizational vibegraph</h3>
 <p>A standalone organizational vibegraph (a company as first-class owner, with no single human anchor) is a plausible extension and nothing in the format precludes it. It is deliberately not part of this framework. The person-anchored model serves the framework's first audience, and an organization-anchored variant deserves its own treatment rather than a premature parallel.</p>
 <figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" width="1200" height="720" role="img" aria-label="Figure 2: a business brand inside its owner's vibegraph">
-<rect width="1200" height="720" fill="#0a0a0a"/>
-<defs><marker id="f2-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b8b8b8"/></marker></defs>
-<rect x="24.0" y="24.0" width="1152.0" height="672.0" rx="14" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="56.0" y="70.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="22" font-weight="500" fill="#f6f6f6" text-anchor="start">Maya Okafor's vibegraph</text>
-<text x="64.0" y="114.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#f6f6f6" text-anchor="start">personal brand</text>
-<text x="64.0" y="134.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b7a8ff" text-anchor="start">when: always</text>
-<rect x="64.0" y="150.0" width="500.0" height="120.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="82.0" y="177.0" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#f6f6f6" text-anchor="start">foundation: identity core</text>
-<text x="82.0" y="201.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11.5" font-weight="400" fill="#b8b8b8" text-anchor="start">Big Five · Enneagram</text>
-<text x="82.0" y="221.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11.5" font-weight="400" fill="#b8b8b8" text-anchor="start">other instruments</text>
-<text x="82.0" y="241.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11.5" font-weight="400" fill="#b8b8b8" text-anchor="start">Ikigai</text>
-<line x1="314.0" y1="270.0" x2="314.0" y2="314.0" stroke="#b8b8b8" stroke-width="1.2" marker-end="url(#f2-arrow)"/>
-<rect x="64.0" y="318.0" width="500.0" height="60.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="82.0" y="343.0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f6f6f6" text-anchor="start">Brand Context</text>
-<text x="82.0" y="363.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">12 elements · the brand in words</text>
-<line x1="314.0" y1="378.0" x2="314.0" y2="402.0" stroke="#b8b8b8" stroke-width="1.2" marker-end="url(#f2-arrow)"/>
-<rect x="64.0" y="406.0" width="500.0" height="60.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="82.0" y="431.0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f6f6f6" text-anchor="start">Brand Visuals</text>
-<text x="82.0" y="451.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">8 elements · the brand in pictures</text>
-<text x="636.0" y="114.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#f6f6f6" text-anchor="start">business brand: Delivery OS</text>
-<text x="636.0" y="134.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b7a8ff" text-anchor="start">when: on-task</text>
-<rect x="636.0" y="150.0" width="500.0" height="120.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="654.0" y="177.0" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#f6f6f6" text-anchor="start">foundations</text>
-<text x="654.0" y="201.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11.5" font-weight="400" fill="#b8b8b8" text-anchor="start">Aaker's five dimensions</text>
-<text x="654.0" y="221.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11.5" font-weight="400" fill="#b8b8b8" text-anchor="start">archetype</text>
-<text x="654.0" y="241.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11.5" font-weight="400" fill="#b8b8b8" text-anchor="start">Golden Circle + mission, vision, values</text>
-<line x1="886.0" y1="270.0" x2="886.0" y2="314.0" stroke="#b8b8b8" stroke-width="1.2" marker-end="url(#f2-arrow)"/>
-<rect x="636.0" y="318.0" width="500.0" height="60.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="654.0" y="343.0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f6f6f6" text-anchor="start">Brand Context</text>
-<text x="654.0" y="363.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">12 elements · the brand in words</text>
-<line x1="886.0" y1="378.0" x2="886.0" y2="402.0" stroke="#b8b8b8" stroke-width="1.2" marker-end="url(#f2-arrow)"/>
-<rect x="636.0" y="406.0" width="500.0" height="60.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="654.0" y="431.0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f6f6f6" text-anchor="start">Brand Visuals</text>
-<text x="654.0" y="451.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">8 elements · the brand in pictures</text>
-<line x1="564.0" y1="210.0" x2="636.0" y2="210.0" stroke="#b8b8b8" stroke-width="1.2" stroke-dasharray="2 4"/>
-<line x1="600.0" y1="210.0" x2="600.0" y2="276.0" stroke="#b8b8b8" stroke-width="1.2" stroke-dasharray="2 4"/>
-<rect x="458.3" y="276.0" width="283.4" height="26.0" rx="13" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="600.0" y="293.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle" font-style="italic">shared Why, checked against each other</text>
-<line x1="886.0" y1="466.0" x2="886.0" y2="510.0" stroke="#b8b8b8" stroke-width="1.2" marker-end="url(#f2-arrow)"/>
-<text x="636.0" y="496.0" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#f6f6f6" text-anchor="start">business areas</text>
-<rect x="636.0" y="514.0" width="500.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<rect x="652.0" y="530.0" width="41.8" height="24.0" rx="6" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="672.9" y="546.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="middle">CRM</text>
-<rect x="703.8" y="530.0" width="88.0" height="24.0" rx="6" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="747.8" y="546.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="middle">operations</text>
-<rect x="801.8" y="530.0" width="140.8" height="24.0" rx="6" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="872.2" y="546.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="middle">playbooks and SOPs</text>
-<rect x="952.6" y="530.0" width="81.4" height="24.0" rx="6" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="993.3" y="546.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="middle">templates</text>
-<line x1="24.0" y1="612.0" x2="1176.0" y2="612.0" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="600.0" y="656.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="middle">personal · when: always | business · when: on-task (any Delivery OS writing, design, or publishing)</text>
+<rect width="1200" height="720" fill="#f6f6f6"/>
+<defs><marker id="f2-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6b6b6b"/></marker></defs>
+<rect x="24.0" y="24.0" width="1152.0" height="672.0" rx="14" fill="none" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="56.0" y="70.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="22" font-weight="500" fill="#0a0a0a" text-anchor="start">Maya Okafor's vibegraph</text>
+<text x="64.0" y="114.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#0a0a0a" text-anchor="start">personal brand</text>
+<text x="64.0" y="134.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#5a4bd1" text-anchor="start">when: always</text>
+<rect x="64.0" y="150.0" width="500.0" height="120.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="82.0" y="177.0" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#0a0a0a" text-anchor="start">foundation: identity core</text>
+<text x="82.0" y="201.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11.5" font-weight="400" fill="#6b6b6b" text-anchor="start">Big Five · Enneagram</text>
+<text x="82.0" y="221.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11.5" font-weight="400" fill="#6b6b6b" text-anchor="start">other instruments</text>
+<text x="82.0" y="241.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11.5" font-weight="400" fill="#6b6b6b" text-anchor="start">Ikigai</text>
+<line x1="314.0" y1="270.0" x2="314.0" y2="314.0" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#f2-arrow)"/>
+<rect x="64.0" y="318.0" width="500.0" height="60.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="82.0" y="343.0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0a0a0a" text-anchor="start">Brand Context</text>
+<text x="82.0" y="363.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">12 elements · the brand in words</text>
+<line x1="314.0" y1="378.0" x2="314.0" y2="402.0" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#f2-arrow)"/>
+<rect x="64.0" y="406.0" width="500.0" height="60.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="82.0" y="431.0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0a0a0a" text-anchor="start">Brand Visuals</text>
+<text x="82.0" y="451.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">8 elements · the brand in pictures</text>
+<text x="636.0" y="114.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#0a0a0a" text-anchor="start">business brand: Delivery OS</text>
+<text x="636.0" y="134.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#5a4bd1" text-anchor="start">when: on-task</text>
+<rect x="636.0" y="150.0" width="500.0" height="120.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="654.0" y="177.0" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#0a0a0a" text-anchor="start">foundations</text>
+<text x="654.0" y="201.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11.5" font-weight="400" fill="#6b6b6b" text-anchor="start">Aaker's five dimensions</text>
+<text x="654.0" y="221.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11.5" font-weight="400" fill="#6b6b6b" text-anchor="start">archetype</text>
+<text x="654.0" y="241.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11.5" font-weight="400" fill="#6b6b6b" text-anchor="start">Golden Circle + mission, vision, values</text>
+<line x1="886.0" y1="270.0" x2="886.0" y2="314.0" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#f2-arrow)"/>
+<rect x="636.0" y="318.0" width="500.0" height="60.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="654.0" y="343.0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0a0a0a" text-anchor="start">Brand Context</text>
+<text x="654.0" y="363.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">12 elements · the brand in words</text>
+<line x1="886.0" y1="378.0" x2="886.0" y2="402.0" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#f2-arrow)"/>
+<rect x="636.0" y="406.0" width="500.0" height="60.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="654.0" y="431.0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0a0a0a" text-anchor="start">Brand Visuals</text>
+<text x="654.0" y="451.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">8 elements · the brand in pictures</text>
+<line x1="564.0" y1="210.0" x2="636.0" y2="210.0" stroke="#6b6b6b" stroke-width="1.2" stroke-dasharray="2 4"/>
+<line x1="600.0" y1="210.0" x2="600.0" y2="276.0" stroke="#6b6b6b" stroke-width="1.2" stroke-dasharray="2 4"/>
+<rect x="458.3" y="276.0" width="283.4" height="26.0" rx="13" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="600.0" y="293.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle" font-style="italic">shared Why, checked against each other</text>
+<line x1="886.0" y1="466.0" x2="886.0" y2="510.0" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#f2-arrow)"/>
+<text x="636.0" y="496.0" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#0a0a0a" text-anchor="start">business areas</text>
+<rect x="636.0" y="514.0" width="500.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<rect x="652.0" y="530.0" width="41.8" height="24.0" rx="6" fill="none" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="672.9" y="546.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="middle">CRM</text>
+<rect x="703.8" y="530.0" width="88.0" height="24.0" rx="6" fill="none" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="747.8" y="546.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="middle">operations</text>
+<rect x="801.8" y="530.0" width="140.8" height="24.0" rx="6" fill="none" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="872.2" y="546.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="middle">playbooks and SOPs</text>
+<rect x="952.6" y="530.0" width="81.4" height="24.0" rx="6" fill="none" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="993.3" y="546.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="middle">templates</text>
+<line x1="24.0" y1="612.0" x2="1176.0" y2="612.0" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="600.0" y="656.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="middle">personal · when: always | business · when: on-task (any Delivery OS writing, design, or publishing)</text>
 </svg>
 <figcaption>Figure 2: a business brand nested inside its owner's vibegraph. Foundations swapped for organizational instruments, the same twelve and eight, read on-task, with business areas built for repeatability.</figcaption></figure>
 <hr />
@@ -454,109 +454,109 @@ figcaption { font-style: italic; font-size: 8.8pt; color: #52525b; text-align: c
 <p>The identity slot is empty in nearly every tool listed. Agent folders start with a business interview. Memory layers start with observation. Clone platforms start with uploaded content. The human-authored, instrument-grounded identity core is the one component none of them builds, which is why the framework builds it and registers everything else.</p>
 <p>Adding a tool costs one line. A new memory layer, a new notes app, a new agent: one entry in the root file with a kind and a scope, and the graph is current.</p>
 <figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000" role="img" aria-label="Figure 3: where existing tools fit in a vibegraph">
-<rect width="1000" height="1000" fill="#0a0a0a"/>
-<path d="M20.7,601.9 A490,490 0 0 1 172.1,135.9 L219.0,187.9 A420,420 0 0 0 89.2,587.3 Z" fill="#f6f6f6" fill-opacity="0.06" stroke="none"/>
-<circle cx="500" cy="500" r="390" fill="none" stroke="#b7a8ff" stroke-width="1"/>
-<line x1="434.2" y1="409.4" x2="270.8" y2="184.5" stroke="#2b2b2b" stroke-width="1"/>
-<line x1="565.8" y1="409.4" x2="729.2" y2="184.5" stroke="#2b2b2b" stroke-width="1"/>
-<line x1="606.5" y1="534.6" x2="870.9" y2="620.5" stroke="#2b2b2b" stroke-width="1"/>
-<line x1="500.0" y1="612.0" x2="500.0" y2="890.0" stroke="#2b2b2b" stroke-width="1"/>
-<line x1="393.5" y1="534.6" x2="129.1" y2="620.5" stroke="#2b2b2b" stroke-width="1"/>
-<text x="500.0" y="355.0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f6f6f6" text-anchor="middle">knowledge stores<tspan font-family="'IBM Plex Mono', Menlo, monospace" font-weight="400" fill="#b8b8b8"> · source</tspan></text>
-<rect x="439.6" y="309.0" width="120.8" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="500.0" y="324.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Notion Business</text>
-<rect x="395.4" y="279.0" width="114.1" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="452.4" y="294.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">context graphs</text>
-<rect x="517.4" y="279.0" width="87.2" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="561.0" y="294.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Capacities</text>
-<rect x="381.4" y="249.0" width="80.5" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="421.6" y="264.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Heptabase</text>
-<rect x="469.8" y="249.0" width="73.8" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="506.7" y="264.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Obsidian</text>
-<rect x="551.6" y="249.0" width="67.0" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="585.1" y="264.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Anytype</text>
-<rect x="329.8" y="219.0" width="67.0" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="363.4" y="234.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Reflect</text>
-<rect x="404.9" y="219.0" width="60.3" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="435.0" y="234.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Logseq</text>
-<rect x="473.2" y="219.0" width="60.3" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="503.4" y="234.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Notion</text>
-<rect x="541.5" y="219.0" width="60.3" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="571.7" y="234.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Tettra</text>
-<rect x="609.8" y="219.0" width="60.3" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="640.0" y="234.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">GBrain</text>
-<rect x="394.2" y="189.0" width="53.6" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="421.0" y="204.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Slite</text>
-<rect x="455.8" y="189.0" width="46.9" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="479.3" y="204.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Tana</text>
-<rect x="510.7" y="189.0" width="46.9" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="534.2" y="204.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Guru</text>
-<rect x="565.6" y="189.0" width="40.2" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="585.7" y="204.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Mem</text>
-<text x="707.3" y="437.6" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f6f6f6" text-anchor="middle">memory layers<tspan font-family="'IBM Plex Mono', Menlo, monospace" font-weight="400" fill="#b8b8b8"> · memory</tspan></text>
-<rect x="622.9" y="369.0" width="208.2" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="727.0" y="384.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Gemini personal intelligence</text>
-<rect x="703.0" y="489.0" width="114.1" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="760.0" y="504.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">ChatGPT memory</text>
-<rect x="651.0" y="459.0" width="107.4" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="704.7" y="474.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Claude memory</text>
-<rect x="766.4" y="459.0" width="100.6" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="816.7" y="474.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Codex memory</text>
-<rect x="679.9" y="519.0" width="80.5" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="720.1" y="534.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Hindsight</text>
-<rect x="768.4" y="519.0" width="73.8" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="805.2" y="534.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Graphiti</text>
-<rect x="632.5" y="339.0" width="67.0" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="666.0" y="354.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">LangMem</text>
-<rect x="707.6" y="339.0" width="60.3" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="737.7" y="354.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Cognee</text>
-<rect x="775.9" y="339.0" width="53.6" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="802.7" y="354.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Letta</text>
-<rect x="686.5" y="309.0" width="46.9" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="709.9" y="324.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Mem0</text>
-<rect x="741.4" y="309.0" width="40.2" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="761.4" y="324.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Zep</text>
-<text x="604.6" y="649.0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f6f6f6" text-anchor="middle">projects<tspan font-family="'IBM Plex Mono', Menlo, monospace" font-weight="400" fill="#b8b8b8"> · project</tspan></text>
-<rect x="511.8" y="669.0" width="107.4" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="565.4" y="684.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">agent folders</text>
-<rect x="627.1" y="669.0" width="100.6" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="677.4" y="684.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Cursor rules</text>
-<rect x="735.8" y="669.0" width="80.5" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="776.0" y="684.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">AGENTS.md</text>
-<rect x="535.4" y="699.0" width="80.5" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="575.6" y="714.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">CLAUDE.md</text>
-<rect x="623.8" y="699.0" width="80.5" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="664.1" y="714.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">GEMINI.md</text>
-<rect x="712.3" y="699.0" width="60.3" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="742.5" y="714.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">AIS-OS</text>
-<text x="400.1" y="642.5" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f6f6f6" text-anchor="middle">skills<tspan font-family="'IBM Plex Mono', Menlo, monospace" font-weight="400" fill="#b8b8b8"> · skill</tspan></text>
-<rect x="215.6" y="669.0" width="120.8" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="276.0" y="684.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">the skills area</text>
-<rect x="344.4" y="669.0" width="114.1" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="401.4" y="684.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">SKILL.md files</text>
-<text x="319.3" y="446.3" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f6f6f6" text-anchor="middle">agents<tspan font-family="'IBM Plex Mono', Menlo, monospace" font-weight="400" fill="#b8b8b8"> · agent</tspan></text>
-<rect x="185.7" y="369.0" width="174.6" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="273.0" y="384.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">a vibeclone · per grant</text>
-<rect x="226.8" y="399.0" width="60.3" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="257.0" y="414.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">GBrain</text>
-<rect x="17.8" y="489.0" width="60.3" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="48.0" y="504.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Delphi</text>
-<rect x="18.5" y="364.4" width="93.9" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="65.5" y="379.4" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">Personal.ai</text>
-<rect x="86.5" y="249.5" width="60.3" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="116.7" y="264.5" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">HeyGen</text>
-<rect x="148.1" y="158.4" width="87.2" height="22.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="191.7" y="173.4" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="middle">ElevenLabs</text>
+<rect width="1000" height="1000" fill="#f6f6f6"/>
+<path d="M20.7,601.9 A490,490 0 0 1 172.1,135.9 L219.0,187.9 A420,420 0 0 0 89.2,587.3 Z" fill="#5a4bd1" fill-opacity="0.08" stroke="none"/>
+<circle cx="500" cy="500" r="390" fill="#5a4bd1" fill-opacity="0.05" stroke="#5a4bd1" stroke-width="1"/>
+<line x1="434.2" y1="409.4" x2="270.8" y2="184.5" stroke="#e2e2e2" stroke-width="1"/>
+<line x1="565.8" y1="409.4" x2="729.2" y2="184.5" stroke="#e2e2e2" stroke-width="1"/>
+<line x1="606.5" y1="534.6" x2="870.9" y2="620.5" stroke="#e2e2e2" stroke-width="1"/>
+<line x1="500.0" y1="612.0" x2="500.0" y2="890.0" stroke="#e2e2e2" stroke-width="1"/>
+<line x1="393.5" y1="534.6" x2="129.1" y2="620.5" stroke="#e2e2e2" stroke-width="1"/>
+<text x="500.0" y="355.0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0a0a0a" text-anchor="middle">knowledge stores<tspan font-family="'IBM Plex Mono', Menlo, monospace" font-weight="400" fill="#6b6b6b"> · source</tspan></text>
+<rect x="439.6" y="309.0" width="120.8" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="500.0" y="324.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">Notion Business</text>
+<rect x="395.4" y="279.0" width="114.1" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="452.4" y="294.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">context graphs</text>
+<rect x="517.4" y="279.0" width="87.2" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="561.0" y="294.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">Capacities</text>
+<rect x="381.4" y="249.0" width="80.5" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="421.6" y="264.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">Heptabase</text>
+<rect x="469.8" y="249.0" width="73.8" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="506.7" y="264.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">Obsidian</text>
+<rect x="551.6" y="249.0" width="67.0" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="585.1" y="264.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">Anytype</text>
+<rect x="329.8" y="219.0" width="67.0" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="363.4" y="234.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">Reflect</text>
+<rect x="404.9" y="219.0" width="60.3" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="435.0" y="234.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">Logseq</text>
+<rect x="473.2" y="219.0" width="60.3" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="503.4" y="234.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">Notion</text>
+<rect x="541.5" y="219.0" width="60.3" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="571.7" y="234.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">Tettra</text>
+<rect x="609.8" y="219.0" width="60.3" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="640.0" y="234.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">GBrain</text>
+<rect x="394.2" y="189.0" width="53.6" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="421.0" y="204.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">Slite</text>
+<rect x="455.8" y="189.0" width="46.9" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="479.3" y="204.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">Tana</text>
+<rect x="510.7" y="189.0" width="46.9" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="534.2" y="204.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">Guru</text>
+<rect x="565.6" y="189.0" width="40.2" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="585.7" y="204.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">Mem</text>
+<text x="707.3" y="437.6" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0a0a0a" text-anchor="middle">memory layers<tspan font-family="'IBM Plex Mono', Menlo, monospace" font-weight="400" fill="#6b6b6b"> · memory</tspan></text>
+<rect x="622.9" y="369.0" width="208.2" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="727.0" y="384.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">Gemini personal intelligence</text>
+<rect x="703.0" y="489.0" width="114.1" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="760.0" y="504.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">ChatGPT memory</text>
+<rect x="651.0" y="459.0" width="107.4" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="704.7" y="474.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">Claude memory</text>
+<rect x="766.4" y="459.0" width="100.6" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="816.7" y="474.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">Codex memory</text>
+<rect x="679.9" y="519.0" width="80.5" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="720.1" y="534.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">Hindsight</text>
+<rect x="768.4" y="519.0" width="73.8" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="805.2" y="534.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">Graphiti</text>
+<rect x="632.5" y="339.0" width="67.0" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="666.0" y="354.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">LangMem</text>
+<rect x="707.6" y="339.0" width="60.3" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="737.7" y="354.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">Cognee</text>
+<rect x="775.9" y="339.0" width="53.6" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="802.7" y="354.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">Letta</text>
+<rect x="686.5" y="309.0" width="46.9" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="709.9" y="324.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">Mem0</text>
+<rect x="741.4" y="309.0" width="40.2" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="761.4" y="324.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">Zep</text>
+<text x="604.6" y="649.0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0a0a0a" text-anchor="middle">projects<tspan font-family="'IBM Plex Mono', Menlo, monospace" font-weight="400" fill="#6b6b6b"> · project</tspan></text>
+<rect x="511.8" y="669.0" width="107.4" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="565.4" y="684.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">agent folders</text>
+<rect x="627.1" y="669.0" width="100.6" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="677.4" y="684.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">Cursor rules</text>
+<rect x="735.8" y="669.0" width="80.5" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="776.0" y="684.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">AGENTS.md</text>
+<rect x="535.4" y="699.0" width="80.5" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="575.6" y="714.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">CLAUDE.md</text>
+<rect x="623.8" y="699.0" width="80.5" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="664.1" y="714.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">GEMINI.md</text>
+<rect x="712.3" y="699.0" width="60.3" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="742.5" y="714.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">AIS-OS</text>
+<text x="400.1" y="642.5" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0a0a0a" text-anchor="middle">skills<tspan font-family="'IBM Plex Mono', Menlo, monospace" font-weight="400" fill="#6b6b6b"> · skill</tspan></text>
+<rect x="215.6" y="669.0" width="120.8" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="276.0" y="684.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">the skills area</text>
+<rect x="344.4" y="669.0" width="114.1" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="401.4" y="684.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">SKILL.md files</text>
+<text x="319.3" y="446.3" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0a0a0a" text-anchor="middle">agents<tspan font-family="'IBM Plex Mono', Menlo, monospace" font-weight="400" fill="#6b6b6b"> · agent</tspan></text>
+<rect x="185.7" y="369.0" width="174.6" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="273.0" y="384.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">a vibeclone · per grant</text>
+<rect x="226.8" y="399.0" width="60.3" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="257.0" y="414.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">GBrain</text>
+<rect x="17.8" y="489.0" width="60.3" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="48.0" y="504.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">Delphi</text>
+<rect x="18.5" y="364.4" width="93.9" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="65.5" y="379.4" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">Personal.ai</text>
+<rect x="86.5" y="249.5" width="60.3" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="116.7" y="264.5" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">HeyGen</text>
+<rect x="148.1" y="158.4" width="87.2" height="22.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="191.7" y="173.4" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="middle">ElevenLabs</text>
 <defs><path id="f3-ring-label" d="M301.0,155.3 A398,398 0 0 1 699.0,155.3"/><path id="f3-band-label" d="M11.9,621.7 A503,503 0 0 1 176.7,114.7"/></defs>
-<text font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" fill="#b7a8ff"><textPath href="#f3-ring-label" startOffset="50%" text-anchor="middle">scope: scoped</textPath></text>
-<text font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#b8b8b8"><textPath href="#f3-band-label" startOffset="50%" text-anchor="middle">public slice only</textPath></text>
-<circle cx="500" cy="500" r="110" fill="#b7a8ff"/>
-<text x="500.0" y="496.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="18" font-weight="600" fill="#0a0a0a" text-anchor="middle">identity core</text>
-<text x="500.0" y="520.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="18" font-weight="600" fill="#0a0a0a" text-anchor="middle">+ VIBEGRAPH.md</text>
-<circle cx="772" cy="954" r="7" fill="#b7a8ff"/>
-<text x="786.0" y="958.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="start">built here</text>
-<rect x="868.0" y="944.0" width="22.0" height="20.0" rx="6" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="898.0" y="958.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="start">registered</text>
+<text font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" fill="#5a4bd1"><textPath href="#f3-ring-label" startOffset="50%" text-anchor="middle">scope: scoped</textPath></text>
+<text font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#6b6b6b"><textPath href="#f3-band-label" startOffset="50%" text-anchor="middle">public slice only</textPath></text>
+<circle cx="500" cy="500" r="110" fill="#5a4bd1"/>
+<text x="500.0" y="496.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="18" font-weight="600" fill="#ffffff" text-anchor="middle">identity core</text>
+<text x="500.0" y="520.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="18" font-weight="600" fill="#ffffff" text-anchor="middle">+ VIBEGRAPH.md</text>
+<circle cx="772" cy="954" r="7" fill="#5a4bd1"/>
+<text x="786.0" y="958.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="start">built here</text>
+<rect x="868.0" y="944.0" width="22.0" height="20.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="898.0" y="958.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="start">registered</text>
 </svg>
 <figcaption>Figure 3: the placement map. The identity core and root file at the center; sources, memory, projects, skills, and agents as registered components around it, each with its kind and scope.</figcaption></figure>
 <hr />
@@ -573,7 +573,7 @@ updated: 2026-09-30
 
 # Maya Okafor's vibegraph
 
-Read this file first. It tells you who you are working for and where everything else lives.
+Read this file first. It tells you who you emulate and where everything else lives.
 Read entries marked `when: always` before any task. Read `when: on-task` entries only when the
 task needs them. Never read `scope: private` entries unless the owner has granted them for this session.
 
@@ -635,7 +635,7 @@ See [components.md](components.md). Summary:
 <p>Naming rules. The identity file is named after the person, because a fixed name like identity.md collides with generic usage and person names let a folder hold two people side by side later. Brand files carry the <code>.brand.md</code> suffix so a directory listing tells you the kind. Areas are folders with an index.md, so an area can hold one file or a hundred and can be granted as a unit. Skills use the SKILL.md form so Claude Code, Codex, and the other harnesses that already read that format load them directly.</p>
 </div><div class="keep"><h3>7.4 The handoff stanza</h3>
 <p>Put this in AGENTS.md, and the same text in CLAUDE.md, in any repository or workspace the person works in:</p>
-<pre><code class="language-markdown">## Who you are working for
+<pre><code class="language-markdown">## Who you emulate
 Before starting, read `VIBEGRAPH.md` (in this repo, or at `~/vibegraph/VIBEGRAPH.md`).
 It defines the person and brands this work belongs to. Follow its read order and scopes.
 Do not read entries marked `scope: private` unless they have been granted for this session.
@@ -650,91 +650,91 @@ Do not read entries marked `scope: private` unless they have been granted for th
 </div><div class="keep"><h3>7.6 The acceptance test</h3>
 <p>Open a fresh session in any model. Paste VIBEGRAPH.md, the identity file, and one brand file. Ask for a piece of work the owner does often. The output should sound like the owner on the first generation. If it does not, the core is incomplete, not the tool. This is the test the reference repository's README leads with.</p>
 <figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" width="1400" height="760" role="img" aria-label="Figure 4: the root file and the four consumption modes">
-<rect width="1400" height="760" fill="#0a0a0a"/>
-<defs><marker id="f4-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f6f6f6"/></marker></defs>
-<rect x="40.0" y="40.0" width="420.0" height="680.0" rx="12" fill="#0a0a0a" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="62.0" y="74.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="14" font-weight="500" fill="#f6f6f6" text-anchor="start">VIBEGRAPH.md</text>
-<text x="438.0" y="74.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#b8b8b8" text-anchor="end">root file</text>
-<line x1="40.0" y1="90.0" x2="460.0" y2="90.0" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="62" y="116.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#b8b8b8" font-weight="400" xml:space="preserve">---</text>
-<text x="62" y="133.8" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">vibegraph: "2.0"</text>
-<text x="62" y="151.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">owner: Maya Okafor</text>
-<text x="62" y="169.4" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">identity: identity/maya-okafor.md</text>
-<text x="62" y="187.2" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">updated: 2026-09-30</text>
-<text x="62" y="205.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#b8b8b8" font-weight="400" xml:space="preserve">---</text>
-<text x="62" y="222.8" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="500" xml:space="preserve"># Maya Okafor's vibegraph</text>
-<text x="62" y="240.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">Read this file first. It tells you who you are</text>
-<text x="62" y="258.4" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">working for and where everything else lives.</text>
-<text x="62" y="276.2" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="500" xml:space="preserve">## Identity</text>
-<text x="62" y="294.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">- [Maya Okafor](identity/maya-okafor.md)</text>
-<text x="62" y="311.8" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">    · <tspan fill="#b7a8ff">kind:</tspan> identity · <tspan fill="#b7a8ff">scope:</tspan> public · <tspan fill="#b7a8ff">when:</tspan> always</text>
-<text x="62" y="329.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="500" xml:space="preserve">## Brands</text>
-<text x="62" y="347.4" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">- [Maya Okafor (personal brand)]</text>
-<text x="62" y="365.2" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">    (brands/maya-okafor.brand.md)</text>
-<text x="62" y="383.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">    · <tspan fill="#b7a8ff">kind:</tspan> brand · <tspan fill="#b7a8ff">type:</tspan> personal</text>
-<text x="62" y="400.8" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">    · <tspan fill="#b7a8ff">scope:</tspan> public · <tspan fill="#b7a8ff">when:</tspan> always</text>
-<text x="62" y="418.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">- [Delivery OS](brands/delivery-os.brand.md)</text>
-<text x="62" y="436.4" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">    · <tspan fill="#b7a8ff">kind:</tspan> brand · <tspan fill="#b7a8ff">type:</tspan> business</text>
-<text x="62" y="454.2" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">    · <tspan fill="#b7a8ff">scope:</tspan> public · <tspan fill="#b7a8ff">when:</tspan> on-task</text>
-<text x="62" y="472.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="500" xml:space="preserve">## Areas</text>
-<text x="62" y="489.8" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">- [Career](areas/career/index.md)</text>
-<text x="62" y="507.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">    · <tspan fill="#b7a8ff">kind:</tspan> area · <tspan fill="#b7a8ff">scope:</tspan> scoped · <tspan fill="#b7a8ff">when:</tspan> on-task</text>
-<text x="62" y="525.4" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">- [Finances](areas/finances/index.md)</text>
-<text x="62" y="543.2" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">    · <tspan fill="#b7a8ff">kind:</tspan> area · <tspan fill="#b7a8ff">scope:</tspan> private · <tspan fill="#b7a8ff">when:</tspan> on-grant</text>
-<text x="62" y="561.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="500" xml:space="preserve">## Components</text>
-<text x="62" y="578.8" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">- Obsidian vault "Notes" · <tspan fill="#b7a8ff">kind:</tspan> source</text>
-<text x="62" y="596.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">- Claude memory · <tspan fill="#b7a8ff">kind:</tspan> memory</text>
-<text x="62" y="614.4" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="500" xml:space="preserve">## Read order</text>
-<text x="62" y="632.2" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">1. identity/maya-okafor.md</text>
-<text x="62" y="650.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">2. brands/maya-okafor.brand.md</text>
-<text x="62" y="667.8" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">3. the brand or area the task names</text>
-<text x="62" y="685.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#f6f6f6" font-weight="400" xml:space="preserve">4. nothing else without a grant</text>
-<text x="490.0" y="88.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="16" font-weight="500" fill="#f6f6f6" text-anchor="start">1. paste</text>
-<line x1="462.0" y1="100.0" x2="654.0" y2="100.0" stroke="#f6f6f6" stroke-width="1.5" marker-end="url(#f4-arrow)"/>
-<text x="490.0" y="223.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="16" font-weight="500" fill="#f6f6f6" text-anchor="start">2. workspace</text>
-<line x1="462.0" y1="235.0" x2="654.0" y2="235.0" stroke="#f6f6f6" stroke-width="1.5" marker-end="url(#f4-arrow)"/>
-<text x="490.0" y="388.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="16" font-weight="500" fill="#f6f6f6" text-anchor="start">3. MCP</text>
-<line x1="462.0" y1="400.0" x2="654.0" y2="400.0" stroke="#f6f6f6" stroke-width="1.5" marker-end="url(#f4-arrow)"/>
-<text x="490.0" y="668.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="16" font-weight="500" fill="#f6f6f6" text-anchor="start">4. seed</text>
-<line x1="462.0" y1="680.0" x2="654.0" y2="680.0" stroke="#f6f6f6" stroke-width="1.5" marker-end="url(#f4-arrow)"/>
-<rect x="660.0" y="72.0" width="320.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<circle cx="676" cy="87" r="3" fill="#b8b8b8"/>
-<circle cx="687" cy="87" r="3" fill="#b8b8b8"/>
-<circle cx="698" cy="87" r="3" fill="#b8b8b8"/>
-<text x="716.0" y="91.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#f6f6f6" text-anchor="start">any chat</text>
-<text x="676.0" y="116.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">root + identity + one brand</text>
-<rect x="660.0" y="207.0" width="320.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="674.0" y="232.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#f6f6f6" text-anchor="start">Claude Project · custom GPT</text>
-<text x="674.0" y="251.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">set once per workspace</text>
-<rect x="660.0" y="354.0" width="360.0" height="92.0" rx="10" fill="#0a0a0a" stroke="#b7a8ff" stroke-width="1.2"/>
-<text x="678.0" y="382.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="15" font-weight="500" fill="#f6f6f6" text-anchor="start">MCP server</text>
-<text x="678.0" y="402.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">scopes become grants</text>
-<text x="678.0" y="418.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">kinds become resource types</text>
-<text x="678.0" y="434.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">every read logged</text>
-<line x1="1020.0" y1="400.0" x2="1096.0" y2="320.0" stroke="#f6f6f6" stroke-width="1.5" marker-end="url(#f4-arrow)"/>
-<rect x="1100.0" y="292.0" width="200.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="1114.0" y="314.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#f6f6f6" text-anchor="start">Claude</text>
-<rect x="1114.0" y="324.0" width="148.0" height="18.0" rx="9" fill="none" stroke="#b7a8ff" stroke-width="1.0"/>
-<text x="1188.0" y="336.5" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10" font-weight="400" fill="#b7a8ff" text-anchor="middle">grant: public + skills</text>
-<line x1="1020.0" y1="400.0" x2="1096.0" y2="400.0" stroke="#f6f6f6" stroke-width="1.5" marker-end="url(#f4-arrow)"/>
-<rect x="1100.0" y="372.0" width="200.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="1114.0" y="394.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#f6f6f6" text-anchor="start">ChatGPT</text>
-<rect x="1114.0" y="404.0" width="94.0" height="18.0" rx="9" fill="none" stroke="#b7a8ff" stroke-width="1.0"/>
-<text x="1161.0" y="416.5" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10" font-weight="400" fill="#b7a8ff" text-anchor="middle">grant: public</text>
-<line x1="1020.0" y1="400.0" x2="1096.0" y2="480.0" stroke="#f6f6f6" stroke-width="1.5" marker-end="url(#f4-arrow)"/>
-<rect x="1100.0" y="452.0" width="200.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="1114.0" y="474.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#f6f6f6" text-anchor="start">Cursor</text>
-<rect x="1114.0" y="484.0" width="154.0" height="18.0" rx="9" fill="none" stroke="#b7a8ff" stroke-width="1.0"/>
-<text x="1191.0" y="496.5" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10" font-weight="400" fill="#b7a8ff" text-anchor="middle">grant: public + project</text>
-<line x1="840.0" y1="446.0" x2="840.0" y2="528.0" stroke="#b8b8b8" stroke-width="1.2" stroke-dasharray="3 4"/>
-<rect x="660.0" y="530.0" width="640.0" height="82.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="676.0" y="552.0" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#f6f6f6" text-anchor="start">read log</text>
-<text x="676" y="570" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10" fill="#b8b8b8" xml:space="preserve">2026-09-30 14:02  claude   read identity/maya-okafor.md       (public)</text>
-<text x="676" y="585" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10" fill="#b8b8b8" xml:space="preserve">2026-09-30 14:05  chatgpt  read brands/maya-okafor.brand.md   (public)</text>
-<text x="676" y="600" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10" fill="#b8b8b8" xml:space="preserve">2026-09-30 14:09  cursor   read brands/delivery-os.brand.md   (public)</text>
-<rect x="660.0" y="652.0" width="380.0" height="56.0" rx="8" fill="none" stroke="#2b2b2b" stroke-width="1.0"/>
-<text x="674.0" y="677.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#f6f6f6" text-anchor="start">memory layer</text>
-<text x="674.0" y="696.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#b8b8b8" text-anchor="start">substrate; the vibegraph is the schema</text>
+<rect width="1400" height="760" fill="#f6f6f6"/>
+<defs><marker id="f4-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0a0a0a"/></marker></defs>
+<rect x="40.0" y="40.0" width="420.0" height="680.0" rx="12" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="62.0" y="74.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="14" font-weight="500" fill="#0a0a0a" text-anchor="start">VIBEGRAPH.md</text>
+<text x="438.0" y="74.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="end">root file</text>
+<line x1="40.0" y1="90.0" x2="460.0" y2="90.0" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="62" y="116.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#6b6b6b" font-weight="400" xml:space="preserve">---</text>
+<text x="62" y="133.8" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">vibegraph: "2.0"</text>
+<text x="62" y="151.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">owner: Maya Okafor</text>
+<text x="62" y="169.4" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">identity: identity/maya-okafor.md</text>
+<text x="62" y="187.2" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">updated: 2026-09-30</text>
+<text x="62" y="205.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#6b6b6b" font-weight="400" xml:space="preserve">---</text>
+<text x="62" y="222.8" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="500" xml:space="preserve"># Maya Okafor's vibegraph</text>
+<text x="62" y="240.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">Read this file first. It tells you who you</text>
+<text x="62" y="258.4" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">emulate and where everything else lives.</text>
+<text x="62" y="276.2" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="500" xml:space="preserve">## Identity</text>
+<text x="62" y="294.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">- [Maya Okafor](identity/maya-okafor.md)</text>
+<text x="62" y="311.8" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">    · <tspan fill="#5a4bd1">kind:</tspan> identity · <tspan fill="#5a4bd1">scope:</tspan> public · <tspan fill="#5a4bd1">when:</tspan> always</text>
+<text x="62" y="329.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="500" xml:space="preserve">## Brands</text>
+<text x="62" y="347.4" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">- [Maya Okafor (personal brand)]</text>
+<text x="62" y="365.2" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">    (brands/maya-okafor.brand.md)</text>
+<text x="62" y="383.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">    · <tspan fill="#5a4bd1">kind:</tspan> brand · <tspan fill="#5a4bd1">type:</tspan> personal</text>
+<text x="62" y="400.8" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">    · <tspan fill="#5a4bd1">scope:</tspan> public · <tspan fill="#5a4bd1">when:</tspan> always</text>
+<text x="62" y="418.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">- [Delivery OS](brands/delivery-os.brand.md)</text>
+<text x="62" y="436.4" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">    · <tspan fill="#5a4bd1">kind:</tspan> brand · <tspan fill="#5a4bd1">type:</tspan> business</text>
+<text x="62" y="454.2" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">    · <tspan fill="#5a4bd1">scope:</tspan> public · <tspan fill="#5a4bd1">when:</tspan> on-task</text>
+<text x="62" y="472.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="500" xml:space="preserve">## Areas</text>
+<text x="62" y="489.8" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">- [Career](areas/career/index.md)</text>
+<text x="62" y="507.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">    · <tspan fill="#5a4bd1">kind:</tspan> area · <tspan fill="#5a4bd1">scope:</tspan> scoped · <tspan fill="#5a4bd1">when:</tspan> on-task</text>
+<text x="62" y="525.4" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">- [Finances](areas/finances/index.md)</text>
+<text x="62" y="543.2" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">    · <tspan fill="#5a4bd1">kind:</tspan> area · <tspan fill="#5a4bd1">scope:</tspan> private · <tspan fill="#5a4bd1">when:</tspan> on-grant</text>
+<text x="62" y="561.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="500" xml:space="preserve">## Components</text>
+<text x="62" y="578.8" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">- Obsidian vault "Notes" · <tspan fill="#5a4bd1">kind:</tspan> source</text>
+<text x="62" y="596.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">- Claude memory · <tspan fill="#5a4bd1">kind:</tspan> memory</text>
+<text x="62" y="614.4" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="500" xml:space="preserve">## Read order</text>
+<text x="62" y="632.2" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">1. identity/maya-okafor.md</text>
+<text x="62" y="650.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">2. brands/maya-okafor.brand.md</text>
+<text x="62" y="667.8" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">3. the brand or area the task names</text>
+<text x="62" y="685.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">4. nothing else without a grant</text>
+<text x="490.0" y="88.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="16" font-weight="500" fill="#0a0a0a" text-anchor="start">1. paste</text>
+<line x1="462.0" y1="100.0" x2="654.0" y2="100.0" stroke="#0a0a0a" stroke-width="1.5" marker-end="url(#f4-arrow)"/>
+<text x="490.0" y="223.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="16" font-weight="500" fill="#0a0a0a" text-anchor="start">2. workspace</text>
+<line x1="462.0" y1="235.0" x2="654.0" y2="235.0" stroke="#0a0a0a" stroke-width="1.5" marker-end="url(#f4-arrow)"/>
+<text x="490.0" y="388.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="16" font-weight="500" fill="#0a0a0a" text-anchor="start">3. MCP</text>
+<line x1="462.0" y1="400.0" x2="654.0" y2="400.0" stroke="#0a0a0a" stroke-width="1.5" marker-end="url(#f4-arrow)"/>
+<text x="490.0" y="668.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="16" font-weight="500" fill="#0a0a0a" text-anchor="start">4. seed</text>
+<line x1="462.0" y1="680.0" x2="654.0" y2="680.0" stroke="#0a0a0a" stroke-width="1.5" marker-end="url(#f4-arrow)"/>
+<rect x="660.0" y="72.0" width="320.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<circle cx="676" cy="87" r="3" fill="#6b6b6b"/>
+<circle cx="687" cy="87" r="3" fill="#6b6b6b"/>
+<circle cx="698" cy="87" r="3" fill="#6b6b6b"/>
+<text x="716.0" y="91.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#0a0a0a" text-anchor="start">any chat</text>
+<text x="676.0" y="116.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">root + identity + one brand</text>
+<rect x="660.0" y="207.0" width="320.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="674.0" y="232.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#0a0a0a" text-anchor="start">Claude Project · custom GPT</text>
+<text x="674.0" y="251.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">set once per workspace</text>
+<rect x="660.0" y="354.0" width="360.0" height="92.0" rx="10" fill="#ffffff" stroke="#5a4bd1" stroke-width="1.2"/>
+<text x="678.0" y="382.0" font-family="'Space Grotesk', Inter, sans-serif" font-size="15" font-weight="500" fill="#0a0a0a" text-anchor="start">MCP server</text>
+<text x="678.0" y="402.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">scopes become grants</text>
+<text x="678.0" y="418.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">kinds become resource types</text>
+<text x="678.0" y="434.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">every read logged</text>
+<line x1="1020.0" y1="400.0" x2="1096.0" y2="320.0" stroke="#0a0a0a" stroke-width="1.5" marker-end="url(#f4-arrow)"/>
+<rect x="1100.0" y="292.0" width="200.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="1114.0" y="314.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#0a0a0a" text-anchor="start">Claude</text>
+<rect x="1114.0" y="324.0" width="148.0" height="18.0" rx="9" fill="none" stroke="#5a4bd1" stroke-width="1.0"/>
+<text x="1188.0" y="336.5" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10" font-weight="400" fill="#5a4bd1" text-anchor="middle">grant: public + skills</text>
+<line x1="1020.0" y1="400.0" x2="1096.0" y2="400.0" stroke="#0a0a0a" stroke-width="1.5" marker-end="url(#f4-arrow)"/>
+<rect x="1100.0" y="372.0" width="200.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="1114.0" y="394.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#0a0a0a" text-anchor="start">ChatGPT</text>
+<rect x="1114.0" y="404.0" width="94.0" height="18.0" rx="9" fill="none" stroke="#5a4bd1" stroke-width="1.0"/>
+<text x="1161.0" y="416.5" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10" font-weight="400" fill="#5a4bd1" text-anchor="middle">grant: public</text>
+<line x1="1020.0" y1="400.0" x2="1096.0" y2="480.0" stroke="#0a0a0a" stroke-width="1.5" marker-end="url(#f4-arrow)"/>
+<rect x="1100.0" y="452.0" width="200.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="1114.0" y="474.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#0a0a0a" text-anchor="start">Cursor</text>
+<rect x="1114.0" y="484.0" width="154.0" height="18.0" rx="9" fill="none" stroke="#5a4bd1" stroke-width="1.0"/>
+<text x="1191.0" y="496.5" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10" font-weight="400" fill="#5a4bd1" text-anchor="middle">grant: public + project</text>
+<line x1="840.0" y1="446.0" x2="840.0" y2="528.0" stroke="#6b6b6b" stroke-width="1.2" stroke-dasharray="3 4"/>
+<rect x="660.0" y="530.0" width="640.0" height="82.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="676.0" y="552.0" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#0a0a0a" text-anchor="start">read log</text>
+<text x="676" y="570" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10" fill="#6b6b6b" xml:space="preserve">2026-09-30 14:02  claude   read identity/maya-okafor.md       (public)</text>
+<text x="676" y="585" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10" fill="#6b6b6b" xml:space="preserve">2026-09-30 14:05  chatgpt  read brands/maya-okafor.brand.md   (public)</text>
+<text x="676" y="600" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10" fill="#6b6b6b" xml:space="preserve">2026-09-30 14:09  cursor   read brands/delivery-os.brand.md   (public)</text>
+<rect x="660.0" y="652.0" width="380.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="674.0" y="677.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#0a0a0a" text-anchor="start">memory layer</text>
+<text x="674.0" y="696.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">substrate; the vibegraph is the schema</text>
 </svg>
 <figcaption>Figure 4: the root file and the four consumption modes. One VIBEGRAPH.md, read by paste, by workspace, over MCP with scopes as grants and a read log, and as a seed for memory layers.</figcaption></figure>
 <hr />
