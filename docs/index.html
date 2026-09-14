@@ -19,7 +19,7 @@
     root.classList.add('js');
     let theme;
     try { theme = localStorage.getItem('vibe-theme'); } catch {}
-    root.dataset.theme = theme === 'dark' || theme === 'light' ? theme : matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    root.dataset.theme = theme === 'dark' || theme === 'light' ? theme : 'light';
   })();
 </script>
 <style>
@@ -70,7 +70,7 @@
   .skip-link:focus { transform:none; }
   .top { border-bottom:1px solid var(--border); }
   .top .wrap { display:flex; align-items:center; justify-content:space-between; gap:24px; min-height:88px; }
-  .brandmark { display:flex; align-items:center; gap:88px; width:440px; min-height:44px; font:400 24px/23px var(--font-mono); text-decoration:none; white-space:nowrap; }
+  .brandmark { display:flex; align-items:center; gap:12px; width:440px; min-height:44px; font:400 24px/23px var(--font-mono); text-decoration:none; white-space:nowrap; }
   .framework-mark { display:block; width:32px; height:33px; flex:none; }
   .framework-mark path { fill:var(--foreground); }
   .framework-mark path:first-child { fill:var(--background); }
@@ -133,6 +133,11 @@
   .js-only { display:none; }
   .js .js-only { display:inline-flex; }
   .js .menu-toggle { display:none; }
+  .hero .net-toggle { position:absolute; right:20px; bottom:16px; z-index:2; width:44px; height:44px; align-items:center; justify-content:center; background:var(--background); border:1px solid var(--border); border-radius:6px; padding:0; }
+  .hero .net-toggle:disabled { display:none; }
+  .net-toggle .motion-play,.net-toggle[aria-pressed="true"] .motion-pause { display:none; }
+  .net-toggle[aria-pressed="true"] .motion-play { display:block; }
+  .hero { padding-bottom:80px; }
   #net-background { position:absolute; inset:0; overflow:hidden; opacity:.5; z-index:-1; pointer-events:none; }
   #net-background::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,var(--background) 0%,var(--background) 25%,transparent 100%); }
   #net-background.static-net { background-image:linear-gradient(30deg,transparent 49.8%,var(--border) 50%,transparent 50.2%),linear-gradient(150deg,transparent 49.8%,var(--border) 50%,transparent 50.2%); background-size:100px 70px; }
@@ -155,7 +160,7 @@
     :root { --page-gutter:20px; --section-gap:32px; }
     .brandmark { gap:8px; }
     .nav-actions { gap:0; }
-    .hero { padding:48px 0 32px; }
+    .hero { padding:48px 0 80px; }
     .hero-content { gap:32px; }
     h1 { font-size:44px; line-height:51px; }
     h2 { font-size:32px; line-height:38px; letter-spacing:-.01em; }
@@ -205,7 +210,7 @@
 <main id="main" tabindex="-1">
 
 <div class="hero">
-  <div id="net-background" aria-hidden="true"></div>
+  <div id="net-background" class="static-net" aria-hidden="true"></div>
   <div class="wrap"><div class="hero-content">
     <div class="eyebrow">The open framework</div>
     <h1>vibegraph.md</h1>
@@ -217,8 +222,11 @@
       <a class="btn ghost" href="https://github.com/vibegraph-ai/vibegraph.md/tree/v2.0/examples/maya-okafor.vibegraph">Browse the example →</a>
     </div>
     <p class="monoline">Published specification: 2.0 · MIT (templates, schema, code) · CC-BY 4.0 (prose)</p>
-    <button class="text-link net-toggle js-only" type="button" aria-pressed="false" aria-controls="net-background">Preview NET background</button>
   </div></div>
+  <button class="net-toggle js-only" type="button" aria-label="Pause motion" title="Pause motion" aria-pressed="false" aria-controls="net-background">
+    <svg class="motion-pause" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 3v10M11 3v10" stroke="currentColor" stroke-width="2"/></svg>
+    <svg class="motion-play" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="m5 3 8 5-8 5z"/></svg>
+  </button>
 </div>
 
 <section id="definition">
@@ -330,7 +338,6 @@ Do not read entries marked `scope: private` unless they have been granted for th
       </nav>
       <button class="icon-button theme-toggle js-only" type="button" aria-label="Switch to dark theme"><img src="assets/icon-moon.svg" alt="" width="20" height="20"></button>
     </div>
-    <p class="footer-credit">vibegraph &amp; vibeclone · Raizen Labs</p>
     <nav class="resource-links" aria-label="Framework resources">
       <a href="https://github.com/vibegraph-ai/vibegraph.md/blob/v2.0/SPEC.md">Specification</a>
       <a href="https://github.com/vibegraph-ai/vibegraph.md/tree/v2.0/templates/your-name.vibegraph">Templates</a>
@@ -340,7 +347,7 @@ Do not read entries marked `scope: private` unless they have been granted for th
       <a href="https://github.com/vibegraph-ai/vibegraph.md">GitHub</a>
       <a href="https://vibegraph.ai">vibegraph.ai</a>
     </nav>
-    <p class="footer-credit">Maintained by Ryan Charleston · Raizen Labs, LLC · "vibegraph" is a common noun.</p>
+    <p class="footer-credit">© 2026 Raizen Labs, LLC | Built and maintained by <a href="https://ryancharleston.com">Ryan Charleston</a></p>
   </div>
 </footer>
 

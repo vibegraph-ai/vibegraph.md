@@ -1,9 +1,7 @@
 (() => {
   'use strict';
   const root = document.documentElement;
-  const colorPreference = matchMedia('(prefers-color-scheme: dark)');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  const narrowScreen = matchMedia('(max-width: 639px)');
   const collapsedNavigation = matchMedia('(max-width: 1023px)');
   const themeButtons = document.querySelectorAll('.theme-toggle');
   const menuButton = document.querySelector('.menu-toggle');
@@ -16,7 +14,7 @@
     const saved = localStorage.getItem('vibe-theme');
     if (saved === 'dark' || saved === 'light') explicitTheme = saved;
   } catch {}
-  let netRequested = false;
+  let netRequested = true;
   let net = null;
   let libraries;
   let generation = 0;
@@ -37,13 +35,10 @@
     try { localStorage.setItem('vibe-theme', explicitTheme); } catch {}
     updateTheme(explicitTheme);
   }));
-  colorPreference.addEventListener('change', () => {
-    if (!explicitTheme) updateTheme(colorPreference.matches ? 'dark' : 'light');
-  });
   addEventListener('storage', event => {
     if (event.key !== 'vibe-theme' && event.key !== null) return;
     explicitTheme = event.newValue === 'dark' || event.newValue === 'light' ? event.newValue : null;
-    updateTheme(explicitTheme || (colorPreference.matches ? 'dark' : 'light'));
+    updateTheme(explicitTheme || 'light');
   });
 
   function closeMenu(returnFocus = false) {
@@ -109,11 +104,15 @@
   async function updateNet() {
     const revision = ++generation;
     destroyNet();
-    netButton.setAttribute('aria-pressed', String(netRequested));
-    netButton.textContent = netRequested ? 'Use monochrome static background' : 'Preview NET background';
-    netTarget.classList.toggle('static-net', netRequested);
-    root.dataset.net = netRequested ? 'static' : 'off';
-    if (!netRequested || reducedMotion.matches || narrowScreen.matches || document.hidden || !heroVisible || !pageActive) return;
+    const paused = !netRequested || reducedMotion.matches;
+    const label = reducedMotion.matches ? 'Static view (reduced motion)' : paused ? 'Play motion' : 'Pause motion';
+    netButton.setAttribute('aria-pressed', String(paused));
+    netButton.setAttribute('aria-label', label);
+    netButton.title = label;
+    netButton.disabled = reducedMotion.matches;
+    netTarget.classList.add('static-net');
+    root.dataset.net = 'static';
+    if (paused || document.hidden || !heroVisible || !pageActive) return;
     try {
       await loadNet();
       if (revision !== generation) return;
@@ -132,11 +131,13 @@
       destroyNet();
       netTarget.classList.add('static-net');
       root.dataset.net = 'fallback';
+      netButton.disabled = true;
+      netButton.setAttribute('aria-label', 'Static background');
+      netButton.title = 'Static background';
     }
   }
   netButton.addEventListener('click', () => { netRequested = !netRequested; updateNet(); });
   reducedMotion.addEventListener('change', updateNet);
-  narrowScreen.addEventListener('change', updateNet);
   document.addEventListener('visibilitychange', updateNet);
   const observer = new IntersectionObserver(entries => {
     heroVisible = entries[0].isIntersecting;
@@ -145,6 +146,5 @@
   observer.observe(hero);
   addEventListener('pagehide', () => { pageActive = false; ++generation; destroyNet(); });
   addEventListener('pageshow', () => { pageActive = true; updateNet(); });
-  updateTheme(explicitTheme || (colorPreference.matches ? 'dark' : 'light'));
+  updateTheme(explicitTheme || 'light');
 })();
-

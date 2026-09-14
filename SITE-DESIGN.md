@@ -1,6 +1,6 @@
 # Framework site design
 
-The static GitHub Pages entry is docs/index.html. There is no build step. docs/assets/site.js controls the theme, navigation and optional NET preview. Google Fonts supplies Space Grotesk Medium, Inter Regular/Medium and IBM Plex Mono Regular/Medium.
+The static GitHub Pages entry is docs/index.html. There is no build step. docs/assets/site.js controls the theme, navigation and NET motion. Google Fonts supplies Space Grotesk Medium, Inter Regular/Medium and IBM Plex Mono Regular/Medium.
 
 ## Design source
 
@@ -27,11 +27,13 @@ The framework/site name remains lowercase. The locked specification's literal ro
 
 ## Behavior
 
-First visit follows prefers-color-scheme, as requested, overriding the older Figma dark-first instruction. Explicit choices persist as vibe-theme, matching the marketing site key. Header and footer controls always name the next action. Storage failures do not prevent use. System changes apply until a manual preference exists; storage events synchronize tabs.
+First visit defaults to light. Explicit choices persist as vibe-theme, matching the marketing site key. Header and footer controls always name the next action. Storage failures do not prevent use. Storage events synchronize tabs; system color-scheme changes do not override the light default.
 
 Menu controls use native buttons and a labeled navigation landmark. Enter/Space operate controls; Escape closes the menu and restores trigger focus. Below 640 the roles table becomes a labeled stack. Code and path strings wrap; the body does not need horizontal scrolling. Focus uses the shared 2 px ring and 3 px offset. Action targets are at least 44 px, primary/secondary buttons 48 px.
 
-NET is off by default. Opting in lazy-loads pinned local Three.js and Vanta.js from the original prototype, with their MIT license texts. Page 14's reference settings are preserved, with its documented light-theme colors and touchControls:false. Below 640, with reduced motion, or on loading/WebGL failure, a static diagonal mesh appears. Hidden/offscreen pages suspend the effect. Theme changes and page exit destroy existing canvases. Turning the preview off returns to solid monochrome. The effect is decorative and cannot capture page scrolling.
+NET starts automatically on desktop and mobile, loading pinned local Three.js and Vanta.js with their MIT license texts. Page 14's reference settings are preserved, with its documented light-theme colors and touchControls:false. Reduced motion and loading/WebGL failure use a static diagonal mesh. A 44 px pause/play control at the lower right matches the marketing site's control; it is hidden when motion is unavailable. Pausing retains a static mesh. Hidden/offscreen pages suspend the effect. Theme changes and page exit destroy existing canvases. The effect is decorative and cannot capture page scrolling.
+
+September 13 follow-up: the desktop logo/wordmark gap is 12 px. The family credit is removed; the final credit uses the requested 2026 text and links Ryan Charleston to https://ryancharleston.com. Run `node tests/site-behavior.cjs` from the repository root for checks of theme defaults, saved choices, autoplay, pause/play, reduced motion and footer content. Local-file browser review was blocked by browser policy for this follow-up; earlier visual checks below describe the prior release.
 
 ## Verification
 
@@ -44,4 +46,3 @@ Text contrast: dark foreground 18.32:1, dark muted 9.98:1, light foreground 18.3
 SPEC.md, templates, example, changelog, GitHub, framework, product domains and whitepaper PDF resolve. The Context Layer at https://contextlayer.vibegraph.ai/ was verified as Home | The Context Layer in the browser; a command-line request returned 403. vibegraph.ai and vibeclone.ai currently resolve to public holding pages, not the unpublished marketing implementation. The PDF redirect and CNAME remain untouched.
 
 No push or deployment is part of this change.
-
