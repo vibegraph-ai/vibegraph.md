@@ -43,7 +43,7 @@ your-name.vibegraph/
 ├── CLAUDE.md                  the same stanza, for Claude Code
 ├── identity/your-name.md      the identity core: rules, personality, purpose
 ├── brands/
-│   ├── your-name.brand.md     personal brand: 12 Brand Context + 8 Brand Visuals
+│   ├── your-name.brand.md     personal brand: up to 12 Brand Context + 8 Brand Visuals
 │   ├── your-business.brand.md business brand: foundations + 12 + 8
 │   └── assets/README.md       where the visual assets live
 ├── context-sources.md         the systems that already hold parts of the graph

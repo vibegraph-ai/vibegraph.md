@@ -500,7 +500,7 @@ A producer's export conforms to this specification when:
 7. Every markdown file is reachable from `VIBEGRAPH.md`, except `AGENTS.md`, `CLAUDE.md`, `README.md`, and `areas/README.md`.
 8. At most one `type: personal` brand; brand slugs unique, not the owner's, not reserved.
 9. If `brands/assets/` exists, it contains `README.md`.
-10. Every area folder contains `index.md`, and every line under its `## Entries` carries `access` from `file`, `link`, `mcp`, `ask`.
+10. Every area folder contains `index.md`, and every line under its `## Entries` carries `scope`, `when`, and `access` from `file`, `link`, `mcp`, `ask`.
 11. Every `in:` on an entry names a `slug` present in `context-sources.md`.
 12. If `context-sources.md` exists, every row has a unique lowercase-hyphenated `slug`.
 13. If `AGENTS.md` or `CLAUDE.md` exists, it contains the handoff stanza byte for byte.
