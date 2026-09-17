@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://vibegraph.md/schema/vibegraph-node.schema.json",
   "title": "vibegraph node file front matter",
-  "description": "The optional YAML front matter of a node file (identity file, brand file, or area index) in a vibegraph, per the vibegraph.md specification 2.0 (SPEC.md section 5). When it disagrees with the node's entry in VIBEGRAPH.md, the root file wins.",
+  "description": "The optional YAML front matter of a node file (identity file, brand file, or area index) in a vibegraph, per the vibegraph.md specification 3.0 (SPEC.md section 5). When it disagrees with the node's entry in VIBEGRAPH.md, the root file wins.",
   "type": "object",
   "additionalProperties": true,
   "required": ["kind"],
@@ -29,7 +29,12 @@
       "enum": ["always", "on-task", "on-grant"],
       "description": "When the node is read. Absent means on-grant."
     },
-    "updated": { "type": "string", "format": "date" }
+    "updated": { "type": "string", "format": "date" },
+    "role": {
+      "type": "string",
+      "description": "Who built and maintains this vibegraph. Absent means owner.",
+      "enum": ["owner", "staff", "agency"]
+    }
   },
   "allOf": [
     {
