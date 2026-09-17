@@ -27,6 +27,14 @@ Context Sources and Areas become two concepts with a stated relationship, areas 
 - The always-present career, skills, and goals scaffolds.
 - The `components.md` name and the `## Components` section.
 
+### Migration
+For a hand-maintained 2.0 vibegraph:
+- Bump `vibegraph:` to `"3.0"` in the root file's front matter.
+- Rename `components.md` to `context-sources.md`, and add its `slug` column.
+- Rename `## Components` to `## Context Sources` in the root file, and move it before `## Areas`.
+- Add `## Entries` to each area's `index.md`, with `scope`, `when`, and `access` on every line.
+- Keep only the areas you actually use; drop the rest, and drop `areas/` entirely if none remain.
+
 ## [2.0] (September 30, 2026)
 
 The reference layout release. The specification now describes a vibegraph as five elements anchored to one person (the identity core, brands, areas, components, and the root file) and matches the whitepaper of the same version.
