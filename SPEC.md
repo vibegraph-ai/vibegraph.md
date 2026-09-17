@@ -36,7 +36,7 @@ Every vibegraph has five elements, anchored to one person:
 - **The identity core.** A human-authored statement of who the person is: personality (the Big Five, the Enneagram, and any other instruments the owner has taken, reconciled in an integrated reading) and purpose (a four-pillar Ikigai). Small, stable, and safe to share.
 - **Brands.** One personal brand built from the identity core, and any business brands the owner operates. Each brand has twelve Brand Context elements (its words) and eight Brand Visuals elements (its look). A business brand adds organizational foundations.
 - **Areas.** Domains of knowledge and working context the owner adds when a use case demands one (career, skills, goals, finances; on the business side CRM, operations, playbooks and SOPs, templates). Each area is a folder with its own scope.
-- **Context Sources.** The tools that already hold parts of the graph: a notes app, a memory layer, a project with its own AGENTS.md, a skill, an agent. Registered, not stored.
+- **Context sources.** The systems that already hold parts of the graph: a notes app, a memory layer, a project with its own AGENTS.md, a skill, an agent. Registered, not stored.
 - **The root file.** VIBEGRAPH.md. It names the owner, links every node with a kind, a scope, and a when rule, and states the read order. Any agent reads it first.
 
 A vibegraph is plain markdown at its simplest. Implementations MAY add hosting, encryption, and access control, but a folder of markdown files that follows this document is a complete, valid vibegraph.
@@ -212,7 +212,7 @@ The same grammar is used for the entries of an area index (see [§5.5](#55-areas
 
 | Key | On | Required | Values |
 |---|---|---|---|
-| `kind` | every entry | Yes | `identity`, `brand`, `area`, `source`, `memory`, `project`, `skill`, `agent` |
+| `kind` | every root entry | Yes | `identity`, `brand`, `area`, `source`, `memory`, `project`, `skill`, `agent` |
 | `scope` | identity, brand, and area entries, and area index entries; source summaries SHOULD | Yes | `public`, `scoped`, `private` |
 | `when` | identity, brand, and area entries, and area index entries | Yes | `always`, `on-task`, `on-grant` |
 | `type` | brand entries | Yes | `personal`, `business` |
