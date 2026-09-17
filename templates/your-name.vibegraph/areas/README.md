@@ -17,11 +17,12 @@ Areas are the domains of knowledge and working context you add when a real use c
    ---
    ```
 
-3. In the body, say what the area covers and link or locate its contents.
-4. Add one line under `## Areas` in `VIBEGRAPH.md`:
+3. In the body, say what the area covers.
+4. Under `## Entries`, list each file, link, or location that holds the area's content, one line per entry: a `scope`, a `when`, and one `access`: `file` (a path), `link` (a URL), `mcp` (a named connector), or `ask` (ask the owner; nothing is stored). Add `in:` naming a context source's slug when the entry lives in one.
+5. Add one line under `## Areas` in `VIBEGRAPH.md`:
 
    ```
    - [Finances](areas/finances/index.md) · kind: area · scope: private · when: on-grant
    ```
 
-Suggested personal areas: career, skills, goals, finances, health, relationships, notes and ideas. Suggested business areas: relationships and CRM, operations, playbooks and SOPs, management routines, templates, goals.
+Suggested personal areas: Health, Relationships, Career, Money, Play, Time, Tech, Goals, Library. Suggested business areas: Finance, Relationships and CRM, Marketing, Content and Brand, Operations. `area:` is free text; an owner may name areas outside the list.
