@@ -2,7 +2,7 @@
 
 A complete vibegraph in the [vibegraph.md reference layout](../../SPEC.md#2-the-reference-layout). Maya Okafor is fictional: a solo operations consultant who runs a business brand, Delivery OS. Every name, number, and link here is invented for the example.
 
-A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one person, and any businesses they own or operate. This folder holds the center of Maya's: her identity core, her personal brand, her business brand, four areas, and a registry of the tools that already hold the rest.
+A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one person, and any businesses they own or operate. This folder holds the center of Maya's: her identity core, her personal brand, her business brand, three areas, and a registry of the systems that already hold the rest.
 
 ## What is here
 
@@ -13,8 +13,8 @@ A vibegraph is the network of identity, context, knowledge, and memory that gove
 | [brands/maya-okafor.brand.md](brands/maya-okafor.brand.md) | The personal brand: 12 Brand Context and 8 Brand Visuals elements. |
 | [brands/delivery-os.brand.md](brands/delivery-os.brand.md) | The business brand: foundations, then the same 12 and 8. |
 | [brands/assets/README.md](brands/assets/README.md) | Where every visual asset lives. |
-| [areas/](areas/README.md) | Career, skills, goals, and finances, each with its own scope. |
-| [components.md](components.md) | The tools that hold parts of the graph. |
+| [areas/](areas/README.md) | Career, skills, and finances, each with its own scope and its entries. |
+| [context-sources.md](context-sources.md) | The systems that hold parts of the graph. |
 | [AGENTS.md](AGENTS.md), [CLAUDE.md](CLAUDE.md) | The four-line handoff that sends agents to VIBEGRAPH.md. |
 
 ## The paste test

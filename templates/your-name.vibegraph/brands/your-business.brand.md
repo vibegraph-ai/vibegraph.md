@@ -5,7 +5,7 @@ brand: Your Business
 owner: Your Name
 scope: public
 when: on-task
-updated: 2026-09-30
+updated: 2026-10-10
 ---
 
 # Your Business

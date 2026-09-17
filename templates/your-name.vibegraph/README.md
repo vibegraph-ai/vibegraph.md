@@ -9,7 +9,7 @@ A blank vibegraph in the [vibegraph.md reference layout](../../SPEC.md#2-the-ref
 3. Fill in the identity file first. A rough core beats an empty one. Delete the guidance quote blocks as you go.
 4. Fill in the personal brand.
 5. If you own a business, rename `brands/your-business.brand.md` to your business's slug and fill it in. If not, delete the file and its line in `VIBEGRAPH.md`.
-6. Register the tools that already hold parts of your graph in `components.md`, with one summary line each in `VIBEGRAPH.md`.
+6. Register the tools that already hold parts of your graph in `context-sources.md`, with one summary line each under `## Context Sources` in `VIBEGRAPH.md`.
 7. Put `AGENTS.md` and `CLAUDE.md` (the four-line handoff) in the repositories you work in.
 
 ## The paste test

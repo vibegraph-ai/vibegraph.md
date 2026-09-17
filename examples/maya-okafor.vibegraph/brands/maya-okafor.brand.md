@@ -5,7 +5,7 @@ brand: Maya Okafor
 owner: Maya Okafor
 scope: public
 when: always
-updated: 2026-09-30
+updated: 2026-10-10
 ---
 
 # Maya Okafor (personal brand)

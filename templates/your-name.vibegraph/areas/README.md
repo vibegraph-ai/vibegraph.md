@@ -13,7 +13,7 @@ Areas are the domains of knowledge and working context you add when a real use c
    area: Finances
    scope: private
    when: on-grant
-   updated: 2026-09-30
+   updated: 2026-10-10
    ---
    ```
 

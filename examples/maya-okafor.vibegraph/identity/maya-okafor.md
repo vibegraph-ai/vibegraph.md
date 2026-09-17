@@ -1,9 +1,10 @@
 ---
 kind: identity
 owner: Maya Okafor
+role: owner
 scope: public
 when: always
-updated: 2026-09-30
+updated: 2026-10-10
 ---
 
 # Maya Okafor

@@ -5,7 +5,7 @@ brand: Delivery OS
 owner: Maya Okafor
 scope: public
 when: on-task
-updated: 2026-09-30
+updated: 2026-10-10
 ---
 
 # Delivery OS

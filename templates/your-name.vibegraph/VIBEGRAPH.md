@@ -1,8 +1,9 @@
 ---
-vibegraph: "2.0"
+vibegraph: "3.0"
 owner: Your Name
+role: owner
 identity: identity/your-name.md
-updated: 2026-09-30
+updated: 2026-10-10
 ---
 
 # Your Name's vibegraph
@@ -10,6 +11,7 @@ updated: 2026-09-30
 Read this file first. It tells you who you emulate and where everything else lives.
 Read entries marked `when: always` before any task. Read `when: on-task` entries only when the
 task needs them. Never read `scope: private` entries unless the owner has granted them for this session.
+Context sources are where context lives; areas are what it is about, and an area's entries point into sources.
 
 ## Identity
 - [Your Name](identity/your-name.md) · kind: identity · scope: public · when: always
@@ -18,14 +20,12 @@ task needs them. Never read `scope: private` entries unless the owner has grante
 - [Your Name (personal brand)](brands/your-name.brand.md) · kind: brand · type: personal · scope: public · when: always
 - [Your Business](brands/your-business.brand.md) · kind: brand · type: business · scope: public · when: on-task (any Your Business writing, design, or publishing)
 
+## Context Sources
+See [context-sources.md](context-sources.md). Summary:
+- Notes app "Your vault" · kind: source · scope: scoped · locator: ~/Notes
+
 ## Areas
 - [Career](areas/career/index.md) · kind: area · scope: scoped · when: on-task (resume, bio, applications)
-- [Skills](areas/skills/index.md) · kind: area · scope: scoped · when: on-task (any repeatable workflow)
-- [Goals](areas/goals/index.md) · kind: area · scope: scoped · when: on-task (planning, prioritization)
-
-## Components
-See [components.md](components.md). Summary:
-- Notes app "Your vault" · kind: source · scope: scoped · locator: ~/Notes
 
 ## Read order
 1. identity/your-name.md

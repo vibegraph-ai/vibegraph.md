@@ -3,15 +3,14 @@ kind: area
 area: Skills
 scope: scoped
 when: on-task
-updated: 2026-09-30
+updated: 2026-10-10
 ---
 
 # Skills
 
 Read for: any repeatable workflow Maya or her agents run.
 
-Procedures live here as SKILL.md files, so any harness that reads that format loads them directly.
+What belongs here: procedures as SKILL.md files, so any harness that reads that format loads them directly.
 
-| Skill | Use when |
-|---|---|
-| [client-kickoff.SKILL.md](client-kickoff.SKILL.md) | A signed client needs a kickoff: workspace set up, call booked, first-week checklist sent. |
+## Entries
+- [Client kickoff](client-kickoff.SKILL.md) · scope: scoped · when: on-task · access: file
