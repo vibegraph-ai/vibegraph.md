@@ -2,6 +2,31 @@
 
 All notable changes to the vibegraph.md specification are recorded here. The format follows [Keep a Changelog](https://keepachangelog.com).
 
+## [3.0] (October 10, 2026)
+
+Context Sources and Areas become two concepts with a stated relationship, areas ship only when chosen and carry typed entries, and a vibegraph can be built for a business by someone who took no instruments.
+
+### Added
+- **`role`** in the root file and identity file front matter: `owner`, `staff`, or `agency`; absent means `owner`.
+- **Area entries:** every `areas/<slug>/index.md` lists its contents under `## Entries` in the root file's entry grammar, with `scope`, `when`, a required **`access`** route (`file`, `link`, `mcp`, `ask`), and an optional **`in`** naming the context source that holds it.
+- **The recommended area vocabulary:** nine personal areas and five business areas, with `area:` still free text.
+- **A `slug` column** in `context-sources.md`, which `in:` refers to.
+- **Optional identity sections:** Personality and Purpose may be absent; Rules and the title are enough.
+- **Optional brand elements**, in fixed order; a personal-use brand file with seven Brand Context elements is valid.
+- **Conformance rules 10 to 12:** `access` from the closed set, `in` naming a registered slug, unique lowercase-hyphenated slugs.
+- **A fourth orientation sentence** in the root file, stating how sources and areas relate.
+- The rule that a vibegraph never carries a credential (§4.3, §7.1).
+
+### Changed
+- **Components are now Context Sources:** `components.md` is `context-sources.md`, `## Components` is `## Context Sources`, and the section sits before `## Areas`.
+- **Areas ship only when chosen.** No fixed scaffold; no `areas/` folder when there are none.
+- `context-sources` joins the reserved names.
+- Version 3.x.
+
+### Removed
+- The always-present career, skills, and goals scaffolds.
+- The `components.md` name and the `## Components` section.
+
 ## [2.0] (September 30, 2026)
 
 The reference layout release. The specification now describes a vibegraph as five elements anchored to one person (the identity core, brands, areas, components, and the root file) and matches the whitepaper of the same version.
