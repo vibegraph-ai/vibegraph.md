@@ -8,7 +8,7 @@ The open framework and file convention for a vibegraph. It defines VIBEGRAPH.md,
 
 [Specification](SPEC.md) · [Example](examples/maya-okafor.vibegraph) · [Templates](templates/your-name.vibegraph) · [Whitepaper (PDF)](whitepaper/vibegraph-whitepaper.pdf) · [vibegraph.ai](https://vibegraph.ai)
 
-Published specification: 2.0 · MIT (templates, schema, code) · CC-BY 4.0 (prose)
+Published specification: 3.0 · MIT (templates, schema, code) · CC-BY 4.0 (prose)
 
 </div>
 
@@ -46,8 +46,8 @@ your-name.vibegraph/
 │   ├── your-name.brand.md     personal brand: 12 Brand Context + 8 Brand Visuals
 │   ├── your-business.brand.md business brand: foundations + 12 + 8
 │   └── assets/README.md       where the visual assets live
-├── areas/<area>/index.md      one folder per area, each with its own scope
-└── components.md              the tools that already hold parts of the graph
+├── context-sources.md         the systems that already hold parts of the graph
+└── areas/<area>/index.md      one folder per chosen area, each with its entries
 ```
 
 The full rules are in [SPEC.md §2](SPEC.md#2-the-reference-layout).
@@ -98,7 +98,7 @@ Want a guided build with an AI coach instead? That is what [vibegraph.ai](https:
 
 | Path | What it is |
 |---|---|
-| [SPEC.md](SPEC.md) | The specification, version 2.0 |
+| [SPEC.md](SPEC.md) | The specification, version 3.0 |
 | [examples/](examples) | The Maya Okafor worked example |
 | [templates/](templates) | A blank vibegraph in the reference layout |
 | [schema/](schema) | JSON Schemas for the front matter |

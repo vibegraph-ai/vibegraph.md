@@ -196,15 +196,15 @@
 <path fill-rule="evenodd" clip-rule="evenodd" d="M8.375 9.91249C13.1 7.18749 18.9 7.18749 23.625 9.91249C23.625 15.3625 20.725 20.4 16 23.125C11.275 20.4 8.375 15.3625 8.375 9.91249ZM9.6125 10.6375C13.625 8.58749 18.375 8.58749 22.3875 10.6375C22.1625 15.1375 19.7875 19.25 16 21.7C12.225 19.25 9.8375 15.1375 9.6125 10.6375Z" fill="#F6F6F6"/>
 <path d="M9.1375 10.475C13.3875 8.025 18.6125 8.025 22.8625 10.475C22.8625 15.375 20.25 19.9125 16 22.3625C11.75 19.9125 9.1375 15.375 9.1375 10.475Z" fill="#F6F6F6"/>
 </svg><span>vibegraph.md</span></a>
-    <nav class="desktop-nav" aria-label="Main navigation"><a href="https://github.com/vibegraph-ai/vibegraph.md/blob/v2.0/SPEC.md">Specification</a>
-      <a href="https://github.com/vibegraph-ai/vibegraph.md/tree/v2.0/templates/your-name.vibegraph">Templates</a>
+    <nav class="desktop-nav" aria-label="Main navigation"><a href="https://github.com/vibegraph-ai/vibegraph.md/blob/v3.0/SPEC.md">Specification</a>
+      <a href="https://github.com/vibegraph-ai/vibegraph.md/tree/v3.0/templates/your-name.vibegraph">Templates</a>
       <a href="https://vibegraph.ai">vibegraph.ai</a></nav>
     <div class="nav-actions"><button class="icon-button theme-toggle js-only" type="button" aria-label="Switch to dark theme"><img src="assets/icon-moon.svg" alt="" width="20" height="20"></button>
       <button class="icon-button menu-toggle js-only" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav"><img src="assets/icon-menu.svg" alt="" width="20" height="20"></button>
     </div>
   </div>
-  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden><a href="https://github.com/vibegraph-ai/vibegraph.md/blob/v2.0/SPEC.md">Specification</a>
-      <a href="https://github.com/vibegraph-ai/vibegraph.md/tree/v2.0/templates/your-name.vibegraph">Templates</a>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden><a href="https://github.com/vibegraph-ai/vibegraph.md/blob/v3.0/SPEC.md">Specification</a>
+      <a href="https://github.com/vibegraph-ai/vibegraph.md/tree/v3.0/templates/your-name.vibegraph">Templates</a>
       <a href="https://vibegraph.ai">vibegraph.ai</a></nav>
 </header>
 <main id="main" tabindex="-1">
@@ -218,10 +218,10 @@
     <p class="vibes">Your vibes: your personality, taste, voice, values, purpose, and aesthetic.</p>
     <p class="lede">A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one person, and any businesses they own or operate. This is its file convention: a readable structure for who you are, your personal brand, and the business brands you own, portable to any AI tool you choose.</p>
     <div class="cta-row">
-      <a class="btn primary" href="https://github.com/vibegraph-ai/vibegraph.md/blob/v2.0/SPEC.md">Read the specification →</a>
-      <a class="btn ghost" href="https://github.com/vibegraph-ai/vibegraph.md/tree/v2.0/examples/maya-okafor.vibegraph">Browse the example →</a>
+      <a class="btn primary" href="https://github.com/vibegraph-ai/vibegraph.md/blob/v3.0/SPEC.md">Read the specification →</a>
+      <a class="btn ghost" href="https://github.com/vibegraph-ai/vibegraph.md/tree/v3.0/examples/maya-okafor.vibegraph">Browse the example →</a>
     </div>
-    <p class="monoline">Published specification: 2.0 · MIT (templates, schema, code) · CC-BY 4.0 (prose)</p>
+    <p class="monoline">Published specification: 3.0 · MIT (templates, schema, code) · CC-BY 4.0 (prose)</p>
   </div></div>
   <button class="net-toggle js-only" type="button" aria-label="Pause motion" title="Pause motion" aria-pressed="false" aria-controls="net-background">
     <svg class="motion-pause" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 3v10M11 3v10" stroke="currentColor" stroke-width="2"/></svg>
@@ -268,9 +268,9 @@
         <div class="path">brands/&lt;slug&gt;.brand.md</div>
       </div>
       <div class="col">
-        <h3>Areas and components</h3>
-        <p>Areas are the domains you add when a use case demands one, each a folder with its own scope. Components are the tools that already hold parts of your graph, registered with a kind and a scope.</p>
-        <div class="path">areas/&lt;area&gt;/index.md · components.md</div>
+        <h3>Context sources and areas</h3>
+        <p>Context sources are the systems that already hold your context, registered with a kind and a scope. Areas are the domains you choose, each a folder whose index lists its entries and how to reach them.</p>
+        <div class="path">context-sources.md · areas/&lt;area&gt;/index.md</div>
       </div>
     </div>
   </div>
@@ -310,8 +310,8 @@ Do not read entries marked `scope: private` unless they have been granted for th
     <div class="kicker">Start with the format</div>
     <h2>Open it. Read it. Make it yours.</h2>
     <div class="steps">
-      <div class="step"><div class="n">01</div><div><h3>Read the specification.</h3><p>The layout, the root file, the link schema, scopes, the handoff, and how AI systems consume a vibegraph. <a href="https://github.com/vibegraph-ai/vibegraph.md/blob/v2.0/SPEC.md">Open SPEC.md ↗</a></p></div></div>
-      <div class="step"><div class="n">02</div><div><h3>Start from the example.</h3><p>A complete vibegraph for a fictional owner, Maya Okafor, with a personal brand and a business brand. Clone it, replace her with you, and pass the paste test in under an hour. <a href="https://github.com/vibegraph-ai/vibegraph.md/tree/v2.0/examples/maya-okafor.vibegraph">Browse the example ↗</a></p></div></div>
+      <div class="step"><div class="n">01</div><div><h3>Read the specification.</h3><p>The layout, the root file, the link schema, scopes, the handoff, and how AI systems consume a vibegraph. <a href="https://github.com/vibegraph-ai/vibegraph.md/blob/v3.0/SPEC.md">Open SPEC.md ↗</a></p></div></div>
+      <div class="step"><div class="n">02</div><div><h3>Start from the example.</h3><p>A complete vibegraph for a fictional owner, Maya Okafor, with a personal brand and a business brand. Clone it, replace her with you, and pass the paste test in under an hour. <a href="https://github.com/vibegraph-ai/vibegraph.md/tree/v3.0/examples/maya-okafor.vibegraph">Browse the example ↗</a></p></div></div>
       <div class="step"><div class="n">03</div><div><h3>Bring it to your tools.</h3><p>Paste the root file, your identity file, and one brand file into any chat. Add the handoff to your repositories. Serve it over MCP if you want it live. <a href="whitepaper/vibegraph-whitepaper.pdf">Read the whitepaper ↗</a></p></div></div>
     </div>
     <p class="muted" >Want a guided build with an AI coach? That is what <a class="guided-link" href="https://vibegraph.ai">vibegraph.ai</a> is for.</p>
@@ -339,11 +339,11 @@ Do not read entries marked `scope: private` unless they have been granted for th
       <button class="icon-button theme-toggle js-only" type="button" aria-label="Switch to dark theme"><img src="assets/icon-moon.svg" alt="" width="20" height="20"></button>
     </div>
     <nav class="resource-links" aria-label="Framework resources">
-      <a href="https://github.com/vibegraph-ai/vibegraph.md/blob/v2.0/SPEC.md">Specification</a>
-      <a href="https://github.com/vibegraph-ai/vibegraph.md/tree/v2.0/templates/your-name.vibegraph">Templates</a>
-      <a href="https://github.com/vibegraph-ai/vibegraph.md/tree/v2.0/examples/maya-okafor.vibegraph">Example</a>
+      <a href="https://github.com/vibegraph-ai/vibegraph.md/blob/v3.0/SPEC.md">Specification</a>
+      <a href="https://github.com/vibegraph-ai/vibegraph.md/tree/v3.0/templates/your-name.vibegraph">Templates</a>
+      <a href="https://github.com/vibegraph-ai/vibegraph.md/tree/v3.0/examples/maya-okafor.vibegraph">Example</a>
       <a href="whitepaper/vibegraph-whitepaper.pdf">Whitepaper</a>
-      <a href="https://github.com/vibegraph-ai/vibegraph.md/blob/v2.0/CHANGELOG.md">Changelog</a>
+      <a href="https://github.com/vibegraph-ai/vibegraph.md/blob/v3.0/CHANGELOG.md">Changelog</a>
       <a href="https://github.com/vibegraph-ai/vibegraph.md">GitHub</a>
       <a href="https://vibegraph.ai">vibegraph.ai</a>
     </nav>

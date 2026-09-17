@@ -133,7 +133,7 @@ flowchart LR
   M --> C2["ChatGPT · grant: public"]
   M --> C3["Cursor · grant: public + project"]
   R --> S["4. seed<br/>memory layer (substrate); the vibegraph is the schema"]
-  M -.-> L["read log<br/>2026-09-30 14:02 claude read identity/maya-okafor.md (public)"]
+  M -.-> L["read log<br/>2026-10-10 14:02 claude read identity/maya-okafor.md (public)"]
 ```
 
 **Build spec.** Canvas 1400 × 760. Left panel 420 wide, dark card with the miniature root file in IBM Plex Mono, keys in accent. Four lanes on the right. Lane labels in Space Grotesk 16 with the number. MCP server box 360 wide with its three-clause label in mono 11. Client boxes 200 wide with a grant badge (accent outline pill, mono 10). Read-log strip 3 lines, mono 10, muted. Arrows 1.5px, foreground color, small arrowheads.
