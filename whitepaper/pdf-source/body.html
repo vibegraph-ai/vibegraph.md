@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset='utf-8'><title>vibegraph whitepaper 2.0</title><link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=block'><style>
+<!doctype html><html><head><meta charset='utf-8'><title>vibegraph whitepaper 3.0</title><link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=block'><style>
 * { box-sizing: border-box; }
 html { font-size: 9.6pt; }
 body {
@@ -92,11 +92,11 @@ figcaption { font-style: italic; font-size: 8.8pt; color: #52525b; text-align: c
 <p><strong>A root file.</strong> A single markdown file, always named VIBEGRAPH.md, always at the root, that any agent reads first. It says who the agent is working for or working as, links every part of the graph with a kind and a scope, and states the read order. It is to a vibegraph what index.html is to a website and what AGENTS.md is to a repository.</p>
 </li>
 <li>
-<p><strong>Areas and components, linked by scope.</strong> Areas are the domains of knowledge and working context the person adds when a real use case demands one (career, finances, health, skills, goals, and on the business side CRM, operations, SOPs, templates). Components are the tools that already hold parts of the graph: an Obsidian vault, a Notion workspace, a memory layer such as Mem0 or Zep, a project's AGENTS.md, an agent that runs on the graph. The root file registers each with a kind (identity, brand, area, source, memory, project, skill, agent) and a scope (public, scoped, private). Nothing is exposed by omission.</p>
+<p><strong>Context sources and areas, linked by scope.</strong> Context sources are the systems that already hold context: an Obsidian vault, a Notion workspace, a memory layer such as Mem0 or Zep, a project's AGENTS.md, an agent that runs on the graph. Areas are the domains the person adds when a real use case demands one (career, money, health, tech, goals, and on the business side finance, CRM, marketing, content, operations), each listing entries that point into those sources with a route to reach them. The root file registers each with a kind (identity, brand, area, source, memory, project, skill, agent) and a scope (public, scoped, private). Nothing is exposed by omission.</p>
 </li>
 </ol>
 <p>The identity core and the root file are what make it a vibegraph. Without them, it is context. With them, it is a graph any agent can walk, a permission model an owner can reason about, and a portable asset that moves unchanged when a better tool ships.</p>
-<p><strong>What a vibegraph is not.</strong> It is not a notes app, a memory layer, or an AI operating system; those are components or consumers of it. It is not shared. A single vibegraph represents exactly one human, and there is no global vibegraph. A business brand inside a person's vibegraph can be shared with other people inside that business, but the graph itself has one owner. A vibegraph is not scraped. A core vibegraph is written on purpose, through assessment and brand work, not inferred from an inbox. It is plain markdown at its simplest and an encrypted, permissioned vault at its most complete, owned and hosted by the person it describes.</p>
+<p><strong>What a vibegraph is not.</strong> It is not a notes app, a memory layer, or an AI operating system; those are context sources or consumers of it. It is not shared. A single vibegraph represents exactly one human, and there is no global vibegraph. A business brand inside a person's vibegraph can be shared with other people inside that business, but the graph itself has one owner. A vibegraph is not scraped. A core vibegraph is written on purpose, through assessment and brand work, not inferred from an inbox. It is plain markdown at its simplest and an encrypted, permissioned vault at its most complete, owned and hosted by the person it describes.</p>
 <p>Two design decisions separate a vibegraph from the memory products it composes with. Memory layers remember what happened; a vibegraph defines who you are. And a vibegraph works today, with zero platform adoption required. Use it with your AI tools and the output becomes something that matches the "vibes" of its creator; high-fidelity, high-quality results that are the opposite of AI slop. Where AGENTS.md tells an agent how to work on your code, a vibegraph tells an agent how to work as, and for, you.</p>
 <p>The word is a common noun. "vibegraph" (lowercase v) is not a product name and carries no trademark. The open framework and file convention are published at vibegraph.md under a permissive MIT license. A guided builder for the identity core is available at vibegraph.ai. Neither is required to have a vibegraph; both exist to make a good one faster.</p>
 <div class="keep"><h3>2.1 Design principles</h3>
@@ -107,19 +107,19 @@ figcaption { font-style: italic; font-size: 8.8pt; color: #52525b; text-align: c
 <p><strong>Guided, not blank.</strong> The hard part of a document like this is not the format; it is the blank page. The framework assumes a guided build: structured questions, worked examples for every element, and an AI coach that draws out real material in conversation rather than waiting for the owner to fill a template.</p>
 <p><strong>Portable and sovereign.</strong> A vibegraph is files, not a service. It moves across tools, models, and vendors unchanged. If a platform shuts down or a better one launches, the graph comes along.</p>
 <p><strong>Grounded in established instruments.</strong> The identity core is not improvised. It uses instruments and frameworks with decades of practice behind them, so the result is structured, comparable, and complete rather than a freeform "about me" essay. More instruments make a richer core; the framework welcomes any the owner has taken.</p>
-<p><strong>Extensible.</strong> A minimal vibegraph is an identity core, one personal brand, and a root file. From there the owner adds business brands, areas, and components as real needs appear, at whatever depth they choose.</p>
+<p><strong>Extensible.</strong> A minimal vibegraph is an identity core, one personal brand, and a root file. From there the owner adds business brands, context sources, and areas as real needs appear, at whatever depth they choose.</p>
 <hr />
 </div><h2>3. The anatomy of a vibegraph</h2>
 <p>Every vibegraph has the same five elements, anchored to one person.</p>
 <p><strong>The identity core</strong> answers the question every AI tool silently asks and never gets answered: who is this person? It holds the personality assessment, the integrated reading, any other instruments the owner has taken, and the purpose work. It is deliberately small, because it travels everywhere: pasted into a chat, attached to a project, read first by an agent.</p>
 <p><strong>Brands</strong> answer the next question: how does this person present? A vibegraph holds one personal brand, built from the identity core, and any business brands the owner operates, each a full brand document of its own with organizational foundations. Every brand has its words (Brand Context) and its look (Brand Visuals). The core plus one brand fits inside a single model context window; that is a design constraint, not an accident.</p>
-<p><strong>Areas</strong> answer the follow-up: what is this person working with? Areas are the domains of knowledge and working context the owner adds when a use case demands one. On the personal side: career, finances, health, skills, goals. On the business side: relationships and CRM, operations, playbooks and SOPs, templates. Each area is a folder with its own index file and its own scope, so it can be granted as a unit. Areas are where depth lives, and where sensitivity lives, which is why they are gated by default and stay home when the core travels.</p>
-<p><strong>Components</strong> are the tools that already hold parts of the graph: a notes app, a memory layer, a project repository with its own AGENTS.md, a skill file, an agent. The root file registers them; it does not store them. This is how the framework says "everything you already use is part of your vibegraph" without pretending to be a container for it. Section 6 places the common tools.</p>
-<p><strong>The root file</strong>, VIBEGRAPH.md, ties the four together. It names the owner, points to the identity file, links every brand, area, and component with a kind, a scope, and a rule for when to read it, and states the read order. An agent handed only this file knows what exists, what to read first, and what it may not read.</p>
+<p><strong>Areas</strong> answer the follow-up: what is this person working with? Areas are the domains of knowledge and working context the owner adds when a use case demands one. On the personal side: career, finances, health, skills, goals. On the business side: relationships and CRM, operations, playbooks and SOPs, templates. Each area is a folder with its own index file and its own scope, so it can be granted as a unit. Areas are where depth lives, and where sensitivity lives, which is why they are gated by default and stay home when the core travels. Each area lists its entries: files, links, and locations with a scope, a when, and an <code>access</code> route (<code>file</code>, <code>link</code>, <code>mcp</code>, <code>ask</code>) that tells a reader how to reach them, and which context source holds them. A vibegraph carries routes, never credentials.</p>
+<p><strong>Context sources</strong> are the systems that already hold context: a notes app, a memory layer, a project repository with its own AGENTS.md, a skill file, an agent. The root file registers them; it does not store them. This is how the framework says "everything you already use is part of your vibegraph" without pretending to be a container for it. Section 6 places the common tools.</p>
+<p><strong>The root file</strong>, VIBEGRAPH.md, ties the four together. It names the owner, points to the identity file, links every brand, context source, and area with a kind, a scope, and a rule for when to read it, and states the read order. An agent handed only this file knows what exists, what to read first, and what it may not read.</p>
 <p>The structure matters for three reasons.</p>
 <p>First, it matches how AI consumption works. Identity and brand belong in every interaction; area context belongs only in relevant ones. A model writing your newsletter needs your voice and positioning, not your medical history. Separating the always-relevant from the sometimes-relevant keeps context windows lean and permission decisions simple.</p>
-<p>Second, it matches how trust works. The core and the brands are shareable by design. Areas are gated by design. Components are registered, not copied. A clean line is easier to secure and easier to reason about than one blob with per-paragraph exceptions.</p>
-<p>Third, it scales in both directions. A minimal vibegraph (core, one brand, root file) is useful the day it is built. A large one, with two business brands, a dozen areas, and six registered components maintained over years, is still one file an agent reads first. The framework does not force anyone up the curve.</p>
+<p>Second, it matches how trust works. The core and the brands are shareable by design. Areas are gated by design. Context sources are registered, not copied. A clean line is easier to secure and easier to reason about than one blob with per-paragraph exceptions.</p>
+<p>Third, it scales in both directions. A minimal vibegraph (core, one brand, root file) is useful the day it is built. A large one, with two business brands, a dozen areas, and six registered context sources maintained over years, is still one file an agent reads first. The framework does not force anyone up the curve.</p>
 <figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="Figure 1: the anatomy of a vibegraph">
 <rect width="1200" height="800" fill="#f6f6f6"/>
 <defs><marker id="f1-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0a0a0a"/></marker></defs>
@@ -140,22 +140,22 @@ figcaption { font-style: italic; font-size: 8.8pt; color: #52525b; text-align: c
 <text x="458.0" y="276.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#6b6b6b" text-anchor="middle">kind: brand</text>
 <text x="458.0" y="292.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#6b6b6b" text-anchor="middle">scope: public</text>
 <line x1="742.0" y1="236.0" x2="742.0" y2="330.0" stroke="#6b6b6b" stroke-width="1.0"/>
-<rect x="667.9" y="258.0" width="148.3" height="44.0" rx="4" fill="#f6f6f6" stroke="none" stroke-width="0"/>
-<text x="742.0" y="276.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#6b6b6b" text-anchor="middle">kind: area</text>
-<text x="742.0" y="292.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#6b6b6b" text-anchor="middle">scope: scoped/private</text>
+<rect x="630.0" y="258.0" width="223.9" height="44.0" rx="4" fill="#f6f6f6" stroke="none" stroke-width="0"/>
+<text x="742.0" y="276.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#6b6b6b" text-anchor="middle">kind: source/memory/project/agent</text>
+<text x="742.0" y="292.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#6b6b6b" text-anchor="middle">scope: scoped</text>
 <line x1="1026.0" y1="236.0" x2="1026.0" y2="330.0" stroke="#6b6b6b" stroke-width="1.0"/>
-<rect x="914.0" y="258.0" width="223.9" height="44.0" rx="4" fill="#f6f6f6" stroke="none" stroke-width="0"/>
-<text x="1026.0" y="276.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#6b6b6b" text-anchor="middle">kind: source/memory/project/agent</text>
-<text x="1026.0" y="292.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#6b6b6b" text-anchor="middle">scope: scoped</text>
+<rect x="951.9" y="258.0" width="148.3" height="44.0" rx="4" fill="#f6f6f6" stroke="none" stroke-width="0"/>
+<text x="1026.0" y="276.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#6b6b6b" text-anchor="middle">kind: area</text>
+<text x="1026.0" y="292.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" font-weight="400" fill="#6b6b6b" text-anchor="middle">scope: scoped/private</text>
 <rect x="44.0" y="330.0" width="260.0" height="440.0" rx="12" fill="none" stroke="#e2e2e2" stroke-width="1.0"/>
 <text x="64.0" y="364.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#0a0a0a" text-anchor="start">identity core</text>
 <rect x="328.0" y="330.0" width="260.0" height="440.0" rx="12" fill="none" stroke="#e2e2e2" stroke-width="1.0"/>
 <text x="348.0" y="364.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#0a0a0a" text-anchor="start">brands</text>
-<rect x="612.0" y="330.0" width="260.0" height="440.0" rx="12" fill="none" stroke="#e2e2e2" stroke-width="1.0"/>
-<text x="632.0" y="364.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#0a0a0a" text-anchor="start">areas</text>
-<rect x="896.0" y="330.0" width="260.0" height="440.0" rx="12" fill="none" stroke="#e2e2e2" stroke-width="1.0" stroke-dasharray="6 4"/>
-<text x="916.0" y="364.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#0a0a0a" text-anchor="start">components</text>
-<text x="916.0" y="384.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="start">registered, not stored</text>
+<rect x="612.0" y="330.0" width="260.0" height="440.0" rx="12" fill="none" stroke="#e2e2e2" stroke-width="1.0" stroke-dasharray="6 4"/>
+<text x="632.0" y="364.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#0a0a0a" text-anchor="start">context sources</text>
+<rect x="896.0" y="330.0" width="260.0" height="440.0" rx="12" fill="none" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="916.0" y="364.0" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#0a0a0a" text-anchor="start">areas</text>
+<text x="632.0" y="384.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="start">registered, not stored</text>
 <rect x="60.0" y="386.0" width="228.0" height="84.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
 <text x="74.0" y="411.0" font-family="Inter, sans-serif" font-size="14" font-weight="400" fill="#0a0a0a" text-anchor="start">personality</text>
 <text x="74.0" y="430.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">Big Five · Enneagram</text>
@@ -177,31 +177,31 @@ figcaption { font-style: italic; font-size: 8.8pt; color: #52525b; text-align: c
 <text x="374.0" y="547.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">foundations + 12 + 8</text>
 <text x="374.0" y="564.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">when: on-task</text>
 <text x="348.0" y="750.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">brands/</text>
-<rect x="628.0" y="386.0" width="228.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
-<text x="642.0" y="411.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="13" font-weight="500" fill="#0a0a0a" text-anchor="start">career/</text>
-<text x="642.0" y="430.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">scope: scoped · on-task</text>
-<rect x="628.0" y="454.0" width="228.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
-<text x="642.0" y="479.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="13" font-weight="500" fill="#0a0a0a" text-anchor="start">skills/</text>
-<text x="642.0" y="498.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">scope: scoped · on-task</text>
-<rect x="628.0" y="522.0" width="228.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
-<text x="642.0" y="547.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="13" font-weight="500" fill="#0a0a0a" text-anchor="start">finances/</text>
-<text x="642.0" y="566.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">scope: private · on-grant</text>
-<text x="632.0" y="750.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">areas/&lt;area&gt;/index.md</text>
-<rect x="912.0" y="406.0" width="228.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
-<text x="926.0" y="431.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#0a0a0a" text-anchor="start">Obsidian vault</text>
-<text x="926.0" y="450.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">kind: source</text>
-<rect x="912.0" y="474.0" width="228.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
-<text x="926.0" y="499.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#0a0a0a" text-anchor="start">Claude memory</text>
-<text x="926.0" y="518.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">kind: memory</text>
-<rect x="912.0" y="542.0" width="228.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
-<text x="926.0" y="567.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#0a0a0a" text-anchor="start">site repo</text>
-<text x="926.0" y="586.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">kind: project</text>
-<rect x="912.0" y="610.0" width="228.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
-<text x="926.0" y="635.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#0a0a0a" text-anchor="start">writing agent</text>
-<text x="926.0" y="654.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">kind: agent</text>
-<text x="916.0" y="750.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">components.md</text>
+<rect x="628.0" y="406.0" width="228.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="642.0" y="431.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#0a0a0a" text-anchor="start">Obsidian vault</text>
+<text x="642.0" y="450.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">kind: source</text>
+<rect x="628.0" y="474.0" width="228.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="642.0" y="499.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#0a0a0a" text-anchor="start">Claude memory</text>
+<text x="642.0" y="518.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">kind: memory</text>
+<rect x="628.0" y="542.0" width="228.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="642.0" y="567.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#0a0a0a" text-anchor="start">site repo</text>
+<text x="642.0" y="586.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">kind: project</text>
+<rect x="628.0" y="610.0" width="228.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="642.0" y="635.0" font-family="Inter, sans-serif" font-size="13.5" font-weight="400" fill="#0a0a0a" text-anchor="start">writing agent</text>
+<text x="642.0" y="654.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">kind: agent</text>
+<text x="632.0" y="750.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">context-sources.md</text>
+<rect x="912.0" y="386.0" width="228.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="926.0" y="411.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="13" font-weight="500" fill="#0a0a0a" text-anchor="start">career/</text>
+<text x="926.0" y="430.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">scope: scoped · on-task</text>
+<rect x="912.0" y="454.0" width="228.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="926.0" y="479.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="13" font-weight="500" fill="#0a0a0a" text-anchor="start">skills/</text>
+<text x="926.0" y="498.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">scope: scoped · on-task</text>
+<rect x="912.0" y="522.0" width="228.0" height="56.0" rx="8" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
+<text x="926.0" y="547.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="13" font-weight="500" fill="#0a0a0a" text-anchor="start">finances/</text>
+<text x="926.0" y="566.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">scope: private · on-grant</text>
+<text x="916.0" y="750.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="11" font-weight="400" fill="#6b6b6b" text-anchor="start">areas/&lt;area&gt;/index.md</text>
 </svg>
-<figcaption>Figure 1: the anatomy of a vibegraph. One owner, one root file, an identity core, brands (personal plus nested business brands), areas, and registered components, with every link carrying a kind and a scope.</figcaption></figure>
+<figcaption>Figure 1: the anatomy of a vibegraph. One owner, one root file, an identity core, brands (personal plus nested business brands), context sources, and areas, with every link carrying a kind and a scope.</figcaption></figure>
 <hr />
 <h2>4. Inside the identity core</h2>
 <div class="keep"><h3>4.1 Personality: two built-in instruments, and any others you bring</h3>
@@ -358,7 +358,7 @@ figcaption { font-style: italic; font-size: 8.8pt; color: #52525b; text-align: c
 <figcaption>Figure 2: a business brand nested inside its owner's vibegraph. Foundations swapped for organizational instruments, the same twelve and eight, read on-task, with business areas built for repeatability.</figcaption></figure>
 <hr />
 </div><h2>6. Where existing tools fit</h2>
-<p>A vibegraph is not a competitor to the tools a person already uses. Each of them is a component of that person's vibegraph, with a kind the root file assigns and a scope that usually fits. This table is the map.</p>
+<p>A vibegraph is not a competitor to the tools a person already uses. Each of them is a context source of that person's vibegraph, with a kind the root file assigns and a scope that usually fits. This table is the map.</p>
 <table>
 <thead>
 <tr>
@@ -389,13 +389,13 @@ figcaption { font-style: italic; font-size: 8.8pt; color: #52525b; text-align: c
 </tr>
 <tr>
 <td>ChatGPT memory, Claude memory, Gemini personal intelligence, Codex memory</td>
-<td>Platform memory; seed it from the core, treat it as a component you do not own</td>
+<td>Platform memory; seed it from the core, treat it as a context source you do not own</td>
 <td>memory</td>
 <td>scoped</td>
 </tr>
 <tr>
 <td>GBrain</td>
-<td>Agent-run brain; a component that can hold areas and memory, and an agent that reads the root file</td>
+<td>Agent-run brain; a context source that can hold areas and memory, and an agent that reads the root file</td>
 <td>source + agent</td>
 <td>scoped</td>
 </tr>
@@ -443,7 +443,7 @@ figcaption { font-style: italic; font-size: 8.8pt; color: #52525b; text-align: c
 </tr>
 <tr>
 <td>Courses and templates (PARA courses, PPV, Ultimate Brain)</td>
-<td>Methods for building and maintaining areas; not components</td>
+<td>Methods for building and maintaining areas; not context sources</td>
 <td>none</td>
 <td>n/a</td>
 </tr>
@@ -451,7 +451,7 @@ figcaption { font-style: italic; font-size: 8.8pt; color: #52525b; text-align: c
 </table>
 <p>Three things follow from the map.</p>
 <p>The contested names are resolved. "Memory layer" is a kind. "Knowledge store" is a kind. "Agent folder" is a project. None of them is the whole, and none of them needs to be replaced. A vibegraph is the graph those nodes hang from.</p>
-<p>The identity slot is empty in nearly every tool listed. Agent folders start with a business interview. Memory layers start with observation. Clone platforms start with uploaded content. The human-authored, instrument-grounded identity core is the one component none of them builds, which is why the framework builds it and registers everything else.</p>
+<p>The identity slot is empty in nearly every tool listed. Agent folders start with a business interview. Memory layers start with observation. Clone platforms start with uploaded content. The human-authored, instrument-grounded identity core is the one part none of them builds, which is why the framework builds it and registers everything else.</p>
 <p>Adding a tool costs one line. A new memory layer, a new notes app, a new agent: one entry in the root file with a kind and a scope, and the graph is current.</p>
 <figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000" role="img" aria-label="Figure 3: where existing tools fit in a vibegraph">
 <rect width="1000" height="1000" fill="#f6f6f6"/>
@@ -558,7 +558,7 @@ figcaption { font-style: italic; font-size: 8.8pt; color: #52525b; text-align: c
 <rect x="868.0" y="944.0" width="22.0" height="20.0" rx="6" fill="#ffffff" stroke="#e2e2e2" stroke-width="1.0"/>
 <text x="898.0" y="958.0" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b6b6b" text-anchor="start">registered</text>
 </svg>
-<figcaption>Figure 3: the placement map. The identity core and root file at the center; sources, memory, projects, skills, and agents as registered components around it, each with its kind and scope.</figcaption></figure>
+<figcaption>Figure 3: the placement map. The identity core and root file at the center; sources, memory, projects, skills, and agents as registered context sources around it, each with its kind and scope.</figcaption></figure>
 <hr />
 <h2>7. How AI systems consume a vibegraph</h2>
 <p>A vibegraph is only as good as the ways it can be used. This section specifies the root file, the link schema, the scope vocabulary, and the handoff, then the four consumption modes. The first mode requires nothing from anyone.</p>
@@ -584,18 +584,17 @@ task needs them. Never read `scope: private` entries unless the owner has grante
 - [Maya Okafor (personal brand)](brands/maya-okafor.brand.md) · kind: brand · type: personal · scope: public · when: always
 - [Delivery OS](brands/delivery-os.brand.md) · kind: brand · type: business · scope: public · when: on-task (any Delivery OS writing, design, or publishing)
 
+## Context Sources
+See [context-sources.md](context-sources.md). Summary:
+- Obsidian vault &quot;Notes&quot; · kind: source · scope: scoped · locator: ~/Notes
+- Claude memory · kind: memory · scope: scoped · seeded from this vibegraph on 2026-10-10
+- Delivery OS site repo · kind: project · scope: scoped · locator: github.com/deliveryos/site (has its own AGENTS.md)
+- Writing agent · kind: agent · scope: private · when: on-grant · reads: identity, brands, areas/skills · never: areas/finances
+
 ## Areas
 - [Career](areas/career/index.md) · kind: area · scope: scoped · when: on-task (resume, bio, client applications)
 - [Skills](areas/skills/index.md) · kind: area · scope: scoped · when: on-task (any repeatable workflow)
-- [Goals](areas/goals/index.md) · kind: area · scope: scoped · when: on-task (planning, prioritization)
 - [Finances](areas/finances/index.md) · kind: area · scope: private · when: on-grant
-
-## Components
-See [components.md](components.md). Summary:
-- Obsidian vault &quot;Notes&quot; · kind: source · scope: scoped · locator: ~/Notes
-- Claude memory · kind: memory · scope: scoped · seeded from this vibegraph on 2026-09-30
-- Delivery OS site repo · kind: project · scope: scoped · locator: github.com/deliveryos/site (has its own AGENTS.md)
-- Writing agent · kind: agent · reads: identity, brands, areas/skills · never: areas/finances
 
 ## Read order
 1. identity/maya-okafor.md
@@ -610,6 +609,7 @@ See [components.md](components.md). Summary:
 <p><strong>scope</strong> names who may read it: <code>public</code> (safe to share with any tool), <code>scoped</code> (exposed to named tools or purposes), <code>private</code> (never exposed without an explicit grant).</p>
 <p><strong>when</strong> names when to read it: <code>always</code> (before any task), <code>on-task</code> (only when the task needs it, with the tasks named in parentheses), <code>on-grant</code> (only after the owner grants it for the session).</p>
 <p><strong>type</strong>, on brands only: <code>personal</code> or <code>business</code>.</p>
+<p><strong>access</strong>, on area entries only: <code>file</code>, <code>link</code>, <code>mcp</code>, <code>ask</code>. <strong>in</strong>, optional: the slug of the context source that holds the entry.</p>
 <p>This is what makes "graph" a literal claim. Every node has a kind, every edge has a scope and a when, and an agent can walk it from the root. Served over MCP, the scope field is the permission, and every read is logged.</p>
 </div><div class="keep"><h3>7.3 The layout</h3>
 <pre><code>maya-okafor.vibegraph/
@@ -623,14 +623,15 @@ See [components.md](components.md). Summary:
 │   ├── maya-okafor.brand.md     personal brand: 12 Context + 8 Visuals
 │   ├── delivery-os.brand.md     business brand: foundations + 12 + 8
 │   └── assets/                  where the visual assets live, or links to where they live
-├── areas/
-│   ├── career/index.md          each area has an index.md with its own scope
-│   ├── skills/
-│   │   ├── index.md
-│   │   └── *.SKILL.md           skills in SKILL.md form, loadable by any harness that reads it
-│   ├── finances/index.md
-│   └── goals/index.md
-└── components.md                registry of external tools that hold parts of the graph
+├── context-sources.md           registry of the systems that hold context
+└── areas/
+    ├── career/
+    │   ├── index.md              each area has an index.md with its own scope
+    │   └── resume-maya-okafor.md
+    ├── skills/
+    │   ├── index.md
+    │   └── *.SKILL.md           skills in SKILL.md form, loadable by any harness that reads it
+    └── finances/index.md
 </code></pre>
 <p>Naming rules. The identity file is named after the person, because a fixed name like identity.md collides with generic usage and person names let a folder hold two people side by side later. Brand files carry the <code>.brand.md</code> suffix so a directory listing tells you the kind. Areas are folders with an index.md, so an area can hold one file or a hundred and can be granted as a unit. Skills use the SKILL.md form so Claude Code, Codex, and the other harnesses that already read that format load them directly.</p>
 </div><div class="keep"><h3>7.4 The handoff stanza</h3>
@@ -676,14 +677,14 @@ Do not read entries marked `scope: private` unless they have been granted for th
 <text x="62" y="418.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">- [Delivery OS](brands/delivery-os.brand.md)</text>
 <text x="62" y="436.4" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">    · <tspan fill="#5a4bd1">kind:</tspan> brand · <tspan fill="#5a4bd1">type:</tspan> business</text>
 <text x="62" y="454.2" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">    · <tspan fill="#5a4bd1">scope:</tspan> public · <tspan fill="#5a4bd1">when:</tspan> on-task</text>
-<text x="62" y="472.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="500" xml:space="preserve">## Areas</text>
-<text x="62" y="489.8" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">- [Career](areas/career/index.md)</text>
-<text x="62" y="507.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">    · <tspan fill="#5a4bd1">kind:</tspan> area · <tspan fill="#5a4bd1">scope:</tspan> scoped · <tspan fill="#5a4bd1">when:</tspan> on-task</text>
-<text x="62" y="525.4" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">- [Finances](areas/finances/index.md)</text>
-<text x="62" y="543.2" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">    · <tspan fill="#5a4bd1">kind:</tspan> area · <tspan fill="#5a4bd1">scope:</tspan> private · <tspan fill="#5a4bd1">when:</tspan> on-grant</text>
-<text x="62" y="561.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="500" xml:space="preserve">## Components</text>
-<text x="62" y="578.8" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">- Obsidian vault "Notes" · <tspan fill="#5a4bd1">kind:</tspan> source</text>
-<text x="62" y="596.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">- Claude memory · <tspan fill="#5a4bd1">kind:</tspan> memory</text>
+<text x="62" y="472.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="500" xml:space="preserve">## Context Sources</text>
+<text x="62" y="489.8" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">- Obsidian vault "Notes" · <tspan fill="#5a4bd1">kind:</tspan> source</text>
+<text x="62" y="507.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">- Claude memory · <tspan fill="#5a4bd1">kind:</tspan> memory</text>
+<text x="62" y="525.4" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="500" xml:space="preserve">## Areas</text>
+<text x="62" y="543.2" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">- [Career](areas/career/index.md)</text>
+<text x="62" y="561.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">    · <tspan fill="#5a4bd1">kind:</tspan> area · <tspan fill="#5a4bd1">scope:</tspan> scoped · <tspan fill="#5a4bd1">when:</tspan> on-task</text>
+<text x="62" y="578.8" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">- [Finances](areas/finances/index.md)</text>
+<text x="62" y="596.6" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">    · <tspan fill="#5a4bd1">kind:</tspan> area · <tspan fill="#5a4bd1">scope:</tspan> private · <tspan fill="#5a4bd1">when:</tspan> on-grant</text>
 <text x="62" y="614.4" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="500" xml:space="preserve">## Read order</text>
 <text x="62" y="632.2" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">1. identity/maya-okafor.md</text>
 <text x="62" y="650.0" font-family="'IBM Plex Mono', Menlo, monospace" font-size="10.5" fill="#0a0a0a" font-weight="400" xml:space="preserve">2. brands/maya-okafor.brand.md</text>
@@ -792,7 +793,7 @@ Do not read entries marked `scope: private` unless they have been granted for th
 <td>What it is</td>
 <td>A category term. The network of identity, context, knowledge, and memory that governs AI for one person and the businesses they own.</td>
 <td>The open specification and file convention: the root file, the typed link schema, scopes, area conventions, and the handoff to AGENTS.md and CLAUDE.md.</td>
-<td>The guided builder. Claudia runs the identity assessment, purpose work, and brand build, then exports the reference layout and registers components.</td>
+<td>The guided builder. Claudia runs the identity assessment, purpose work, and brand build, then exports the reference layout and registers context sources.</td>
 </tr>
 <tr>
 <td>Who owns it</td>
@@ -825,12 +826,12 @@ Do not read entries marked `scope: private` unless they have been granted for th
 <p><strong>The app.</strong> vibegraph.ai builds the center of a vibegraph: the identity core and the brands. It does not become a notes app, a memory layer, or a dashboard, and it does not build the organizational vibegraph.</p>
 <p>It meets the owner wherever they stand. On the AI-assisted path, a person with no brand and no assessments starts from a blank slate: the two built-in personality instruments, the integrated reading, the four-pillar Ikigai in conversation with Claudia, then the personal brand. Then, if they own a business, the business brand. On the upload path, a person who already has assessment results (from any instrument, not only the two built in), an Ikigai, or completed or partial brand material brings it in, and the build starts from there. More instruments produce a richer core, and the app expects to add instruments over time.</p>
 <p>For Brand Visuals, the app hands off rather than generating. After the Brand Context is finished, the owner receives their partially built vibegraph plus ready-to-use prompts and instructions for their chosen tool (a general model, a code agent, a design canvas, a design application), with a live connection where one exists. The owner produces the visuals there, records where the assets live, and the build completes with the export.</p>
-<p>The export is the reference layout in section 7, with the handoff stanza pre-written into AGENTS.md and CLAUDE.md and an areas scaffold ready to fill. A components step registers the tools the owner already uses. The same layout is served live over MCP with scopes as grants and every read logged. The personality assessments are free. Completing the build is a one-time unlock with unlimited edits and re-exports; current tiers are at vibegraph.ai/pricing. The app is a convenience layered on the open framework, never a gate in front of it.</p>
+<p>The export is the reference layout in section 7, with the handoff stanza pre-written into AGENTS.md and CLAUDE.md and the areas the owner chose, each with its entries. A Context Sources step registers the systems the owner already uses. The same layout is served live over MCP with scopes as grants and every read logged. The personality assessments are free. Completing the build is a one-time unlock with unlimited edits and re-exports; current tiers are at vibegraph.ai/pricing. The app is a convenience layered on the open framework, never a gate in front of it.</p>
 <hr />
 <h2>12. Summary</h2>
 <p>The last two years settled whether AI can produce competent work. The next two are about context, and whose work it produces. Left uncalibrated, every model regresses to the same mean, and everyone who relies on it sounds a little more like everyone else.</p>
 <p>The fix is not a smarter model. It is a better starting point: a human-authored identity core and a root file every AI reads first, linked by kind and scope to the brands, areas, and tools that make up the rest of one person's graph. Small enough to paste into a chat today. Structured enough to serve an agent fleet tomorrow. Private by default, permissioned by design, grounded in instruments older and sturdier than any of the tools that will consume it.</p>
-<p>Every AI you use should run on your vibegraph. Your notes app, your memory layer, and your agents are components of it. The open framework at vibegraph.md defines its shape. vibegraph.ai builds its center.</p>
+<p>Every AI you use should run on your vibegraph. Your notes app, your memory layer, and your agents are context sources of it. The open framework at vibegraph.md defines its shape. vibegraph.ai builds its center.</p>
 <hr />
 <h2>Glossary</h2>
 <p><strong>vibegraph.</strong> The network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one person and the businesses they own. A common noun, always lowercase. Plural: vibegraphs. One person per vibegraph.</p>
@@ -841,7 +842,9 @@ Do not read entries marked `scope: private` unless they have been granted for th
 <p><strong>Brand Visuals.</strong> The brand in pictures: eight elements from Symbols &amp; Logos to Photography, recorded as concrete artifacts and linked to where the assets live.</p>
 <p><strong>element.</strong> The unit inside Brand Context and Brand Visuals: one named artifact such as Core Values or Color Palette, with its own shape and craft standard.</p>
 <p><strong>area.</strong> A domain of knowledge or working context the owner adds when a use case demands one: a folder with an index file, its own scope, and its own when rule. Familiar from PARA's areas.</p>
-<p><strong>component.</strong> A tool that already holds part of the graph (a knowledge store, a memory layer, a project, a skill, an agent), registered in the root file with a kind and a scope. Registered, not stored.</p>
+<p><strong>context source.</strong> A system that already holds context (a knowledge store, a memory layer, a project, a skill, an agent), registered in the root file with a kind and a scope. Registered, not stored.</p>
+<p><strong>entry.</strong> One line under an area's <code>## Entries</code>: a file, link, or location with a scope, a when, an <code>access</code> route, and optionally the context source it lives in.</p>
+<p><strong>access.</strong> How a reader reaches an entry: <code>file</code>, <code>link</code>, <code>mcp</code>, or <code>ask</code>. Never a credential.</p>
 <p><strong>kind.</strong> What a node is: identity, brand, area, source, memory, project, skill, agent.</p>
 <p><strong>scope.</strong> Who may read a node: public, scoped, private. Nothing is exposed by omission. Familiar from OAuth.</p>
 <p><strong>when.</strong> When a node is read: always, on-task, on-grant.</p>

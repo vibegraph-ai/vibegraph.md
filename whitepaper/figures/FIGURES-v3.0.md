@@ -12,7 +12,7 @@ Palette, from the brand system's light mode (Figma file x48b72CU3Bv4bvgTwtOBH7, 
 
 File: `figure-1-anatomy.svg`
 
-**What it shows.** One owner at the top. VIBEGRAPH.md as a single root node directly beneath. Four children fanning out: identity core (with three sub-nodes: personality, integrated reading, Ikigai), brands (personal brand, and a nested business brand box inside the brands region), areas (three example folders), components (four example registered tools drawn with a dashed border to mean "registered, not stored"). Every edge from the root carries a small mono label with kind and scope.
+**What it shows.** One owner at the top. VIBEGRAPH.md as a single root node directly beneath. Four children fanning out: identity core (with three sub-nodes: personality, integrated reading, Ikigai), brands (personal brand, and a nested business brand box inside the brands region), context sources (four example registered systems drawn with a dashed border to mean "registered, not stored"), areas (three example folders). Every edge from the root carries a small mono label with kind and scope.
 
 **Mermaid source.**
 
@@ -30,25 +30,25 @@ flowchart TB
     PB["maya-okafor.brand.md<br/>personal · 12 + 8"]
     BB["delivery-os.brand.md<br/>business · foundations + 12 + 8"]
   end
-  subgraph A["areas"]
-    A1["career/"]
-    A2["skills/"]
-    A3["finances/"]
-  end
-  subgraph C["components (registered, not stored)"]
+  subgraph C["context sources (registered, not stored)"]
     C1["Obsidian vault · source"]
     C2["Claude memory · memory"]
     C3["site repo · project"]
     C4["writing agent · agent"]
   end
+  subgraph A["areas"]
+    A1["career/"]
+    A2["skills/"]
+    A3["finances/"]
+  end
   R -- "kind: identity · scope: public · when: always" --> IC
   R -- "kind: brand · scope: public" --> B
-  R -- "kind: area · scope: scoped/private" --> A
   R -- "kind: source/memory/project/agent · scope: scoped" --> C
+  R -- "kind: area · scope: scoped/private" --> A
   style C stroke-dasharray: 6 4
 ```
 
-**Build spec.** Canvas 1200 × 800. Owner label centered at top in Space Grotesk 26. Root node 320 × 64, accent stroke, IBM Plex Mono file name. Four regions on one row beneath, each 260 wide with 24 gutters, region titles in Inter SemiBold 15, lowercase. The business brand box sits inside the brands region, inset 16, with a thin accent left rule to read as "nested." Components region border dashed (6 4). Edge labels in IBM Plex Mono 10.5, muted. No arrowheads on edges from the root to regions; arrowhead only from owner to root.
+**Build spec.** Canvas 1200 × 800. Owner label centered at top in Space Grotesk 26. Root node 320 × 64, accent stroke, IBM Plex Mono file name. Four regions on one row beneath, each 260 wide with 24 gutters, region titles in Inter SemiBold 15, lowercase. The business brand box sits inside the brands region, inset 16, with a thin accent left rule to read as "nested." Context sources region border dashed (6 4). Edge labels in IBM Plex Mono 10.5, muted. No arrowheads on edges from the root to regions; arrowhead only from owner to root.
 
 ## Figure 2: a business brand inside its owner's vibegraph
 
@@ -87,7 +87,7 @@ flowchart LR
 
 File: `figure-3-where-tools-fit.svg`
 
-**What it shows.** A radial map. Center: a filled accent disc labeled "identity core + VIBEGRAPH.md." Around it, five wedges, one per component kind (source, memory, project, skill, agent), each holding the tools from the whitepaper's section 6 table as small chips. A thin accent ring labeled "scope: scoped." The agent wedge is split: the vibeclone inside the ring, labeled "per grant," and the clone platforms outside it in a "public slice only" band. A small legend: filled = built here, chips = registered.
+**What it shows.** A radial map. Center: a filled accent disc labeled "identity core + VIBEGRAPH.md." Around it, five wedges, one per context source kind (source, memory, project, skill, agent), each holding the tools from the whitepaper's section 6 table as small chips. A thin accent ring labeled "scope: scoped." The agent wedge is split: the vibeclone inside the ring, labeled "per grant," and the clone platforms outside it in a "public slice only" band. A small legend: filled = built here, chips = registered.
 
 **Mermaid source (as a mindmap, the closest Mermaid form).**
 

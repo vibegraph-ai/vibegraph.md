@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the four whitepaper figures as SVG from the specs in FIGURES-v2.0.md.
+"""Build the four whitepaper figures as SVG from the specs in FIGURES-v3.0.md.
 
   python3 build_figures.py
 
@@ -106,8 +106,8 @@ def figure1():
     labels = [
         ("kind: identity", "scope: public · when: always"),
         ("kind: brand", "scope: public"),
-        ("kind: area", "scope: scoped/private"),
         ("kind: source/memory/project/agent", "scope: scoped"),
+        ("kind: area", "scope: scoped/private"),
     ]
     for x, (l1, l2) in zip(xs, labels):
         cx = x + 130
@@ -117,11 +117,11 @@ def figure1():
         b.append(text(cx, 276, l1, 10.5, MONO, MUTED, 400, "middle"))
         b.append(text(cx, 292, l2, 10.5, MONO, MUTED, 400, "middle"))
 
-    titles = ["identity core", "brands", "areas", "components"]
+    titles = ["identity core", "brands", "context sources", "areas"]
     for i, x in enumerate(xs):
-        b.append(rect(x, top, 260, rh, BORDER, "none", 12, dash="6 4" if i == 3 else None))
+        b.append(rect(x, top, 260, rh, BORDER, "none", 12, dash="6 4" if i == 2 else None))
         b.append(text(x + 20, top + 34, titles[i], 15, SANS, FG, 600))
-    b.append(text(xs[3] + 20, top + 54, "registered, not stored", 12, SANS, MUTED))
+    b.append(text(xs[2] + 20, top + 54, "registered, not stored", 12, SANS, MUTED))
     foot = top + rh - 20
 
     # identity core
@@ -138,21 +138,21 @@ def figure1():
               ["business", "foundations + 12 + 8", "when: on-task"], MONO, 12.5, rule=True)
     b.append(text(xs[1] + 20, foot, "brands/", 11, MONO, MUTED))
 
-    # areas
+    # context sources
     x = xs[2] + 16
+    sources = [("Obsidian vault", "kind: source"), ("Claude memory", "kind: memory"),
+               ("site repo", "kind: project"), ("writing agent", "kind: agent")]
+    for i, (name, sub) in enumerate(sources):
+        b += node(x, top + 76 + i * 68, 228, 56, name, [sub], SANS, 13.5)
+    b.append(text(xs[2] + 20, foot, "context-sources.md", 11, MONO, MUTED))
+
+    # areas
+    x = xs[3] + 16
     areas = [("career/", "scope: scoped · on-task"), ("skills/", "scope: scoped · on-task"),
              ("finances/", "scope: private · on-grant")]
     for i, (name, sub) in enumerate(areas):
         b += node(x, top + 56 + i * 68, 228, 56, name, [sub], MONO, 13)
-    b.append(text(xs[2] + 20, foot, "areas/<area>/index.md", 11, MONO, MUTED))
-
-    # components
-    x = xs[3] + 16
-    comps = [("Obsidian vault", "kind: source"), ("Claude memory", "kind: memory"),
-             ("site repo", "kind: project"), ("writing agent", "kind: agent")]
-    for i, (name, sub) in enumerate(comps):
-        b += node(x, top + 76 + i * 68, 228, 56, name, [sub], SANS, 13.5)
-    b.append(text(xs[3] + 20, foot, "components.md", 11, MONO, MUTED))
+    b.append(text(xs[3] + 20, foot, "areas/<area>/index.md", 11, MONO, MUTED))
 
     return svg(W, H, "Figure 1: the anatomy of a vibegraph", b)
 
@@ -402,14 +402,14 @@ ROOT_LINES = [
     "- [Delivery OS](brands/delivery-os.brand.md)",
     "    · kind: brand · type: business",
     "    · scope: public · when: on-task",
+    "## Context Sources",
+    '- Obsidian vault "Notes" · kind: source',
+    "- Claude memory · kind: memory",
     "## Areas",
     "- [Career](areas/career/index.md)",
     "    · kind: area · scope: scoped · when: on-task",
     "- [Finances](areas/finances/index.md)",
     "    · kind: area · scope: private · when: on-grant",
-    "## Components",
-    '- Obsidian vault "Notes" · kind: source',
-    "- Claude memory · kind: memory",
     "## Read order",
     "1. identity/maya-okafor.md",
     "2. brands/maya-okafor.brand.md",

@@ -13,7 +13,7 @@ const MARGIN = { top: "20mm", bottom: "24mm", left: "24mm", right: "24mm" };
 const FOOTER = `
   <div style="width:100%; margin: 0 24mm; font-family: Inter, sans-serif; font-size: 7.4pt; color: #71717a;">
     <div style="border-top: 0.6px solid #d4d4d8; padding-top: 5px; display: flex; justify-content: space-between;">
-      <span>vibegraph &nbsp;&middot;&nbsp; your vibes, codified &nbsp;&middot;&nbsp; version 2.0 &nbsp;&middot;&nbsp; September 2026</span>
+      <span>vibegraph &nbsp;&middot;&nbsp; your vibes, codified &nbsp;&middot;&nbsp; version 3.0 &nbsp;&middot;&nbsp; October 2026</span>
       <span>Page <span class="pageNumber"></span></span>
     </div>
   </div>`;

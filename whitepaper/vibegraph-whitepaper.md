@@ -2,7 +2,7 @@
 
 A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one person, and any businesses they own or operate.
 
-**Version 2.0 · September 2026 · Ryan Charleston · vibegraph.md · vibegraph.ai**
+**Version 3.0 · October 2026 · Ryan Charleston · vibegraph.md · vibegraph.ai**
 
 ---
 
@@ -54,11 +54,11 @@ A vibegraph is an attempt to understand and organize that context in the followi
 
 2. **A root file.** A single markdown file, always named VIBEGRAPH.md, always at the root, that any agent reads first. It says who the agent is working for or working as, links every part of the graph with a kind and a scope, and states the read order. It is to a vibegraph what index.html is to a website and what AGENTS.md is to a repository.
 
-3. **Areas and components, linked by scope.** Areas are the domains of knowledge and working context the person adds when a real use case demands one (career, finances, health, skills, goals, and on the business side CRM, operations, SOPs, templates). Components are the tools that already hold parts of the graph: an Obsidian vault, a Notion workspace, a memory layer such as Mem0 or Zep, a project's AGENTS.md, an agent that runs on the graph. The root file registers each with a kind (identity, brand, area, source, memory, project, skill, agent) and a scope (public, scoped, private). Nothing is exposed by omission.
+3. **Context sources and areas, linked by scope.** Context sources are the systems that already hold context: an Obsidian vault, a Notion workspace, a memory layer such as Mem0 or Zep, a project's AGENTS.md, an agent that runs on the graph. Areas are the domains the person adds when a real use case demands one (career, money, health, tech, goals, and on the business side finance, CRM, marketing, content, operations), each listing entries that point into those sources with a route to reach them. The root file registers each with a kind (identity, brand, area, source, memory, project, skill, agent) and a scope (public, scoped, private). Nothing is exposed by omission.
 
 The identity core and the root file are what make it a vibegraph. Without them, it is context. With them, it is a graph any agent can walk, a permission model an owner can reason about, and a portable asset that moves unchanged when a better tool ships.
 
-**What a vibegraph is not.** It is not a notes app, a memory layer, or an AI operating system; those are components or consumers of it. It is not shared. A single vibegraph represents exactly one human, and there is no global vibegraph. A business brand inside a person's vibegraph can be shared with other people inside that business, but the graph itself has one owner. A vibegraph is not scraped. A core vibegraph is written on purpose, through assessment and brand work, not inferred from an inbox. It is plain markdown at its simplest and an encrypted, permissioned vault at its most complete, owned and hosted by the person it describes.
+**What a vibegraph is not.** It is not a notes app, a memory layer, or an AI operating system; those are context sources or consumers of it. It is not shared. A single vibegraph represents exactly one human, and there is no global vibegraph. A business brand inside a person's vibegraph can be shared with other people inside that business, but the graph itself has one owner. A vibegraph is not scraped. A core vibegraph is written on purpose, through assessment and brand work, not inferred from an inbox. It is plain markdown at its simplest and an encrypted, permissioned vault at its most complete, owned and hosted by the person it describes.
 
 Two design decisions separate a vibegraph from the memory products it composes with. Memory layers remember what happened; a vibegraph defines who you are. And a vibegraph works today, with zero platform adoption required. Use it with your AI tools and the output becomes something that matches the "vibes" of its creator; high-fidelity, high-quality results that are the opposite of AI slop. Where AGENTS.md tells an agent how to work on your code, a vibegraph tells an agent how to work as, and for, you.
 
@@ -80,7 +80,7 @@ The word is a common noun. "vibegraph" (lowercase v) is not a product name and c
 
 **Grounded in established instruments.** The identity core is not improvised. It uses instruments and frameworks with decades of practice behind them, so the result is structured, comparable, and complete rather than a freeform "about me" essay. More instruments make a richer core; the framework welcomes any the owner has taken.
 
-**Extensible.** A minimal vibegraph is an identity core, one personal brand, and a root file. From there the owner adds business brands, areas, and components as real needs appear, at whatever depth they choose.
+**Extensible.** A minimal vibegraph is an identity core, one personal brand, and a root file. From there the owner adds business brands, context sources, and areas as real needs appear, at whatever depth they choose.
 
 ---
 
@@ -92,23 +92,23 @@ Every vibegraph has the same five elements, anchored to one person.
 
 **Brands** answer the next question: how does this person present? A vibegraph holds one personal brand, built from the identity core, and any business brands the owner operates, each a full brand document of its own with organizational foundations. Every brand has its words (Brand Context) and its look (Brand Visuals). The core plus one brand fits inside a single model context window; that is a design constraint, not an accident.
 
-**Areas** answer the follow-up: what is this person working with? Areas are the domains of knowledge and working context the owner adds when a use case demands one. On the personal side: career, finances, health, skills, goals. On the business side: relationships and CRM, operations, playbooks and SOPs, templates. Each area is a folder with its own index file and its own scope, so it can be granted as a unit. Areas are where depth lives, and where sensitivity lives, which is why they are gated by default and stay home when the core travels.
+**Areas** answer the follow-up: what is this person working with? Areas are the domains of knowledge and working context the owner adds when a use case demands one. On the personal side: career, finances, health, skills, goals. On the business side: relationships and CRM, operations, playbooks and SOPs, templates. Each area is a folder with its own index file and its own scope, so it can be granted as a unit. Areas are where depth lives, and where sensitivity lives, which is why they are gated by default and stay home when the core travels. Each area lists its entries: files, links, and locations with a scope, a when, and an `access` route (`file`, `link`, `mcp`, `ask`) that tells a reader how to reach them, and which context source holds them. A vibegraph carries routes, never credentials.
 
-**Components** are the tools that already hold parts of the graph: a notes app, a memory layer, a project repository with its own AGENTS.md, a skill file, an agent. The root file registers them; it does not store them. This is how the framework says "everything you already use is part of your vibegraph" without pretending to be a container for it. Section 6 places the common tools.
+**Context sources** are the systems that already hold context: a notes app, a memory layer, a project repository with its own AGENTS.md, a skill file, an agent. The root file registers them; it does not store them. This is how the framework says "everything you already use is part of your vibegraph" without pretending to be a container for it. Section 6 places the common tools.
 
-**The root file**, VIBEGRAPH.md, ties the four together. It names the owner, points to the identity file, links every brand, area, and component with a kind, a scope, and a rule for when to read it, and states the read order. An agent handed only this file knows what exists, what to read first, and what it may not read.
+**The root file**, VIBEGRAPH.md, ties the four together. It names the owner, points to the identity file, links every brand, context source, and area with a kind, a scope, and a rule for when to read it, and states the read order. An agent handed only this file knows what exists, what to read first, and what it may not read.
 
 The structure matters for three reasons.
 
 First, it matches how AI consumption works. Identity and brand belong in every interaction; area context belongs only in relevant ones. A model writing your newsletter needs your voice and positioning, not your medical history. Separating the always-relevant from the sometimes-relevant keeps context windows lean and permission decisions simple.
 
-Second, it matches how trust works. The core and the brands are shareable by design. Areas are gated by design. Components are registered, not copied. A clean line is easier to secure and easier to reason about than one blob with per-paragraph exceptions.
+Second, it matches how trust works. The core and the brands are shareable by design. Areas are gated by design. Context sources are registered, not copied. A clean line is easier to secure and easier to reason about than one blob with per-paragraph exceptions.
 
-Third, it scales in both directions. A minimal vibegraph (core, one brand, root file) is useful the day it is built. A large one, with two business brands, a dozen areas, and six registered components maintained over years, is still one file an agent reads first. The framework does not force anyone up the curve.
+Third, it scales in both directions. A minimal vibegraph (core, one brand, root file) is useful the day it is built. A large one, with two business brands, a dozen areas, and six registered context sources maintained over years, is still one file an agent reads first. The framework does not force anyone up the curve.
 
 ![Figure 1: the anatomy of a vibegraph](figures/figure-1-anatomy.svg)
 
-*Figure 1: the anatomy of a vibegraph. One owner, one root file, an identity core, brands (personal plus nested business brands), areas, and registered components, with every link carrying a kind and a scope.*
+*Figure 1: the anatomy of a vibegraph. One owner, one root file, an identity core, brands (personal plus nested business brands), context sources, and areas, with every link carrying a kind and a scope.*
 
 ---
 
@@ -219,15 +219,15 @@ A standalone organizational vibegraph (a company as first-class owner, with no s
 
 ## 6. Where existing tools fit
 
-A vibegraph is not a competitor to the tools a person already uses. Each of them is a component of that person's vibegraph, with a kind the root file assigns and a scope that usually fits. This table is the map.
+A vibegraph is not a competitor to the tools a person already uses. Each of them is a context source of that person's vibegraph, with a kind the root file assigns and a scope that usually fits. This table is the map.
 
 | Tool or system | Role in a vibegraph | kind | Typical scope |
 |---|---|---|---|
 | Obsidian, Logseq, Anytype | Knowledge store for one or more areas; local, plaintext | source | scoped |
 | Notion, Tana, Reflect, Mem, Capacities, Heptabase | Knowledge store for areas; cloud | source | scoped |
 | Mem0, Zep and Graphiti, Letta, Cognee, Hindsight, LangMem | Memory layer; seeded from the core, extended by observation | memory | scoped |
-| ChatGPT memory, Claude memory, Gemini personal intelligence, Codex memory | Platform memory; seed it from the core, treat it as a component you do not own | memory | scoped |
-| GBrain | Agent-run brain; a component that can hold areas and memory, and an agent that reads the root file | source + agent | scoped |
+| ChatGPT memory, Claude memory, Gemini personal intelligence, Codex memory | Platform memory; seed it from the core, treat it as a context source you do not own | memory | scoped |
+| GBrain | Agent-run brain; a context source that can hold areas and memory, and an agent that reads the root file | source + agent | scoped |
 | AIS-OS and other Claude Code or Codex folders | An operating pattern that runs on a vibegraph; its context folder is where the core goes | project | scoped |
 | AGENTS.md, CLAUDE.md, GEMINI.md, Cursor rules | Per-project context; carries the handoff stanza | project | scoped |
 | SKILL.md files | Executable procedures; live in the skills area | skill | scoped |
@@ -235,19 +235,19 @@ A vibegraph is not a competitor to the tools a person already uses. Each of them
 | Delphi, Personal.ai, HeyGen, ElevenLabs | Outward-facing clone surfaces; consumers of a public slice of the core | agent | public slice only |
 | A vibeclone | Inward-facing agent that runs on the whole graph within granted scopes | agent | per grant |
 | Context graphs and organizational decision stores | Org-anchored decision records; a business brand's areas can link to one | source | scoped |
-| Courses and templates (PARA courses, PPV, Ultimate Brain) | Methods for building and maintaining areas; not components | none | n/a |
+| Courses and templates (PARA courses, PPV, Ultimate Brain) | Methods for building and maintaining areas; not context sources | none | n/a |
 
 Three things follow from the map.
 
 The contested names are resolved. "Memory layer" is a kind. "Knowledge store" is a kind. "Agent folder" is a project. None of them is the whole, and none of them needs to be replaced. A vibegraph is the graph those nodes hang from.
 
-The identity slot is empty in nearly every tool listed. Agent folders start with a business interview. Memory layers start with observation. Clone platforms start with uploaded content. The human-authored, instrument-grounded identity core is the one component none of them builds, which is why the framework builds it and registers everything else.
+The identity slot is empty in nearly every tool listed. Agent folders start with a business interview. Memory layers start with observation. Clone platforms start with uploaded content. The human-authored, instrument-grounded identity core is the one part none of them builds, which is why the framework builds it and registers everything else.
 
 Adding a tool costs one line. A new memory layer, a new notes app, a new agent: one entry in the root file with a kind and a scope, and the graph is current.
 
 ![Figure 3: the placement map](figures/figure-3-where-tools-fit.svg)
 
-*Figure 3: the placement map. The identity core and root file at the center; sources, memory, projects, skills, and agents as registered components around it, each with its kind and scope.*
+*Figure 3: the placement map. The identity core and root file at the center; sources, memory, projects, skills, and agents as registered context sources around it, each with its kind and scope.*
 
 ---
 
@@ -280,18 +280,17 @@ task needs them. Never read `scope: private` entries unless the owner has grante
 - [Maya Okafor (personal brand)](brands/maya-okafor.brand.md) · kind: brand · type: personal · scope: public · when: always
 - [Delivery OS](brands/delivery-os.brand.md) · kind: brand · type: business · scope: public · when: on-task (any Delivery OS writing, design, or publishing)
 
+## Context Sources
+See [context-sources.md](context-sources.md). Summary:
+- Obsidian vault "Notes" · kind: source · scope: scoped · locator: ~/Notes
+- Claude memory · kind: memory · scope: scoped · seeded from this vibegraph on 2026-10-10
+- Delivery OS site repo · kind: project · scope: scoped · locator: github.com/deliveryos/site (has its own AGENTS.md)
+- Writing agent · kind: agent · scope: private · when: on-grant · reads: identity, brands, areas/skills · never: areas/finances
+
 ## Areas
 - [Career](areas/career/index.md) · kind: area · scope: scoped · when: on-task (resume, bio, client applications)
 - [Skills](areas/skills/index.md) · kind: area · scope: scoped · when: on-task (any repeatable workflow)
-- [Goals](areas/goals/index.md) · kind: area · scope: scoped · when: on-task (planning, prioritization)
 - [Finances](areas/finances/index.md) · kind: area · scope: private · when: on-grant
-
-## Components
-See [components.md](components.md). Summary:
-- Obsidian vault "Notes" · kind: source · scope: scoped · locator: ~/Notes
-- Claude memory · kind: memory · scope: scoped · seeded from this vibegraph on 2026-09-30
-- Delivery OS site repo · kind: project · scope: scoped · locator: github.com/deliveryos/site (has its own AGENTS.md)
-- Writing agent · kind: agent · reads: identity, brands, areas/skills · never: areas/finances
 
 ## Read order
 1. identity/maya-okafor.md
@@ -314,6 +313,8 @@ Every link in the root file carries three keys, and brand links carry a fourth.
 
 **type**, on brands only: `personal` or `business`.
 
+**access**, on area entries only: `file`, `link`, `mcp`, `ask`. **in**, optional: the slug of the context source that holds the entry.
+
 This is what makes "graph" a literal claim. Every node has a kind, every edge has a scope and a when, and an agent can walk it from the root. Served over MCP, the scope field is the permission, and every read is logged.
 
 ### 7.3 The layout
@@ -330,14 +331,15 @@ maya-okafor.vibegraph/
 │   ├── maya-okafor.brand.md     personal brand: 12 Context + 8 Visuals
 │   ├── delivery-os.brand.md     business brand: foundations + 12 + 8
 │   └── assets/                  where the visual assets live, or links to where they live
-├── areas/
-│   ├── career/index.md          each area has an index.md with its own scope
-│   ├── skills/
-│   │   ├── index.md
-│   │   └── *.SKILL.md           skills in SKILL.md form, loadable by any harness that reads it
-│   ├── finances/index.md
-│   └── goals/index.md
-└── components.md                registry of external tools that hold parts of the graph
+├── context-sources.md           registry of the systems that hold context
+└── areas/
+    ├── career/
+    │   ├── index.md              each area has an index.md with its own scope
+    │   └── resume-maya-okafor.md
+    ├── skills/
+    │   ├── index.md
+    │   └── *.SKILL.md           skills in SKILL.md form, loadable by any harness that reads it
+    └── finances/index.md
 ```
 
 Naming rules. The identity file is named after the person, because a fixed name like identity.md collides with generic usage and person names let a folder hold two people side by side later. Brand files carry the `.brand.md` suffix so a directory listing tells you the kind. Areas are folders with an index.md, so an area can hold one file or a hundred and can be granted as a unit. Skills use the SKILL.md form so Claude Code, Codex, and the other harnesses that already read that format load them directly.
@@ -459,7 +461,7 @@ Three things share the name, and the analogy row is the one to remember: the web
 
 | | vibegraph (the noun) | vibegraph.md (the framework) | vibegraph.ai (the app) |
 |---|---|---|---|
-| What it is | A category term. The network of identity, context, knowledge, and memory that governs AI for one person and the businesses they own. | The open specification and file convention: the root file, the typed link schema, scopes, area conventions, and the handoff to AGENTS.md and CLAUDE.md. | The guided builder. Claudia runs the identity assessment, purpose work, and brand build, then exports the reference layout and registers components. |
+| What it is | A category term. The network of identity, context, knowledge, and memory that governs AI for one person and the businesses they own. | The open specification and file convention: the root file, the typed link schema, scopes, area conventions, and the handoff to AGENTS.md and CLAUDE.md. | The guided builder. Claudia runs the identity assessment, purpose work, and brand build, then exports the reference layout and registers context sources. |
 | Who owns it | Nobody. Released as a common noun. | Ryan Charleston, as maintainer, under the MIT license. Anyone can fork, extend, serve, or build on it. | Raizen Labs, LLC, as a business. |
 | What it is for | Giving the market a word for the thing everyone is assembling by hand. | Making a vibegraph portable, machine-walkable, and permissionable across every tool, with zero platform adoption required. | Building the one part of a vibegraph no other tool builds: a validated, reconciled, brand-complete identity core. |
 | How it is written | Always lowercase: a vibegraph, your vibegraph, vibegraphs. | Always lowercase with the extension. The spec defines VIBEGRAPH.md, the root file, which is capitalized. | Always lowercase as a domain. The app has no other product name. |
@@ -475,7 +477,7 @@ It meets the owner wherever they stand. On the AI-assisted path, a person with n
 
 For Brand Visuals, the app hands off rather than generating. After the Brand Context is finished, the owner receives their partially built vibegraph plus ready-to-use prompts and instructions for their chosen tool (a general model, a code agent, a design canvas, a design application), with a live connection where one exists. The owner produces the visuals there, records where the assets live, and the build completes with the export.
 
-The export is the reference layout in section 7, with the handoff stanza pre-written into AGENTS.md and CLAUDE.md and an areas scaffold ready to fill. A components step registers the tools the owner already uses. The same layout is served live over MCP with scopes as grants and every read logged. The personality assessments are free. Completing the build is a one-time unlock with unlimited edits and re-exports; current tiers are at vibegraph.ai/pricing. The app is a convenience layered on the open framework, never a gate in front of it.
+The export is the reference layout in section 7, with the handoff stanza pre-written into AGENTS.md and CLAUDE.md and the areas the owner chose, each with its entries. A Context Sources step registers the systems the owner already uses. The same layout is served live over MCP with scopes as grants and every read logged. The personality assessments are free. Completing the build is a one-time unlock with unlimited edits and re-exports; current tiers are at vibegraph.ai/pricing. The app is a convenience layered on the open framework, never a gate in front of it.
 
 ---
 
@@ -485,7 +487,7 @@ The last two years settled whether AI can produce competent work. The next two a
 
 The fix is not a smarter model. It is a better starting point: a human-authored identity core and a root file every AI reads first, linked by kind and scope to the brands, areas, and tools that make up the rest of one person's graph. Small enough to paste into a chat today. Structured enough to serve an agent fleet tomorrow. Private by default, permissioned by design, grounded in instruments older and sturdier than any of the tools that will consume it.
 
-Every AI you use should run on your vibegraph. Your notes app, your memory layer, and your agents are components of it. The open framework at vibegraph.md defines its shape. vibegraph.ai builds its center.
+Every AI you use should run on your vibegraph. Your notes app, your memory layer, and your agents are context sources of it. The open framework at vibegraph.md defines its shape. vibegraph.ai builds its center.
 
 ---
 
@@ -507,7 +509,11 @@ Every AI you use should run on your vibegraph. Your notes app, your memory layer
 
 **area.** A domain of knowledge or working context the owner adds when a use case demands one: a folder with an index file, its own scope, and its own when rule. Familiar from PARA's areas.
 
-**component.** A tool that already holds part of the graph (a knowledge store, a memory layer, a project, a skill, an agent), registered in the root file with a kind and a scope. Registered, not stored.
+**context source.** A system that already holds context (a knowledge store, a memory layer, a project, a skill, an agent), registered in the root file with a kind and a scope. Registered, not stored.
+
+**entry.** One line under an area's `## Entries`: a file, link, or location with a scope, a when, an `access` route, and optionally the context source it lives in.
+
+**access.** How a reader reaches an entry: `file`, `link`, `mcp`, or `ask`. Never a credential.
 
 **kind.** What a node is: identity, brand, area, source, memory, project, skill, agent.
 

@@ -38,7 +38,7 @@ COVER_BODY = """
 <section class="cover">
   <div class="cover-top">
     <span class="cover-eyebrow">WHITEPAPER</span>
-    <span class="cover-eyebrow right">VERSION 2.0</span>
+    <span class="cover-eyebrow right">VERSION 3.0</span>
   </div>
   <hr class="cover-rule"/>
   <div class="cover-main">
@@ -50,7 +50,7 @@ COVER_BODY = """
   <div class="cover-bottom">
     <hr class="cover-rule"/>
     <div class="cover-meta">
-      <div><p>September 2026</p><p>Ryan Charleston</p></div>
+      <div><p>October 2026</p><p>Ryan Charleston</p></div>
       <div class="right"><p>vibegraph.ai</p><p>vibegraph.md</p></div>
     </div>
   </div>
@@ -185,7 +185,7 @@ def main() -> None:
     )
 
     (HERE / "cover.html").write_text(page("Cover", COVER_BODY))
-    (HERE / "body.html").write_text(page("vibegraph whitepaper 2.0", body_html))
+    (HERE / "body.html").write_text(page("vibegraph whitepaper 3.0", body_html))
 
     subprocess.run([NODE, str(HERE / "render.js")], check=True)
 
