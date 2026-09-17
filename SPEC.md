@@ -35,7 +35,7 @@ Every vibegraph has five elements, anchored to one person:
 
 - **The identity core.** A human-authored statement of who the person is: personality (the Big Five, the Enneagram, and any other instruments the owner has taken, reconciled in an integrated reading) and purpose (a four-pillar Ikigai). Small, stable, and safe to share.
 - **Brands.** One personal brand built from the identity core, and any business brands the owner operates. Each brand has twelve Brand Context elements (its words) and eight Brand Visuals elements (its look). A business brand adds organizational foundations.
-- **Areas.** Domains of knowledge and working context the owner adds when a use case demands one (career, skills, goals, finances; on the business side CRM, operations, playbooks and SOPs, templates). Each area is a folder with its own scope.
+- **Areas.** Domains of knowledge and working context the owner chooses to add (personal: Health, Relationships, Career, Money, Play, Time, Tech, Goals, Library; business: Finance, Relationships and CRM, Marketing, Content and Brand, Operations). Each area is a folder with its own scope, and its index lists the area's entries with a route to reach each one.
 - **Context sources.** The systems that already hold parts of the graph: a notes app, a memory layer, a project with its own AGENTS.md, a skill, an agent. Registered, not stored.
 - **The root file.** VIBEGRAPH.md. It names the owner, links every node with a kind, a scope, and a when rule, and states the read order. Any agent reads it first.
 

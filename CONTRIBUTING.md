@@ -27,7 +27,7 @@ Thanks for your interest in improving vibegraph.md. It is an open convention: th
 Changes are recorded in [`CHANGELOG.md`](CHANGELOG.md) and versioned `MAJOR.MINOR`:
 
 - **Clarifications and corrections** change the text in place with a changelog note.
-- **MINOR:** new optional fields, suggested areas, or component placements.
+- **MINOR:** new optional fields, suggested areas, or source placements.
 - **MAJOR:** anything that breaks an existing valid vibegraph.
 
 ## Style
