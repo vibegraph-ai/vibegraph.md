@@ -261,10 +261,11 @@ VIBEGRAPH.md is a fixed name at the root, capitalized to match AGENTS.md and CLA
 
 ```markdown
 ---
-vibegraph: "2.0"
+vibegraph: "3.0"
 owner: Maya Okafor
+role: owner
 identity: identity/maya-okafor.md
-updated: 2026-09-30
+updated: 2026-10-10
 ---
 
 # Maya Okafor's vibegraph
@@ -272,6 +273,7 @@ updated: 2026-09-30
 Read this file first. It tells you who you emulate and where everything else lives.
 Read entries marked `when: always` before any task. Read `when: on-task` entries only when the
 task needs them. Never read `scope: private` entries unless the owner has granted them for this session.
+Context sources are where context lives; areas are what it is about, and an area's entries point into sources.
 
 ## Identity
 - [Maya Okafor](identity/maya-okafor.md) · kind: identity · scope: public · when: always
@@ -288,7 +290,7 @@ See [context-sources.md](context-sources.md). Summary:
 - Writing agent · kind: agent · scope: private · when: on-grant · reads: identity, brands, areas/skills · never: areas/finances
 
 ## Areas
-- [Career](areas/career/index.md) · kind: area · scope: scoped · when: on-task (resume, bio, client applications)
+- [Career](areas/career/index.md) · kind: area · scope: scoped · when: on-task (resumes, bios, and client applications)
 - [Skills](areas/skills/index.md) · kind: area · scope: scoped · when: on-task (any repeatable workflow)
 - [Finances](areas/finances/index.md) · kind: area · scope: private · when: on-grant
 

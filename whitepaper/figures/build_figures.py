@@ -383,10 +383,11 @@ def figure3():
 
 ROOT_LINES = [
     "---",
-    'vibegraph: "2.0"',
+    'vibegraph: "3.0"',
     "owner: Maya Okafor",
+    "role: owner",
     "identity: identity/maya-okafor.md",
-    "updated: 2026-09-30",
+    "updated: 2026-10-10",
     "---",
     "# Maya Okafor's vibegraph",
     "Read this file first. It tells you who you",
@@ -480,9 +481,9 @@ def figure4():
     b.append(rect(660, 530, 640, 82, fill=CARD))
     b.append(text(676, 552, "read log", 12, SANS, FG, 600))
     log = [
-        "2026-09-30 14:02  claude   read identity/maya-okafor.md       (public)",
-        "2026-09-30 14:05  chatgpt  read brands/maya-okafor.brand.md   (public)",
-        "2026-09-30 14:09  cursor   read brands/delivery-os.brand.md   (public)",
+        "2026-10-10 14:02  claude   read identity/maya-okafor.md       (public)",
+        "2026-10-10 14:05  chatgpt  read brands/maya-okafor.brand.md   (public)",
+        "2026-10-10 14:09  cursor   read brands/delivery-os.brand.md   (public)",
     ]
     for i, s in enumerate(log):
         b.append(f'<text x="676" y="{570 + i * 15}" font-family="{MONO}" font-size="10" fill="{MUTED}" '
