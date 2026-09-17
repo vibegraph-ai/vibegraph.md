@@ -54,7 +54,7 @@ flowchart TB
 
 File: `figure-2-business-brand.svg`
 
-**What it shows.** Two columns inside one outer frame labeled with the owner's name, so the nesting is literal. Left column: the personal brand's foundation (identity core: Big Five, Enneagram, other instruments, Ikigai) feeding its 12 + 8. Right column: the business brand's foundation (Aaker's five dimensions, archetype, Golden Circle with mission, vision, values) feeding the same 12 + 8. Between the two foundations, a connector labeled "shared Why, checked against each other." Below the right column, a strip of business areas (CRM, operations, playbooks and SOPs, templates). Under the whole figure, one line: personal `when: always`, business `when: on-task`.
+**What it shows.** Two columns inside one outer frame labeled with the owner's name, so the nesting is literal. Left column: the personal brand's foundation (identity core: Big Five, Enneagram, other instruments, Ikigai) feeding its 12 + 8. Right column: the business brand's foundation (Aaker's five dimensions, archetype, Golden Circle with mission, vision, values) feeding the same 12 + 8. Between the two foundations, a connector labeled "shared Why, checked against each other." Below the right column, a strip of business areas (Finance, Relationships and CRM, Marketing, Content and Brand, Operations). Under the whole figure, one line: personal `when: always`, business `when: on-task`.
 
 **Mermaid source.**
 
@@ -74,7 +74,7 @@ flowchart LR
       BF["foundations<br/>Aaker's five dimensions · archetype · Golden Circle + mission, vision, values"]
       BC["Brand Context (12)"]
       BV["Brand Visuals (8) + templates"]
-      BA["business areas: CRM · operations · playbooks and SOPs · templates"]
+      BA["business areas: Finance · Relationships and CRM · Marketing · Content and Brand · Operations"]
       BF --> BC --> BV --> BA
     end
     PF -. "shared Why, checked against each other" .- BF

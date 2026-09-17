@@ -198,14 +198,18 @@ def figure2():
 
     # business areas strip under the right column
     x = 636
+    box_w = 500
     b.append(line(x + 250, 466, x + 250, 510, MUTED, 1.2, marker="f2-arrow"))
     b.append(text(x, 496, "business areas", 12, SANS, FG, 600))
-    b.append(rect(x, 514, 500, 56, fill=CARD))
-    cx = x + 16
-    for chip in ["CRM", "operations", "playbooks and SOPs", "templates"]:
+    b.append(rect(x, 514, box_w, 76, fill=CARD))
+    cx, cy = x + 16, 530
+    row_max_x = x + box_w - 16
+    for chip in ["Finance", "Relationships and CRM", "Marketing", "Content and Brand", "Operations"]:
         w = tw(chip, 11, True) + 22
-        b.append(rect(cx, 530, w, 24, BORDER, "none", 6))
-        b.append(text(cx + w / 2, 546, chip, 11, MONO, MUTED, 400, "middle"))
+        if cx + w > row_max_x and cx > x + 16:
+            cx, cy = x + 16, cy + 30
+        b.append(rect(cx, cy, w, 24, BORDER, "none", 6))
+        b.append(text(cx + w / 2, cy + 16, chip, 11, MONO, MUTED, 400, "middle"))
         cx += w + 10
 
     b.append(line(24, 612, 1176, 612, BORDER))
