@@ -13,7 +13,7 @@ A vibegraph is the network of identity, context, knowledge, and memory that gove
 | [brands/maya-okafor.brand.md](brands/maya-okafor.brand.md) | The personal brand: 12 Brand Context and 8 Brand Visuals elements. |
 | [brands/delivery-os.brand.md](brands/delivery-os.brand.md) | The business brand: foundations, then the same 12 and 8. |
 | [brands/assets/README.md](brands/assets/README.md) | Where every visual asset lives. |
-| [areas/](areas/README.md) | Career, skills, and finances, each with its own scope and its entries. |
+| [areas/](areas/README.md) | Career, skills, finances, health, and journals, each with its own scope and its entries. |
 | [context-sources.md](context-sources.md) | The systems that hold parts of the graph. |
 | [AGENTS.md](AGENTS.md), [CLAUDE.md](CLAUDE.md) | The four-line handoff that sends agents to VIBEGRAPH.md. |
 

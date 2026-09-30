@@ -2,7 +2,7 @@
 
 Areas are the domains of knowledge and working context an owner adds when a real use case demands one. Each area is a folder with an `index.md` and its own scope, so it can be granted as a unit. Areas are where depth and sensitivity live, so they are scoped or private by default and stay home when the core travels.
 
-This example registers three areas. Their content lives in Maya's Obsidian vault; each index lists its entries with a route to reach them.
+This example registers five areas. Their content lives in Maya's Obsidian vault; each index lists its entries with a route to reach them.
 
 ## Add an area
 

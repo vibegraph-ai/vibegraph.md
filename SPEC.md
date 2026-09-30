@@ -171,12 +171,14 @@ See [context-sources.md](context-sources.md). Summary:
 - Obsidian vault "Notes" · kind: source · scope: scoped · locator: ~/Notes
 - Claude memory · kind: memory · scope: scoped · seeded from this vibegraph on 2026-10-10
 - Delivery OS site repo · kind: project · scope: scoped · locator: github.com/deliveryos/site (has its own AGENTS.md)
-- Writing agent · kind: agent · scope: private · when: on-grant · reads: identity, brands, areas/skills · never: areas/finances
+- Writing agent · kind: agent · scope: private · when: on-grant · reads: identity, brands, areas/skills · never: areas/finances, areas/health, areas/journals
 
 ## Areas
 - [Career](areas/career/index.md) · kind: area · scope: scoped · when: on-task (resumes, bios, and client applications)
 - [Skills](areas/skills/index.md) · kind: area · scope: scoped · when: on-task (any repeatable workflow)
 - [Finances](areas/finances/index.md) · kind: area · scope: private · when: on-grant
+- [Health](areas/health/index.md) · kind: area · scope: private · when: on-grant
+- [Journals](areas/journals/index.md) · kind: area · scope: private · when: on-grant
 
 ## Read order
 1. identity/maya-okafor.md

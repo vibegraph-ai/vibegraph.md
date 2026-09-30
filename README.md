@@ -60,6 +60,8 @@ Every link in VIBEGRAPH.md carries a kind, a scope, and a rule for when to read 
 - [Maya Okafor](identity/maya-okafor.md) · kind: identity · scope: public · when: always
 - [Delivery OS](brands/delivery-os.brand.md) · kind: brand · type: business · scope: public · when: on-task (any Delivery OS writing, design, or publishing)
 - [Finances](areas/finances/index.md) · kind: area · scope: private · when: on-grant
+- [Health](areas/health/index.md) · kind: area · scope: private · when: on-grant
+- [Journals](areas/journals/index.md) · kind: area · scope: private · when: on-grant
 ```
 
 - **kind:** identity · brand · area · source · memory · project · skill · agent
