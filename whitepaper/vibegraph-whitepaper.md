@@ -70,7 +70,7 @@ The word is a common noun. "vibegraph" (lowercase v) is not a product name and c
 
 **Useful on day one, with zero adoption required.** A vibegraph delivers its value the moment its owner pastes the core into any AI tool. Proposed standards that depended on platform adoption have a poor record; the ones that won gave individual users an immediate payoff with the tools they already had. The framework is designed for the second pattern.
 
-**One person per vibegraph.** A vibegraph represents exactly one human. The businesses that person owns nest inside it as business brands. There is no global vibegraph, and nothing in the framework pools graphs across people.
+**One human per vibegraph.** A vibegraph represents exactly one human. The businesses that person owns nest inside it as business brands. There is no global vibegraph, and nothing in the framework pools graphs across people.
 
 **Nothing is exposed by omission.** Every link in the root file carries a scope. Anything without one is private. An agent that was never granted a part of the graph cannot read it, and cannot leak it.
 
@@ -86,7 +86,7 @@ The word is a common noun. "vibegraph" (lowercase v) is not a product name and c
 
 ## 3. The anatomy of a vibegraph
 
-Every vibegraph has the same five elements, anchored to one person.
+Every vibegraph has the same five elements, anchored to one human.
 
 **The identity core** answers the question every AI tool silently asks and never gets answered: who is this person? It holds the personality assessment, the integrated reading, any other instruments the owner has taken, and the purpose work. It is deliberately small, because it travels everywhere: pasted into a chat, attached to a project, read first by an agent.
 
@@ -176,7 +176,7 @@ A vibegraph represents one human being, and that is the design, not a limitation
 
 A business cannot take a personality test, and an Ikigai does not describe a company, so the business brand swaps the identity instruments for organizational equivalents and keeps the same Brand Context and Brand Visuals structure. Its foundations are drafted from material about the business and from its builder's answers about it, never from the builder's own personality scores.
 
-The person at the anchor is not always the founder. The root file carries a `role` that says who built and maintains the graph: `owner`, `staff`, or `agency`. For the same reason, the identity instruments are optional on this path. A vibegraph built for a business by someone who took no assessments is valid, with an identity file that holds only the rules for how AI should work for that business. There is still one person at the root, which is what separates it from the organizational vibegraph in section 5.6.
+The person at the anchor is not always the founder. The root file carries a `role` that says who built and maintains the graph: `owner`, `staff`, or `agency`. For the same reason, the identity instruments are optional on this path. A vibegraph built for a business by someone who took no assessments is valid, with an identity file that holds only the rules for how AI should work for that business. There is still one human at the root, which is what separates it from the organizational vibegraph in section 5.6.
 
 ### 5.1 Foundations
 
@@ -196,7 +196,7 @@ In the root file, the personal brand is `when: always`. A business brand is `whe
 
 ### 5.4 Business areas
 
-A business brand brings its own areas, and they shift from life domains to operating knowledge: finance, relationships and CRM, marketing, content and brand, operations. A personal system optimizes for one person's recall. A business system optimizes for repeatability: any operator following the same playbook should get the same result, which is why the SOPs, playbooks, and templates that barely appear on the personal side live as entries inside these areas, Operations chief among them. It is also why the business side of a vibegraph suits agents: an SOP written clearly enough for a new hire is most of the way to a protocol an agent can run.
+A business brand brings its own areas, and they shift from life domains to operating knowledge: finance, relationships and CRM, marketing, content and brand, operations. A personal system optimizes for one human's recall. A business system optimizes for repeatability: any operator following the same playbook should get the same result, which is why the SOPs, playbooks, and templates that barely appear on the personal side live as entries inside these areas, Operations chief among them. It is also why the business side of a vibegraph suits agents: an SOP written clearly enough for a new hire is most of the way to a protocol an agent can run.
 
 ### 5.5 What maps, what does not
 
@@ -209,7 +209,7 @@ A business brand brings its own areas, and they shift from life domains to opera
 | Personal areas | Business areas | Restructured around repeatability |
 | `when: always` | `when: on-task` | The founder governs by default; the business governs its own tasks |
 
-A solo operator needs both, and a vibegraph holds them side by side by design: the personal brand governs voice and identity; the business brand governs the machine that sells and delivers. One person, one graph, every brand they own.
+A solo operator needs both, and a vibegraph holds them side by side by design: the personal brand governs voice and identity; the business brand governs the machine that sells and delivers. One human, one graph, every brand they own.
 
 ### 5.6 Out of scope: the organizational vibegraph
 
@@ -507,7 +507,7 @@ The same layout can be served live over MCP, with scopes as grants and every rea
 
 The last two years settled whether AI can produce competent work. The next two are about context, and whose work it produces. Left uncalibrated, every model regresses to the same mean, and everyone who relies on it sounds a little more like everyone else.
 
-The fix is not a smarter model. It is a better starting point: a human-authored identity core and a root file every AI reads first, linked by kind and scope to the brands, areas, and tools that make up the rest of one person's graph. Small enough to paste into a chat today. Structured enough to serve an agent fleet tomorrow. Private by default, permissioned by design, grounded in instruments older and sturdier than any of the tools that will consume it.
+The fix is not a smarter model. It is a better starting point: a human-authored identity core and a root file every AI reads first, linked by kind and scope to the brands, areas, and tools that make up the rest of one human's graph. Small enough to paste into a chat today. Structured enough to serve an agent fleet tomorrow. Private by default, permissioned by design, grounded in instruments older and sturdier than any of the tools that will consume it.
 
 Every AI you use should run on your vibegraph. Your notes app, your memory layer, and your agents are context sources of it. The open framework at vibegraph.md defines its shape. vibegraph.ai builds its center.
 
@@ -515,7 +515,7 @@ Every AI you use should run on your vibegraph. Your notes app, your memory layer
 
 ## Glossary
 
-**vibegraph.** The network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate. A common noun, always lowercase. Plural: vibegraphs. One person per vibegraph.
+**vibegraph.** The network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate. A common noun, always lowercase. Plural: vibegraphs. One human per vibegraph.
 
 **identity core.** The human-authored statement of who the person is: the personality assessment (the Big Five via the IPIP-NEO-120, the Enneagram, and any other instruments the owner brings), the integrated reading, and the four-pillar Ikigai, with the personal brand built from it. Small, stable, and safe to share.
 

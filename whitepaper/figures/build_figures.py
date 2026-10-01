@@ -93,7 +93,7 @@ def figure1():
     W, H = 1200, 800
     b = [f"<defs>{arrow_marker('f1')}</defs>"]
     b.append(text(600, 56, "Maya Okafor", 26, DISPLAY, FG, 500, "middle"))
-    b.append(text(600, 80, "one person", 13, SANS, MUTED, 400, "middle"))
+    b.append(text(600, 80, "one human", 13, SANS, MUTED, 400, "middle"))
     b.append(line(600, 92, 600, 127, FG, 1.5, marker="f1-arrow"))
     b.append(rect(440, 130, 320, 64, ACCENT, CARD, 10, sw=1.5))
     b.append(text(600, 160, "VIBEGRAPH.md", 18, MONO, FG, 500, "middle"))

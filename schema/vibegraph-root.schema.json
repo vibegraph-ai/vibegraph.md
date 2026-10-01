@@ -15,7 +15,7 @@
     },
     "owner": {
       "type": "string",
-      "description": "The display name of the one person this vibegraph represents.",
+      "description": "The display name of the one human this vibegraph represents.",
       "minLength": 1
     },
     "identity": {

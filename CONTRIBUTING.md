@@ -20,7 +20,7 @@ Thanks for your interest in improving vibegraph.md. It is an open convention: th
 - **Human readability.** If a change makes a vibegraph harder to read and edit by hand, it is probably the wrong change.
 - **Zero-adoption value.** Nothing in the spec should require a specific platform to be useful.
 - **Privacy by default.** Changes must not weaken deny by default or the scope model.
-- **One person per vibegraph.** Changes must not pool graphs across people.
+- **One human per vibegraph.** Changes must not pool graphs across people.
 
 ## Versioning
 

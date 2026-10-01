@@ -111,7 +111,7 @@ Want a guided build with an AI coach instead? That is what [vibegraph.ai](https:
 
 ## A note on privacy
 
-A complete vibegraph is sensitive by nature. There is no global vibegraph: each one represents one person and is private by default. The reference posture is files on hardware you control, areas stay home when the core travels, and anything without a scope is private. Read [SPEC.md §7](SPEC.md#7-scopes-grants-and-serving) before you serve a vibegraph to any agent. Never commit your own vibegraph to a public repository; this repository's `.gitignore` excludes `*.vibegraph/` folders outside `examples/` and `templates/`.
+A complete vibegraph is sensitive by nature. There is no global vibegraph: each one represents one human and is private by default. The reference posture is files on hardware you control, areas stay home when the core travels, and anything without a scope is private. Read [SPEC.md §7](SPEC.md#7-scopes-grants-and-serving) before you serve a vibegraph to any agent. Never commit your own vibegraph to a public repository; this repository's `.gitignore` excludes `*.vibegraph/` folders outside `examples/` and `templates/`.
 
 ## License
 

@@ -31,7 +31,7 @@ Specification prose is CC-BY 4.0; templates, schema, and code are MIT. See [Lice
 
 A **vibegraph** is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate.
 
-Every vibegraph has five elements, anchored to one person:
+Every vibegraph has five elements, anchored to one human:
 
 - **The identity core.** A human-authored statement of who the person is: personality (the Big Five, the Enneagram, and any other instruments the owner has taken, reconciled in an integrated reading) and purpose (a four-pillar Ikigai). Small, stable, and safe to share.
 - **Brands.** One personal brand built from the identity core, and any business brands the owner operates. Each brand has twelve Brand Context elements (its words) and eight Brand Visuals elements (its look). A business brand adds organizational foundations.
@@ -45,7 +45,7 @@ A vibegraph is plain markdown at its simplest. Implementations MAY add hosting, 
 
 1. **Human-readable.** If you can read markdown, you can read and edit a vibegraph. No tooling required.
 2. **Useful with zero adoption.** Value arrives the moment the owner pastes the core into any AI tool.
-3. **One person per vibegraph.** A vibegraph represents exactly one human. Business brands nest inside their owner's vibegraph. Nothing in this specification pools graphs across people.
+3. **One human per vibegraph.** A vibegraph represents exactly one human. Business brands nest inside their owner's vibegraph. Nothing in this specification pools graphs across people.
 4. **Nothing exposed by omission.** Every link carries a scope. Anything without one is private.
 5. **Portable.** Files, not a service. A vibegraph moves across tools, models, and vendors unchanged.
 

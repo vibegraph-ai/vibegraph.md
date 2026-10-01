@@ -18,7 +18,7 @@ File: `figure-1-anatomy.svg`
 
 ```mermaid
 flowchart TB
-  O["Maya Okafor<br/>(one person)"]
+  O["Maya Okafor<br/>(one human)"]
   R["VIBEGRAPH.md<br/>root file · read first"]
   O --> R
   subgraph IC["identity core"]
