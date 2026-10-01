@@ -1,6 +1,6 @@
-# The vibegraph: your vibes, codified
+# vibegraph: your vibes, codified
 
-A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one person, and any businesses they own or operate.
+a vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate.
 
 **Version 3.0 · October 2026 · Ryan Charleston · vibegraph.md · vibegraph.ai**
 

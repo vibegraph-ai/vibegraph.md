@@ -42,10 +42,10 @@ COVER_BODY = """
   </div>
   <hr class="cover-rule"/>
   <div class="cover-main">
-    <h1 class="cover-title">The vibegraph:<br/>your vibes, codified</h1>
-    <p class="cover-desc">A vibegraph is the network of identity, context,
+    <h1 class="cover-title">vibegraph:<br/>your vibes, codified</h1>
+    <p class="cover-desc">a vibegraph is the network of identity, context,
     knowledge, and memory that governs how AI thinks, writes, and acts for one
-    person, and any businesses they own or operate.</p>
+    human, and any businesses they own or operate.</p>
   </div>
   <div class="cover-bottom">
     <hr class="cover-rule"/>
@@ -192,7 +192,7 @@ def main() -> None:
     writer = PdfWriter()
     for name in ["cover.pdf", "body.pdf"]:
         writer.append(str(HERE / name))
-    writer.add_metadata({"/Title": "The vibegraph: your vibes, codified", "/Author": "Ryan Charleston"})
+    writer.add_metadata({"/Title": "vibegraph: your vibes, codified", "/Author": "Ryan Charleston"})
     with open(PDF_OUT, "wb") as f:
         writer.write(f)
     print(f"wrote {PDF_OUT}")
