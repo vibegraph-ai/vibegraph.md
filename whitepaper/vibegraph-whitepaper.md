@@ -50,7 +50,7 @@ They may not realize it, but everyone who uses AI for real work already has a vi
 
 A vibegraph is an attempt to understand and organize that context in the following ways:
 
-1. **An identity core.** A human-authored statement of who the person is, built from validated instruments rather than inferred thinly from behavior: a two-part personality assessment (the Big Five via the IPIP-NEO-120, and the Enneagram, reconciled in one integrated reading), any further instruments the person has taken, a four-pillar Ikigai, and a personal brand (twelve Brand Context elements and eight Brand Visuals elements). Business brands the person owns sit beside the personal brand, built with organizational instruments (Aaker's dimensions, a Jungian archetype, the Golden Circle). The core is small, stable, and safe to share. It is the part every AI interaction should start from.
+1. **An identity core.** A human-authored statement of who the person is, built from validated instruments rather than inferred thinly from behavior: a two-part personality assessment (the Big Five via the IPIP-NEO-120, and the Enneagram, reconciled in one integrated reading), any further instruments the person has taken, a four-pillar Ikigai, and a personal brand (twelve Brand Context elements and eight Brand Visuals elements). Business brands the person owns or operates sit beside the personal brand, built with organizational instruments (Aaker's dimensions, a Jungian archetype, the Golden Circle). The core is small, stable, and safe to share. It is the part every AI interaction should start from.
 
 2. **A root file.** A single markdown file, always named VIBEGRAPH.md, always at the root, that any agent reads first. It says who the agent is working for or working as, links every part of the graph with a kind and a scope, and states the read order. It is to a vibegraph what index.html is to a website and what AGENTS.md is to a repository.
 
@@ -80,7 +80,7 @@ The word is a common noun. "vibegraph" (lowercase v) is not a product name and c
 
 **Grounded in established instruments.** The identity core is not improvised. It uses instruments and frameworks with decades of practice behind them, so the result is structured, comparable, and complete rather than a freeform "about me" essay. More instruments make a richer core; the framework welcomes any the owner has taken.
 
-**Extensible.** A minimal vibegraph is an identity core, one personal brand, and a root file. From there the owner adds business brands, context sources, and areas as real needs appear, at whatever depth they choose.
+**Extensible.** The smallest valid vibegraph is a root file and an identity file. The smallest useful one adds a personal brand. From there the owner adds business brands, context sources, and areas as real needs appear, at whatever depth they choose. Instruments and brand elements are optional, so a partial vibegraph is still a valid one.
 
 ---
 
@@ -92,7 +92,7 @@ Every vibegraph has the same five elements, anchored to one person.
 
 **Brands** answer the next question: how does this person present? A vibegraph holds one personal brand, built from the identity core, and any business brands the owner operates, each a full brand document of its own with organizational foundations. Every brand has its words (Brand Context) and its look (Brand Visuals). The core plus one brand fits inside a single model context window; that is a design constraint, not an accident.
 
-**Areas** answer the follow-up: what is this person working with? Areas are the domains of knowledge and working context the owner adds when a use case demands one. On the personal side: health, relationships, career, money, play, time, tech, goals, library. On the business side: finance, relationships and CRM, marketing, content and brand, operations. Each area is a folder with its own index file and its own scope, so it can be granted as a unit. Areas are where depth lives, and where sensitivity lives, which is why they are gated by default and stay home when the core travels. Each area lists its entries: files, links, and locations with a scope, a when, and an `access` route (`file`, `link`, `mcp`, `ask`) that tells a reader how to reach them, and which context source holds them. A vibegraph carries routes, never credentials.
+**Areas** answer the follow-up: what is this person working with? Areas are the domains of knowledge and working context the owner adds when a use case demands one. On the personal side: health, relationships, career, money, play, time, tech, goals, library. On the business side: finance, relationships and CRM, marketing, content and brand, operations. Each area is a folder with its own index file and its own scope, so it can be granted as a unit. Areas are where depth lives, and where sensitivity lives, which is why they are gated by default and stay home when the core travels. Each area lists its entries: files, links, and locations with a scope, a when, and an `access` route (`file`, `link`, `mcp`, `ask`) that tells a reader how to reach them, and which context source holds them. A vibegraph carries routes, never credentials. A route is also not access. An entry tells a reader where something lives and how to get there, and the reader still needs its own way in.
 
 **Context sources** are the systems that already hold context: a notes app, a memory layer, a project repository with its own AGENTS.md, a skill file, an agent. The root file registers them; it does not store them. This is how the framework says "everything you already use is part of your vibegraph" without pretending to be a container for it. Section 6 places the common tools.
 
@@ -149,6 +149,8 @@ The personal brand's first half is twelve elements that define the brand in word
 
 Each element is a small, opinionated artifact with a defined shape: core values as decision filters with the behavior that proves them, a value proposition in one tested sentence, messaging as repeatable statements each paired with the story that makes it believable. The shapes matter because the consumer is a machine: a model handed twelve well-formed elements writes exactly like the owner; a model handed just an essay writes like an AI model.
 
+Not every owner needs all twelve. Someone who wants AI to know them for their own life and work, with no public brand to run, keeps seven: Brand Name, Core Values, Tone & Voice, Bio, Achievements & Awards, Inspiration & Influence, and Online Presence, with no Brand Visuals. Elements are optional and keep their order, so the seven are the same document as the twelve. Growing into a full personal brand later means adding five elements and the visuals to work that already exists.
+
 ### 4.4 The personal brand: Brand Visuals
 
 The second half is eight elements that define the brand in pictures:
@@ -172,7 +174,9 @@ Together, the identity core and the personal brand give any AI system what a goo
 
 A vibegraph represents one human being, and that is the design, not a limitation. The people this framework serves best, initially, are solo operators, founders, creators, and owners of small firms who do not experience their business as a separate self. They experience it as something they own and express. The framework models that directly: business brands live inside their owner's vibegraph, one full brand document per business, beside the personal brand.
 
-The sequence is deliberate. Business brands are built after the owner's identity and personal brand, because the founder's material is the business brand's raw material. A business cannot take a personality test, and an Ikigai does not describe a company, so the business brand swaps the identity instruments for organizational equivalents and keeps the same Brand Context and Brand Visuals structure.
+A business cannot take a personality test, and an Ikigai does not describe a company, so the business brand swaps the identity instruments for organizational equivalents and keeps the same Brand Context and Brand Visuals structure. Its foundations are drafted from material about the business and from its builder's answers about it, never from the builder's own personality scores.
+
+The person at the anchor is not always the founder. The root file carries a `role` that says who built and maintains the graph: `owner`, `staff`, or `agency`. For the same reason, the identity instruments are optional on this path. A vibegraph built for a business by someone who took no assessments is valid, with an identity file that holds only the rules for how AI should work for that business. There is still one person at the root, which is what separates it from the organizational vibegraph in section 5.6.
 
 ### 5.1 Foundations
 
@@ -180,7 +184,7 @@ The sequence is deliberate. Business brands are built after the owner's identity
 
 **Brand character: a Jungian archetype.** Aaker's dimensions describe a brand's personality; an archetype (Sage, Creator, Hero, Outlaw, Caregiver, and the rest) gives it a coherent character to write and design from. The two work together: choose the archetype, then use the dimensions to describe and measure how it shows up.
 
-**Purpose: the Golden Circle, mission, vision, values.** In place of the Ikigai, a business brand codifies purpose through Simon Sinek's Why, How, and What, alongside conventional mission, vision, and values. Small businesses that run on EOS can drop their Vision/Traction Organizer in nearly unchanged. Sinek designed the Golden Circle to apply to individuals as well as organizations, which gives the personal and business brands inside one vibegraph a shared spine: the founder's Why and the company's Why are written in the same shape and checked against each other, in the same graph.
+**Purpose: the Golden Circle, mission, vision, values.** In place of the Ikigai, a business brand codifies purpose through Simon Sinek's Why, How, and What, alongside conventional mission, vision, and values. Small businesses that run on EOS can drop their Vision/Traction Organizer in nearly unchanged. Sinek designed the Golden Circle to apply to individuals as well as organizations, which gives the personal and business brands inside one vibegraph a shared spine: an owner's Why and the company's Why, written in the same shape, can be checked against each other in the same graph.
 
 ### 5.2 The same twelve and eight
 
@@ -303,7 +307,7 @@ See [context-sources.md](context-sources.md). Summary:
 4. nothing else without a grant
 ```
 
-The link line is deliberately plain: a markdown link, then key-value pairs separated by a middle dot. It is readable by a person, greppable by a script, and parseable by an agent without a JSON schema. That is the AGENTS.md lesson: plain markdown, no SDK.
+The link line is deliberately plain: a markdown link, then key-value pairs separated by a middle dot. It is readable by a person, greppable by a script, and parseable by an agent without a JSON schema. That is the AGENTS.md lesson: plain markdown, no SDK. In the front matter, `role` says who built and maintains the graph (`owner`, `staff`, or `agency`), and a file without it is read as `owner`.
 
 ### 7.2 The typed link schema
 
@@ -343,7 +347,9 @@ maya-okafor.vibegraph/
     ├── skills/
     │   ├── index.md
     │   └── *.SKILL.md           skills in SKILL.md form, loadable by any harness that reads it
-    └── finances/index.md
+    ├── finances/index.md
+    ├── health/index.md
+    └── journals/index.md
 ```
 
 Naming rules. The identity file is named after the person, because a fixed name like identity.md collides with generic usage and person names let a folder hold two people side by side later. Brand files carry the `.brand.md` suffix so a directory listing tells you the kind. Areas are folders with an index.md, so an area can hold one file or a hundred and can be granted as a unit. Skills use the SKILL.md form so Claude Code, Codex, and the other harnesses that already read that format load them directly.
@@ -369,7 +375,7 @@ Two placement modes. Standalone: the vibegraph lives in its own folder and repos
 
 **2. Persistent workspace context.** Most serious AI tools have a persistent-context surface: Claude's Projects, ChatGPT's custom GPTs and project instructions, and their equivalents. A vibegraph loads cleanly into all of them. Set it once per workspace and every conversation there starts calibrated.
 
-**3. Live access over MCP.** The Model Context Protocol gives agents a standard way to request data at runtime. A vibegraph served over MCP reads the same VIBEGRAPH.md schema as the files on disk: kinds become resource types, scopes become grants, `when` rules become defaults for what a client sees before asking, and every read is logged. An agent asks for exactly the node it needs, when it needs it, within what the owner granted. Your writing agent reads the identity core and the skills area; your finance agent reads the finances area and nothing else. Because the server serves the exported layout, the hosted graph and the local graph are the same shape, and a tool that walks one can walk the other.
+**3. Live access over MCP.** The Model Context Protocol gives agents a standard way to request data at runtime. A vibegraph served over MCP reads the same VIBEGRAPH.md schema as the files on disk: kinds become resource types, scopes become grants, `when` rules become defaults for what a client sees before asking, and every read is logged. An agent asks for exactly the node it needs, when it needs it, within what the owner granted. Your writing agent reads the identity core and the skills area; your finance agent reads the finances area and nothing else. Because the server serves the exported layout, the hosted graph and the local graph are the same shape, and a tool that walks one can walk the other. What gets served is the graph: the core, the brands, the registry of context sources, and each granted area's index with the entries that client may see. The material an entry points to stays where it lives. A served entry tells the agent where to look, and the agent can follow it only with its own access to that place.
 
 **4. Seeding memory layers.** Memory systems, platform-native and dedicated, face a cold-start problem: they know nothing until they have watched you for weeks, and what they learn is inference. A vibegraph solves the cold start. Loaded as seed context, it gives a memory layer a verified, owner-authored foundation that observation then extends. They are the substrate; the vibegraph is the schema. The two compose.
 
@@ -401,7 +407,7 @@ A complete vibegraph is a concentrated dossier: personality, purpose, brand, and
 
 ### 8.2 Scopes as the permission model
 
-The scope vocabulary in section 7 is the permission model. It has three rules.
+The scope vocabulary in section 7 is the permission model. It has four rules.
 
 **Deny by default.** Anything without a scope is private. Areas are `scoped` or `private` unless the owner says otherwise; the identity core and brands are `public` because they are written to be shared.
 
@@ -409,17 +415,23 @@ The scope vocabulary in section 7 is the permission model. It has three rules.
 
 **Grants are per client, per node, and logged.** When a vibegraph is served, each connected client holds its own grants. A client granted the personal brand and the skills area cannot read finances, however thoroughly that client is compromised. Every read is written to a log the owner can inspect, so the owner can always answer "what has this tool actually seen?"
 
+**Entries are judged one at a time.** An entry carries its own scope, and the most restrictive scope on its line governs. A private entry inside a scoped area is withheld from a client that holds the area.
+
 Tight scoping is not paranoia. Given the prompt-injection reality above, it is the mitigation.
+
+A scope decides what a vibegraph hands to a reader. It does not lock the place an entry points to. A drive or notes vault the owner connects to an AI tool directly is read under its own permissions, whatever the vibegraph says. A private scope does not encrypt a file, and a public scope does not publish one.
 
 ### 8.3 What is shipped, stated plainly
 
 **Local files, private by default (shipped: the framework).** The reference posture for a vibegraph is files on hardware the owner controls. Only the nodes the owner deliberately exposes ever leave the machine. Owners who self-host accept responsibility for their own device security, and the framework says so plainly rather than pretending a folder is a vault.
 
-**The hosted builder (shipped, with limits stated).** The application at vibegraph.ai stores vibegraphs in conventional server-readable form, protected by encryption in transit and at rest, row-level access control that scopes every row to its owner, and the no-train inference posture below. It does not offer zero-knowledge encryption. Owners for whom server-readable hosting is unacceptable should use the local framework; that is why the framework ships open and file-based.
+**The hosted builder (shipped, with limits stated).** The application at vibegraph.ai stores vibegraphs in conventional server-readable form, protected by encryption in transit and at rest, row-level access control that scopes every row to its owner, and the no-train inference posture below. It does not offer zero-knowledge encryption. It holds what the owner builds there: the identity core, the brands, the registry of context sources, and the chosen areas with their entries. Registering a source never imports what is in it. Owners for whom server-readable hosting is unacceptable should use the local framework; that is why the framework ships open and file-based.
 
 **No-train inference (shipped).** AI features that process vibegraph content run against APIs whose terms exclude customer data from training, pinned per request rather than assumed. Owners with stricter requirements can point the framework at local models; a vibegraph is a file format, and it does not care which model reads it.
 
-**Scoped, logged serving over MCP (shipped).** The hosted graph is served read-only over MCP. Grants are per client and per node, default to the public core, and every read is logged and visible to the owner. Write-back over MCP is not offered.
+**Scoped, logged serving over MCP (shipped).** The hosted graph is served read-only over MCP. Grants are per client and per node, default to the public core, and every read is logged and visible to the owner. Entries are filtered line by line, and a line the filter cannot parse is withheld. A grant is recorded at the scope the node had when granted, so tightening a scope withdraws the node until the owner grants it again. Write-back over MCP is not offered.
+
+**Serving the files behind an entry (not offered).** The hosted server serves the graph and its routes. It cannot read the owner's disk, so a file on a laptop reaches a hosted tool only as a path. A hosted tool opens an entry's target only if it can already reach that place, such as a cloud drive it connects to itself. Agents that need local files should run against the local folder.
 
 **Zero-knowledge encryption for hosted vibegraphs (destination).** The endpoint for hosted storage follows the model proven by password managers: client-side encryption, keys derived on the owner's device and never transmitted, so the provider stores ciphertext it cannot read. The trade-offs are real: no server-side search, no recovery of lost keys, nothing to hand over under compulsion. For a document this sensitive, those trade-offs are the point. The hosted builder will say "zero-knowledge" only when it is true.
 
@@ -437,11 +449,13 @@ A vibegraph concentrates risk in exchange for concentrating value; the design's 
 
 **One source of truth across every tool.** The same identity core feeds the chat tool, the writing assistant, the design tool, the email drafter, and the agent that queues posts. One root file ends the drift between tools that each hold a slightly different, slightly stale picture of you.
 
+**AI that knows you, with no brand to run.** Plenty of people want this for their own life and work and have no audience to speak to. The identity core, seven elements of personal context, and a few chosen areas are enough for every tool to stop asking who they are.
+
 **The business that sounds like itself.** With a business brand nested under the founder's, the company's copy is governed by the company's brand on the tasks that belong to it, and the founder's voice is governed by their own everywhere else. One graph holds both and knows which applies.
 
 **A starting point for a new brand.** A person with no brand yet builds the identity core first, and the personal brand follows from it. The brand documents are sufficient raw material for a first website, a bio, a set of templates, and a visual system produced in whatever design tool the owner prefers.
 
-**Agency and consultant onboarding, upgraded.** Agencies extract a shallow vibegraph from every client today; they call it a discovery questionnaire, it lives in a document, and it gets read twice. Rebuilt as a vibegraph, client discovery produces a structured client-context file the agency loads into every AI tool it uses for that account. For the client, the vibegraph is theirs to keep when the engagement ends.
+**Agency and consultant onboarding, upgraded.** Agencies extract a shallow vibegraph from every client today; they call it a discovery questionnaire, it lives in a document, and it gets read twice. Rebuilt as a vibegraph, client discovery produces a structured client-context file the agency loads into every AI tool it uses for that account. The root file records the arrangement: `role: agency` says an outside party built and maintains the graph. For the client, the vibegraph is theirs to keep when the engagement ends.
 
 **Seeding memory and clones.** A vibegraph is the natural seed for any memory layer and the natural substrate for a clone of oneself, giving passive systems a verified foundation instead of weeks of cold-start inference.
 
@@ -465,7 +479,7 @@ Three things share the name, and the analogy row is the one to remember: the web
 
 | | vibegraph (the noun) | vibegraph.md (the framework) | vibegraph.ai (the app) |
 |---|---|---|---|
-| What it is | A category term. The network of identity, context, knowledge, and memory that governs AI for one person and the businesses they own. | The open specification and file convention: the root file, the typed link schema, scopes, area conventions, and the handoff to AGENTS.md and CLAUDE.md. | The guided builder. Claudia runs the identity assessment, purpose work, and brand build, then exports the reference layout and registers context sources. |
+| What it is | A category term. The network of identity, context, knowledge, and memory that governs AI for one person and the businesses they own or operate. | The open specification and file convention: the root file, the typed link schema, scopes, area conventions, and the handoff to AGENTS.md and CLAUDE.md. | The guided builder. Claudia runs the identity assessments, the purpose work, and the brand build. The builder registers context sources, maps the chosen areas, exports the reference layout, and can serve it live. |
 | Who owns it | Nobody. Released as a common noun. | Ryan Charleston, as maintainer, under the MIT license. Anyone can fork, extend, serve, or build on it. | Raizen Labs, LLC, as a business. |
 | What it is for | Giving the market a word for the thing everyone is assembling by hand. | Making a vibegraph portable, machine-walkable, and permissionable across every tool, with zero platform adoption required. | Building the one part of a vibegraph no other tool builds: a validated, reconciled, brand-complete identity core. |
 | How it is written | Always lowercase: a vibegraph, your vibegraph, vibegraphs. | Always lowercase with the extension. The spec defines VIBEGRAPH.md, the root file, which is capitalized. | Always lowercase as a domain. The app has no other product name. |
@@ -475,13 +489,17 @@ Three things share the name, and the analogy row is the one to remember: the web
 
 **The framework.** vibegraph.md is the open specification: the layout in section 7, the root file, the link schema, the scopes, the handoff stanza, templates, a JSON schema for the front matter, and a complete worked example for a fictional owner so a reader can clone it, replace the example, and pass the acceptance test in under an hour. Templates, schema, and code are MIT. The specification prose is CC-BY 4.0. Anyone can build a vibegraph by hand, with their own tools, their own storage, and their own security posture, and anyone can build products that produce or consume one without asking. An identity standard that is not open is not a standard.
 
-**The app.** vibegraph.ai builds the center of a vibegraph: the identity core and the brands. It does not become a notes app, a memory layer, or a dashboard, and it does not build the organizational vibegraph.
+**The app.** vibegraph.ai builds the center of a vibegraph: the identity core and the brands, plus the map of where everything else lives. It does not become a notes app, a memory layer, or a dashboard, and it does not build the organizational vibegraph.
 
-It meets the owner wherever they stand. On the AI-assisted path, a person with no brand and no assessments starts from a blank slate: the two built-in personality instruments, the integrated reading, the four-pillar Ikigai in conversation with Claudia, then the personal brand. Then, if they own a business, the business brand. On the upload path, a person who already has assessment results (from any instrument, not only the two built in), an Ikigai, or completed or partial brand material brings it in, and the build starts from there. More instruments produce a richer core, and the app expects to add instruments over time.
+It meets the owner wherever they stand, through three build paths and two starting points. Personal Use is for a person's own life and work: the identity core and seven elements of personal context, with no brand to run. Personal Brand is the full twelve and eight. Business Brand adds one or more business brands, each with its own foundations, and on that path the personality instruments are optional. The person building may be the owner, a member of staff, or an agency.
+
+On any path the owner starts from scratch or brings what they have. From scratch means the two built-in personality instruments, the integrated reading, and a four-pillar Ikigai worked out with Claudia, followed by guided interviews for the personal context and for a business's foundations. Bringing what exists means assessment results from any instrument (not only the two built in), an Ikigai, or finished or partial brand material, and the build starts from there. More instruments produce a richer core, and the app expects to add instruments over time.
 
 For Brand Visuals, the app hands off rather than generating. After the Brand Context is finished, the owner receives their partially built vibegraph plus ready-to-use prompts and instructions for their chosen tool (a general model, a code agent, a design canvas, a design application), with a live connection where one exists. The owner produces the visuals there, records where the assets live, and the build completes with the export.
 
-The export is the reference layout in section 7, with the handoff stanza pre-written into AGENTS.md and CLAUDE.md and the areas the owner chose, each with its entries. A Context Sources step registers the systems the owner already uses. The same layout is served live over MCP with scopes as grants and every read logged. The personality assessments are free. Completing the build is a one-time unlock with unlimited edits and re-exports; current tiers are at vibegraph.ai/pricing. The app is a convenience layered on the open framework, never a gate in front of it.
+The export is the reference layout in section 7, with the handoff stanza pre-written into AGENTS.md and CLAUDE.md and only the areas the owner chose, each with its entries. A Context Sources step registers the systems the owner already uses. Nothing moves into the builder when a source is registered.
+
+The same layout can be served live over MCP, with scopes as grants and every read logged, through the part of the app called Connect. The identity core and the areas are free. Each build tier above that is a one-time purchase with unlimited edits and re-exports, and moving up a tier costs the difference. Connect is the one recurring charge: an optional monthly subscription on any tier, the free one included. An owner who lets it lapse keeps every grant for when they come back. Current tiers are at vibegraph.ai/pricing. The app is a convenience layered on the open framework, never a gate in front of it.
 
 ---
 
@@ -497,13 +515,13 @@ Every AI you use should run on your vibegraph. Your notes app, your memory layer
 
 ## Glossary
 
-**vibegraph.** The network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one person and the businesses they own. A common noun, always lowercase. Plural: vibegraphs. One person per vibegraph.
+**vibegraph.** The network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one person, and any businesses they own or operate. A common noun, always lowercase. Plural: vibegraphs. One person per vibegraph.
 
 **identity core.** The human-authored statement of who the person is: the personality assessment (the Big Five via the IPIP-NEO-120, the Enneagram, and any other instruments the owner brings), the integrated reading, and the four-pillar Ikigai, with the personal brand built from it. Small, stable, and safe to share.
 
 **root file.** VIBEGRAPH.md. The fixed-name markdown file at the root of a vibegraph that any agent reads first. Names the owner, links every node with a kind, scope, and when, and states the read order. Defined by the vibegraph.md spec.
 
-**brand.** A full brand document inside a vibegraph: twelve Brand Context elements and eight Brand Visuals elements. One personal brand, built from the identity core; any number of business brands, each with organizational foundations (Aaker's dimensions, an archetype, the Golden Circle), nested under the owner.
+**brand.** A full brand document inside a vibegraph: twelve Brand Context elements and eight Brand Visuals elements. One personal brand, built from the identity core; any number of business brands, each with organizational foundations (Aaker's dimensions, an archetype, the Golden Circle), nested under the owner. Elements are optional and keep their order; a personal brand kept for personal use carries seven Brand Context elements and no visuals.
 
 **Brand Context.** The brand in words: twelve elements from Brand Name to Online Presence.
 
@@ -515,7 +533,7 @@ Every AI you use should run on your vibegraph. Your notes app, your memory layer
 
 **context source.** A system that already holds context (a knowledge store, a memory layer, a project, a skill, an agent), registered in the root file with a kind and a scope. Registered, not stored.
 
-**entry.** One line under an area's `## Entries`: a file, link, or location with a scope, a when, an `access` route, and optionally the context source it lives in.
+**entry.** One line under an area's `## Entries`: a file, link, or location with a scope, a when, an `access` route, and optionally the context source it lives in. A pointer to the material, never the material itself.
 
 **access.** How a reader reaches an entry: `file`, `link`, `mcp`, or `ask`. Never a credential.
 
@@ -524,6 +542,10 @@ Every AI you use should run on your vibegraph. Your notes app, your memory layer
 **scope.** Who may read a node: public, scoped, private. Nothing is exposed by omission. Familiar from OAuth.
 
 **when.** When a node is read: always, on-task, on-grant.
+
+**grant.** The owner's permission for one client to read one node. Held per client, and every read made under it is logged.
+
+**role.** Who built and maintains a vibegraph: owner (the person it describes), staff (someone who works for the owner or the business), or agency (an outside party). Carried in the root file's front matter. Absent means owner.
 
 **handoff stanza.** The four-line block placed in AGENTS.md and CLAUDE.md that sends an agent to VIBEGRAPH.md before it starts.
 
