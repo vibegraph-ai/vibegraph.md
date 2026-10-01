@@ -2,7 +2,7 @@
 
 A complete vibegraph in the [vibegraph.md reference layout](../../SPEC.md#2-the-reference-layout). Maya Okafor is fictional: a solo operations consultant who runs a business brand, Delivery OS. Every name, number, and link here is invented for the example.
 
-A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one person, and any businesses they own or operate. This folder holds the center of Maya's: her identity core, her personal brand, her business brand, three areas, and a registry of the systems that already hold the rest.
+A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate. This folder holds the center of Maya's: her identity core, her personal brand, her business brand, three areas, and a registry of the systems that already hold the rest.
 
 ## What is here
 

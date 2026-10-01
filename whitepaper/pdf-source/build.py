@@ -43,7 +43,7 @@ COVER_BODY = """
   <hr class="cover-rule"/>
   <div class="cover-main">
     <h1 class="cover-title">vibegraph:<br/>your vibes, codified</h1>
-    <p class="cover-desc">a vibegraph is the network of identity, context,
+    <p class="cover-desc">A vibegraph is the network of identity, context,
     knowledge, and memory that governs how AI thinks, writes, and acts for one
     human, and any businesses they own or operate.</p>
   </div>

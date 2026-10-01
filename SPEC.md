@@ -29,7 +29,7 @@ Specification prose is CC-BY 4.0; templates, schema, and code are MIT. See [Lice
 
 ## 1. Overview
 
-A **vibegraph** is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one person, and any businesses they own or operate.
+A **vibegraph** is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate.
 
 Every vibegraph has five elements, anchored to one person:
 

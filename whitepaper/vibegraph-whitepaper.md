@@ -1,6 +1,6 @@
 # vibegraph: your vibes, codified
 
-a vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate.
+A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate.
 
 **Version 3.0 · October 2026 · Ryan Charleston · vibegraph.md · vibegraph.ai**
 
@@ -12,7 +12,7 @@ Every AI tool you use starts from zero. It does not know your voice, your values
 
 Your vibes (your personality, taste, voice, values, purpose, and aesthetic) are the things AI gets wrong about you by default, because nobody wrote them down anywhere a machine could read them. This paper is about writing them down, once, in a form every AI you use can read first.
 
-The word for the result is a vibegraph. **A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one person, and any businesses they own or operate.** Everyone who uses AI for real work already has one, spread across a notes app, a folder of documents, a few platform memories, and a great deal that lives only in their head. What separates a working vibegraph from a pile of context is small and specific: a human-authored identity core, and a root file with a fixed name that any agent reads first.
+The word for the result is a vibegraph. **A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate.** Everyone who uses AI for real work already has one, spread across a notes app, a folder of documents, a few platform memories, and a great deal that lives only in their head. What separates a working vibegraph from a pile of context is small and specific: a human-authored identity core, and a root file with a fixed name that any agent reads first.
 
 This paper defines the term, describes the anatomy of a vibegraph, shows where the tools people already use fit inside one, explains how business brands nest inside their owner's graph, specifies how AI systems consume one (by paste, by workspace, over the Model Context Protocol, and as a seed for memory layers), states the security model such a thing demands and which parts of it are shipped, and separates the three things that share the name: the noun, the open framework at vibegraph.md, and the guided builder at vibegraph.ai.
 
@@ -44,7 +44,7 @@ There is no equivalent for a person. That is the gap a vibegraph fills.
 
 ## 2. What is a vibegraph?
 
-A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one person, and any businesses they own or operate.
+A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate.
 
 They may not realize it, but everyone who uses AI for real work already has a vibegraph. It is just spread across a notes app, local folders, cloud drives, fragmented memory inside various AI chat apps and agents, a system prompt pasted from a text file, a CLAUDE.md file, and important context that lives only in the person's head and gets retyped into every new tool. That's a vibegraph in the way a shoebox of photos is an album: all the material, none of the structure, and no way for a machine to read it properly.
 
@@ -479,7 +479,7 @@ Three things share the name, and the analogy row is the one to remember: the web
 
 | | vibegraph (the noun) | vibegraph.md (the framework) | vibegraph.ai (the app) |
 |---|---|---|---|
-| What it is | A category term. The network of identity, context, knowledge, and memory that governs AI for one person and the businesses they own or operate. | The open specification and file convention: the root file, the typed link schema, scopes, area conventions, and the handoff to AGENTS.md and CLAUDE.md. | The guided builder. Claudia runs the identity assessments, the purpose work, and the brand build. The builder registers context sources, maps the chosen areas, exports the reference layout, and can serve it live. |
+| What it is | A category term. The network of identity, context, knowledge, and memory that governs AI for one human and the businesses they own or operate. | The open specification and file convention: the root file, the typed link schema, scopes, area conventions, and the handoff to AGENTS.md and CLAUDE.md. | The guided builder. Claudia runs the identity assessments, the purpose work, and the brand build. The builder registers context sources, maps the chosen areas, exports the reference layout, and can serve it live. |
 | Who owns it | Nobody. Released as a common noun. | Ryan Charleston, as maintainer, under the MIT license. Anyone can fork, extend, serve, or build on it. | Raizen Labs, LLC, as a business. |
 | What it is for | Giving the market a word for the thing everyone is assembling by hand. | Making a vibegraph portable, machine-walkable, and permissionable across every tool, with zero platform adoption required. | Building the one part of a vibegraph no other tool builds: a validated, reconciled, brand-complete identity core. |
 | How it is written | Always lowercase: a vibegraph, your vibegraph, vibegraphs. | Always lowercase with the extension. The spec defines VIBEGRAPH.md, the root file, which is capitalized. | Always lowercase as a domain. The app has no other product name. |
@@ -515,7 +515,7 @@ Every AI you use should run on your vibegraph. Your notes app, your memory layer
 
 ## Glossary
 
-**vibegraph.** The network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one person, and any businesses they own or operate. A common noun, always lowercase. Plural: vibegraphs. One person per vibegraph.
+**vibegraph.** The network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate. A common noun, always lowercase. Plural: vibegraphs. One person per vibegraph.
 
 **identity core.** The human-authored statement of who the person is: the personality assessment (the Big Five via the IPIP-NEO-120, the Enneagram, and any other instruments the owner brings), the integrated reading, and the four-pillar Ikigai, with the personal brand built from it. Small, stable, and safe to share.
 

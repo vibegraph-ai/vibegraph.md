@@ -18,7 +18,7 @@ Published specification: 3.0 · MIT (templates, schema, code) · CC-BY 4.0 (pros
 
 Your vibes (your personality, taste, voice, values, purpose, and aesthetic) are what AI gets wrong about you by default, because nobody wrote them down anywhere a machine could read them.
 
-**A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one person, and any businesses they own or operate.**
+**A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate.**
 
 Everyone who uses AI for real work already has one, spread across a notes app, a folder of documents, a few platform memories, and a great deal that lives only in their head. Two things turn that pile into a vibegraph: a human-authored identity core, and a root file with a fixed name that any agent reads first. Without them, it is context. With them, it is a graph any agent can walk, a permission model you can reason about, and an asset that moves unchanged when a better tool ships.
 
@@ -28,7 +28,7 @@ Everyone who uses AI for real work already has one, spread across a notes app, a
 
 | | vibegraph (the noun) | vibegraph.md (the framework) | vibegraph.ai (the app) |
 |---|---|---|---|
-| What it is | A category term for the network that governs AI for one person and the businesses they own | The open specification and file convention: the root file, the typed link schema, scopes, areas, the handoff | A guided builder for the identity core and brands, which exports this layout |
+| What it is | A category term for the network that governs AI for one human and the businesses they own | The open specification and file convention: the root file, the typed link schema, scopes, areas, the handoff | A guided builder for the identity core and brands, which exports this layout |
 | Who owns it | Nobody. A common noun | Maintained by Ryan Charleston under MIT and CC-BY 4.0 | Raizen Labs, LLC |
 | Analogy | the web | HTML and index.html | a website builder |
 
