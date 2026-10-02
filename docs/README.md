@@ -23,3 +23,7 @@ The shared page head loads this script. PostHog captures pageviews, page exits, 
 The three sites use the same project. Filter `$host` in Web Analytics to separate them. Anonymous visitors on unrelated root domains are not automatically identified as the same person. No signup or purchase conversion is inferred from a link click.
 
 Run `node --test scripts/analytics.test.mjs` to check production-host gating, duplicate initialization and link event behavior. After release, visit the live site and confirm its `$pageview` and link events in PostHog before calling production tracking verified.
+
+## Search discovery
+
+`robots.txt` allows crawling and advertises `https://vibegraph.md/sitemap.xml`. The sitemap lists the homepage and published whitepaper PDF. Keep the redirecting, noindex `/whitepaper/` landing page out of the sitemap. Update the sitemap when adding or removing public canonical pages. Google Search Console uses a DNS-verified domain property, so no browser tracking script is needed.
