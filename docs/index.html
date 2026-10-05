@@ -2,6 +2,7 @@
 <html lang="en" data-brand="framework">
 <head>
 <script defer src="/assets/analytics.js"></script>
+<script defer src="/assets/newsletter.js"></script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>vibegraph.md · The open framework for a vibegraph</title>
@@ -191,6 +192,20 @@
   }
   @media(max-width:359px) { .brandmark { font-size:18px; gap:4px; } h1 { font-size:40px; line-height:48px; } }
   @media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation:none!important; transition:none!important; } }
+
+  #subscribe { background:var(--card); }
+  #subscribe .newsletter-grid { display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); align-items:center; gap:var(--space-72); }
+  .newsletter-copy { display:flex; flex-direction:column; align-items:flex-start; gap:var(--space-24); }
+  .newsletter-copy .text-link { margin-top:var(--space-8); gap:var(--space-8); }
+  .subscribe-form { display:flex; flex-direction:column; gap:var(--space-16); min-width:0; }
+  .subscribe-form label { font-weight:500; }
+  .subscribe-form input[type="email"] { width:100%; min-height:56px; border:1px solid var(--input); border-radius:var(--radius-md); padding:14px 16px; background:var(--background); color:var(--foreground); font:400 16px/26px var(--font-body); }
+  .subscribe-form input::placeholder { color:var(--muted-foreground); opacity:1; }
+  .subscribe-form .btn { width:100%; min-height:56px; }
+  .subscribe-form button:disabled { cursor:wait; opacity:.65; }
+  .newsletter-note { color:var(--muted-foreground); font-size:14px; line-height:22px; }
+  #subscribe-status { min-height:44px; }
+  @media(max-width:1023px) { #subscribe .newsletter-grid { grid-template-columns:1fr; gap:var(--space-40); } }
 </style>
 </head>
 <body>
@@ -237,6 +252,33 @@
     <svg class="motion-play" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="m5 3 8 5-8 5z"/></svg>
   </button>
 </div>
+
+<section id="subscribe" data-section="subscribe" aria-labelledby="newsletter-heading" tabindex="-1">
+  <div class="wrap newsletter-grid">
+    <div class="newsletter-copy">
+      <p class="eyebrow">WEEKLY NEWSLETTER</p>
+      <h2 id="newsletter-heading">The Context Layer</h2>
+      <p class="lede">Get weekly breakdowns of the systems solo founders and small business owners use to turn identity files, agent memory, and context layers into revenue.</p>
+      <a class="text-link" href="https://contextlayer.vibegraph.ai/">Read the latest issue <span aria-hidden="true">→</span></a>
+    </div>
+    <form class="subscribe-form" novalidate data-state="idle"
+      data-live-notice="Confirm your email address to join."
+      data-preview-notice="Preview only: subscriptions are disabled on this review site."
+      data-preview-result="Preview only: no subscription was sent."
+      data-invalid-email="Enter a valid email address to continue."
+      data-pending="Submitting..."
+      data-received="Request received. If confirmation is needed, check your inbox to finish subscribing."
+      data-unavailable="We could not submit your request. Please try again shortly.">
+      <label for="newsletter-email">Email address</label>
+      <input id="newsletter-email" type="email" name="email" autocomplete="email" inputmode="email" maxlength="254" required placeholder="you@yourbusiness.com" aria-describedby="subscribe-note subscribe-status" disabled />
+      <div hidden aria-hidden="true"><input name="website" type="text" tabindex="-1" autocomplete="off" aria-label="Leave this empty" /></div>
+      <button class="btn primary" type="submit" disabled>Subscribe</button>
+      <p class="newsletter-note" id="subscribe-note">Free newsletter sent every Wednesday. Unsubscribe anytime.</p>
+      <p class="newsletter-note" id="subscribe-status" role="status" aria-live="polite"></p>
+      <noscript><p>To subscribe with JavaScript disabled, <a href="https://contextlayer.vibegraph.ai/">visit The Context Layer</a>.</p></noscript>
+    </form>
+  </div>
+</section>
 
 <section id="definition">
   <div class="wrap">

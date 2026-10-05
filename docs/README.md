@@ -27,3 +27,9 @@ Run `node --test scripts/analytics.test.mjs` to check production-host gating, du
 ## Search discovery
 
 `robots.txt` allows crawling and advertises `https://vibegraph.md/sitemap.xml`. The sitemap lists the homepage and published whitepaper PDF. Keep the redirecting, noindex `/whitepaper/` landing page out of the sitemap. Update the sitemap when adding or removing public canonical pages. Google Search Console uses a DNS-verified domain property, so no browser tracking script is needed.
+
+## Newsletter
+
+The Context Layer section sits immediately below the hero in `index.html` and uses the framework site's monochrome tokens. Copy and status messages are in its markup. `assets/newsletter.js` handles validation, pending, retry and confirmation states. Only HTTPS vibegraph.md and www.vibegraph.md send requests; local and review hosts remain inert. The server-only Beehiiv integration runs at `https://vibegraph.ai/api/subscribe/`, with exact origin restrictions and source attribution. Deploy that service's allowlist update before releasing this page. No API keys belong in this repository.
+
+Run `node --test tests/newsletter.cjs`, `node tests/site-behavior.cjs` and `node --test scripts/analytics.test.mjs` from the repository root. Inspect the newsletter in desktop/mobile and light/dark themes. A successful request means Beehiiv received it; subscribers may still need to confirm their email.
