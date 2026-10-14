@@ -33,3 +33,11 @@ Run `node --test scripts/analytics.test.mjs` to check production-host gating, du
 The Context Layer section sits immediately below the hero in `index.html` and uses the framework site's monochrome tokens. Copy and status messages are in its markup. `assets/newsletter.js` handles validation, pending, retry and confirmation states. Only HTTPS vibegraph.md and www.vibegraph.md send requests; local and review hosts remain inert. The server-only Beehiiv integration runs at `https://vibegraph.ai/api/subscribe/`, with exact origin restrictions and source attribution. Deploy that service's allowlist update before releasing this page. No API keys belong in this repository.
 
 Run `node --test tests/newsletter.cjs`, `node tests/site-behavior.cjs` and `node --test scripts/analytics.test.mjs` from the repository root. Inspect the newsletter in desktop/mobile and light/dark themes. A successful request means Beehiiv received it; subscribers may still need to confirm their email.
+
+## Definition guide and structured data
+
+The website publishes from `v2.0`, not `main`. Target site pull requests at `v2.0`. The specification links deliberately target `v3.0`.
+
+Edit the definition guide in `content/search.json`, then run `node scripts/build-search-pages.mjs`. This updates the homepage JSON-LD, `docs/what-is-a-vibegraph/index.html`, and `docs/llms.txt`. The generator reuses the homepage's typography and design tokens and escapes content before emitting HTML. Commit the generated files since Pages serves static files without a build step. Change `dateModified` only for meaningful article revisions; set a real publication date when released if one is added. The homepage is not an article.
+
+The canonical URLs remain on vibegraph.md. Raizen Labs, LLC and Ryan Charleston use stable entity IDs shared with the app's site. The concept, framework, and guided builder are distinct entities. The article's visible publisher matches its author metadata. `llms.txt` is an optional reference index, with no claimed ranking benefit. Run `node --test tests/seo.cjs` alongside existing site checks. Release the companion vibegraph.ai About page before or with these changes.
