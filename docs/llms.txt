@@ -1,0 +1,15 @@
+# vibegraph.md
+
+> The open framework and file convention for a vibegraph, maintained by Ryan Charleston.
+
+A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate.
+
+## Public resources
+
+- [Open framework](https://vibegraph.md/): Overview and file convention.
+- [What is a vibegraph?](https://vibegraph.md/what-is-a-vibegraph/): Definition, example, and explanation.
+- [Specification 3.0](https://github.com/vibegraph-ai/vibegraph.md/blob/v3.0/SPEC.md): Official reference.
+- [Maya Okafor worked example](https://github.com/vibegraph-ai/vibegraph.md/tree/v3.0/examples/maya-okafor.vibegraph): Official reference.
+- [Blank template](https://github.com/vibegraph-ai/vibegraph.md/tree/v3.0/templates/your-name.vibegraph): Official reference.
+- [Whitepaper](https://vibegraph.md/whitepaper/vibegraph-whitepaper.pdf): Official reference.
+- [Creator and operator](https://vibegraph.ai/about/): Official reference.

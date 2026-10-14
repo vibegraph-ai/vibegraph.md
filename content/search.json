@@ -1,0 +1,81 @@
+{
+  "definition": "A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate.",
+  "article": {
+    "title": "What is a vibegraph? Definition, example, and open framework",
+    "description": "A vibegraph organizes identity, context, knowledge, and memory for one human. Learn how VIBEGRAPH.md works, see an example, and explore the open framework.",
+    "heading": "What is a vibegraph?",
+    "sections": [
+      {
+        "heading": "Identity and context that you can carry between tools",
+        "paragraphs": [
+          "Your vibes are your personality, taste, voice, values, purpose, and aesthetic. A vibegraph makes that identity readable alongside the context an AI tool needs for your work.",
+          "The open framework uses Markdown files and typed links. VIBEGRAPH.md is the root file. It tells an agent where to start, which entries to read for a task, and which entries require permission. The root is a map, rather than a copy of every document you own."
+        ]
+      },
+      {
+        "heading": "A concrete example",
+        "paragraphs": [
+          "Maya Okafor is the fictional owner in the public worked example. Her root file points to an identity file, a personal brand, a business brand, and areas of her work. Each link declares its kind, scope, and when it should be read.",
+          "For a writing task, an agent can read her always-read identity and the relevant brand. A private area is not available merely because the root mentions it. Reading a pointer also does not grant access to the external service or local file it describes."
+        ]
+      },
+      {
+        "heading": "What does VIBEGRAPH.md contain?",
+        "paragraphs": [
+          "The root identifies the owner and links to identity, brands, context sources, and areas. Entries use a kind such as identity or brand, a scope such as public, scoped, or private, and a read rule such as always, on-task, or on-grant.",
+          "The filename VIBEGRAPH.md is uppercase and fixed by the convention. The website vibegraph.md publishes the framework. A root file named VIBEGRAPH.md belongs to an individual person's files. These are different things."
+        ]
+      },
+      {
+        "heading": "How does it differ from AI memory or custom instructions?",
+        "paragraphs": [
+          "Custom instructions can state preferences for an AI tool. A memory feature can retain information across conversations. A vibegraph gives identity and context a named, linked structure that its owner can inspect and move between tools.",
+          "Memory can be part of that structure. The framework does not automatically replace a model's memory feature or teach a model new facts. A tool must actually receive or retrieve the files for their contents to influence its response."
+        ]
+      },
+      {
+        "heading": "What is the difference between vibegraph, vibegraph.md, and vibegraph.ai?",
+        "paragraphs": [
+          "A vibegraph is the concept. vibegraph.md is the open framework and file convention. vibegraph.ai is a guided builder operated by Raizen Labs, LLC.",
+          "You can create a vibegraph by hand using the specification and templates. You do not need an account with vibegraph.ai. The app helps you build your identity core, personal context, and brands, then export files or optionally connect supported tools."
+        ]
+      },
+      {
+        "heading": "Who created it, and is it open?",
+        "paragraphs": [
+          "Ryan Charleston created vibegraph and maintains the open framework. Templates, schema, and code are available under the MIT license. Specification prose is available under CC-BY 4.0. The published specification linked here is version 3.0."
+        ]
+      },
+      {
+        "heading": "How do I create my first vibegraph?",
+        "paragraphs": [
+          "Read the specification, copy a blank template or the fictional example, and replace the example identity and brands with your own. Keep personal files out of public repositories. Start a new AI session with the root, identity, and a relevant brand file, then ask for a task you know well. Review the output and improve the source files where context is missing.",
+          "For a repository workflow, the framework provides a short handoff for AGENTS.md and CLAUDE.md. For live serving, the specification describes how scopes map to grants. A filename alone is not an access control system. Permissions must also be enforced by the tool or service serving the content."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Specification 3.0",
+        "href": "https://github.com/vibegraph-ai/vibegraph.md/blob/v3.0/SPEC.md"
+      },
+      {
+        "label": "Maya Okafor worked example",
+        "href": "https://github.com/vibegraph-ai/vibegraph.md/tree/v3.0/examples/maya-okafor.vibegraph"
+      },
+      {
+        "label": "Blank template",
+        "href": "https://github.com/vibegraph-ai/vibegraph.md/tree/v3.0/templates/your-name.vibegraph"
+      },
+      {
+        "label": "Whitepaper",
+        "href": "https://vibegraph.md/whitepaper/vibegraph-whitepaper.pdf"
+      },
+      {
+        "label": "Creator and operator",
+        "href": "https://vibegraph.ai/about/"
+      }
+    ],
+    "dateModified": "2026-10-14"
+  }
+}
