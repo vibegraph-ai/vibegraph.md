@@ -26,7 +26,7 @@ Run `node --test scripts/analytics.test.mjs` to check production-host gating, du
 
 ## Search discovery
 
-`robots.txt` allows crawling and advertises `https://vibegraph.md/sitemap.xml`. The sitemap lists the homepage and published whitepaper PDF. Keep the redirecting, noindex `/whitepaper/` landing page out of the sitemap. Update the sitemap when adding or removing public canonical pages. Google Search Console uses a DNS-verified domain property, so no browser tracking script is needed.
+`robots.txt` allows crawling and advertises `https://vibegraph.md/sitemap.xml`. The sitemap lists the homepage, definition guide, and published whitepaper PDF. Keep the redirecting, noindex `/whitepaper/` landing page out of the sitemap. Update the sitemap when adding or removing public canonical pages. Google Search Console uses a DNS-verified domain property, so no browser tracking script is needed.
 
 ## Newsletter
 
@@ -38,6 +38,13 @@ Run `node --test tests/newsletter.cjs`, `node tests/site-behavior.cjs` and `node
 
 The website publishes from `v2.0`, not `main`. Target site pull requests at `v2.0`. The specification links deliberately target `v3.0`.
 
-Edit the definition guide in `content/search.json`, then run `node scripts/build-search-pages.mjs`. This updates the homepage JSON-LD, `docs/what-is-a-vibegraph/index.html`, and `docs/llms.txt`. The generator reuses the homepage's typography and design tokens and escapes content before emitting HTML. Commit the generated files since Pages serves static files without a build step. Change `dateModified` only for meaningful article revisions; set a real publication date when released if one is added. The homepage is not an article.
+Edit the definition guide in `content/search.json`, then run `node scripts/build-search-pages.mjs`. This updates the homepage JSON-LD, `docs/what-is-a-vibegraph/index.html`, `docs/llms.txt`, and `docs/llms-full.txt`. The generator reuses the homepage's typography and design tokens and escapes content before emitting HTML. Commit the generated files since Pages serves static files without a build step. Change `dateModified` only for meaningful article revisions; retain the actual first publication date of October 14, 2026. The homepage is not an article.
 
 The canonical URLs remain on vibegraph.md. Raizen Labs, LLC and Ryan Charleston use stable entity IDs shared with the app's site. The concept, framework, and guided builder are distinct entities. The article's visible publisher matches its author metadata. `llms.txt` is an optional reference index, with no claimed ranking benefit. Run `node --test tests/seo.cjs` alongside existing site checks. Release the companion vibegraph.ai About page before or with these changes.
+
+The expanded text resource reuses the entire guide content and source list. It is not a copy of private identity files or of all linked documents. Both the visible byline and Article author identify Raizen Labs, LLC. The publication and modification dates are visible and included in Article and Open Graph metadata.
+
+
+## IndexNow
+
+`node scripts/indexnow.mjs / /what-is-a-vibegraph/` previews a batch without sending it. After release, add `--submit` to notify participating search engines of changed pages. The script validates the live root ownership file, public HTML response, indexing permission, and canonical before one POST. A receipt is not confirmation of indexing. The public ownership key in `scripts/indexnow.json` matches its root text file in docs. Never substitute an account API credential. Keep the allowed paths limited to public canonical pages, and run `node --test scripts/indexnow.test.mjs` with the other checks.

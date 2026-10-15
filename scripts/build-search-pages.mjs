@@ -22,7 +22,7 @@ const themeInitializer = homepage.match(/<script>[\s\S]*?<\/script>/)[0];
 const styles = homepage.match(/<style>([\s\S]*?)<\/style>/)[1];
 const schemaArticle = schema([
   { '@type': 'WebPage', '@id': `${articleUrl}#webpage`, url: articleUrl, name: article.title, description: article.description, isPartOf: { '@id': website['@id'] }, mainEntity: { '@id': `${articleUrl}#article` } },
-  { '@type': 'Article', '@id': `${articleUrl}#article`, headline: article.heading, dateModified: article.dateModified, description: article.description, mainEntityOfPage: { '@id': `${articleUrl}#webpage` }, author: { '@id': organization['@id'] }, publisher: { '@id': organization['@id'] }, about: { '@id': term['@id'] }, image: `${origin}/images/vibegraph-md-social-card.png`, inLanguage: 'en', citation: article.sources.map(source => source.href) },
+  { '@type': 'Article', '@id': `${articleUrl}#article`, headline: article.heading, datePublished: article.datePublished, dateModified: article.dateModified, description: article.description, mainEntityOfPage: { '@id': `${articleUrl}#webpage` }, author: { '@id': organization['@id'] }, publisher: { '@id': organization['@id'] }, about: { '@id': term['@id'] }, image: `${origin}/images/vibegraph-md-social-card.png`, inLanguage: 'en', citation: article.sources.map(source => source.href) },
 ]);
 const html = `<!DOCTYPE html>
 <!-- Generated from content/search.json. Run node scripts/build-search-pages.mjs. -->
@@ -33,6 +33,7 @@ const html = `<!DOCTYPE html>
 <meta name="author" content="Raizen Labs, LLC" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="${articleUrl}" /><link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<meta property="article:published_time" content="${escape(article.datePublished)}" /><meta property="article:modified_time" content="${escape(article.dateModified)}" />
 <meta property="og:type" content="article" /><meta property="og:title" content="${escape(article.heading)}" />
 <meta property="og:description" content="${escape(article.description)}" /><meta property="og:url" content="${articleUrl}" />
 <meta property="og:site_name" content="vibegraph.md" /><meta property="og:image" content="${origin}/images/vibegraph-md-social-card.png" />
@@ -60,8 +61,8 @@ ${schemaArticle}
 <main id="main" tabindex="-1" class="wrap editorial"><article>
 <h1>${escape(article.heading)}</h1>
 <p class="lede">${escape(content.definition)}</p>
-<p class="muted">Updated <time datetime="${escape(article.dateModified)}">${escape(article.dateModified)}</time>.</p>
-<p class="muted">Published by <a href="https://vibegraph.ai/about/">Raizen Labs, LLC</a>. Framework maintained by <a href="https://ryancharleston.com">Ryan Charleston</a>.</p>
+<p class="muted">Published <time datetime="${escape(article.datePublished)}">${escape(article.datePublished)}</time>. Updated <time datetime="${escape(article.dateModified)}">${escape(article.dateModified)}</time>.</p>
+<p class="muted">By <a href="https://vibegraph.ai/about/">Raizen Labs, LLC</a>. Framework maintained by <a href="https://ryancharleston.com">Ryan Charleston</a>.</p>
 ${article.sections.map(section => `<section><h2>${escape(section.heading)}</h2>${section.paragraphs.map(p => `<p>${escape(p)}</p>`).join('\n')}</section>`).join('\n')}
 <section><h2>Sources and next steps</h2><ul>${article.sources.map(link => `<li><a href="${escape(link.href)}">${escape(link.label)}</a></li>`).join('\n')}</ul></section>
 </article></main>
@@ -69,4 +70,18 @@ ${article.sections.map(section => `<section><h2>${escape(section.heading)}</h2>$
 </body></html>\n`;
 mkdirSync('docs/what-is-a-vibegraph', { recursive: true });
 writeFileSync('docs/what-is-a-vibegraph/index.html', html);
-writeFileSync('docs/llms.txt', `# vibegraph.md\n\n> The open framework and file convention for a vibegraph, maintained by Ryan Charleston.\n\n${content.definition}\n\n## Public resources\n\n- [Open framework](${origin}/): Overview and file convention.\n- [What is a vibegraph?](${articleUrl}): Definition, example, and explanation.\n${article.sources.map(link => `- [${link.label}](${link.href}): Official reference.`).join('\n')}\n`);
+writeFileSync('docs/llms.txt', `# vibegraph.md\n\n> The open framework and file convention for a vibegraph, maintained by Ryan Charleston.\n\n${content.definition}\n\n## Public resources\n\n- [Open framework](${origin}/): Overview and file convention.\n- [What is a vibegraph?](${articleUrl}): Definition, example, and explanation.\n${article.sources.map(link => `- [${link.label}](${link.href}): Official reference.`).join('\n')}\n\n## Optional\n\n- [Expanded definition guide](${origin}/llms-full.txt): Full article text with attribution, dates, and source links.\n`);
+
+const expandedGuide = [
+  '# vibegraph.md public reference',
+  '> Full text of the definition guide. The specification, templates, worked example, and whitepaper remain available at the source links below.',
+  `## ${article.heading}`,
+  `Source: ${articleUrl}`,
+  content.definition,
+  `Published ${article.datePublished}. Updated ${article.dateModified}.`,
+  'By [Raizen Labs, LLC](https://vibegraph.ai/about/). Framework maintained by [Ryan Charleston](https://ryancharleston.com/).',
+  ...article.sections.map(section => [`### ${section.heading}`, ...section.paragraphs].join('\n\n')),
+  '## Sources and next steps',
+  ...article.sources.map(link => `- [${link.label}](${link.href})`),
+].join('\n\n') + '\n';
+writeFileSync('docs/llms-full.txt', expandedGuide);

@@ -13,3 +13,7 @@ A vibegraph is the network of identity, context, knowledge, and memory that gove
 - [Blank template](https://github.com/vibegraph-ai/vibegraph.md/tree/v3.0/templates/your-name.vibegraph): Official reference.
 - [Whitepaper](https://vibegraph.md/whitepaper/vibegraph-whitepaper.pdf): Official reference.
 - [Creator and operator](https://vibegraph.ai/about/): Official reference.
+
+## Optional
+
+- [Expanded definition guide](https://vibegraph.md/llms-full.txt): Full article text with attribution, dates, and source links.

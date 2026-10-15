@@ -1,7 +1,7 @@
 {
   "definition": "A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate.",
   "article": {
-    "title": "What is a vibegraph? Definition, example, and open framework",
+    "title": "What is a vibegraph? Definition and example",
     "description": "A vibegraph organizes identity, context, knowledge, and memory for one human. Learn how VIBEGRAPH.md works, see an example, and explore the open framework.",
     "heading": "What is a vibegraph?",
     "sections": [
@@ -76,6 +76,7 @@
         "href": "https://vibegraph.ai/about/"
       }
     ],
-    "dateModified": "2026-10-14"
+    "dateModified": "2026-10-14",
+    "datePublished": "2026-10-14"
   }
 }
