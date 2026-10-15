@@ -205,7 +205,10 @@
 .editorial section { padding:32px 0; }
 .editorial p { margin-top:20px; }
 .editorial .lede { max-width:none; }
-.editorial ul { padding-left:24px; }
+.editorial ul, .editorial ol { padding-left:24px; }
+.editorial figure { margin:24px 0; }
+.editorial figcaption { margin-bottom:12px; font-weight:600; }
+.editorial pre { padding:20px; border:1px solid var(--border); border-radius:12px; background:var(--card); white-space:pre-wrap; overflow-wrap:anywhere; font-family:var(--font-mono); font-size:14px; line-height:1.6; }
 .editorial li { margin-top:12px; }
 .article-footer { padding-block:32px; }
 </style>
@@ -219,10 +222,46 @@
 <p class="lede">A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate.</p>
 <p class="muted">Published <time datetime="2026-10-14">2026-10-14</time>. Updated <time datetime="2026-10-14">2026-10-14</time>.</p>
 <p class="muted">By <a href="https://vibegraph.ai/about/">Raizen Labs, LLC</a>. Framework maintained by <a href="https://ryancharleston.com">Ryan Charleston</a>.</p>
-<section><h2>Identity and context that you can carry between tools</h2><p>Your vibes are your personality, taste, voice, values, purpose, and aesthetic. A vibegraph makes that identity readable alongside the context an AI tool needs for your work.</p>
+<section><h2>Identity and context that you can carry between tools</h2><p>Here, vibegraph means personal identity and context for AI. Ryan Charleston created this framework, published at vibegraph.md, and Raizen Labs, LLC operates the guided builder at vibegraph.ai. Similarly named tools for code visualization and software architecture are separate products.</p>
+<p>Your vibes are your personality, taste, voice, values, purpose, and aesthetic. A vibegraph makes that identity readable alongside the context an AI tool needs for your work.</p>
 <p>The open framework uses Markdown files and typed links. VIBEGRAPH.md is the root file. It tells an agent where to start, which entries to read for a task, and which entries require permission. The root is a map, rather than a copy of every document you own.</p></section>
-<section><h2>A concrete example</h2><p>Maya Okafor is the fictional owner in the public worked example. Her root file points to an identity file, a personal brand, a business brand, and areas of her work. Each link declares its kind, scope, and when it should be read.</p>
-<p>For a writing task, an agent can read her always-read identity and the relevant brand. A private area is not available merely because the root mentions it. Reading a pointer also does not grant access to the external service or local file it describes.</p></section>
+<section><h2>A concrete example</h2><p>Maya Okafor is the fictional owner in the public worked example. She helps solo consultants organize client delivery. Her identity file asks for matter-of-fact language. Her personal brand calls for calm, plainspoken writing and tighter, instructional LinkedIn posts.</p>
+<p>This shortened VIBEGRAPH.md illustrates the version 3.0 convention. Paths are relative to Maya's folder. The complete example, including her identity and brand files, is linked under Sources and next steps.</p><figure><figcaption>Shortened fictional VIBEGRAPH.md</figcaption><pre><code>---
+vibegraph: &quot;3.0&quot;
+owner: Maya Okafor
+role: owner
+identity: identity/maya-okafor.md
+updated: 2026-10-10
+---
+
+# Maya Okafor's vibegraph
+
+## Identity
+- [Maya Okafor](identity/maya-okafor.md) · kind: identity · scope: public · when: always
+
+## Brands
+- [Maya Okafor](brands/maya-okafor.brand.md) · kind: brand · type: personal · scope: public · when: always
+- [Delivery OS](brands/delivery-os.brand.md) · kind: brand · type: business · scope: public · when: on-task (Delivery OS work)
+
+## Areas
+- [Skills](areas/skills/index.md) · kind: area · scope: scoped · when: on-task (repeatable workflows)
+- [Finances](areas/finances/index.md) · kind: area · scope: private · when: on-grant
+
+## Read order
+1. identity/maya-okafor.md
+2. brands/maya-okafor.brand.md
+3. the brand or area the task names
+4. nothing else without a grant</code></pre></figure><ol><li>The frontmatter names the owner, file convention version, and starting identity file. The date belongs to this fictional example.</li>
+<li>kind describes what an entry is. type distinguishes a personal brand from a business brand.</li>
+<li>when describes when to read an entry. always entries come first, on-task entries depend on the request, and on-grant entries require permission.</li>
+<li>scope describes the intended access boundary. A public entry is shareable, a scoped entry needs an appropriate grant, and a private entry needs an explicit owner grant. A pointer never grants access to a file or service by itself.</li></ol></section>
+<section><h2>Walk through a writing task</h2><p>Suppose Maya asks, &quot;Write a short LinkedIn post for solo consultants about making client handoffs repeatable. Use my personal voice. Do not invent results or client stories.&quot;</p><ol><li>Read VIBEGRAPH.md, then the always-read identity and personal brand files that Maya has provided.</li>
+<li>The task is about a repeatable workflow, so inspect the Skills area only if Maya has granted access. Read a linked workflow only when it is relevant and available. Do not read the private Finances area. A general personal post does not need the Delivery OS business brand.</li>
+<li>Use the identity rules for direct language and the personal brand rules for short, instructional LinkedIn copy. If the task needs facts that are absent from the supplied files, ask Maya instead of filling them in.</li>
+<li>Return a draft for Maya to review. Check the wording against her voice and check each factual claim against the context she supplied.</li></ol></section>
+<section><h2>An illustrative draft and what changed</h2><p>&quot;Your next client handoff should not depend on what you remember that afternoon. Write down what is ready, who takes it next, and what done looks like. Use the same handoff each time. Boring on purpose. Systems buy back your evenings.&quot;</p>
+<p>This is an authored illustration, not a measured model result or a quote from Maya. The short sentences and second-person address follow her identity rules. The instructional tone and the phrases &quot;boring on purpose&quot; and &quot;systems buy back your evenings&quot; come from her fictional personal brand. No client story, performance metric, or private financial information is needed.</p>
+<p>The files make the basis for the draft inspectable. They do not guarantee that every model will follow every instruction. Maya still reviews the output, and the serving tool must enforce access permissions.</p></section>
 <section><h2>What does VIBEGRAPH.md contain?</h2><p>The root identifies the owner and links to identity, brands, context sources, and areas. Entries use a kind such as identity or brand, a scope such as public, scoped, or private, and a read rule such as always, on-task, or on-grant.</p>
 <p>The filename VIBEGRAPH.md is uppercase and fixed by the convention. The website vibegraph.md publishes the framework. A root file named VIBEGRAPH.md belongs to an individual person's files. These are different things.</p></section>
 <section><h2>How does it differ from AI memory or custom instructions?</h2><p>Custom instructions can state preferences for an AI tool. A memory feature can retain information across conversations. A vibegraph gives identity and context a named, linked structure that its owner can inspect and move between tools.</p>

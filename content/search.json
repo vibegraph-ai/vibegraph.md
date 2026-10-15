@@ -8,6 +8,7 @@
       {
         "heading": "Identity and context that you can carry between tools",
         "paragraphs": [
+          "Here, vibegraph means personal identity and context for AI. Ryan Charleston created this framework, published at vibegraph.md, and Raizen Labs, LLC operates the guided builder at vibegraph.ai. Similarly named tools for code visualization and software architecture are separate products.",
           "Your vibes are your personality, taste, voice, values, purpose, and aesthetic. A vibegraph makes that identity readable alongside the context an AI tool needs for your work.",
           "The open framework uses Markdown files and typed links. VIBEGRAPH.md is the root file. It tells an agent where to start, which entries to read for a task, and which entries require permission. The root is a map, rather than a copy of every document you own."
         ]
@@ -15,8 +16,39 @@
       {
         "heading": "A concrete example",
         "paragraphs": [
-          "Maya Okafor is the fictional owner in the public worked example. Her root file points to an identity file, a personal brand, a business brand, and areas of her work. Each link declares its kind, scope, and when it should be read.",
-          "For a writing task, an agent can read her always-read identity and the relevant brand. A private area is not available merely because the root mentions it. Reading a pointer also does not grant access to the external service or local file it describes."
+          "Maya Okafor is the fictional owner in the public worked example. She helps solo consultants organize client delivery. Her identity file asks for matter-of-fact language. Her personal brand calls for calm, plainspoken writing and tighter, instructional LinkedIn posts.",
+          "This shortened VIBEGRAPH.md illustrates the version 3.0 convention. Paths are relative to Maya's folder. The complete example, including her identity and brand files, is linked under Sources and next steps."
+        ],
+        "code": {
+          "caption": "Shortened fictional VIBEGRAPH.md",
+          "language": "markdown",
+          "text": "---\nvibegraph: \"3.0\"\nowner: Maya Okafor\nrole: owner\nidentity: identity/maya-okafor.md\nupdated: 2026-10-10\n---\n\n# Maya Okafor's vibegraph\n\n## Identity\n- [Maya Okafor](identity/maya-okafor.md) · kind: identity · scope: public · when: always\n\n## Brands\n- [Maya Okafor](brands/maya-okafor.brand.md) · kind: brand · type: personal · scope: public · when: always\n- [Delivery OS](brands/delivery-os.brand.md) · kind: brand · type: business · scope: public · when: on-task (Delivery OS work)\n\n## Areas\n- [Skills](areas/skills/index.md) · kind: area · scope: scoped · when: on-task (repeatable workflows)\n- [Finances](areas/finances/index.md) · kind: area · scope: private · when: on-grant\n\n## Read order\n1. identity/maya-okafor.md\n2. brands/maya-okafor.brand.md\n3. the brand or area the task names\n4. nothing else without a grant"
+        },
+        "items": [
+          "The frontmatter names the owner, file convention version, and starting identity file. The date belongs to this fictional example.",
+          "kind describes what an entry is. type distinguishes a personal brand from a business brand.",
+          "when describes when to read an entry. always entries come first, on-task entries depend on the request, and on-grant entries require permission.",
+          "scope describes the intended access boundary. A public entry is shareable, a scoped entry needs an appropriate grant, and a private entry needs an explicit owner grant. A pointer never grants access to a file or service by itself."
+        ]
+      },
+      {
+        "heading": "Walk through a writing task",
+        "paragraphs": [
+          "Suppose Maya asks, \"Write a short LinkedIn post for solo consultants about making client handoffs repeatable. Use my personal voice. Do not invent results or client stories.\""
+        ],
+        "items": [
+          "Read VIBEGRAPH.md, then the always-read identity and personal brand files that Maya has provided.",
+          "The task is about a repeatable workflow, so inspect the Skills area only if Maya has granted access. Read a linked workflow only when it is relevant and available. Do not read the private Finances area. A general personal post does not need the Delivery OS business brand.",
+          "Use the identity rules for direct language and the personal brand rules for short, instructional LinkedIn copy. If the task needs facts that are absent from the supplied files, ask Maya instead of filling them in.",
+          "Return a draft for Maya to review. Check the wording against her voice and check each factual claim against the context she supplied."
+        ]
+      },
+      {
+        "heading": "An illustrative draft and what changed",
+        "paragraphs": [
+          "\"Your next client handoff should not depend on what you remember that afternoon. Write down what is ready, who takes it next, and what done looks like. Use the same handoff each time. Boring on purpose. Systems buy back your evenings.\"",
+          "This is an authored illustration, not a measured model result or a quote from Maya. The short sentences and second-person address follow her identity rules. The instructional tone and the phrases \"boring on purpose\" and \"systems buy back your evenings\" come from her fictional personal brand. No client story, performance metric, or private financial information is needed.",
+          "The files make the basis for the draft inspectable. They do not guarantee that every model will follow every instruction. Maya still reviews the output, and the serving tool must enforce access permissions."
         ]
       },
       {
