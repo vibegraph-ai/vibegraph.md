@@ -24,6 +24,7 @@ const schemaArticle = schema([
   { '@type': 'WebPage', '@id': `${articleUrl}#webpage`, url: articleUrl, name: article.title, description: article.description, isPartOf: { '@id': website['@id'] }, mainEntity: { '@id': `${articleUrl}#article` } },
   { '@type': 'Article', '@id': `${articleUrl}#article`, headline: article.heading, datePublished: article.datePublished, dateModified: article.dateModified, description: article.description, mainEntityOfPage: { '@id': `${articleUrl}#webpage` }, author: { '@id': organization['@id'] }, publisher: { '@id': organization['@id'] }, about: { '@id': term['@id'] }, image: `${origin}/images/vibegraph-md-social-card.png`, inLanguage: 'en', citation: article.sources.map(source => source.href) },
 ]);
+const renderCode = code => `<figure><figcaption>${escape(code.caption)}</figcaption><pre><code>${escape(code.text)}</code></pre></figure>`;
 const html = `<!DOCTYPE html>
 <!-- Generated from content/search.json. Run node scripts/build-search-pages.mjs. -->
 <html lang="en" data-brand="framework"><head>
@@ -66,7 +67,7 @@ ${schemaArticle}
 <p class="lede">${escape(content.definition)}</p>
 <p class="muted">Published <time datetime="${escape(article.datePublished)}">${escape(article.datePublished)}</time>. Updated <time datetime="${escape(article.dateModified)}">${escape(article.dateModified)}</time>.</p>
 <p class="muted">By <a href="https://vibegraph.ai/about/">Raizen Labs, LLC</a>. Framework maintained by <a href="https://ryancharleston.com">Ryan Charleston</a>.</p>
-${article.sections.map(section => `<section><h2>${escape(section.heading)}</h2>${section.paragraphs.map(p => `<p>${escape(p)}</p>`).join('\n')}${section.code ? `<figure><figcaption>${escape(section.code.caption)}</figcaption><pre><code>${escape(section.code.text)}</code></pre></figure>` : ''}${section.items ? `<ol>${section.items.map(item => `<li>${escape(item)}</li>`).join('\n')}</ol>` : ''}</section>`).join('\n')}
+${article.sections.map(section => `<section${section.id ? ` id="${escape(section.id)}"` : ''}><h2>${escape(section.heading)}</h2>${section.paragraphs.map(p => `<p>${escape(p)}</p>`).join('\n')}${section.code ? renderCode(section.code) : ''}${section.items ? `<ol>${section.items.map(item => `<li>${escape(item)}</li>`).join('\n')}</ol>` : ''}${(section.codeBlocks || []).map(renderCode).join('\n')}${section.links ? `<ul>${section.links.map(link => `<li><a href="${escape(link.href)}">${escape(link.label)}</a></li>`).join('\n')}</ul>` : ''}</section>`).join('\n')}
 <section><h2>Sources and next steps</h2><ul>${article.sources.map(link => `<li><a href="${escape(link.href)}">${escape(link.label)}</a></li>`).join('\n')}</ul></section>
 </article></main>
 <footer class="article-footer"><div class="wrap"><p>© Raizen Labs, LLC · <a href="/">Open framework</a> · <a href="https://vibegraph.ai/">Guided builder</a></p></div></footer>
@@ -83,7 +84,7 @@ const expandedGuide = [
   content.definition,
   `Published ${article.datePublished}. Updated ${article.dateModified}.`,
   'By [Raizen Labs, LLC](https://vibegraph.ai/about/). Framework maintained by [Ryan Charleston](https://ryancharleston.com/).',
-  ...article.sections.map(section => [`### ${section.heading}`, ...section.paragraphs, ...(section.code ? [section.code.caption, '```' + section.code.language + '\n' + section.code.text + '\n```'] : []), ...(section.items ? [section.items.map((item, index) => `${index + 1}. ${item}`).join('\n')] : [])].join('\n\n')),
+  ...article.sections.map(section => [`### ${section.heading}`, ...section.paragraphs, ...(section.code ? [section.code.caption, '```' + section.code.language + '\n' + section.code.text + '\n```'] : []), ...(section.codeBlocks || []).flatMap(code => [code.caption, '```' + code.language + '\n' + code.text + '\n```']), ...(section.links || []).map(link => `[${link.label}](${link.href})`), ...(section.items ? [section.items.map((item, index) => `${index + 1}. ${item}`).join('\n')] : [])].join('\n\n')),
   '## Sources and next steps',
   ...article.sources.map(link => `- [${link.label}](${link.href})`),
 ].join('\n\n') + '\n';

@@ -8,7 +8,7 @@ Source: https://vibegraph.md/what-is-a-vibegraph/
 
 A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate.
 
-Published 2026-10-14. Updated 2026-10-14.
+Published 2026-10-14. Updated 2026-10-15.
 
 By [Raizen Labs, LLC](https://vibegraph.ai/about/). Framework maintained by [Ryan Charleston](https://ryancharleston.com/).
 
@@ -18,7 +18,7 @@ Here, vibegraph means personal identity and context for AI. Ryan Charleston crea
 
 Your vibes are your personality, taste, voice, values, purpose, and aesthetic. A vibegraph makes that identity readable alongside the context an AI tool needs for your work.
 
-The open framework uses Markdown files and typed links. VIBEGRAPH.md is the root file. It tells an agent where to start, which entries to read for a task, and which entries require permission. The root is a map, rather than a copy of every document you own.
+The open framework uses Markdown files and typed links. The lowercase name vibegraph.md identifies the framework and its website. The uppercase filename VIBEGRAPH.md identifies the root file in one person's folder. It tells an agent where to start, which entries to read for a task, and which entries require permission. The root is a map, rather than a copy of every document you own.
 
 ### A concrete example
 
@@ -79,6 +79,63 @@ This is an authored illustration, not a measured model result or a quote from Ma
 
 The files make the basis for the draft inspectable. They do not guarantee that every model will follow every instruction. Maya still reviews the output, and the serving tool must enforce access permissions.
 
+### Actual demo results with and without context
+
+On October 15, 2026, we ran one paired writing task in fresh Google Gemini Temporary Chats using Auto mode. Both prompts asked for a 150 to 180 word LinkedIn post about weekly client updates. One prompt contained only the task. The other included the same task plus Maya's root, identity, and personal brand files. Maya and her business are fictional. The outputs below are actual, unedited responses.
+
+The supplied root file is named VIBEGRAPH.md, with uppercase VIBEGRAPH. The lowercase name vibegraph.md refers to the open framework and website. Files were pasted into chat for this demo. We did not test automatic graph traversal, permission enforcement, or the guided builder.
+
+The context response is not ready to publish unchanged. Its opening claim about why most solo consultants fail is unsupported by the supplied files. Its phrase about a firm ten times your size reflects brand rhetoric, not a measured outcome. The task-only response also makes general assertions about trust and fewer check-ins that this run does not demonstrate. Identity and brand context did not ensure factual accuracy.
+
+Actual task-only output, unedited
+
+```markdown
+As a solo operations consultant, silence can quietly erode client trust. When you are deep in execution, clients are left wondering what is happening behind the scenes.
+
+The antidote is simple: send one weekly client update.
+
+This single weekly touchpoint keeps momentum high, reinforces your value, and prevents unnecessary check-in emails.
+
+Every update should cover three essential things:
+
+* **What was accomplished** since the last message.
+* **What is planned** for the week ahead.
+* **Any roadblocks or decisions** needed from their side.
+
+Consistency transforms how clients perceive your reliability. When they see a clear, structured summary landing in their inbox every week, confidence grows naturally.
+
+**Practical action you can take today:** Draft a simple template containing these three sections and schedule your first weekly update for your current clients this Friday.
+```
+
+Actual output with context, unedited and requiring factual review
+
+```markdown
+Most solo consultants fail not from lack of skill, but from letting client updates slip.
+
+When you don't send a regular update, clients assume the project has stalled. Silence creates anxiety, and anxious clients send mid-week emails asking for status. That breaks your focus and steals your evenings.
+
+Sending one update at the same time every week buys back your calm. Keep it brief and cover three things:
+
+1. **What got done:** State the completed deliverables with real numbers and specific tools.
+2. **What comes next:** Name the exact goal or end state for the upcoming week.
+3. **What is needed:** List any missing inputs or decisions required from the client to keep moving.
+
+Boring systems beat weekly firefighting. A predictable cadence builds trust and establishes your delivery operations like a firm ten times your size.
+
+**Action to take today:** Open your calendar and block thirty minutes every Friday at 4:00 PM to send your weekly updates.
+```
+
+[Open the reproducible demo archive, prompts, outputs, and verification script](https://github.com/vibegraph-ai/vibegraph.md/tree/4410b6731e712d70178011f040c797c5fee972bf/examples/reproducible-demo-2026-10-15)
+
+[Read the recorded evaluation protocol](https://github.com/vibegraph-ai/vibegraph.md/blob/4410b6731e712d70178011f040c797c5fee972bf/examples/reproducible-demo-2026-10-15/PROTOCOL.md)
+
+[Inspect the run metadata and capture times](https://github.com/vibegraph-ai/vibegraph.md/blob/4410b6731e712d70178011f040c797c5fee972bf/examples/reproducible-demo-2026-10-15/run.json)
+
+1. The task-only output contained 129 words excluding Markdown list markers (132 whitespace tokens), below the requested range. The context output contained 154 words (157 whitespace tokens), within the range.
+2. Both responses covered three update sections and ended with a practical action. The context response reflected Maya's language about calm, evenings, boring systems, and a firm ten times your size.
+3. There was one generation per condition, with no retries or selection from multiple candidates. Auto did not expose the exact backend model, temperature, or seed.
+4. This is a repeatable procedure, not a promise of identical outputs. There was no blinded evaluation or equivalent-context plain-prose control. The run cannot isolate the file format's effect or establish a general performance improvement.
+
 ### What does VIBEGRAPH.md contain?
 
 The root identifies the owner and links to identity, brands, context sources, and areas. Entries use a kind such as identity or brand, a scope such as public, scoped, or private, and a read rule such as always, on-task, or on-grant.
@@ -112,6 +169,8 @@ For a repository workflow, the framework provides a short handoff for AGENTS.md 
 - [Specification 3.0](https://github.com/vibegraph-ai/vibegraph.md/blob/v3.0/SPEC.md)
 
 - [Maya Okafor worked example](https://github.com/vibegraph-ai/vibegraph.md/tree/v3.0/examples/maya-okafor.vibegraph)
+
+- [Reproducible writing demo with actual outputs, October 15, 2026](https://github.com/vibegraph-ai/vibegraph.md/tree/4410b6731e712d70178011f040c797c5fee972bf/examples/reproducible-demo-2026-10-15)
 
 - [Blank template](https://github.com/vibegraph-ai/vibegraph.md/tree/v3.0/templates/your-name.vibegraph)
 
