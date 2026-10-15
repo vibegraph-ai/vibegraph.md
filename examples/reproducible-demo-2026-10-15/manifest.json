@@ -1,0 +1,22 @@
+{
+  "source_repository": "https://github.com/vibegraph-ai/vibegraph.md",
+  "source_commit": "c2e2c3fedb42eb04cfba5ddc47ad9bae7135b87e",
+  "specification_version": "3.0",
+  "prompt_sha256": {
+    "task.txt": "0af3c588122bc1d13f65fe2ada540625c67e7b15811169cf38508a05193aa6ca",
+    "baseline-prompt.txt": "0af3c588122bc1d13f65fe2ada540625c67e7b15811169cf38508a05193aa6ca",
+    "context-prompt.txt": "271a8d0da73aa845b9c106cbaf0c865139aa87e111cf4a3957a2b53b1321c7c8",
+    "PROTOCOL.md": "5b82c3f681a6a2ecea0a58636643d5ec3c842b3420a5ff331048350b37d42c64"
+  },
+  "input_sha256": {
+    "VIBEGRAPH.md": "dc00045727c7797fcf8feb09551e60452d85294da71989f45a0fddc673e84e1d",
+    "identity/maya-okafor.md": "2aafd97c86e7315fd9db7ac7374623c2990f04ad548747549a7fad5257d217c9",
+    "brands/maya-okafor.brand.md": "eb9d3cde3fd823de8f751b90ca72c7b23a018715ded336496050c1c0633d8cf9"
+  },
+  "output_sha256": {
+    "baseline.jpg": "77b01253dd3a7959137bdeee3a0db54f4bd7c1f478b3cf2da0c1fccc116ba0e3",
+    "baseline.md": "65b12485b779f7b8fd362611a8d48606cbf75ea306b5954623dc811cfede05e4",
+    "context.jpg": "2dd82442a5206799aaa7eb8569af51762aaf3c488761209f232c8f2e48ab0a57",
+    "context.md": "f92f831514dcb996f0522fa89252b45abe5114e71efc8381e72502e4350de294"
+  }
+}
