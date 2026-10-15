@@ -1,0 +1,23 @@
+{
+  "provider": "Google Gemini web app",
+  "mode": "Gemini Auto",
+  "modelFamilyLabel": "Gemini 3 models",
+  "exactBackendModel": null,
+  "temperature": null,
+  "seed": null,
+  "sessionType": "Temporary Chat",
+  "baseline": {
+    "submittedAt": "2026-10-15T15:37:42.135Z",
+    "capturedAt": "2026-10-15T15:38:59.650Z",
+    "generations": 1,
+    "retries": 0
+  },
+  "context": {
+    "submittedAt": "2026-10-15T15:39:14.131Z",
+    "capturedAt": "2026-10-15T15:40:12.643Z",
+    "generations": 1,
+    "retries": 0
+  },
+  "captureMethod": "Provider Copy response control, saved verbatim as Markdown",
+  "webSearch": "Prompt forbade browsing; no source or search controls appeared in either response"
+}

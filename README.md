@@ -6,7 +6,7 @@
 
 The open framework and file convention for a vibegraph. It defines VIBEGRAPH.md, the root file every AI reads first.
 
-[Specification](SPEC.md) · [Example](examples/maya-okafor.vibegraph) · [Templates](templates/your-name.vibegraph) · [Whitepaper (PDF)](whitepaper/vibegraph-whitepaper.pdf) · [vibegraph.ai](https://vibegraph.ai)
+[What is a vibegraph?](https://vibegraph.md/what-is-a-vibegraph/) · [Specification](SPEC.md) · [Example](examples/maya-okafor.vibegraph) · [Templates](templates/your-name.vibegraph) · [Whitepaper (PDF)](whitepaper/vibegraph-whitepaper.pdf) · [vibegraph.ai](https://vibegraph.ai)
 
 Published specification: 3.0 · MIT (templates, schema, code) · CC-BY 4.0 (prose)
 
@@ -23,6 +23,16 @@ Your vibes (your personality, taste, voice, values, purpose, and aesthetic) are 
 Everyone who uses AI for real work already has one, spread across a notes app, a folder of documents, a few platform memories, and a great deal that lives only in their head. Two things turn that pile into a vibegraph: a human-authored identity core, and a root file with a fixed name that any agent reads first. Without them, it is context. With them, it is a graph any agent can walk, a permission model you can reason about, and an asset that moves unchanged when a better tool ships.
 
 > Memory layers remember what happened. A vibegraph defines who you are.
+
+Read the [definition guide and worked example](https://vibegraph.md/what-is-a-vibegraph/) for the concept, file layout, and a task walkthrough.
+
+### Which vibegraph?
+
+Here, a **vibegraph** is a person's network of identity and context for AI. Ryan Charleston created this framework, published at [vibegraph.md](https://vibegraph.md/). Raizen Labs, LLC operates the live guided builder at [vibegraph.ai](https://vibegraph.ai/). Similarly named codebase visualization tools, product graphs, and blockchain indexers are separate projects. `vibegraph.md` is the framework and website name. `VIBEGRAPH.md` is the root filename.
+
+### Actual model outputs
+
+The [reproducible writing demo](examples/reproducible-demo-2026-10-15/) includes the exact prompts, public fictional input files, unedited model outputs, run details, and a comparison. It demonstrates what changed in one paired run when the writing context was supplied. It is not a performance benchmark.
 
 ## Three things, three roles
 

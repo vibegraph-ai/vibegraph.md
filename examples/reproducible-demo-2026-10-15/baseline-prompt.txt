@@ -1,0 +1,5 @@
+You are writing for Maya Okafor, a fictional solo operations consultant.
+
+Write a LinkedIn post of 150 to 180 words explaining why a solo consultant should send one weekly client update. Include three things that update should cover and end with one practical action the reader can take today.
+
+Use only information supplied in this prompt. Do not browse, invent client stories, claim measured outcomes, or add biographical facts that are not supplied. Return only the post.
