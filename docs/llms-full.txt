@@ -14,15 +14,70 @@ By [Raizen Labs, LLC](https://vibegraph.ai/about/). Framework maintained by [Rya
 
 ### Identity and context that you can carry between tools
 
+Here, vibegraph means personal identity and context for AI. Ryan Charleston created this framework, published at vibegraph.md, and Raizen Labs, LLC operates the guided builder at vibegraph.ai. Similarly named tools for code visualization and software architecture are separate products.
+
 Your vibes are your personality, taste, voice, values, purpose, and aesthetic. A vibegraph makes that identity readable alongside the context an AI tool needs for your work.
 
 The open framework uses Markdown files and typed links. VIBEGRAPH.md is the root file. It tells an agent where to start, which entries to read for a task, and which entries require permission. The root is a map, rather than a copy of every document you own.
 
 ### A concrete example
 
-Maya Okafor is the fictional owner in the public worked example. Her root file points to an identity file, a personal brand, a business brand, and areas of her work. Each link declares its kind, scope, and when it should be read.
+Maya Okafor is the fictional owner in the public worked example. She helps solo consultants organize client delivery. Her identity file asks for matter-of-fact language. Her personal brand calls for calm, plainspoken writing and tighter, instructional LinkedIn posts.
 
-For a writing task, an agent can read her always-read identity and the relevant brand. A private area is not available merely because the root mentions it. Reading a pointer also does not grant access to the external service or local file it describes.
+This shortened VIBEGRAPH.md illustrates the version 3.0 convention. Paths are relative to Maya's folder. The complete example, including her identity and brand files, is linked under Sources and next steps.
+
+Shortened fictional VIBEGRAPH.md
+
+```markdown
+---
+vibegraph: "3.0"
+owner: Maya Okafor
+role: owner
+identity: identity/maya-okafor.md
+updated: 2026-10-10
+---
+
+# Maya Okafor's vibegraph
+
+## Identity
+- [Maya Okafor](identity/maya-okafor.md) · kind: identity · scope: public · when: always
+
+## Brands
+- [Maya Okafor](brands/maya-okafor.brand.md) · kind: brand · type: personal · scope: public · when: always
+- [Delivery OS](brands/delivery-os.brand.md) · kind: brand · type: business · scope: public · when: on-task (Delivery OS work)
+
+## Areas
+- [Skills](areas/skills/index.md) · kind: area · scope: scoped · when: on-task (repeatable workflows)
+- [Finances](areas/finances/index.md) · kind: area · scope: private · when: on-grant
+
+## Read order
+1. identity/maya-okafor.md
+2. brands/maya-okafor.brand.md
+3. the brand or area the task names
+4. nothing else without a grant
+```
+
+1. The frontmatter names the owner, file convention version, and starting identity file. The date belongs to this fictional example.
+2. kind describes what an entry is. type distinguishes a personal brand from a business brand.
+3. when describes when to read an entry. always entries come first, on-task entries depend on the request, and on-grant entries require permission.
+4. scope describes the intended access boundary. A public entry is shareable, a scoped entry needs an appropriate grant, and a private entry needs an explicit owner grant. A pointer never grants access to a file or service by itself.
+
+### Walk through a writing task
+
+Suppose Maya asks, "Write a short LinkedIn post for solo consultants about making client handoffs repeatable. Use my personal voice. Do not invent results or client stories."
+
+1. Read VIBEGRAPH.md, then the always-read identity and personal brand files that Maya has provided.
+2. The task is about a repeatable workflow, so inspect the Skills area only if Maya has granted access. Read a linked workflow only when it is relevant and available. Do not read the private Finances area. A general personal post does not need the Delivery OS business brand.
+3. Use the identity rules for direct language and the personal brand rules for short, instructional LinkedIn copy. If the task needs facts that are absent from the supplied files, ask Maya instead of filling them in.
+4. Return a draft for Maya to review. Check the wording against her voice and check each factual claim against the context she supplied.
+
+### An illustrative draft and what changed
+
+"Your next client handoff should not depend on what you remember that afternoon. Write down what is ready, who takes it next, and what done looks like. Use the same handoff each time. Boring on purpose. Systems buy back your evenings."
+
+This is an authored illustration, not a measured model result or a quote from Maya. The short sentences and second-person address follow her identity rules. The instructional tone and the phrases "boring on purpose" and "systems buy back your evenings" come from her fictional personal brand. No client story, performance metric, or private financial information is needed.
+
+The files make the basis for the draft inspectable. They do not guarantee that every model will follow every instruction. Maya still reviews the output, and the serving tool must enforce access permissions.
 
 ### What does VIBEGRAPH.md contain?
 

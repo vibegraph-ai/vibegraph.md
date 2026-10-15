@@ -48,3 +48,7 @@ The expanded text resource reuses the entire guide content and source list. It i
 ## IndexNow
 
 `node scripts/indexnow.mjs / /what-is-a-vibegraph/` previews a batch without sending it. After release, add `--submit` to notify participating search engines of changed pages. The script validates the live root ownership file, public HTML response, indexing permission, and canonical before one POST. A receipt is not confirmation of indexing. The public ownership key in `scripts/indexnow.json` matches its root text file in docs. Never substitute an account API credential. Keep the allowed paths limited to public canonical pages, and run `node --test scripts/indexnow.test.mjs` with the other checks.
+
+## Worked example editing
+
+Guide sections support escaped `paragraphs`, an optional `code` object with `caption`, `language`, and `text`, and optional ordered `items`. The generator emits the same example and steps in HTML and llms-full.txt. Keep the abbreviated root aligned with the linked 3.0 example. Label authored output illustrations clearly and retain the distinction between read rules and enforced access grants.
