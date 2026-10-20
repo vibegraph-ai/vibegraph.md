@@ -54,3 +54,12 @@ The expanded text resource reuses the entire guide content and source list. It i
 Guide sections support escaped `paragraphs`, an optional `code` object with `caption`, `language`, and `text`, and optional ordered `items`. The generator emits the same example and steps in HTML and llms-full.txt. Keep the abbreviated root aligned with the linked 3.0 example. Label authored output illustrations clearly and retain the distinction between read rules and enforced access grants.
 
 Guide sections may also provide an `id` for direct links, `codeBlocks` for multiple unedited output transcripts, and `links` for source references. The actual demo section uses `reproducible-demo`. Keep the output text identical to the pinned archive and preserve its limitations and factual-review warning. These fields render in HTML and the expanded text reference.
+
+
+## Context Engineering Lab promotion
+
+The `context-engineering-lab` section in `docs/index.html` appears directly below the newsletter. Its heading, three facts, self-guided format and CTA use the framework typography and monochrome theme tokens. The final footer link sits at the bottom right. Both links lead to https://contextcourse.vibegraph.ai/ so visitors can review the course and enroll there. Keep the course counts aligned with that course landing page. This promotion does not change newsletter behavior or process payments on the framework site.
+
+The course promo describes a self-guided alternative and references MIT xPRO promotional tuition of USD 5,376 observed October 19, 2026. The user requested removal of the explanatory note and comparison link from the promo. Detailed program comparisons remain on the course site.
+
+Course pricing stays on the course landing page. The promo highlights the self-guided format and course contents.
