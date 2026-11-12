@@ -1,8 +1,10 @@
 # vibegraph: your vibes, codified
 
-A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate.
+**A vibegraph is a living map of who you are, recorded for your AI.**
 
-**Version 3.0 · October 2026 · Ryan Charleston · vibegraph.md · vibegraph.ai**
+Formally, a vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate.
+
+**Version 3.0 · November 2026 · Ryan Charleston · vibegraph.md · vibegraph.ai**
 
 ---
 
@@ -12,9 +14,9 @@ Every AI tool you use starts from zero. It does not know your voice, your values
 
 Your vibes (your personality, taste, voice, values, purpose, and aesthetic) are the things AI gets wrong about you by default, because nobody wrote them down anywhere a machine could read them. This paper is about writing them down, once, in a form every AI you use can read first.
 
-The word for the result is a vibegraph. **A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate.** Everyone who uses AI for real work already has one, spread across a notes app, a folder of documents, a few platform memories, and a great deal that lives only in their head. What separates a working vibegraph from a pile of context is small and specific: a human-authored identity core, and a root file with a fixed name that any agent reads first.
+The word for the result is a vibegraph: **a living map of who you are, recorded for your AI.** The name says what it is. *Vibe* is you, the mix of personality, taste, values, and story that makes you recognizably you. *Graph* is a map of how things connect, the way a knowledge graph maps facts. Put precisely, a vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate. Everyone who uses AI for real work already has one, spread across a notes app, a folder of documents, a few platform memories, and a great deal that lives only in their head. What separates a working vibegraph from a pile of context is small and specific: a human-authored identity core, and a root file with a fixed name that any agent reads first.
 
-This paper defines the term, describes the anatomy of a vibegraph, shows where the tools people already use fit inside one, explains how business brands nest inside their owner's graph, specifies how AI systems consume one (by paste, by workspace, over the Model Context Protocol, and as a seed for memory layers), states the security model such a thing demands and which parts of it are shipped, and separates the three things that share the name: the noun, the open framework at vibegraph.md, and the guided builder at vibegraph.ai.
+This paper defines the term, describes the anatomy of a vibegraph, shows where the tools people already use fit inside one, explains how business brands nest inside their owner's graph, describes how a vibegraph stays current as its owner changes, specifies how AI systems consume one (by paste, by workspace, over the Model Context Protocol, and as a seed for memory layers), states the security model such a thing demands and which parts of it are shipped, and separates the three things that share the name: the noun, the open framework at vibegraph.md, and the guided builder at vibegraph.ai.
 
 > Memory layers remember what happened. A vibegraph defines who you are.
 
@@ -44,7 +46,9 @@ There is no equivalent for a person. That is the gap a vibegraph fills.
 
 ## 2. What is a vibegraph?
 
-A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate.
+In plain terms, a vibegraph is a living map of who you are, recorded for your AI. It holds who you are, what drives you, what you know, your story, your taste, and as much of your life data as you choose to add. It is written down once, in a form every AI you use reads first, and kept current as you change.
+
+Stated as a definition: A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate.
 
 They may not realize it, but everyone who uses AI for real work already has a vibegraph. It is just spread across a notes app, local folders, cloud drives, fragmented memory inside various AI chat apps and agents, a system prompt pasted from a text file, a CLAUDE.md file, and important context that lives only in the person's head and gets retyped into every new tool. That's a vibegraph in the way a shoebox of photos is an album: all the material, none of the structure, and no way for a machine to read it properly.
 
@@ -75,6 +79,8 @@ The word is a common noun. "vibegraph" (lowercase v) is not a product name and c
 **Nothing is exposed by omission.** Every link in the root file carries a scope. Anything without one is private. An agent that was never granted a part of the graph cannot read it, and cannot leak it.
 
 **Guided, not blank.** The hard part of a document like this is not the format; it is the blank page. The framework assumes a guided build: structured questions, worked examples for every element, and an AI coach that draws out real material in conversation rather than waiting for the owner to fill a template.
+
+**Living, not frozen.** A vibegraph changes as its owner does. Goals move, taste shifts, and new skills arrive. A good vibegraph is reviewed on a regular cadence rather than written once and left to go stale. A review may draw on what connected sources show and propose changes, but the owner approves every one, so the graph stays a statement of record and never becomes a model's running guess. What no source can see, such as a change of heart or a new goal, the owner adds by hand.
 
 **Portable and sovereign.** A vibegraph is files, not a service. It moves across tools, models, and vendors unchanged. If a platform shuts down or a better one launches, the graph comes along.
 
@@ -433,6 +439,8 @@ A scope decides what a vibegraph hands to a reader. It does not lock the place a
 
 **Serving the files behind an entry (not offered).** The hosted server serves the graph and its routes. It cannot read the owner's disk, so a file on a laptop reaches a hosted tool only as a path. A hosted tool opens an entry's target only if it can already reach that place, such as a cloud drive it connects to itself. Agents that need local files should run against the local folder.
 
+**The vibecheck (in development).** The monthly review described in section 11 is not shipped. As designed, it reads only sources the owner has connected and granted, and it proposes changes rather than making them. Nothing it suggests enters the graph until the owner approves it.
+
 **Zero-knowledge encryption for hosted vibegraphs (destination).** The endpoint for hosted storage follows the model proven by password managers: client-side encryption, keys derived on the owner's device and never transmitted, so the provider stores ciphertext it cannot read. The trade-offs are real: no server-side search, no recovery of lost keys, nothing to hand over under compulsion. For a document this sensitive, those trade-offs are the point. The hosted builder will say "zero-knowledge" only when it is true.
 
 **Verifiable credentials (future consideration).** The W3C's Verifiable Credentials standard and selective-disclosure techniques point toward a future in which a vibegraph can prove an attribute without revealing the underlying data. The framework is designed not to preclude it and does not include it.
@@ -501,13 +509,15 @@ The export is the reference layout in section 7, with the handoff stanza pre-wri
 
 The same layout can be served live over MCP, with scopes as grants and every read logged, through the part of the app called Connect. The identity core and the areas are free. Each build tier above that is a one-time purchase with unlimited edits and re-exports, and moving up a tier costs the difference. Connect is the one recurring charge: an optional monthly subscription on any tier, the free one included. An owner who lets it lapse keeps every grant for when they come back. Current tiers are at vibegraph.ai/pricing. The app is a convenience layered on the open framework, never a gate in front of it.
 
+Coming next is the vibecheck, the app's way of keeping a vibegraph living. At the start of each month it looks back at the month before, shows the owner how their vibes are changing, and proposes updates they can accept in a few clicks. It reads only the sources the owner has connected and granted, it changes nothing without the owner's approval, and it leaves room for what only the owner knows. The vibecheck is in development and not yet shipped.
+
 ---
 
 ## 12. Summary
 
 The last two years settled whether AI can produce competent work. The next two are about context, and whose work it produces. Left uncalibrated, every model regresses to the same mean, and everyone who relies on it sounds a little more like everyone else.
 
-The fix is not a smarter model. It is a better starting point: a human-authored identity core and a root file every AI reads first, linked by kind and scope to the brands, areas, and tools that make up the rest of one human's graph. Small enough to paste into a chat today. Structured enough to serve an agent fleet tomorrow. Private by default, permissioned by design, grounded in instruments older and sturdier than any of the tools that will consume it.
+The fix is not a smarter model. It is a better starting point: a human-authored identity core and a root file every AI reads first, linked by kind and scope to the brands, areas, and tools that make up the rest of one human's graph. Small enough to paste into a chat today. Structured enough to serve an agent fleet tomorrow. Private by default, permissioned by design, grounded in instruments older and sturdier than any of the tools that will consume it. Kept current as its owner changes, and never rewritten without their say.
 
 Every AI you use should run on your vibegraph. Your notes app, your memory layer, and your agents are context sources of it. The open framework at vibegraph.md defines its shape. vibegraph.ai builds its center.
 
@@ -515,7 +525,7 @@ Every AI you use should run on your vibegraph. Your notes app, your memory layer
 
 ## Glossary
 
-**vibegraph.** The network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate. A common noun, always lowercase. Plural: vibegraphs. One human per vibegraph.
+**vibegraph.** A living map of who you are, recorded for your AI. Formally, the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate. A common noun, always lowercase. Plural: vibegraphs. One human per vibegraph.
 
 **identity core.** The human-authored statement of who the person is: the personality assessment (the Big Five via the IPIP-NEO-120, the Enneagram, and any other instruments the owner brings), the integrated reading, and the four-pillar Ikigai, with the personal brand built from it. Small, stable, and safe to share.
 
@@ -548,6 +558,8 @@ Every AI you use should run on your vibegraph. Your notes app, your memory layer
 **role.** Who built and maintains a vibegraph: owner (the person it describes), staff (someone who works for the owner or the business), or agency (an outside party). Carried in the root file's front matter. Absent means owner.
 
 **handoff stanza.** The four-line block placed in AGENTS.md and CLAUDE.md that sends an agent to VIBEGRAPH.md before it starts.
+
+**vibecheck.** A monthly review of a vibegraph that shows its owner how their vibes are changing and proposes updates the owner approves or declines. In development at vibegraph.ai. One word, always lowercase.
 
 **vibeclone.** An agent that runs on a vibegraph and works in its owner's likeness, inward for the owner or outward as a public slice. A common noun, always lowercase.
 

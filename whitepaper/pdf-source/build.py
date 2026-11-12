@@ -43,6 +43,7 @@ COVER_BODY = """
   <hr class="cover-rule"/>
   <div class="cover-main">
     <h1 class="cover-title">vibegraph:<br/>your vibes, codified</h1>
+    <p class="cover-lead">A living map of who you are, recorded for your AI.</p>
     <p class="cover-desc">A vibegraph is the network of identity, context,
     knowledge, and memory that governs how AI thinks, writes, and acts for one
     human, and any businesses they own or operate.</p>
@@ -50,7 +51,7 @@ COVER_BODY = """
   <div class="cover-bottom">
     <hr class="cover-rule"/>
     <div class="cover-meta">
-      <div><p>October 2026</p><p>Ryan Charleston</p></div>
+      <div><p>November 2026</p><p>Ryan Charleston</p></div>
       <div class="right"><p>vibegraph.ai</p><p>vibegraph.md</p></div>
     </div>
   </div>
@@ -76,7 +77,8 @@ body {{
 .cover-rule {{ border: none; border-top: 1.6px solid #1a1a1c; margin: 3mm 0 0 0; }}
 .cover-main {{ margin-top: 42mm; }}
 .cover-title {{ font-family: {DISPLAY}; font-size: 36pt; line-height: 1.05; margin: 0; font-weight: 700; letter-spacing: -0.02em; }}
-.cover-desc {{ max-width: 148mm; font-size: 11.5pt; line-height: 1.55; margin-top: 16mm; color: #3f3f46; }}
+.cover-lead {{ max-width: 148mm; font-family: {DISPLAY}; font-weight: 500; font-size: 17pt; line-height: 1.3; letter-spacing: -0.01em; margin: 16mm 0 0 0; color: #1a1a1c; }}
+.cover-desc {{ max-width: 148mm; font-size: 11.5pt; line-height: 1.55; margin-top: 6mm; color: #3f3f46; }}
 .cover-bottom {{ margin-top: auto; }}
 .cover-bottom .cover-rule {{ border-top: 1px solid #d4d4d8; }}
 .cover-meta {{ display: flex; justify-content: space-between; margin-top: 3mm; font-size: 9.5pt; }}
