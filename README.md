@@ -18,9 +18,13 @@ Published specification: 3.0 · MIT (templates, schema, code) · CC-BY 4.0 (pros
 
 Your vibes (your personality, taste, voice, values, purpose, and aesthetic) are what AI gets wrong about you by default, because nobody wrote them down anywhere a machine could read them.
 
-**A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate.**
+**A vibegraph is a living map of who you are, recorded for your AI.**
+
+Formally, a vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate. The name says what it is. *Vibe* is you, the mix of personality, taste, values, and story that makes you recognizably you. *Graph* is a map of how things connect, the way a knowledge graph maps facts.
 
 Everyone who uses AI for real work already has one, spread across a notes app, a folder of documents, a few platform memories, and a great deal that lives only in their head. Two things turn that pile into a vibegraph: a human-authored identity core, and a root file with a fixed name that any agent reads first. Without them, it is context. With them, it is a graph any agent can walk, a permission model you can reason about, and an asset that moves unchanged when a better tool ships.
+
+A vibegraph is living, not frozen. It changes as you do, and you approve every change. The guided builder at [vibegraph.ai](https://vibegraph.ai) is adding a monthly vibecheck that shows you how your vibes are changing. It is coming soon.
 
 > Memory layers remember what happened. A vibegraph defines who you are.
 
