@@ -6,7 +6,9 @@
 
 Source: https://vibegraph.md/what-is-a-vibegraph/
 
-A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate.
+A vibegraph is a living map of who you are, recorded for your AI.
+
+Formally, a vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate.
 
 Published 2026-10-14. Updated 2026-10-15.
 

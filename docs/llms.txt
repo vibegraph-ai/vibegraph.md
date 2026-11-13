@@ -2,7 +2,9 @@
 
 > The open framework and file convention for a vibegraph, maintained by Ryan Charleston.
 
-A vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate.
+A vibegraph is a living map of who you are, recorded for your AI.
+
+Formally, a vibegraph is the network of identity, context, knowledge, and memory that governs how AI thinks, writes, and acts for one human, and any businesses they own or operate.
 
 ## Public resources
 
